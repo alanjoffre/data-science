@@ -2,4 +2,4 @@
 - Machine Learning
 - Deep Learning
 - Faculdade Estácio de Sá - Data Science - 2º Sementre
-- Aprendizado, exercicios e projetos
+- Repositório com: artigos, aprendizados, exercícios e projetos.
