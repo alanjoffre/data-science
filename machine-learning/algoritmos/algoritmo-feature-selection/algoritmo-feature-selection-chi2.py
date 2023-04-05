@@ -1,6 +1,6 @@
-# Machine Learning: Feature Selection
+# Machine Learning: Feature Selection - CHI2
 
-# Documentação: 
+# Importante: Só trabalha com valores positivos. 
 
 # Execute os blocos de códigos no Jupyter Notebook, conforme indicação: 
 
