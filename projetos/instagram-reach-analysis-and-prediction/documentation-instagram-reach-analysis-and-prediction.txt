@@ -1,0 +1,157 @@
+# Importando as bibliotecas necessárias
+
+import pandas as pd # Biblioteca para manipulação de dados em tabelas
+import numpy as np # Biblioteca para cálculos matemáticos
+import matplotlib.pyplot as plt # Biblioteca para criação de gráficos
+import seaborn as sns # Biblioteca para visualização de dados
+import plotly.express as px # Biblioteca para criação de gráficos interativos
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator # Biblioteca para criação de nuvem de palavras
+from sklearn.model_selection import train_test_split # Biblioteca para dividir dados em treino e teste
+from sklearn.linear_model import PassiveAggressiveRegressor # Biblioteca para implementar modelo de regressão linear
+import warnings # Biblioteca para suprimir avisos de alerta
+
+warnings.filterwarnings('ignore') # Suprimindo avisos de alerta
+
+Lendo os dados a partir de um arquivo CSV
+data = pd.read_csv("D:/Github/data-science/projetos/instagram-reach-analysis-and-prediction/instagram-data.csv", encoding = 'latin1')
+
+Imprimindo as primeiras linhas da tabela de dados
+print(data.head())
+
+Verificando valores nulos na tabela
+data.isnull().sum()
+
+Removendo linhas com valores nulos na tabela
+data = data.dropna()
+
+Obtendo informações da tabela de dados
+data.info()
+
+Criando um gráfico de distribuição de Impressões a partir de 'From Home'
+plt.figure(figsize=(10, 8))
+plt.style.use('fivethirtyeight')
+plt.title("Distribution of Impressions From Home")
+sns.distplot(data['From Home'])
+plt.show()
+
+Criando um gráfico de distribuição de Impressões a partir de 'From Hashtags'
+plt.figure(figsize=(10, 8))
+plt.title("Distribution of Impressions From Hashtags")
+sns.distplot(data['From Hashtags'])
+plt.show()
+
+Criando um gráfico de distribuição de Impressões a partir de 'From Explore'
+plt.figure(figsize=(10, 8))
+plt.title("Distribution of Impressions From Explore")
+sns.distplot(data['From Explore'])
+plt.show()
+
+Obtendo a soma das Impressões de cada fonte e criando um gráfico de pizza
+home = data["From Home"].sum()
+hashtags = data["From Hashtags"].sum()
+explore = data["From Explore"].sum()
+other = data["From Other"].sum()
+
+labels = ['From Home','From Hashtags','From Explore','Other']
+values = [home, hashtags, explore, other]
+
+fig = px.pie(data, values=values, names=labels,
+title='Impressions on Instagram Posts From Various Sources', hole=0.5)
+fig.show()
+
+Criando a nuvem de palavras com base no campo "Caption" do DataFrame "data"
+text = " ".join(i for i in data.Caption)
+stopwords = set(STOPWORDS)
+wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
+
+Configurando o estilo e mostrando a imagem da nuvem de palavras
+plt.style.use('classic')
+plt.figure( figsize=(12,10))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+
+Criando a nuvem de palavras com base no campo "Hashtags" do DataFrame "data"
+text = " ".join(i for i in data.Hashtags)
+stopwords = set(STOPWORDS)
+wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
+
+Configurando o estilo e mostrando a imagem da nuvem de palavras
+plt.figure( figsize=(12,10))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+
+Plotando um gráfico de dispersão com relação entre as variáveis "Impressions" e "Likes"
+figure = px.scatter(data_frame = data, x="Impressions",
+y="Likes", size="Likes", trendline="ols",
+title = "Relationship Between Likes and Impressions")
+figure.show()
+
+Plotando um gráfico de dispersão com relação entre as variáveis "Impressions" e "Comments"
+figure = px.scatter(data_frame = data, x="Impressions",
+y="Comments", size="Comments", trendline="ols",
+title = "Relationship Between Comments and Total Impressions")
+figure.show()
+
+Plotando um gráfico de dispersão com relação entre as variáveis "Impressions" e "Shares"
+figure = px.scatter(data_frame = data, x="Impressions",
+y="Shares", size="Shares", trendline="ols",
+title = "Relationship Between Shares and Total Impressions")
+figure.show()
+
+Plotando um gráfico de dispersão com relação entre as variáveis "Impressions" e "Saves"
+figure = px.scatter(data_frame = data, x="Impressions",
+y="Saves", size="Saves", trendline="ols",
+title = "Relationship Between Post Saves and Total Impressions")
+figure.show()
+
+Calculando a correlação entre as colunas do DataFrame "data" com a coluna "Impressions"
+correlation = data.corr()
+print(correlation["Impressions"].sort_values(ascending=False))
+
+Calculando a taxa de conversão
+conversion_rate = (data["Follows"].sum() / data["Profile Visits"].sum()) * 100
+print(conversion_rate)
+
+Plotando um gráfico de dispersão com relação entre as variáveis "Profile Visits" e "Follows"
+figure = px.scatter(data_frame = data, x="Profile Visits",
+y="Follows", size="Follows", trendline="ols",
+title = "Relationship Between Profile Visits and Followers Gained")
+figure.show()
+
+Criando um modelo de regressão linear utilizando o algoritmo PassiveAggressiveRegressor
+Dividindo os dados em conjuntos de treino e teste
+
+Cálculo da taxa de conversão a partir dos dados de Follows e Profile Visits
+conversion_rate = (data["Follows"].sum() / data["Profile Visits"].sum()) * 100
+print(conversion_rate)
+
+Criação de um gráfico de dispersão usando a biblioteca plotly express (px) a partir dos dados de Profile Visits e Follows
+figure = px.scatter(data_frame = data, x="Profile Visits",
+y="Follows", size="Follows", trendline="ols",
+title = "Relationship Between Profile Visits and Followers Gained")
+figure.show()
+
+Criação das variáveis x e y a partir dos dados de Likes, Saves, Comments, Shares, Profile Visits e Follows para serem usados no modelo de regressão
+x = np.array(data[['Likes', 'Saves', 'Comments', 'Shares',
+'Profile Visits', 'Follows']])
+y = np.array(data["Impressions"])
+
+Divisão dos dados em conjuntos de treinamento e teste
+xtrain, xtest, ytrain, ytest = train_test_split(x, y,
+test_size=0.2,
+random_state=42)
+
+Criação de um modelo de regressão passiva-agressiva e treinamento do modelo com os dados de treinamento
+model = PassiveAggressiveRegressor()
+model.fit(xtrain, ytrain)
+
+Avaliação da performance do modelo usando os dados de teste
+model.score(xtest, ytest)
+
+Criação de uma matriz de features com os dados de Likes, Saves, Comments, Shares, Profile Visits e Follows para ser usada na previsão
+features = np.array([[282.0, 233.0, 4.0, 9.0, 165.0, 54.0]])
+
+Previsão da variável de resposta Impressions usando o modelo treinado e a matriz de features
+model.predict(features)
