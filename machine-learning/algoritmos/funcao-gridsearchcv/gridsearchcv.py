@@ -4,7 +4,7 @@
 
 ## Bloco1
 import pandas as pd
-arquivo = pd.read_csv('D:/Github/machine-learning/algoritmos/funcao-gridsearchcv/Admission_Predict.csv')
+arquivo = pd.read_csv('D:/Github/data-science/machine-learning/algoritmos/funcao-gridsearchcv/Admission_Predict.csv')
 arquivo.drop('Serial No.', axis=1, inplace=True)
 
 ## Bloco2
