@@ -1,2 +1,2 @@
-# machine-learning
- - Repositório com: artigos, aprendizado, exercícios e projetos.
+# Machine-learning
+- Repositório com: artigos, aprendizado, exercícios e projetos.
