@@ -1,2 +1,2 @@
-# deep-learning
+# Deep-Learning | Curso completo
  - Repositório com: artigos, aprendizado, exercícios e projetos.
