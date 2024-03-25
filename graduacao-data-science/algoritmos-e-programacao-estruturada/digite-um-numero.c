@@ -9,7 +9,7 @@ int main() {
   printf("Digite um número: ");
   scanf("%d", &valor);
 
-  printf("\nO número é: %d", valor);
+  printf("\nO número é:%d", valor);
 
   return 0;
 }
