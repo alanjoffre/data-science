@@ -1,0 +1,4 @@
+dbname: 'novadrivebank'
+user: 'etlreadonlybank'
+password: 'novadrive376A@'
+host: '159.223.187.110'

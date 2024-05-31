@@ -1,0 +1,72 @@
+# Machine Learning
+
+O aprendizado de máquina (em inglês, machine learning) é um método de análise de dados que automatiza a construção de modelos analíticos. É um ramo da inteligência artificial baseado na ideia de que sistemas podem aprender com dados, identificar padrões e tomar decisões com o mínimo de intervenção humana.
+
+# Evolução do machine learning
+
+Graças às novas tecnologias computacionais, o machine learning de hoje não é como o machine learning do passado. Ele nasceu do reconhecimento de padrões e da teoria de que computadores podem aprender sem serem programados para realizar tarefas específicas; pesquisadores interessados em inteligência artificial queriam saber se as máquinas poderiam aprender com dados. O aspecto iterativo do aprendizado de máquina é importante porque, quando os modelos são expostos a novos dados, eles são capazes de se adaptar independentemente. Eles aprendem com computações anteriores para produzir decisões e resultados confiáveis, passíveis de repetição. Isso não é uma ciência nova – mas uma ciência que está ganhando um novo impulso.
+
+Embora diversos algoritmos de machine learning existam há muito tempo, a capacidade de aplicar cálculos matemáticos complexos ao big data automaticamente – de novo e de novo, mais rápido e mais rápido – é um desenvolvimento recente. 
+
+Eis alguns exemplos bem conhecidos de aplicações de machine learning, dos quais você já deve ter ouvido falar:
+
+* Os carros autônomos super esperados do Google? A essência do machine learning;
+* Ofertas recomendadas como as da Amazon e da Netflix? Aplicações de machine learning para o dia-a-dia;
+* Saber o que seus clientes estão falando de você no Twitter? Machine learning combinado com criação de regras linguísticas;
+* Detecção de fraudes? Um dos usos mais óbvios e importantes de machine learning no mundo de hoje.
+
+Qual a importância do machine learning?
+
+O interesse renovado no aprendizado de máquina se deve aos mesmos fatores que tornaram a mineração de dados e a análise Bayesiana mais populares do que nunca: coisas como os crescentes volume e variedade de dados disponíveis, o processamento computacional mais barato e poderoso, o armazenamento de dados acessível etc.
+
+Tudo isso significa que é possível produzir, rápida e automaticamente, modelos capazes de analisar dados maiores e mais complexos, e entregar resultados mais rápidos e precisos – mesmo em grande escala. E ao construir modelos precisos, uma organização tem mais chances de identificar oportunidades lucrativas – ou de evitar riscos desconhecidos.
+
+# O que é preciso para criar bons sistemas de machine learning?
+* Capacidade de data preparation;
+* Algoritmos – básicos e avançados;
+* Processos automatizados e iterativos;
+* Escalabilidade;
+* Modelagem conjunta.
+
+# Você sabia?
+* No aprendizado de máquina, um alvo é chamado de rótulo;
+* Em estatística, um alvo é chamado de variável dependente;
+* Uma variável em estatística é chamada de recurso em machine learning;
+* Uma transformação em estatística é chamada de criação de recurso em machine learning.
+
+Quem está usando?
+A maioria das indústrias que trabalham com grandes quantidades de dados tem reconhecido o valor da tecnologia de aprendizado de máquina. Ao extrair insights desses dados – frequentemente em tempo real – as organizações são capazes de trabalhar com mais eficiência ou de ganhar uma vantagem competitiva sobre seus concorrentes.
+
+Serviços financeiros
+Bancos e outros negócios na indústria financeira usam tecnologias de machine learning para dois propósitos principais: identificar insights importantes nos dados e prevenir fraudes. Esses inisghts podem identificar oportunidades de investimento, ou ajudar investidores a saber quando fazer o trade. A mineração de dados também pode identificar clientes com alto perfil de risco ou usar cyber-vigilância para encontrar sinais de fraudes.
+
+Governo
+Agências governamentais, como segurança pública e utilities, têm uma necessidade particular para machine learning, uma vez que elas possuem múltiplas fontes de dados que podem ser mineradas para deles obterem insights. Analisar dados de sensores, por exemplo, identifica maneiras de aumentar a eficiência e economizar dinheiro. O aprendizado de máquina também pode ajudar na detecção de fraudes e na minimização de roubos de identidade.
+
+Operadoras de saúde
+Machine learning é uma tendência crescente na assistência médica graças ao advento dos dispositivos wearables e sensores que permitem aos profissionais de saúde acessar os dados de pacientes em tempo real. A tecnologia também pode ajudar especialistas médicos a analisar dados para identificar tendências ou alertas, levando ao aperfeiçoamento de diagnósticos e tratamentos.
+
+Marketing e vendas
+Websites que recomendam produtos e serviços com base em suas compras anteriores estão usando machine learning para analisar seu histórico de compras – e promover outros itens pelos quais você pode se interessar. Essa capacidade de capturar dados, analisá-los e utilizá-los para personalizar a experiência de compra (ou implementar uma campanha de marketing) é o futuro do varejo.
+
+Petróleo & gás
+Descobrir novas fontes de energia. Analisar minerais no solo. Prever falhas em sensores de refinarias. Acelerar a distribuição de petróleo para torná-la mais eficiente e econômica. O número de aplicações de machine learning nesta indústria é vasto – e continua crescendo.
+
+Transportes
+Analisar dados para identificar padrões e tendências é essencial para a indústria de transportes, a qual depende da elaboração de rotas mais eficientes e da previsão de problemas potenciais para aumentar a rentabilidade. Os aspectos de análise e modelagem de dados de machine learning são ferramentas importantes para transportadoras, transporte público e outras organizações do setor.
+
+Quais são os métodos mais populares de machine learning?
+
+Dois dos métodos mais adotados de machine learning são o aprendizado supervisionado e o aprendizado não-supervisionado – mas eles não são os únicos. Eis os tipos mais populares:
+
+Algoritmos de aprendizado supervisionado são treinados por meio de exemplos rotulados, como uma entrada na qual a saída desejada é conhecida. Por exemplo, um equipamento poderia ter pontos de dados rotulados como “F” (falha) ou “E” (executa). O algoritmo de aprendizado recebe um conjunto de entradas junto com as saídas corretas correspondentes, e aprende ao comparar a saída real com as saídas corretas para encontrar erros. Ele, então, modifica o modelo de acordo. Através de métodos como classificação, regressão e gradient boosting, o aprendizado supervisionado utiliza padrões para prever os valores de rótulos em dados não-rotulados adicionais. O aprendizado supervisionado é comumente empregado em aplicações nas quais dados históricos preveem eventos futuros prováveis. Por exemplo, ele pode antecipar quando transações via cartão de crédito são passíveis de fraude ou qual segurado tende a reivindicar sua apólice.
+
+Aprendizado semi-supervisionado é utilizado para as mesmas aplicações que o aprendizado supervisionado. Mas este aqui manipula tanto dados rotulados quanto não-rotulados para treinamento – normalmente uma pequena quantidade de dados rotulados com uma grande quantidade de dados não-rotulados (porque dados sem rótulos são mais baratos e demandam menos esforços para serem adquiridos). Esse tipo de aprendizado pode ser empregado com métodos como classificação, regressão e previsão. O aprendizado semi-supervisionado é útil quando o custo associado à rotulação é muito alto para possibilitar um processo de treinamento totalmente rotulado. Exemplos básicos incluem a identificação do rosto de uma pessoa em uma webcam.
+
+O aprendizado não-supervisionado é utilizado contra dados que não possuem rótulos históricos. A "resposta certa" não é informada ao sistema. O algoritmo deve descobrir o que está sendo mostrado. O objetivo é explorar os dados e encontrar alguma estrutura dentro deles. O aprendizado não-supervisionado funciona bem com dados transacionais. Por exemplo, ele pode identificar segmentos de clientes com atributos similares que podem, então, ser tratados de modo igualmente similar em campanhas de marketing; ou ele pode encontrar os principais atributos que separam segmentos distintos de clientes. Técnicas populares incluem mapas auto-organizáveis, mapeamento por proximidade, agrupamento k-means e decomposição em valores singulares. Esses algoritmos também são utilizados para segmentar tópicos de texto, recomendar itens e identificar pontos discrepantes nos dados.
+
+Aprendizado por reforço é normalmente utilizado em robótica, jogos e navegação. Com ele, o algoritmo descobre através de testes do tipo 'tentativa e erro' quais ações rendem as maiores recompensas. Este tipo de aprendizado possui três componentes principais: o agente (o aprendiz ou tomador de decisão), o ambiente (tudo com que o agente interage) e ações (o que o agente pode fazer). O objetivo é que o agente escolha ações que maximizem a recompensa esperada em um período de tempo determinado. O agente atingirá o objetivo muito mais rápido se seguir uma boa política. Então o foco do aprendizado por reforço é descobrir a melhor política.
+
+
+
+
