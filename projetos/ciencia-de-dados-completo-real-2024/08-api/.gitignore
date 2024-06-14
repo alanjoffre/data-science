@@ -2,3 +2,6 @@ config.yaml
 meu_modelo.keras
 objects/*
 !objects/.gitkeep
+.gitignore
+__pycache__
+novadrivebank
