@@ -51,4 +51,3 @@ if uploaded_file is not None and processar:
         
     except Exception as e:
         st.error(f"Erro ao processar os dados: {e}")
-    
