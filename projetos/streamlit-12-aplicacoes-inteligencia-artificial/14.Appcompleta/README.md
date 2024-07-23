@@ -1,3 +1,3 @@
-# Ciência de Dados - App completa com multiplas páginas e publicação na internet.
+# Ciência de Dados - App com multiplas páginas e publicação na internet.
 ## Streamlit + IA.
 - Projeto completo.
