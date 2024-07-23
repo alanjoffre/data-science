@@ -40,7 +40,7 @@ with tab2:
                             title="Histograma do PIB")
         st.plotly_chart(fig3, use_container_width=True)
         fig4 = px.box(dados,x='PIB', 
-                            title="Boxplot do pib")
+                            title="Boxplot do PIB")
         st.plotly_chart(fig4, use_container_width=True)
 
 with tab3:
