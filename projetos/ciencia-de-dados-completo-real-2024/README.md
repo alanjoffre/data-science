@@ -1,7 +1,7 @@
 # Ciência de Dados - Projeto completo - 2024
 - Conhecer a Empresa.
 - Conectar aos Dados da Empresa.
-- Realizar Análise Explorátória dos Dados.
+- Realizar Análise Exploratória dos Dados.
 - Limpeza, tratamento, e Pré-Processamento de Dados.
 - Criação de Modelo de Machine Learning.
 - Criar API para servir o Modelo.
