@@ -1,0 +1,307 @@
+CIENCIA DE DADOS - ALGORITMOS - QUANDO USAR - COMO USAR
+
+----------
+
+REGRESSÃO LINEAR - (FAZER PREVISÕES)
+
+A regressão linear é uma técnica fundamental em machine learning utilizada para prever um valor numérico contínuo 
+com base em um ou mais atributos. Imagine que você quer prever o preço de um apartamento baseado em sua área, 
+número de quartos e localização. A regressão linear é uma ferramenta ideal para essa tarefa.
+
+-Prever um valor númerico - Variavel Dependente/Independente.
+-prever investimento inicial (variavel dependente). 
+-taxa anual de franquia (variavel independente).
+-As variaveis independentes são usadas para prever a variavel dependente.
+-Se temos uma variavel independente: Regressão Linear Simples
+-Se temos mais de uma variavel independente: Regressão Linear Múltipla
+-O que é preciso? Dados históricos para criar um modelo para servir como base para as previsões.
+
+REGRESSÃO LINEAR - PROJETO: PREVENDO CUSTOS PARA ABRIR FRANQUIA - CÓDIGO MODELO
+
+Importação das Bibliotecas
+import streamlit as st
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+
+st.title("Previsão Inicial de Custo para Franquia")
+
+dados = pd.read_csv("slr12.csv", sep=";")
+
+X = dados[['FrqAnual']]
+y = dados['CusInic']
+
+modelo = LinearRegression().fit(X,y)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header("Dados")
+    st.table(dados.head(10))
+
+with col2:
+    st.header("Gráfico de Dispersão")
+    fig, ax = plt.subplots()
+    ax.scatter(X,y, color='blue')
+    ax.plot(X, modelo.predict(X), color='red')
+    st.pyplot(fig)
+
+st.header("Valor Anual da Franquia:")
+novo_valor = st.number_input("Insira Novo Valor",min_value=1.0, max_value=999999.0,value=1500.0, step=0.01)
+processar = st.button("Processar")
+
+if processar:
+    dados_novo_valor = pd.DataFrame([[novo_valor]], columns=['FrqAnual'])
+    prev = modelo.predict(dados_novo_valor)
+    st.header(f"Previsão de Custo Inicial R$: {prev[0]:.2f}")
+
+----------
+
+Nota: Teste - 30% / Treino - 70%
+
+----------
+
+NAIVE BAYES - CLASSIFICAÇÃO
+
+Nota: Dados históricos, permitem prever e classificar dados com Machine Learning
+
+O modelo Naive Bayes é um algoritmo de classificação probabilístico amplamente utilizado em machine learning. 
+Ele é especialmente útil para problemas de classificação de texto, filtragem de spam, recomendação de produtos e muitos outros.
+
+NAIVE BAYES - PROJETO: PREVENDO A QUALIDADE DE VEICULOS - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.naive_bayes import CategoricalNB
+from sklearn.metrics import accuracy_score //calcular a acurácia do modelo.
+
+st.set_page_config(
+    page_title="Classificação de Veículos",
+    layout="wide"
+)
+
+@st.cache_data
+def load_data_and_model():
+    carros = pd.read_csv("car.csv",sep=",")
+    encoder = OrdinalEncoder()
+
+    for col in carros.columns.drop('class'):
+        carros[col] = carros[col].astype('category')
+
+    X_encoded = encoder.fit_transform(carros.drop('class',axis=1))
+
+    y = carros['class'].astype('category').cat.codes
+
+    X_train,X_test, y_train, y_test = train_test_split(X_encoded,y, test_size=0.3, random_state=42)
+
+    modelo = CategoricalNB()
+    modelo.fit(X_train,y_train)
+
+    y_pred = modelo.predict(X_test)
+    acuracia = accuracy_score(y_test, y_pred)
+
+    return encoder, modelo, acuracia, carros
+
+encoder, modelo, acuracia, carros = load_data_and_model()
+
+st.title("Previsão de Qualidade de Veículo")
+st.write(f"Acurácia do modelo: {acuracia:.2f}")
+
+input_features  = [
+        st.selectbox("Preço:",carros['buying'].unique()),
+        st.selectbox("Manutenção:",carros['maint'].unique()),
+        st.selectbox("Portas:",carros['doors'].unique()),
+        st.selectbox("Capacidade de Passegeiros:",carros['persons'].unique()),
+        st.selectbox("Porta Malas:",carros['lug_boot'].unique()),
+        st.selectbox("Segurança:",carros['safety'].unique()),
+        ]
+
+if st.button("Processar"):
+    input_df = pd.DataFrame([input_features], columns=carros.columns.drop('class'))
+    input_encoded = encoder.transform(input_df)
+    predict_encoded = modelo.predict(input_encoded)
+    previsao = carros['class'].astype('category').cat.categories[predict_encoded][0]
+    st.header(f"Resultado da previsão:  {previsao}")
+	
+Nota: Muitos algoritmos de machine learning, como os algoritmos de árvores de decisão e Naive Bayes, funcionam melhor com dados categóricos.
+
+----------
+
+SÉRIES TEMPORAIS - (FAZER PREVISÕES)
+
+Modelos de séries temporais são ferramentas poderosas em machine learning, utilizadas para analisar e prever dados que se modificam ao longo do tempo. 
+Pense em dados como o preço de ações, a temperatura diária, o número de vendas mensais ou o tráfego em um site. 
+Todos esses dados apresentam um componente temporal intrínseco e podem ser modelados como séries temporais.
+
+Dados coletados em intervalos regulares de tempo.
+
+Tecnicas de previsão: ARIMA
+
+SÉRIES TEMPORAIS - PROJETO: PREVEENDO A PRODUÇÃO DE LEITE - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from statsmodels.tsa.seasonal import seasonal_decompose
+import matplotlib.pyplot as plt
+from datetime import date
+from io import StringIO
+
+st.set_page_config(page_title="Sistema de Análise e Previsão de Séries Temporais", 
+                   layout="wide")
+
+st.title("Sistema de Análise e Previsão de Séries Temporais")
+
+with st.sidebar:
+    uploaded_file = st.file_uploader("Escolha o arquivo:", type=['csv'])
+    if uploaded_file is not None:
+        stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+        data = pd.read_csv(stringio, header=None)
+        data_inicio = date(2000,1,1)
+        periodo = st.date_input("Período Inicial da Série", data_inicio)
+        periodo_previsao = st.number_input("Informe quantos meses quer prever", min_value=1, max_value=48, value=12)
+        processar = st.button("Processar")
+
+if uploaded_file is not None and processar:
+    try:
+        ts_data = pd.Series(data.iloc[:,0].values, index= pd.date_range(
+                start=periodo, periods=len(data), freq='M'  ))
+        decomposicao = seasonal_decompose(ts_data, model='additive')
+        fig_decomposicao = decomposicao.plot()
+        fig_decomposicao.set_size_inches(10,8)
+
+        modelo = SARIMAX(ts_data,order=(2,0,0), seasonal_order=(0,1,1,12))
+        modelo_fit = modelo.fit()
+        previsao = modelo_fit.forecast(steps=periodo_previsao)
+
+        fig_previsao, ax = plt.subplots(figsize=(10,5))
+        ax = ts_data.plot(ax=ax)
+        previsao.plot(ax=ax, style='r--')
+
+        col1, col2, col3  = st.columns([3,3,2])
+        with col1:
+            st.write("Decomposição")
+            st.pyplot(fig_decomposicao)
+        with col2:
+            st.write("Previsão")
+            st.pyplot(fig_previsao)
+        with col3:
+            st.write("Dados da Previsão")
+            st.dataframe(previsao)
+
+        
+    except Exception as e:
+        st.error(f"Erro ao processar os dados: {e}")
+		
+----------		
+
+DISTRIBUIÇÃO DE POISSON - Mede a probabilidade da ocorrência de eventos em intervalo de tempo
+
+Contagens e eventos raros.
+
+A distribuição de Poisson é um conceito estatístico fundamental que encontra diversas aplicações em machine learning, 
+especialmente quando lidamos com dados que representam contagens de eventos.
+
+DISTRIBUIÇÃO DE POISSON - PROJETO: AVALIANDO A PROBABILIDADE DE QUEBRA DE EQUIPAMENTOS - CÓDIGO MODELO
+
+import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import poisson
+
+st.set_page_config(page_title="Probabilidade de Falhas em Equipamentos")
+st.title("Probabilidade de Falhas em Equipamentos")
+
+with st.sidebar:
+    st.header("Configurações")
+    tipo = st.radio("Selecione o Cálculo", options=["Prob. Exata","Menos que","Mais que"])
+    ocorrencia = st.number_input("Ocorrência Atual",min_value=1,max_value=99, value=2, step=1)
+    processar = st.button("Processar")
+
+if processar:
+    lamb = ocorrencia
+    inic = lamb -2
+    fim = lamb + 2
+    x_vals = np.arange(inic,fim+1)
+
+    if tipo =="Prob. Exata":
+        probs = poisson.pmf(x_vals, lamb)
+        tit = "Probabilidades de Ocorrência"
+    elif tipo == "Menos que":
+        probs = poisson.cdf(x_vals, lamb)
+        tit = "Probabilidades de Ocorrência Igual ou Menor que:"
+    else:
+        probs = poisson.sf(x_vals, lamb)
+        tit = "Probabilidades de Ocorrência Maior que:"
+
+    z_vals = np.round(probs,4)
+    labels = [f"{i} prob.: {p}" for i,p in zip(x_vals,z_vals)]
+
+    fig, ax = plt.subplots()
+    ax.bar(x_vals, probs, tick_label=labels, color= plt.cm.gray(np.linspace(0.4,0.8, len(x_vals))))
+    ax.set_title(tit)
+    plt.xticks(rotation=45,ha="right")
+    plt.tight_layout()
+    st.pyplot(fig)
+	
+----------	
+	
+Normalidade - Normalmente distribuidos
+
+Teste de Shapiro Wilk
+
+A normalidade, em termos estatísticos, refere-se à distribuição normal, também conhecida como curva em forma de sino. 
+Em machine learning, a normalidade desempenha um papel crucial em diversas etapas, desde a preparação dos dados até a construção e avaliação de modelos.
+
+Quando a normalidade não é necessária?
+
+Algoritmos robustos: Alguns algoritmos, como as árvores de decisão e as florestas aleatórias, são menos sensíveis à distribuição dos dados.
+Dados não contínuos: Variáveis categóricas ou binárias não seguem uma distribuição normal e não precisam ser normalizadas.
+
+NORMALIDADE - PROJETO: Normalidade - Código/Modelo
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
+st.set_page_config(page_title="Teste de Normalidade", layout="wide")
+st.title("Teste de Normalidade")
+
+with st.sidebar:
+    upload_file = st.file_uploader("Escolha o arquivo:",type=['csv'],
+                                   accept_multiple_files=False)
+    process_button = st.button("Processar")
+
+if process_button and upload_file is not None:
+    try:
+        data = pd.read_csv(upload_file, header=0)
+        if data.empty or data.iloc[:,0].isnull().all():
+            st.error("O arquivo está vazio ou a primeira coluna não tem dados válidos")
+        else:
+            col1, col2 = st.columns(2)
+            with col1:
+                fig_hist, ax_hist = plt.subplots()
+                ax_hist.hist(data.iloc[:,0].dropna(),bins="auto",
+                             color='blue', alpha=0.7, rwidth=0.85)
+                ax_hist.set_title("Histograma")
+                st.pyplot(fig_hist)
+            with col2:
+                fig_qq, ax_qq = plt.subplots()
+                stats.probplot(data.iloc[:,0].dropna(), dist='norm', plot=ax_qq)
+                ax_qq.set_title("QQ Plot")
+                st.pyplot(fig_qq)
+
+            shapiro_test = stats.shapiro(data.iloc[:,0].dropna())
+            st.write(f"Valor de P: {shapiro_test.pvalue:.5f}")
+            if shapiro_test.pvalue > 0.05:
+                st.success("Não existem evidências suficientes para rejeitar a hipótese de normalidade dos dados")
+            else:
+                st.warning("Existem evidências suficientes para rejeitar a hipótese de normalidade dos dados")
+    except Exception as e:
+        st.error(f"Erro ao processar o arquivo: {e}")
+		
+

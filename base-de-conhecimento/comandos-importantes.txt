@@ -1,0 +1,46 @@
+------------------------------------------
+
+Python - Terminal VS CODE
+
+Criar ambiente virtual
+python -m venv streamlitenv
+
+Ativar ambiente virtual
+.\streamlitenv\Scripts\activate        
+
+Instalar requirements
+pip install -r requirements.txt
+
+Upgrade pip
+python.exe -m pip install --upgrade pip
+
+Executar Streamlit
+python -m streamlit run .\NOME_DO_APP.py
+
+Executar aplicação Python
+python nome_aplicacao.py
+
+Colocar comentário em Python
+# texto a ser comentado
+
+
+------------------------------------------
+
+Github - Terminal VS CODE
+
+Acessar diretório no terminal VS CODE
+cd D:\Github\NOME_DO_DIRETORIO
+
+Adicionar arquivos para sincronização Github
+git add .                                                                                                 
+
+Commit dos arquivos a serem sinconizados
+git commit -m "update commit"          
+
+Informar o novo diretório do github para sincronização    
+git remote add origin https://github.com/alanjoffre/nome_diretorio_github.git
+
+Confirmar sincronização Github
+git push -u origin master                                                                                                                            	
+
+------------------------------------------

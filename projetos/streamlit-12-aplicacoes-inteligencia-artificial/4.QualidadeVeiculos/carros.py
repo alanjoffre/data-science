@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.naive_bayes import CategoricalNB
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score # calcular a acurácia do modelo
 
 st.set_page_config(
     page_title="Classificação de Veículos",
