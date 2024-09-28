@@ -22,6 +22,7 @@ x.head()
 ## Bloco3
 import numpy as np
 from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
 
 #Definindo os valores que serão testados em DecisionTree:
 minimos_split = np.array([2,3,4,5,6,7,8])
@@ -43,12 +44,15 @@ print ("Algoritmo escolhido: ", gridDecisionTree.best_estimator_.criterion)
 print ("Acurácia: ", gridDecisionTree.best_score_)
 
 ## Bloco4
-import graphviz
-from sklearn.tree import export_graphviz
+pip install graphviz
 
 ## Bloco5
+import graphviz
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+
+## Bloco6
 #Criando o arquivo que irá armazenar a árvore:
-arquivo = 'D:/Github/data-science/machine-learning/algoritmos/algoritmo-decision-trees/exemplo.dot'
+arquivo = 'D:/Github/data-science/curso-didaticatech/machine-learning/primeiro-modulo/algoritmos/algoritmo-decision-trees/exemplo.dot'
 melhor_modelo = DecisionTreeClassifier(min_samples_split=2, max_depth=3, criterion='gini')
 melhor_modelo.fit(x,y)
 

@@ -2,6 +2,68 @@ CIENCIA DE DADOS - ALGORITMOS - QUANDO USAR - COMO USAR
 
 ----------
 
+NOTEBOOK / ARVORE DE DECISÃO - CLASSIFICAÇÃO
+
+# Execute os blocos de códigos no Jupyter Notebook, conforme indicação: 
+
+## Bloco1
+from sklearn.datasets import load_iris
+import pandas as pd
+import warnings
+iris = load_iris()
+x = pd.DataFrame(iris.data, columns=[iris.feature_names])
+y = pd.Series(iris.target)
+warnings.filterwarnings('ignore')
+
+## Bloco2
+x.head()
+
+## Bloco3
+import numpy as np
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+
+#Definindo os valores que serão testados em DecisionTree:
+minimos_split = np.array([2,3,4,5,6,7,8])
+maximo_nivel = np.array([3,4,5,6])
+algoritmo = ['gini', 'entropy']
+valores_grid = {'min_samples_split': minimos_split, 'max_depth': maximo_nivel, 'criterion':algoritmo}
+
+#Criação do modelo:
+modelo = DecisionTreeClassifier()
+
+#Criando os grids:
+gridDecisionTree = GridSearchCV(estimator = modelo, param_grid = valores_grid, cv=5)
+gridDecisionTree.fit(x,y)
+
+#Imprimindo os melhores parâmetros:
+print ("Mínimo split: ", gridDecisionTree.best_estimator_.min_samples_split)
+print ("Máximo profundidade: ", gridDecisionTree.best_estimator_.max_depth)
+print ("Algoritmo escolhido: ", gridDecisionTree.best_estimator_.criterion)
+print ("Acurácia: ", gridDecisionTree.best_score_)
+
+## Bloco4
+pip install graphviz
+
+## Bloco5
+import graphviz
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+
+## Bloco6
+#Criando o arquivo que irá armazenar a árvore:
+arquivo = 'D:/Github/data-science/curso-didaticatech/machine-learning/primeiro-modulo/algoritmos/algoritmo-decision-trees/exemplo.dot'
+melhor_modelo = DecisionTreeClassifier(min_samples_split=2, max_depth=3, criterion='gini')
+melhor_modelo.fit(x,y)
+
+#Gerando o gráfico da árvore de decisão:
+export_graphviz(melhor_modelo, out_file = arquivo, feature_names = iris.feature_names)
+with open(arquivo) as aberto:
+    grafico_dot = aberto.read()
+h = graphviz.Source(grafico_dot)
+h.view()
+
+----------
+
 REGRESSÃO LINEAR - (FAZER PREVISÕES)
 
 A regressão linear é uma técnica fundamental em machine learning utilizada para prever um valor numérico contínuo 
@@ -738,3 +800,189 @@ if generate_button and prompt:
                          output_format='auto')
     
 ----------
+
+DASHBOARD - STREAMLIT - BOLSA DE VALORES
+
+DASHBOARD - PROJETO: MONITORAMENTO DE BOLSA DE VALORES - CÓDIGO MODELO
+
+import streamlit as st  # Biblioteca para criar interfaces web interativas
+import yfinance as yf  # Biblioteca para baixar dados financeiros do Yahoo Finance
+import plotly.graph_objects as go  # Biblioteca para criar gráficos interativos
+from datetime import date  # Biblioteca para trabalhar com datas
+
+st.set_page_config(page_title="Visualizador de Ações", layout="wide")  # Configura o título da página e o layout
+st.title("Visualizador de Ações")  # Adiciona o título principal da aplicação
+
+# Cria uma sidebar à esquerda da tela
+with st.sidebar:
+    # Cria um dropdown para o usuário selecionar a empresa
+    empresa_selecionada = st.selectbox("Selecione a empresa para visualizar:",
+                                      ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA'])
+    # Cria campos para o usuário inserir as datas de início e fim
+    start_date = st.date_input("Data de Início", value=date(2020, 1, 1))
+    end_date = st.date_input("Data de Fim", value=date(2020, 1, 15))
+    # Cria um botão para gerar os gráficos
+    gerar_graficos = st.button("Gerar Gráficos")
+
+# Verifica se o botão "Gerar Gráficos" foi clicado
+if gerar_graficos:
+    # Baixa os dados da ação selecionada no período especificado
+    data = yf.download(empresa_selecionada, start=start_date, end=end_date)
+    # Verifica se foram obtidos dados
+    if data.size > 0:
+        # Cria abas para os diferentes tipos de gráficos e dados
+        tab1, tab2, tab3, tab4 = st.tabs(["Preço Fechado Ajustado", "Volume",
+                                       "Gráfico de Velas", "Dados"])
+        # Aba 1: Preço Fechado Ajustado
+        with tab1:
+            fig_close = go.Figure()  # Cria um objeto Figure do Plotly
+            fig_close.add_trace(go.Scatter(x=data.index, y=data['Adj Close'],
+                                          mode='lines', name='Preço Fechado Ajustado'))  # Adiciona uma linha ao gráfico
+            fig_close.update_layout(title=f'Histórico de Preços para {empresa_selecionada}',
+                                   xaxis_title='Data', yaxis_title='Preço')  # Configura o layout do gráfico
+            st.plotly_chart(fig_close, use_container_width=True)  # Exibe o gráfico na aplicação Streamlit
+        # Aba 2: Volume
+        # ... (código similar para as outras abas)
+        # Aba 3: Gráfico de Velas
+        # ...
+        # Aba 4: Dados
+        # ...
+    else:
+        st.error("Erro ao carregar dados, por favor tente novamente")
+    
+----------
+
+STREAMLIT + INTELIGENCIA ARTIFICIAL = APP COMPLETA RODANDO WEB
+
+APP COMPLETA COM MULTIPLAS PAGINAS E PUBLICAÇÃO NA INTERNET.
+
+- MELHORIA DA APLICAÇÃO DE EDA
+--APLICAÇÃO COM VARIAS PÁGINAS
+--USO DE CACHE
+--USO DE SESSION
+
+-PUBLICAÇÃO NA INTERNET
+--GITHUB
+--DEPLOY
+
+APP - APP COMPLETA COM MULTIPLAS PAGINAS E PUBLICAÇÃO NA INTERNET - CÓDIGO MODELO
+
+PAGES - LSITAGEM.PY 
+
+import streamlit as st
+from st_aggrid import AgGrid
+
+st.header("Visualização de Dados")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    top_n = st.session_state.get('top_n', 10)
+    dados = st.session_state['dados']
+    dados_filtrados = dados.head(top_n)
+    AgGrid(dados_filtrados, fit_columns_on_grid_load=True)
+	
+PAGES - RESUMO.PY 
+
+import streamlit as st
+
+st.header("Resumo dos Dados")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    dados = st.session_state['dados'].describe().reset_index()
+    st.write(dados)
+	
+PAGES - ANALISEDETALHADA.PY 
+
+import streamlit as st
+import plotly.express as px
+
+st.header("Distribuição dos Dados")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    dados = st.session_state['dados']
+    col1, col2 = st.columns(2)
+    with col1:
+        fig1 = px.histogram(dados, x='VALOREMPENHO', 
+                            title='Histograma do valor de Empenho')
+        st.plotly_chart(fig1, use_container_width=True)
+
+        fig2 = px.box(dados, x='VALOREMPENHO', 
+                            title='BoxPlot do valor de Empenho')
+        st.plotly_chart(fig2, use_container_width=True)
+
+    with col2:
+        fig3 = px.histogram(dados, x='PIB', 
+                            title='Histograma do PIB')
+        st.plotly_chart(fig3, use_container_width=True)
+
+        fig4 = px.box(dados, x='PIB', 
+                            title='BoxPlot do PIB')
+        st.plotly_chart(fig4, use_container_width=True)     
+		
+PAGES - MAIORESVALORES.PY 
+
+import streamlit as st
+import plotly.express as px
+
+st.header("Maiores Valores")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    top_n = st.session_state.get('top_n', 10)
+    dados = st.session_state['dados']
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        Mempenho = dados.nlargest(top_n, 'VALOREMPENHO')
+        fig1 = px.bar(Mempenho, x='MUNICIPIO',y='VALOREMPENHO',
+                     title='Maiores Empenhos')
+        st.plotly_chart(fig1, use_container_width=True)
+    with col2:
+        Mpibs = dados.nlargest(top_n, 'PIB')
+        fig2 = px.pie(Mpibs, values='PIB', names='MUNICIPIO',
+                     title='Maiores PIBs')
+        st.plotly_chart(fig2, use_container_width=True)
+
+    with col3:
+        Mprop = dados.nlargest(top_n, 'PROPORCAO')
+        fig3 = px.bar(Mempenho, x='MUNICIPIO',y='PROPORCAO',
+                     title='Maiores Gastos em Proporção ao PIB')
+        st.plotly_chart(fig3, use_container_width=True)     
+		
+APP.PY
+
+import streamlit as st
+import pandas as pd
+
+st.set_page_config(page_title="Análise Exploratória")
+st.title("Bem-vindo à Análise Exploratória das Despesas de Viagem")
+
+@st.cache_resource
+def load_data():
+    dados = pd.read_csv("dados.csv", sep=";")
+    dados['PROPORCAO'] = dados['VALOREMPENHO'] / dados['PIB']
+    return dados
+
+dados = load_data()
+st.session_state['dados'] = dados
+
+with st.sidebar:
+    st.header("Configurações Globais")
+    if 'top_n' in st.session_state:
+        default_top_n = st.session_state['top_n']
+    else:
+        default_top_n = 10
+
+    top_n = st.number_input("Selecione o número de dados para exibir:",
+                            min_value=1, max_value=len(dados),
+                            value=default_top_n)
+    st.session_state['top_n'] = top_n
+	
+--------------
