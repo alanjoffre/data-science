@@ -465,7 +465,7 @@ if processar and uploaded_file is not None:
 
 ----------
 
-SÉRIES TEMPORARIS - MÉTODOS DE FORECAST (PREVISÃO)
+SÉRIES TEMPORARIS - PRINCIPAIS MÉTODOS DE FORECAST (PREVISÃO)
 
 NAIVE: último valor
 MEAN: média
