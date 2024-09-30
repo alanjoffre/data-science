@@ -74,13 +74,3 @@ selector = selector.fit(X_train, y_train)
 X_train = selector.transform(X_train)
 X_test = selector.transform(X_test)
 joblib.dump(selector, './objects/selector.joblib')
-
-
-
-
-
-
-
-
-
-
