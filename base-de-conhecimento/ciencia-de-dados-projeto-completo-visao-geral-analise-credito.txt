@@ -1,37 +1,36 @@
-VISÃO GERAL DO PROJETO - ANALISE DE CREDITO - CIENCIA DE DADOS - 2024
+VISÃO GERAL DO PROJETO - ANALISE DE CREDITO - CIENCIA DE DADOS – 2024
+RESUMO
 
 EMPRESA: NOVADRIVE
 MONTADORA DE VEICULOS
-
 Site da empresa NOVADRIVE: URL=https://www.novadrivemotors.com.br/
-Vaga disponivel: Cientista de Dados: URL=https://www.novadrivemotors.com.br/vagas.html
+Vaga disponível: Cientista de Dados: URL=https://www.novadrivemotors.com.br/vagas.html
 
-1 - Levantar necessidade do cliente
-2 - Acesso a base de dados 
+TODAS AS ETAPAS DO PROJETO
+1 - Necessidades do cliente
+2 - Dados 
 3 - EDA - Analise Exploratória de Dados
 4 - Pré-processamento
 5 - Criar modelo / Objetos
-6 - XAI - Inteligencia Artificial Explicável
+6 - XAI - Inteligência Artificial Explicável
 7 - Criar API (Interface de Programação de Aplicativos) / Criar UI (Interface Usuário)
 8 - Deploy
-10 - Considerações Finais e possiveis melhorias
+9 - Considerações Finais e possíveis melhorias
 
-1 - NECESSIDADES
+1 – Necessidades do cliente
 - Sistema de concessão de crédito
 - Avaliar a concessão de crédito
-- Performance minima: Precisão minima 70%, Esperado 80%
-- Recall minimo 70%, Esperado 75%
-- Limiar de decisao: 50%, ajustavel
+- Performance mínima: Precisão mínima 70%, Esperado 80%
+- Recall mínimo 70%, Esperado 75%
+- Limiar de decisão: 50%, ajustável
 - Tecnica de Explicabilidade (XAI)
 - Servida através de API
 - Tela UI (Interface Usuário)
+Infraestrutura:  Publicar no AWS - EC2 /  Informações para extrair os dados
 
-Infraestrutura
-- Publicar no AWS - EC2
-- Informações para extrair os dados
 
-2 - DADOS
-2.1 - Tabelas: Clientes, Pedido de crédito, Parcelas Crédito, Produtos finaciados
+2 - Dados
+2.1 - Tabelas: Clientes, Pedido de crédito, Parcelas Crédito, Produtos financiados
 
 2.2 - Informações das tabelas:
 - Clientes: ClienteID, Nome, CPF, Email, Profissao, TempoProfissao, Renda, TipoResidencia, Escolaridade, DataNascimento, Dependentes, EstadoCivil, Telefone, Score
@@ -44,7 +43,7 @@ Clientes/ClienteID -> PedidoCredito/ClienteID
 PedidoCredito/SolicitacaoID -> ParcelasCredito/SolicitacaoID
 PedidoCredito/ProdutoID -> ProdutosFinanciados/ProdutoID
  
-2.4 - Identificar atributos com valores semnanticos - Atributos importantes
+2.4 - Identificar atributos com valores semânticos - Atributos importantes
 - Tabela Clientes: Profissao, TempoProfissao, Renda, TipoResidencia, Escolaridade, DataNacimento, Dependentes, EstadoCivil, Score
 - Tabela PedidoCredito: ValorSolicitado, ValorTotalBem
 - Tabela ParcelasCredito: Status
@@ -58,7 +57,7 @@ EstadoCivil: Divorciado, Casado, Solteiro, Viuvo
 Score: Baixo, MuitoBom, Bom, Justo
 Produtos: AgileXplorer, e outros
 
-2.6 - Variáveis Numericas
+2.6 - Variáveis Numéricas
 - Não há problema de cardinalidade
 - Porém devemos considerar: Valores nulos e Outliers (valores discrepantes)
 
@@ -66,7 +65,7 @@ Produtos: AgileXplorer, e outros
 Tabela Modelo: Profissao, TempoProfissao, Renda, TipoResidencia, Escolaridade, Score, Idade, Dependentes, EstadoCivil, Produto, ValorSolicitado, ValorTotalBem
 
 2.8 - Acesso a base de dados
-- Conexao remota via PGADMIN
+- Conexão remota via PGADMIN
 - Credenciais do banco de dados
 
 dbname: 'novadrivebank'
@@ -103,10 +102,9 @@ LEFT JOIN ParcelasCredito p ON pc.SolicitacaoID = p.SolicitacaoID
 WHERE pc.Status = 'Aprovado'
 GROUP BY c.ClienteID, pf.NomeComercial, pc.ValorSolicitado, pc.ValorTotalBem
 ----------
-
 - Dados normalizados após a execução do SQL
 
-3 - EDA - ANALIDE EXPLORATÓRIA DE DADOS
+3 - EDA – Analise Exploratória de Dados
 
 3.1 - Ambiente: 
 - Python3.7 ou superior
@@ -119,6 +117,7 @@ Windows
 - pip install -r requirements.txt
 - deactivate
 
+
 Mac/Linux
 - python3 -m venv novadrivebank
 - source novadrivebank\bin\activate
@@ -126,8 +125,8 @@ Mac/Linux
 - deactivate
 
 ----------
-Conteudo arquivo: .gitignore
-Nota: O arquivo deve contar dentro do repositório de exploratoria.
+Conteúdo arquivo: .gitignore
+Nota: O arquivo deve contar dentro do repositório de exploratória.
 ----------
 config.yaml
 meu_modelo.keras
@@ -139,8 +138,8 @@ novadrivebank
 ----------
 //////////
 ----------
-Conteudo arquivo: requirements.txt
-Nota: O arquivo deve contar dentro do repositório de exploratoria.
+Conteúdo arquivo: requirements.txt
+Nota: O arquivo deve contar dentro do repositório de exploratória.
 ----------
 fuzzywuzzy==0.18.0
 pandas==2.2.1
@@ -161,7 +160,7 @@ seaborn==0.13.2
 O que cada biblioteca faz: 
 fuzzywuzzy==0.18.0: Calcula a similaridade entre duas strings usando diferentes algoritmos, como Levenshtein distance e Jaro-Winkler distance.
 pandas==2.2.1: Fornece estruturas de dados e ferramentas de análise para manipulação de dados eficiente em Python.
-scikit-learn==1.4.1.post1: Uma biblioteca de aprendizado de máquina com algoritmos para classificação, regressão, clustering e outras tarefas.
+Scikit-learn==1.4.1.post1: Uma biblioteca de aprendizado de máquina com algoritmos para classificação, regressão, clustering e outras tarefas.
 joblib==1.3.2: Uma biblioteca que permite a persistência de objetos Python e a execução de tarefas em paralelo.
 PyYAML==6.0.1: Uma biblioteca para carregar e salvar dados em formato YAML.
 psycopg2-binary==2.9.9: Um adaptador para o banco de dados PostgreSQL.
@@ -174,10 +173,11 @@ streamlit==1.32.1: Uma biblioteca para criar aplicativos web interativos para ci
 matplotlib==3.8.3: Uma biblioteca para criar gráficos e visualizações de dados em Python.
 seaborn==0.13.2: Uma biblioteca de visualização de dados baseada no Matplotlib, com uma interface mais alta e gráficos mais bonitos.
 
+
 ----------
-Conteudo arquivo: config.yaml
+Conteúdo arquivo: config.yaml
 Mascarar usuário e senha para acesso ao banco de dados no projeto. Não envie esse arquivo para o servidor, inclua no arquivo .gitignore
-Nota: O arquivo deve contar dentro do repositório de exploratoria.
+Nota: O arquivo deve contar dentro do repositório de exploratória.
 ----------
 database_config:
   dbname: 'novadrivebank'
@@ -187,8 +187,8 @@ database_config:
 ----------
 //////////
 ----------
-Conteudo arquivo: const.py
-Nota: O arquivo deve contar dentro do repositório de exploratoria.
+Conteúdo arquivo: const.py
+Nota: O arquivo deve contar dentro do repositório de exploratória.
 ----------
 consulta_sql = '''
 SELECT c.Profissao,
@@ -217,8 +217,8 @@ GROUP BY c.ClienteID, pf.NomeComercial, pc.ValorSolicitado, pc.ValorTotalBem
 ----------
 //////////
 ----------
-Conteudo arquivo: utils.py
-Nota: O arquivo deve contar dentro do repositório de exploratoria.
+Conteúdo arquivo: utils.py
+Nota: O arquivo deve contar dentro do repositório de exploratória.
 ----------
 import pandas as pd
 import yaml 
@@ -260,23 +260,23 @@ Observação: O código será exclusivo para Análise Exploratória
 3.2.1.1 - Variações
 3.2.1.2 - Anomalias
 3.2.1.3 - Distribuição dos dados
-3.2.1.4 - Dominio
+3.2.1.4 - Domínio
 
 3.2.2   - O que buscamos:
 3.2.2.1 - Distribuição / Outliers (dados discrepantes)
 3.2.2.2 - Nas (dados faltantes) / Nulos
-3.2.2.3 - Fora do dominio
+3.2.2.3 - Fora do domínio
 
 3.2.3 - Atributos Categóricos
-3.2.3.1 - Gráficos de Barras. Mostra a frequencia por categoria. Indica Valores fora do dominio.
+3.2.3.1 - Gráficos de Barras. Mostra a frequência por categoria. Indica Valores fora do domínio.
 3.2.3.2 - Valores nulos
 
-3.2.4 - Atributos Númericos
-3.2.4.1 - Distribuição: Boxplot, Histograma, Resumo Estatistico
+3.2.4 - Atributos Numéricos
+3.2.4.1 - Distribuição: Boxplot, Histograma, Resumo Estatístico
 3.2.4.2 - Valores nulos
 
 Gráfico Histograma - Gráfico de colunas
-Gráfico Boxplot - Possui informações de: Outlier, Máximo, Q3, Mediana, Q1, Minimo
+Gráfico Boxplot - Possui informações de: Outlier, Máximo, Q3, Mediana, Q1, Mínimo
 
 Q1 (Primeiro Quartil): Corresponde ao valor abaixo do qual se encontram 25% dos dados. É o limite inferior da caixa no boxplot.
 Q3 (Terceiro Quartil): Corresponde ao valor abaixo do qual se encontram 75% dos dados. É o limite superior da caixa no boxplot.
@@ -284,9 +284,9 @@ Q3 (Terceiro Quartil): Corresponde ao valor abaixo do qual se encontram 75% dos 
 ----------
 //////////
 ----------              
-Conteudo arquivo: exploratoria.py
+Conteúdo arquivo: exploratoria.py
 !!!EDA - ANALISE EXPLORATÓRIA DE DADOS sendo realizada!!!
-Nota: O arquivo deve contar dentro do repositório de exploratoria.
+Nota: O arquivo deve contar dentro do repositório de exploratória.
 ----------
 
 import pandas as pd
@@ -312,20 +312,20 @@ df['valortotalbem'] = df['valortotalbem'].astype(float)
 # Isso é importante para realizar cálculos e análises numéricas.
 
 variaveis_categoricas = ['profissao', 'tiporesidencia', 
-                         'escolaridade', 'score', 'estadocivil', 'produto']
+                         'escolaridade', 'score', 'estadocivil', 'produto']
 variaveis_numericas = ['tempoprofissao', 'renda', 'idade',
-                        'dependentes', 'valorsolicitado', 'valortotalbem']
+                        'dependentes', 'valorsolicitado', 'valortotalbem']
 
 # Define listas com os nomes das colunas categoricas e numéricas do DataFrame.
 # Essas listas serão utilizadas para iterar sobre as colunas e gerar os gráficos.
 
 for coluna in variaveis_categoricas:
-    df[coluna].value_counts().plot(kind='bar', figsize=(10, 6))
-    plt.title(f'Distribuição de {coluna}')
-    plt.ylabel('Contagem')
-    plt.xlabel(coluna)
-    plt.xticks(rotation=45)
-    plt.show()
+    df[coluna].value_counts().plot(kind='bar', figsize=(10, 6))
+    plt.title(f'Distribuição de {coluna}')
+    plt.ylabel('Contagem')
+    plt.xlabel(coluna)
+    plt.xticks(rotation=45)
+    plt.show()
 
 # Itera sobre cada coluna categórica e:
 # - Conta a frequência de cada categoria usando value_counts().
@@ -333,18 +333,18 @@ for coluna in variaveis_categoricas:
 # - Personaliza o gráfico com título, rótulos dos eixos e rotação dos rótulos do eixo x.
 
 for coluna in variaveis_numericas:
-    plt.figure(figsize=(10, 6))
-    sns.boxplot(data=df, x=coluna)
-    plt.title(f'Boxplot de {coluna}')
-    plt.show()
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(data=df, x=coluna)
+    plt.title(f'Boxplot de {coluna}')
+    plt.show()
 
-    df[coluna].hist(bins=20, figsize=(10, 6))
-    plt.title(f'Histograma de {coluna}')
-    plt.xlabel(coluna)
-    plt.ylabel('Frequência')
-    plt.show()
+    df[coluna].hist(bins=20, figsize=(10, 6))
+    plt.title(f'Histograma de {coluna}')
+    plt.xlabel(coluna)
+    plt.ylabel('Frequência')
+    plt.show()
 
-    print(f'Resumo estatístico de :\n', df[coluna].describe(), '\n')
+    print(f'Resumo estatístico de :\n', df[coluna].describe(), '\n')
 
 # Itera sobre cada coluna numérica e:
 # - Cria um boxplot para visualizar a distribuição, quartis e outliers.
@@ -379,11 +379,14 @@ print(nulos_por_coluna)
 - Algoritmos de ML, especialmente RNA (Rede Neurais Artificiais), não conseguem lidar com valores nulos.
 - O que fazer: 
 --Remover a linha
---Substituir a ocorrencia, mantendo a linha
+--Substituir a ocorrência, mantendo a linha
 ---Não buscamos a contribuição individual de cada evento
 
+
+
+
 ----------
-CÓDIGO - UTILS.PY
+Código - utils.py
 
 def substitui_nulos(df):
     """
@@ -410,20 +413,20 @@ def substitui_nulos(df):
 ----------
 
 Como?
-- Dados categoricos: Moda
-- Dados númericos: Mediana
+- Dados categóricos: Moda
+- Dados numéricos: Mediana
 
 Nota: 
 - Os arquivos devem constar na pasta limpeza: .gitignore, config.yaml, const.py, requirements.txt e utils.py
-- O arquivo: modelcreation.py, será rodado no VScode, mas também poderá ser rodado no JUPYTER NOTEBOOK
+- O arquivo: modelcreation.py, será rodado no VSCode, mas também poderá ser rodado no Jupyter Notebook
 
-4.2 - Erros de Entrada  - Dados Categoricos
-- Vamos usar o dominio da categoria: valores possiveis
-- Não é possivel fazer função generica e universal
-Observação: Valores fora do dominio podem gerar erro no modelo
+4.2 - Erros de Entrada  - Dados Categóricos
+- Vamos usar o domínio da categoria: valores possíveis
+- Não é possível fazer função genérica e universal
+Observação: Valores fora do domínio podem gerar erro no modelo
 
 ----------
-CÓDIGO - UTILS.PY
+Código - utils.py
 
 def corrigir_erros_digitacao(df, coluna, lista_valida):
     """
@@ -451,22 +454,22 @@ def corrigir_erros_digitacao(df, coluna, lista_valida):
 ----------
 
 4.3 - Outliers
-- Abordagem estatistica: Desvio padrão ou Intervalo Interquantil
-- Intervalo Interquantil: (IIQ) é uma medida estatística que indica a dispersão dos dados em um conjunto. 
+- Abordagem estatística: Desvio padrão ou Intervalo Interquartil
+- Intervalo Interquartil: (IIQ) é uma medida estatística que indica a dispersão dos dados em um conjunto. 
 Em outras palavras, ele nos mostra o quão espalhados os valores estão em torno da mediana.
 
 Como ele funciona?
-Quartiis: Para calcular o IIQ, primeiro dividimos os dados em quatro partes iguais. Os pontos que dividem esses quartos são chamados de quartis.
+Quartis: Para calcular o IIQ, primeiro dividimos os dados em quatro partes iguais. Os pontos que dividem esses quartos são chamados de quartis.
 Primeiro quartil (Q1): Separa os 25% menores valores do conjunto.
 Terceiro quartil (Q3): Separa os 25% maiores valores do conjunto.
 Cálculo do IIQ: O IIQ é a diferença entre o terceiro e o primeiro quartil:
 
-- Abordagem de negocio: Dominio do atributo
+- Abordagem de negócio: Domínio do atributo
 --Tempo de profissão: 0-70
 --Idade: 0-110
 
 ----------
-CÓDIGO - UTILS.PY
+Código - utils.py
 
 def tratar_outliers(df, coluna, minimo, maximo):
     # Calcula a mediana dos valores da coluna, excluindo outliers
@@ -613,11 +616,13 @@ def save_encoders(df, nome_colunas):
 ----------
 
 4.4 - Engenharia de Atributos
-- Codificação de Variaveis Categoricas
+- Codificação de Variáveis Categóricas
 - Normalização e Padronização
 - Tratamento de Valores Ausentes
 - Interactions
 df['proporcaosolicitadototal'] = df['valorsolicitado'] / df['valortotalbem']  # Cria uma nova coluna com a proporção entre valor solicitado e valor total do bem
+
+
 
 4.5 - Divisão de Dados em Treino e Teste
 
@@ -634,8 +639,7 @@ df['proporcaosolicitadototal'] = df['valorsolicitado'] / df['valortotalbem']  # 
 * RNA - Redes Neurais Artificiais
 
 ----------
-
-CÓDIGO: MODELCREATION.PY
+Código: modelcreation.py
 
 #Divisão dos dados em treino e teste:
 X = df.drop('classe', axis=1)  # Separando as features (X) da classe (y)
@@ -643,15 +647,13 @@ y = df['classe']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=seed)  # Dividindo os dados em conjuntos de treino e teste
 
 ----------
-
 4.6 - Normalização de DADOS
-- Processo de transformação de dados numericos
-- Variaveis em escalas diferentes
+- Processo de transformação de dados numéricos
+- Variáveis em escalas diferentes
 --Contribuem de forma desbalanceada para o modelo 
 --Exemplo: Salário e Altura
-
 ----------
-CÓDIGO: MODELCREATION.PY
+Código: modelcreation.py
 
 #Normalização:
 X_test = save_scalers(X_test, ['tempoprofissao', ...])  # Normaliza as colunas numéricas do conjunto de teste
@@ -667,17 +669,17 @@ X_train = save_scalers(X_train, ['tempoprofissao', ...])  # Normaliza as colunas
 
 4.8 - Normalização (Min-Max)
 - Transforma para escala comum entre zero e 1 
-- usado em processamento de imagens e RNA
+- Usado em processamento de imagens e RNA
 - Quando não sabemos a distribuição dos dados
 - Quando precisam ser positivos
 - Algoritmos não "requerem" dados normais
 - Remove outliers pois impõem "limites"
 
-FUNÇÃO - NORMALIZAÇÃO DE DADOS
+Função – Normalização de Dados
 
 ----------
 
-CÓDIGO - UTILS.PY
+Código: utils.py
 
 def save_scalers(df, nome_colunas):
 	# salvar escalonadores em um arquivo, para posterior reutilização. 
@@ -695,24 +697,24 @@ def save_scalers(df, nome_colunas):
 ----------
 
 Porque salvar objetos?
-- Uso do moeldo treinado em produção
+- Uso do modelo treinado em produção
 
-4.9 - Codificação Categorica ou Categorical Encoding
+4.9 - Codificação Categórica ou Categorical Encoding
 - Algoritmos entendem números
-- Categorical Enconding é o processo de transformar categorias em números
+- Categorical Encoding é o processo de transformar categorias em números
 -Duas formas:
 --Label encoding
 --One-hot encoding
 
+
 4.9.1 - Label encoding 
 - Cada categoria recebe um número, normalmente em ordem alfabética
---Ex: EstadoCivil: Casado, Divorciado, SOlteiro
+--Ex: EstadoCivil: Casado, Divorciado, Solteiro
 --Ex: EstadoCivil: Casado = 0, Divorciado = 1, Solteiro = 2
---Passa-se a considerar os números enão mais as nomenclaturas
+--Passa-se a considerar os números e não mais as nomenclaturas
 
 ----------
-
-CÓDIGO - UTILS.PY
+Código: utils.py
 
 def save_encoders(df, nome_colunas):
 	# salvar parametros de codificadores em um arquivo, para posterior reutilização
@@ -734,7 +736,7 @@ def save_encoders(df, nome_colunas):
 
 ----------
 
-CÓDIGO: MODELCREATION.PY
+Código: modelcreation.py
 
 # Seleção de Atributos
 model = RandomForestClassifier()
@@ -750,7 +752,7 @@ joblib.dump(selector, './objects/selector.joblib')
 
 Observações:
 
-- Funções customizadas: As funções substitui_nulos, corrigir_erros_digitacao, tratar_outliers, save_scalers e save_encoders provavelmente estão definidas no módulo utils
+- Funções customizadas:  substitui_nulos, corrigir_erros_digitacao, tratar_outliers, save_scalers e save_encoders provavelmente estão definidas no módulo utils
 e realizam tarefas específicas de pré-processamento de dados.
 - Random Forest: A seleção de atributos é feita usando um modelo de Random Forest, que é um algoritmo de aprendizado de máquina popular para classificação.
 - RFE: O RFE (Recursive Feature Elimination) é uma técnica para selecionar as features mais importantes em um conjunto de dados.
@@ -891,21 +893,23 @@ Sigmoid: Suave e diferenciável, mas pode sofrer com o problema do gradiente van
 
 5.8 - Dropout
 - Sinapses são removidas de forma aleatória
-- Ajuda a minimizar overfitting e a convergencia da rede
+- Ajuda a minimizar overfitting e a convergência da rede
+
+
 
 5.9 - Matriz de Confusão (Classificação)
 
 ------------
-			     Classe           Classe                   
-			     Real             Real
-                 Positiva         Negativa 
+			     Classe                          Classe                   
+			     Real                            Real
+                 Positiva                        Negativa 
 
-Classe       	Verdadeiros       Falsos 
-Prevista 		Positivos	      Negativos
+Classe       	Verdadeiros                      Falsos 
+Prevista 		Positivos	                     Negativos
 Positiva
 
-Classe			Falsos 		      Verdadeiros
-Prevista		Positivos	      Negativos
+Classe			Falsos 		                     Verdadeiros
+Prevista		Positivos	                     Negativos
 Negativa
 
 ----------
@@ -923,6 +927,7 @@ Verd. Bad			2				  3
 -- Calculation: (4 + 3) / (4 + 1 + 2 + 3) = 7 / 10 = 0.7
 -- Interpretação: O modelo classificou corretamente 70% das instancias
 
+
 5.9.2 - Precisão
 - A proporção de instancias verdadeiramente positivas entre as instancias previstas como positivas.
 Fórmula: VP / (VP + FP)
@@ -935,11 +940,11 @@ Formula: VP / (VP + FN)
 Calculo: 4 / (4 + 1) = 4 / 5 = 0,8
 Interpretação: O modelo identificou corretamente 80% das instancias boas
 
-5.9.4 - Tecnicas para melhorar o modelo
+5.9.4 - Técnicas para melhorar o modelo
 - Early Stopping: interrompe o treinamento quando a perfomance começa a piorar
 - Regularization: L1 e L2 penalizam pesos maiores e previnem overfitting
 - Batch Normalization: Acelera o processo de treino estabilizando o processo de aprendizado
-- Tunning de Hiper - Parametros: valores como epochs, camadas, neurônios
+- Tunning de Hiper - Parâmetros: valores como epochs, camadas, neurônios
 
 5.9.5 - Versão com mudanças
 - Modelcreation_modified.py
@@ -947,7 +952,7 @@ Interpretação: O modelo identificou corretamente 80% das instancias boas
 Observação: Esse repositório necessita dos seguintes arquivos: config.yaml, const.py, modelcreation.py, modelcreation_modified.py, modelcreation.ipynb, requirements.txt, utils.py
 
 ----------
-CÓDIGO: config.yaml
+Código: config.yaml
 
 database_config:
   dbname: 'novadrivebank'
@@ -957,7 +962,7 @@ database_config:
  
 ----------
 
-CÓDIGO: modelcreation_modified.py
+Código: modelcreation_modified.py
 
 import pandas as pd  # Importa a biblioteca pandas para manipulação de dados.
 from datetime import datetime  # Importa a biblioteca datetime para trabalhar com datas e horas.
@@ -1125,10 +1130,8 @@ print("\nRelatório de Classificação:")
 # Gera um relatório detalhado de classificação, incluindo métricas como precisão, recall, F1-score, etc.
 # Compara as classes previstas (y_pred) com as verdadeiras classes (y_test)
 print(classification_report(y_test, y_pred))
-
 ----------
-
-CÓDIGO: MODELCREATION.PY
+Código: modelcreation.py
 
 # Importa a biblioteca pandas para manipulação de dados
 import pandas as pd
@@ -1307,7 +1310,7 @@ print(classification_report(y_test, y_pred))
 
 ----------
 
-CÓDIGO: requirements.txt
+Código: requirements.txt
 
 fuzzywuzzy==0.18.0
 pandas==2.2.1
@@ -1326,7 +1329,7 @@ seaborn==0.13.2
 
 ----------
 
-CÓDIGO: utils.py
+Código: utils.py
 
 from fuzzywuzzy import process
 import pandas as pd
@@ -1404,7 +1407,7 @@ def save_encoders(df, nome_colunas):
 6 - Explicabilidade
 
 6.1 - O que é XAI?
-- Significado de explicavel: Adjetivo "Que se consegue explicar; em que há ou pode haver explicação"
+- Significado de explicável: Adjetivo "Que se consegue explicar; em que há ou pode haver explicação"
 
 6.2 - Relação I
 - Complexidade
@@ -1422,8 +1425,8 @@ def save_encoders(df, nome_colunas):
 6.5 - Aplicações
 - Diagnostico médico
 - Aprovação de Crédito
-- Veiculos autonomos
-- Decisoes judiciais
+- Veiculos autônomos
+- Decisões judiciais
 - Contratação de funcionários
 
 6.6 - Questões Legais
@@ -1432,8 +1435,8 @@ def save_encoders(df, nome_colunas):
 6.7 - Reputação
 - AI toma uma decisão preconceituosa
 
-6.8 - Segurança Juridica/Financeira
-- Um veiculo autonomo provoca um acidente
+6.8 - Segurança Jurídica/Financeira
+- Um veículo autônomo provoca um acidente
 - Como planejar uma defesa?
 
 6.9 - Depuração
@@ -1446,7 +1449,7 @@ def save_encoders(df, nome_colunas):
 6.9.2 - Questão pessoal
 - Executivo quer entender
 
-6.9.3 - White Box / Blask Box
+6.9.3 - White Box / Black Box
 
 - Black Box
 -- Modelos não podem ser interpretados
@@ -1461,11 +1464,11 @@ def save_encoders(df, nome_colunas):
 --- Modelos baseados em Regras
 
 6.9.4 - Algoritmo vs Modelo
-- Interpretar o algoritmo é uma visão Agnostica de DADOS
+- Interpretar o algoritmo é uma visão Agnóstica de DADOS
 - Interpretar o modelo é uma visão de caso especifico
 
-6.9.5 - Interpretação Agnostica vs Especifica
-- Exemplo agnostica: Lime
+6.9.5 - Interpretação Agnóstica vs Especifica
+- Exemplo agnóstica: Lime
 - Exemplo especifico: Tree Shap (arvores de decisão)
 
 6.9.6 - Local interpretable Model-Agnostic Explanations (LIME)
@@ -1476,7 +1479,7 @@ def save_encoders(df, nome_colunas):
 - 0.00 < tiporesidencia <=1.00: 0.0737412
 - produto > 5.00: 0.044722
 
-6.9.8 - Lime (Local Interpretable Model-agnostic Explanations) 
+6.9.8 - Lime (Local Interpretable Model-Agnostic Explanations) 
 - É uma técnica usada em IA explicável (XAI) para interpretar e explicar as previsões de modelos de aprendizado de máquina. Aqui está um resumo de como funciona:
 -- Amostragem Local: LIME gera várias amostras perturbadas da instância que você deseja explicar. Essas amostras são ligeiramente modificadas em relação à instância original.
 -- Predições do Modelo: O modelo complexo faz previsões para essas amostras perturbadas.
@@ -1489,8 +1492,7 @@ LIME pode ser aplicado a diferentes tipos de dados, como tabulares, imagens ou t
 Observação: Esse repositório necessita dos seguintes arquivos: config.yaml, const.py, modelcreation.py, modelcreation_modified.py, modelcreation.ipynb, requirements.txt, utils.py
 
 ----------
-
-CÓDIGO: XAI.PY
+Código: xai.py
 
 # Importa a biblioteca pandas para manipulação de dados
 import pandas as pd
@@ -1538,7 +1540,6 @@ df = fetch_data_from_db(const.consulta_sql)
 
 # Converte a coluna 'idade' para o tipo inteiro
 df['idade'] = df['idade'].astype(int)
-
 # Converte a coluna 'valorsolicitado' para o tipo float
 df['valorsolicitado'] = df['valorsolicitado'].astype(float)
 
@@ -1717,7 +1718,6 @@ print("\nAcessar os valores das features e seus pesos para Bom")
 feature_importances = exp.as_list(label=1)
 for feature, weight in feature_importances:
     print(f"{feature}: {weight}")
-
 ----------
 
 7 - API
@@ -1746,7 +1746,6 @@ for feature, weight in feature_importances:
 
 7.5 - Roteiro
 - Rodar modelcreation.py
-
 - Criar aplicação Flask 
 -- Url no config
 
@@ -1762,7 +1761,7 @@ python -m streamlit run .\webapp.py
 Observação: Os arquivos devem constar no diretório API: api.py, const.py, modelcreation.py, modelcreation_modified.py, requirements.txt, testflask.py, utils.py, webapp.py, xai.py
 
 ----------
-CÓDIGO: config.yaml
+Código: config.yaml
 
 database_config:
   dbname: 'novadrivebank'
@@ -1777,7 +1776,7 @@ url_api:
 Observação: Aqui vai a configuração AWS.
 ----------
 
-CÓDIGO: const.py
+Código: const.py
 
 consulta_sql = '''
 SELECT c.Profissao,
@@ -1805,7 +1804,7 @@ GROUP BY c.ClienteID, pf.NomeComercial, pc.ValorSolicitado, pc.ValorTotalBem
 ''' 
 ----------
 
-CÓDIGO: modelcreation_modified.py
+Código: modelcreation_modified.py
 
 import pandas as pd
 from datetime import datetime
@@ -1910,7 +1909,7 @@ print(classification_report(y_test, y_pred))
 
 ----------
 
-CÓDIGO: modelcreation.py
+Código: modelcreation.py
 
 import pandas as pd
 from datetime import datetime
@@ -2028,7 +2027,7 @@ print(classification_report(y_test, y_pred))
 
 ----------
 
-CÓDIGO: requirements.txt
+Código: requirements.txt
 
 fuzzywuzzy==0.18.0
 pandas==2.2.1
@@ -2047,7 +2046,7 @@ seaborn==0.13.2
 
 ----------
 
-CÓDIGO: testflask.py
+Código: testflask.py
 
 import requests
 import yaml
@@ -2084,7 +2083,7 @@ else:
 
 ----------
 
-CÓDIGO: utils.py
+Código: utils.py
 
 from fuzzywuzzy import process
 import pandas as pd
@@ -2173,7 +2172,7 @@ def load_encoders(df, nome_colunas):
                                                                     
 ----------
 
-CÓDIGO: Webapp.py
+Código: Webapp.py
 
 import streamlit as st
 import requests
@@ -2243,7 +2242,7 @@ if submit_button:
         
 ----------
 
-CÓDIGO: xai.py
+Código: xai.py
 
 import pandas as pd
 from datetime import datetime
@@ -2393,9 +2392,9 @@ for feature, weight in feature_importances:
 - Etapas
 -- Criar Repositório no Github
 -- Configurar gitignore
--- Fazer push para repositorio Remoto
+-- Fazer push para repositório Remoto
 -- Configurar instancia do EC2
--- Fazer clone do Repositorio
+-- Fazer clone do Repositório
 -- Rodar API e aplicação WEB
 -- Testar com aplicação Local
 -- Testar com aplicação Remota
@@ -2405,10 +2404,49 @@ for feature, weight in feature_importances:
 
 8.2 - Ajuste no config.yaml
 
-8.3 - Criando o repósitorio e fazendo push
+----------
+
+Código: api.py
+
+from flask import Flask, request, jsonify
+from tensorflow.keras.models import load_model
+import pandas as pd
+import joblib
+from utils import *
+
+app = Flask(__name__)
+
+model = load_model('meu_modelo.keras')
+selector_carregado = joblib.load('./objects/selector.joblib')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    input_data = request.get_json()
+
+    df = pd.DataFrame(input_data)
+
+    df = load_scalers(df, ['tempoprofissao', 'renda', 'idade', 'dependentes', 
+                           'valorsolicitado', 'valortotalbem', 'proporcaosolicitadototal'])
+    df = load_encoders(df, ['profissao', 'tiporesidencia', 'escolaridade', 'score', 
+                            'estadocivil', 'produto'])
+    df = selector_carregado.transform(df)
+
+    predictions = model.predict(df)
+
+    return jsonify(predictions.tolist())
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True) #Liberar requisições AWS
+
+----------
+
+8.3 - Criando o repositório e fazendo push
+- Criar repositório Github
+- Procedimento padrão
 
 8.4 - Criando o arquivo gitignore
-config.yaml
+config.yaml # Arquivo de senha não pode ser enviado!!!
 meu_modelo.keras
 objects/*
 !objects/.gitkeep
@@ -2416,52 +2454,181 @@ objects/*
 __pycache__
 novadrivebank
 
-8.5 - Configuração do repositorio
-Acessar diretório no terminal VS CODE
+8.5 - Configuração do repositório
+- Acessar diretório no terminal VS CODE
 cd D:\Github\NOME_DO_DIRETORIO
 
-Adicionar arquivos para sincronização Github
+- Adicionar arquivos para sincronização Github
 git add .                                                                                                 
 
-Commit dos arquivos a serem sinconizados
+- Commit dos arquivos a serem sinconizados
 git commit -m "update commit"          
 
-Informar o novo diretório do github para sincronização    
+- Informar o novo diretório do github para sincronização    
 git remote add origin https://github.com/alanjoffre/nome_diretorio_github.git
 
-Confirmar sincronização Github
+- Confirmar sincronização Github
 git push -u origin master
 
 8.6 - Criando VM AWS
-- EC2
-- Ubuntu Server 22.04 LTS (HVM), SSD Volume Type
-- Architecture: 64 bit (x86)
-- Instance type: T2.micro
-- Create key pair: RSA
-- Private key file format: .pem
-- Create key pair
-- Create security group
-- Selecione: Allow SSH traffic from / Allow HTTPS traffic from the internet / Allow HTTP traffic from the internet
-- Execute a instancia
-- Aba: Security / Inbound rules / Edit inbounds rules / Add rule
-- Custom TCP / Port 5000 / Custom 
-- Custom TCP / Port Range 8501-8505 / Custom
-- Connect to instance / Aba SSH client 
+- Faça login e acesse a pagina inicial Do AWS
+- Pesquise sobre: EC2
+- Na aba da esquerda, procure e clique no campo: Instances
+- Selecione o campo: Launch as Instance
+- Para o campo: Name and tags, informe: Novadrivebankvm
+- Para o campo Application and OS Images (Amazon Machine Image), selecione a imagem: Ubuntu Server 22.04 LTS (HVM), SSD Volume Type
+- Architecture: 64-bit
+- Instance type: t2.medium
+- Crie um novo par de chave para login
+- Informe um nome para a sua par de chave
+- Selecione em Key pair type: RSA
+- Private key file formato: .pem
+- Clique em: Create key pair
+- Salve a chave em um local, para uso posterior.
+- Selecione no campo: Key pair (login), a chave gerada na tela anterior.
+- No campo: Network settings, deixe selecionado: Create security group para Firewall (security groups)
+- Deixe marcado: Allow SSH traffic from, Allow HTTPS traffic from the internet e Allow HTTP traffic from the internet  
+- Clique em: Launch instance, para que a instancia seja criada.
+- Volte para aba: Instances e atualize a pagina
+- Aguarde 2 min para que a instancia fique com o status: rodando...
+- Clique em: Instance ID da instancia desejada
+- Uma janela será aberta com as informações da instancia, desça a página e procure por: Security
+- Clique no campo: Security groups
+- Uma janela será aberta, no campo: Inbounds rules, clique em: Edit inbounds rules
+- Clique em: Add rule
+- Para o campo: Type, selecione: Custom TCP.
+- Para o campo: Port range, informe 5000, que é a porta do Flask    
+- Para o campo: Source, selecione: Anywhere-IPv4
+- Crie outra regra
+- Para o campo: Type, selecione: Custom TCP.
+- Para o campo: Port range, informe 8501-8505, que é a porta do Streamlit    
+- Para o campo: Source, selecione: Anywhere-IPv4
+- Clique em: Save rules
+- Volte para a tela principal da sua instancia
+- Clique no botão: Connect
+- Clique na aba: SSH client
+- Copie o comando do campo: Exemple, para acessar o diretório remotamente de sua instancia na AWS por SSH
+- Abra o prompt de comando do Windows, em sua máquina local
+- Acesse o diretório onde foi copiada a chave para acesso a sua instancia no AWS.
+- Copie o comando para acesso da sua instancia AWS, cole no prompt, dentro do diretório onde encontra-se sua chave
+- Confirme a operação com: Yes
+- Com acesso a console de sua instancia. digite: sudo apt update
+- Abra o Github, no repositorio do seu projeto, clique no campo: Code, copie a url do seu projeto (HTTPS)
+- Volte para a máquina virtual e digite: git clone URL_COPIADA_DO_GITHUB_REPOSITORIO
+- Aperte a tecla ENTER
+- Digite: ls para listar e verificar se o diretório do repositorio Github, encontra-se na instancia AWS
+- Digite: cd novadrivebank/, para acessar o diretório
+- Digite: python3 --version, para verificar a versão do python
+- Crie o arquivo config.yaml
+- Digite: touch config.yaml
+- Digite: ls, para listar o diretório
+- Digite: nano config.yaml, para editar o arquivo
+
+----------
+database_config:
+  dbname: 'novadrivebank'
+  user: 'etlreadonlybank'
+  password: 'novadrive376A@'
+  host: '159.223.187.110'
+
+url_api:
+   url: 'http://127.0.0.1:5000/predict'
+   #url: 'http://ec2-44-210-140-14.compute-1.amazonaws.com:5000/predict'
+----------
+
+- Digite: Control + X
+- Digite: y, depois Enter para salvar a edição
+- Para ter certeza que foi salvo, digite: cat config.yaml
+
+----------
+database_config:
+  dbname: 'novadrivebank'
+  user: 'etlreadonlybank'
+  password: 'novadrive376A@'
+  host: '159.223.187.110'
+
+url_api:
+   url: 'http://127.0.0.1:5000/predict'
+   #url: 'http://ec2-44-210-140-14.compute-1.amazonaws.com:5000/predict'
+----------
+
+- Instale o pip na console de sua instancia, basta digitar: sudo apt install python3-pip
+- Selecione Y e dê ENTER
+- Será aberta uma janela de configuração, clique na tecla TAB, não será alterado nada
+- Continuará selecionado: polkit.service, cliquem em OK com a tecla ENTER
+- Digite: ls para listar o diretório
+- Instale os: requirements.txt
+- Digite: pip3 install -r requirements.txt
+- Crie os objetos do modelo, digite: python3 modelcreation.py
+- Para que a console do terminal da instancia não fique travada/bloqueada, pois temos que rodar duas aplicações, digite o seguinte comando: nohup python3 api.py &
+- A API já está rodando por padrão na porta: 5000
+- Comando para verificar se a aplicação está rodando: sudo lsof -i : 5000
+- Digite para rodar a aplicação streamlit: nohup python3 -m streamlit run webapp.py &
+- Volte para a página AWS, instancia da aplicação, procure pelo campo: Public IPv4 DNS e copie o endereço
+- Cole o endereço em uma nova aba do seu navegador e adicione: :8501 (dois pontos e 8501)
+- Pronto, aplicação rodando totalmente online.
+
+8.7 - Testando API (rodando na AWS)
+- Acesse: config.yaml no VSCode
+
+----------
+
+Código: config.yaml pasta API
+
+database_config:
+  dbname: 'novadrivebank'
+  user: 'etlreadonlybank'
+  password: 'novadrive376A@'
+  host: '159.223.187.110'
+
+url_api:
+   #url: 'http://127.0.0.1:5000/predict'
+   url: 'http://ec2-44-210-140-14.compute-1.amazonaws.com:5000/predict'
+   
+----------   
+
+- Ative o ambiente virtual no VSCode
+- Digite: python .\testflask.py
+- Tem que aparecer as previsões, caso apareça informações, estas, são enviadas pela instancia EC2-AWS 
+- Digite: python -m streamlit run .\webapp.py
+- Aplicação rodando remotamente
 
 
 
+8.8 - Parando e terminando instancia no EC2/AWS - !!!Cuidado!!!
+- Não deixe rodando instancia no AWS
+-- Gera custos
 
-  
+- Para uma instancia
+-- Ela continua no servidor, mas não gera custos
 
-    
+- Terminar uma instancia
+-- Ela não constará mais no servidor, será excluída, não gera custos
 
+9 - Considerações finais e possíveis melhorias
 
+9.1 - Tratar labels não treinados
+- Mesmo tratando o input(não selecionado na amostra)
+- Como mitigar
+-- Técnica de amostragem que garanta a presença dos labels no ntreino
+-- Data Augmentation
+-- Continual Learning
+-- Novel Detection
 
+9.2 - Técnicas de CI/CD
+- Git Action
+- Jenkins
+- Ferramentas Especializadas no ciclo de vida do Modelo:
+-- Mlflow
+-- Sagemaker (AWS)
+-- Azure Machine Learning
 
+9.3 - Segurança / Autenticação
+- Aplicação WEB
+- API/FLASK
 
-
-
-
+9.4 - Testes Unitários
+- Pytest
 
 
 

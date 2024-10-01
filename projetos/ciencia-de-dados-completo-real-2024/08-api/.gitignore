@@ -5,3 +5,4 @@ objects/*
 .gitignore
 __pycache__
 novadrivebank
+streamlitenv
