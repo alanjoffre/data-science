@@ -1,0 +1,773 @@
+Projeto: Rotatividade de Clientes
+Site do projeto: https://www.kaggle.com/datasets/saisiddartha69/customer-churn-classification
+Dataset: https://www.kaggle.com/datasets/saisiddartha69/customer-churn-classification
+
+#PROMPT1
+Uma empresa quer passar a usar modelos de machine learning para melhorar seus resultados.  
+O conjunto de dados está no arquivo: "D:\Github\data-science\projetos\rotatividade-de-clientes\rclientes.csv" 
+Considerando as seguintes etapas do projeto: 1 - Entendimento do negócio, 2 - Entendimento de dados, 3 - Preparação de dados, 4 - Análise exploratória de dados, 
+5 - Modelagem preditiva, 6 - Avaliação do modelo e 7 - Implantação do modelo. 
+Poderia a me ajudar a implementar cada etapa a nivel Senior do projeto e alcançar o objetivo de entrega? 
+Vamos começar pela etapa 1 - Entendimento do negócio.
+Linguagem a ser utilzada: Python no software Jupyter Notebook. 
+O código terá que ter comentários do que está sendo efetuado.
+
+Entendimento do Negócio. Essa fase é crucial, pois envolve a definição do problema a ser resolvido, o entendimento dos objetivos da empresa e a identificação de 
+como os modelos de machine learning podem ajudar a melhorar os resultados.
+
+>>>>>>>>>>     Etapa 1: Entendimento do Negócio
+
+1.1 Definição do Problema
+Primeiro, você precisa entender qual é o problema de rotatividade que a empresa está enfrentando. Algumas perguntas a considerar:
+
+Qual é a taxa atual de rotatividade de clientes?
+O que a empresa considera um cliente "perdido"?
+Há características específicas de clientes que tendem a abandonar a empresa?
+
+1.2 Objetivos do Projeto
+Estabeleça os objetivos específicos que a empresa deseja alcançar com a implementação do modelo de machine learning:
+
+Reduzir a taxa de rotatividade em X% ao longo do próximo ano.
+Identificar os fatores que mais influenciam a rotatividade dos clientes.
+Criar campanhas direcionadas para retenção de clientes.
+
+1.3 Stakeholders
+Identifique os principais stakeholders envolvidos no projeto:
+
+Quem são os responsáveis pela tomada de decisão na empresa?
+Quais departamentos estão envolvidos (ex: marketing, vendas, atendimento ao cliente)?
+
+1.4 Exemplos de Aplicação de Machine Learning
+Forneça exemplos de como outras empresas utilizaram modelos de machine learning para reduzir a rotatividade de clientes:
+
+Segmentação de clientes para campanhas personalizadas.
+Previsão de churn (desistência) baseada em comportamento do cliente.
+Análise de sentimentos de feedbacks de clientes.
+
+1.5 Documentação
+Considere documentar todas essas informações para referência futura e comunicação com a equipe e stakeholders.
+
+#PROMPT2
+Aprofunde nos tópicos: 1.1, 1.2, 1.3, 1.4 e 1.5. De exemplos e respostas.
+
+Vamos aprofundar cada um dos tópicos da Etapa 1: Entendimento do Negócio, fornecendo exemplos e respostas que podem ser úteis na sua análise.
+
+1.1 Definição do Problema
+A definição do problema é o primeiro passo crítico para garantir que você e sua equipe tenham uma compreensão clara da situação atual e das dificuldades enfrentadas.
+
+Exemplo de Respostas:
+- Taxa Atual de Rotatividade: A empresa tem uma taxa de rotatividade de 25% ao ano, o que significa que 1 em cada 4 clientes deixa de usar os serviços.
+- Cliente Perdido: Um cliente é considerado "perdido" quando não realiza uma compra ou interação com a empresa por um período de 3 meses.
+- Características Específicas: Análises preliminares sugerem que clientes que não utilizam o serviço regularmente ou que têm interações insatisfatórias com o 
+atendimento ao cliente têm maior probabilidade de desistir.
+
+Perguntas para Discussão:
+- Qual é a taxa de rotatividade desejada pela empresa?
+- Quais serviços ou produtos apresentam maior rotatividade?
+- Quais são os feedbacks mais comuns recebidos de clientes que desistiram?
+
+1.2 Objetivos do Projeto
+Os objetivos do projeto devem ser SMART (Específicos, Mensuráveis, Atingíveis, Relevantes e Temporais).
+
+Exemplo de Objetivos:
+1 - Reduzir a Taxa de Rotatividade:
+-- Específico: Reduzir a taxa de rotatividade de clientes em 10%.
+-- Mensurável: Utilizar métricas mensais para monitorar a taxa de rotatividade.
+-- Atingível: Basear-se em campanhas e intervenções específicas.
+-- Relevante: Melhorar a sustentabilidade financeira da empresa.
+-- Temporal: Dentro de 12 meses.
+
+2 - Identificar Fatores de Rotatividade:
+-- Realizar uma análise de dados para determinar os 5 principais fatores que contribuem para a rotatividade.
+
+3 - Criar Campanhas de Retenção:
+-- Desenvolver e implementar campanhas personalizadas para clientes que têm uma alta probabilidade de rotatividade, com base nas análises, ao longo do próximo trimestre.
+
+Perguntas para Discussão:
+- Quais métricas você gostaria de usar para medir o sucesso?
+- Como você pretende monitorar o progresso ao longo do tempo?
+- Quais intervenções estão sendo consideradas para atingir esses objetivos?
+
+1.3 Stakeholders
+Identificar os stakeholders é fundamental para garantir que todos os interessados estejam alinhados e que suas expectativas sejam gerenciadas.
+
+Exemplos de Stakeholders:
+- Diretor de Marketing: Responsável por aprovar estratégias de marketing e campanhas de retenção.
+- Gerente de Vendas: Necessita de informações sobre quais clientes estão em risco de desistência para focar esforços de vendas.
+- Analista de Dados: Realiza a análise de dados e modelagem preditiva, fornecendo insights e recomendações.
+- Atendimento ao Cliente: Pode fornecer feedback sobre interações com clientes e ajudar a identificar padrões de insatisfação.
+
+Perguntas para Discussão:
+- Como os stakeholders podem contribuir para o sucesso do projeto?
+- Que informações ou relatórios eles esperam receber?
+- Qual é o nível de envolvimento esperado de cada um?
+
+1.4 Exemplos de Aplicação de Machine Learning
+Fornecer exemplos concretos ajuda a contextualizar o que a empresa pode alcançar com a implementação de modelos de machine learning.
+
+Exemplos:
+- Segmentação de Clientes:
+-- Uma empresa de telecomunicações utilizou clustering (agrupamento) para segmentar clientes com base em comportamento de uso, permitindo campanhas 
+direcionadas que aumentaram a retenção em 15%.
+
+- Previsão de Churn:
+Uma empresa de software como serviço (SaaS) aplicou regressão logística para prever a probabilidade de churn, identificando os clientes em risco e 
+permitindo intervenções proativas.
+
+- Análise de Sentimentos:
+Uma empresa de e-commerce utilizou processamento de linguagem natural (NLP) em feedbacks de clientes para identificar emoções negativas, permitindo 
+ações rápidas para resolver problemas e melhorar a satisfação do cliente.
+
+Perguntas para Discussão:
+- Que tipo de resultados você gostaria de alcançar com a aplicação de machine learning?
+- Você tem exemplos de empresas ou indústrias que admira e que implementaram soluções semelhantes?
+- Como você enxerga a transformação digital impactando seu negócio?
+
+1.5 Documentação
+A documentação é vital para garantir que todos os insights, decisões e planos estejam registrados e acessíveis a todos os membros da equipe.
+
+Exemplo de Documentação:
+Você pode utilizar um formato de documento simples como um arquivo de texto ou um documento do Word para registrar as informações discutidas. 
+Uma alternativa é criar um README em um repositório do GitHub.
+
+----------
+
+CÓDIGO
+
+# Projeto de Redução da Rotatividade de Clientes
+
+## 1. Definição do Problema
+- **Taxa Atual de Rotatividade**: 25% ao ano.
+- **Cliente Perdido**: Sem interações por 3 meses.
+- **Características Específicas**: Clientes que não usam o serviço regularmente.
+
+## 2. Objetivos do Projeto
+1. Reduzir a taxa de rotatividade em 10% dentro de 12 meses.
+2. Identificar os 5 principais fatores de rotatividade.
+3. Criar campanhas personalizadas de retenção no próximo trimestre.
+
+## 3. Stakeholders
+- **Diretor de Marketing**
+- **Gerente de Vendas**
+- **Analista de Dados**
+- **Atendimento ao Cliente**
+
+## 4. Exemplos de Aplicação de Machine Learning
+1. Segmentação de Clientes
+2. Previsão de Churn
+3. Análise de Sentimentos
+
+## 5. Próximas Etapas
+- Reunião com stakeholders para discutir objetivos e expectativas.
+
+----------
+
+#PROMPT3
+Esqueci algo nessa etapa ou posso prosseguir para a etapa 2?
+
+Antes de prosseguir para a Etapa 2: Entendimento dos Dados, aqui estão algumas considerações finais para garantir que nada importante tenha sido esquecido:
+
+1 - Revisão com Stakeholders: Se possível, compartilhe as informações coletadas com os stakeholders para obter feedback e garantir que todos estejam alinhados.
+
+2 - Definição de KPIs: Considere estabelecer indicadores-chave de desempenho (KPIs) que serão usados para medir o sucesso do projeto. 
+Isso pode incluir métricas de rotatividade, taxas de resposta a campanhas, etc.
+
+3 - Timeline do Projeto: Pense em uma linha do tempo inicial para as etapas do projeto, incluindo marcos importantes e prazos.
+
+4 - Recursos Necessários: Avalie se você possui todos os recursos necessários (dados, ferramentas, equipe) para a próxima etapa.
+
+#PROMPT4
+Aprofunde-se mais nos itens informados, com exemplos e respostas
+
+1. Revisão com Stakeholders
+
+Importância
+Uma revisão com stakeholders garante que todos estejam na mesma página em relação ao entendimento do problema e aos objetivos do projeto. 
+Isso também ajuda a captar diferentes perspectivas e insights que podem ter sido perdidos.
+
+Exemplos de Atividades:
+- Reuniões de Alinhamento: Organizar uma reunião com todos os stakeholders para apresentar as descobertas e os objetivos.
+- Feedback Estruturado: Criar um formulário ou questionário para coletar feedback específico dos stakeholders sobre as informações apresentadas.
+
+Perguntas para Discussão:
+- Todos concordam com a definição do problema e dos objetivos?
+- Existem preocupações ou expectativas adicionais que precisam ser abordadas?
+- Alguém possui dados ou informações que podem enriquecer a análise?
+
+2. Definição de KPIs
+Importância
+Definir KPIs ajuda a medir o progresso em direção aos objetivos do projeto. Esses indicadores servirão como base para avaliar a eficácia das intervenções realizadas.
+
+Exemplos de KPIs:
+- Taxa de Rotatividade: Percentual de clientes que deixaram de utilizar os serviços em um determinado período.
+
+Cálculo: 
+
+1 - Taxa de Rotatividade = Numero de Clientes Perdidos
+						   ---------------------------  X 100
+					        Numero Total de Clientes
+
+2 - Satisfação do Cliente: Avaliada através de pesquisas e Net Promoter Score (NPS).
+
+Meta: Aumentar o NPS em 20% no próximo ano.
+
+3 - Taxa de Resposta a Campanhas: Percentual de clientes que interagiram com campanhas de retenção.
+
+Cálculo: 
+ 
+Taxa de Resposta = Numero de Clientes que Responderam
+				   ----------------------------------  X 100
+				     Numero Total de Clientes Alvo
+
+Perguntas para Discussão:
+- Quais métricas são mais relevantes para os objetivos do projeto?
+- Com que frequência os KPIs serão revisados?
+- Como as equipes podem acompanhar essas métricas?
+
+3. Timeline do Projeto
+Importância
+Ter uma linha do tempo clara ajuda a definir expectativas e mantém todos os membros da equipe informados sobre os prazos e entregas.
+
+Exemplos de Atividades:
+- Cronograma de Reuniões: Estabelecer datas regulares para reuniões de acompanhamento.
+- Milestones: Definir marcos importantes, como a conclusão da análise de dados, o desenvolvimento do modelo e a apresentação dos resultados.
+
+
+| Etapa                         | Data de Início | Data de Conclusão |
+|-------------------------------|----------------|--------------------|
+| Entendimento do Negócio       | 01/10/2024     | 15/10/2024         |
+| Entendimento dos Dados        | 16/10/2024     | 31/10/2024         |
+| Preparação dos Dados          | 01/11/2024     | 15/11/2024         |
+| Análise Exploratória de Dados | 16/11/2024     | 30/11/2024         |
+| Modelagem Preditiva           | 01/12/2024     | 15/12/2024         |
+| Avaliação do Modelo           | 16/12/2024     | 31/12/2024         |
+| Implantação do Modelo         | 01/01/2025     | 15/01/2025         |
+
+
+Perguntas para Discussão:
+- Existe alguma data importante que precisa ser considerada?
+- Como a equipe pode garantir que todos os prazos sejam cumpridos?
+- Quais são os riscos que podem impactar a linha do tempo?
+
+4. Recursos Necessários
+Importância
+Identificar os recursos necessários é fundamental para garantir que você tenha tudo que precisa para realizar cada etapa do projeto.
+
+Exemplos de Recursos:
+- Dados: Acesso ao arquivo rclientes.csv e outros dados relevantes que possam ajudar na análise.
+- Ferramentas: Software de análise de dados (como Python, R, Excel), ferramentas de visualização (como Tableau ou Power BI) e ferramentas de machine learning (como Scikit-learn).
+- Equipe: Membros da equipe com as habilidades necessárias, como analistas de dados, cientistas de dados e profissionais de marketing.
+
+Perguntas para Discussão:
+- Existem lacunas nas habilidades da equipe que precisam ser preenchidas?
+- Os dados necessários estão disponíveis e acessíveis?
+- Que ferramentas e tecnologias serão utilizadas em cada etapa?
+
+Resumo
+Com essas considerações adicionais abordadas, você terá uma base ainda mais sólida para avançar para a Etapa 2: Entendimento dos Dados. Nessa etapa, vamos analisar 
+o conjunto de dados que você tem em rclientes.csv, explorando suas características e o que pode ser extraído dele. Se você estiver pronto, podemos começar!
+
+#PROMPT5
+Prossiga para a etapa 2, mantendo o mesmo padrão
+
+Vamos avançar para a Etapa 2: Entendimento dos Dados. Essa fase é fundamental para compreender as características do conjunto de dados que você tem disponível e 
+para preparar o caminho para as etapas seguintes do projeto.
+
+Etapa 2: Entendimento dos Dados
+
+2.1 Importação do Conjunto de Dados
+O primeiro passo é carregar o conjunto de dados no Jupyter Notebook e inspecioná-lo para entender sua estrutura.
+
+----------
+CÓDIGO
+# Importando as bibliotecas necessárias
+import pandas as pd
+
+# Carregando o conjunto de dados
+caminho_arquivo = r"D:\Github\data-science\projetos\rotatividade-de-clientes\rclientes.csv"
+dados = pd.read_csv(caminho_arquivo)
+
+# Exibindo as primeiras linhas do conjunto de dados
+dados.head()
+----------
+RESULTADO:
+
+RowNumber	CustomerId	Surname	    CreditScore	  Geography	   Gender	Age   Tenure	Balance	  NumOfProducts	  HasCrCard	IsActiveMember	EstimatedSalary	Exited
+0	    1   15634602	Hargrave	  619	       France	   Female	42	    2	    0.00	          1	        1	          1	           101348.88	1
+1	    2	15647311	Hill	      608	       Spain	   Female	41	    1	    83807.86	      1	        0	          1	           112542.58	0
+2	    3	15619304	Onio	      502	       France	   Female	42	    8	    159660.80	      3	        1	          0	           113931.57	1
+3	    4	15701354	Boni	      699	       France	   Female	39    	1	    0.00			  2	        0	          0	           93826.63  	0
+4	    5	15737888	Mitchell	  850	       Spain	   Female	43	    2	    125510.82	      1	        1	          1            79084.10  	0
+
+----------
+
+Resultados Esperados:
+
+- Colunas disponíveis:
+-- RowNumber: Número da linha (não é uma variável relevante).
+-- CustomerId: ID do cliente (único para cada cliente).
+-- Surname: Sobrenome do cliente (pode não ser relevante para a análise).
+-- CreditScore: Pontuação de crédito do cliente.
+-- Geography: Localização geográfica do cliente.
+-- Gender: Gênero do cliente.
+-- Age: Idade do cliente.
+-- Tenure: Tempo (anos) que o cliente está com a empresa.
+-- Balance: Saldo da conta do cliente.
+-- NumOfProducts: Número de produtos que o cliente possui.
+-- HasCrCard: Indica se o cliente tem um cartão de crédito (1 = sim, 0 = não).
+-- IsActiveMember: Indica se o cliente é um membro ativo (1 = sim, 0 = não).
+-- EstimatedSalary: Salário estimado do cliente.
+-- Exited: Indica se o cliente saiu da empresa (1 = sim, 0 = não).
+
+Tipos de dados:
+- Numéricos (ex: CreditScore, Age, Balance, etc.).
+- Categóricos (ex: Geography, Gender, etc.).
+
+2.3 Identificação de Valores Ausentes
+É importante verificar a presença de valores ausentes no conjunto de dados, pois isso pode afetar a análise e a modelagem.
+2.2 Inspeção da Estrutura do Conjunto de Dados
+Após carregar os dados, é importante inspecionar a estrutura do DataFrame, incluindo a verificação dos tipos de dados e das colunas disponíveis.
+
+RESULTADO
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10000 entries, 0 to 9999
+Data columns (total 14 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   RowNumber        10000 non-null  int64  
+ 1   CustomerId       10000 non-null  int64  
+ 2   Surname          10000 non-null  object 
+ 3   CreditScore      10000 non-null  int64  
+ 4   Geography        10000 non-null  object 
+ 5   Gender           10000 non-null  object 
+ 6   Age              10000 non-null  int64  
+ 7   Tenure           10000 non-null  int64  
+ 8   Balance          10000 non-null  float64
+ 9   NumOfProducts    10000 non-null  int64  
+ 10  HasCrCard        10000 non-null  int64  
+ 11  IsActiveMember   10000 non-null  int64  
+ 12  EstimatedSalary  10000 non-null  float64
+ 13  Exited           10000 non-null  int64  
+dtypes: float64(2), int64(9), object(3)
+memory usage: 1.1+ MB
+
+
+			RowNumber	CustomerId		CreditScore		Age				Tenure			Balance			NumOfProducts	HasCrCard		IsActiveMember	EstimatedSalary		Exited
+count		10000.00000	1.000000e+04	10000.000000	10000.000000	10000.000000	10000.000000	10000.000000	10000.00000		10000.000000		10000.000000	10000.000000
+mean		5000.50000	1.569094e+07	650.528800		38.921800		5.012800		76485.889288	1.530200		0.70550			0.515100			100090.239881	0.203700
+std			2886.89568	7.193619e+04	96.653299		10.487806		2.892174		62397.405202	0.581654		0.45584			0.499797			57510.492818	0.402769
+min			1.00000		1.556570e+07	350.000000		18.000000		0.000000		0.000000		1.000000		0.00000			0.000000			11.580000		0.000000
+25%			2500.75000	1.562853e+07	584.000000		32.000000		3.000000		0.000000		1.000000		0.00000			0.000000			51002.110000	0.000000
+50%			5000.50000	1.569074e+07	652.000000		37.000000		5.000000		97198.540000	1.000000		1.00000			1.000000			100193.915000	0.000000
+75%			7500.25000	1.575323e+07	718.000000		44.000000		7.000000		127644.240000	2.000000		1.00000			1.000000			149388.247500	0.000000
+max			10000.00000	1.581569e+07	850.000000		92.000000		10.000000		250898.090000	4.000000		1.00000			1.000000			199992.480000	1.000000
+
+----------
+
+Com base nas saídas do comando info() e describe(), podemos tirar algumas conclusões importantes.
+
+Resumo da Estrutura do Conjunto de Dados
+
+1. Estrutura do DataFrame
+- O DataFrame possui 10.000 entradas e 14 colunas.
+- Nenhuma coluna contém valores ausentes, o que é positivo para a análise.
+
+2. Tipos de Dados
+As colunas estão divididas em três tipos principais:
+- Inteiros (int64): RowNumber, CustomerId, CreditScore, Age, Tenure, NumOfProducts, HasCrCard, IsActiveMember, Exited.
+- Flutuantes (float64): Balance, EstimatedSalary.
+- Objetos (object): Surname, Geography, Gender.
+
+Análise Estatística das Variáveis Numéricas
+A saída do describe() oferece insights valiosos sobre as variáveis numéricas:
+
+1 - CreditScore:
+- Média: 650.53, com um desvio padrão de 96.65.
+- Valores variam de 350 a 850, indicando um bom intervalo de pontuação.
+
+2 - Age:
+- Média: 38.92 anos, com idades variando de 18 a 92.
+- A distribuição de idades pode influenciar a rotatividade.
+
+3 - Tenure:
+- Média: 5.01 anos, com um mínimo de 0 e um máximo de 10.
+- Um tenure mais longo pode estar associado a menores taxas de saída.
+
+4 - Balance:
+- Média: 76.485, com um máximo de 250.898, indicando que alguns clientes têm um saldo considerável.
+
+5 - NumOfProducts:
+- A média é 1.53, com um máximo de 4 produtos por cliente.
+
+6 - HasCrCard e IsActiveMember:
+- Essas colunas indicam a presença de um cartão de crédito e se o cliente é ativo.
+
+7 - EstimatedSalary:
+- Média: 100.090, com um desvio padrão de 57.510. A distribuição dos salários estimados pode influenciar a rotatividade.
+
+8 - Exited:
+- A variável alvo, com uma média de 0.203, sugere que cerca de 20,37% dos clientes saíram da empresa.
+
+----------
+
+CÓDIGO:
+
+# Verificando a quantidade de valores ausentes por coluna
+valores_ausentes = dados.isnull().sum()
+print(valores_ausentes[valores_ausentes > 0])
+
+----------
+
+RESULTADO:
+
+Series([], dtype: int64)
+
+----------
+
+A saída Series([], dtype: int64) indica que você não encontrou valores ausentes nas colunas do seu DataFrame, o que é ótimo. 
+Isso significa que todos os dados estão completos e prontos para serem utilizados nas próximas etapas do projeto.
+
+Etapa 2: Entendimento dos Dados - Recapitulando
+Com o entendimento já estabelecido, aqui está um resumo das informações e da análise realizada na Etapa 2: Entendimento dos Dados:
+
+----------
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Contagem de status do cliente
+plt.figure(figsize=(10, 6))
+sns.countplot(data=dados, x='Exited')
+plt.title('Distribuição de Clientes que Saíram')
+plt.xlabel('Status do Cliente (0 = Não Saiu, 1 = Saiu)')
+plt.ylabel('Número de Clientes')
+plt.show()
+
+
+----------
+
+
+Estrutura do Conjunto de Dados:
+
+10.000 entradas e 14 colunas.
+Nenhuma coluna apresenta valores ausentes.
+Tipos de Dados:
+
+Variáveis numéricas (ex.: CreditScore, Age, Balance) e variáveis categóricas (ex.: Geography, Gender).
+Análise Estatística:
+
+As variáveis numéricas foram analisadas, e insights relevantes foram extraídos a partir das estatísticas descritivas.
+A variável alvo (Exited) mostra que aproximadamente 20,37% dos clientes saíram.
+Relações entre Variáveis:
+
+A análise da matriz de correlação e os gráficos de dispersão ajudaram a identificar potenciais relações entre as variáveis e a rotatividade dos clientes.
+
+----------
+
+Resultados Esperados:
+Se não houver valores ausentes, isso deve ser mencionado como um ponto positivo. Se houver, você deve decidir como tratá-los.
+
+2.4 Análise das Variáveis
+Aqui, você pode fazer uma análise inicial das variáveis, focando nas variáveis categóricas e numéricas.
+
+----------
+
+CÓDIGO
+
+# Estatísticas descritivas das variáveis numéricas
+print(dados[['CreditScore', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'EstimatedSalary']].describe())
+
+----------
+
+		CreditScore           Age        Tenure        Balance  NumOfProducts  \
+count  10000.000000  10000.000000  10000.000000   10000.000000   10000.000000   
+mean     650.528800     38.921800      5.012800   76485.889288       1.530200   
+std       96.653299     10.487806      2.892174   62397.405202       0.581654   
+min      350.000000     18.000000      0.000000       0.000000       1.000000   
+25%      584.000000     32.000000      3.000000       0.000000       1.000000   
+50%      652.000000     37.000000      5.000000   97198.540000       1.000000   
+75%      718.000000     44.000000      7.000000  127644.240000       2.000000   
+max      850.000000     92.000000     10.000000  250898.090000       4.000000   
+
+       EstimatedSalary  
+count     10000.000000  
+mean     100090.239881  
+std       57510.492818  
+min          11.580000  
+25%       51002.110000  
+50%      100193.915000  
+75%      149388.247500  
+max      199992.480000  
+
+----------
+
+A análise estatística das variáveis numéricas que você apresentou fornece uma visão mais clara sobre a distribuição dos dados. 
+Aqui está uma interpretação detalhada de cada uma das colunas e algumas considerações que podem ser relevantes para a modelagem preditiva na próxima etapa.
+
+Resumo Estatístico das Variáveis Numéricas
+
+CreditScore
+Média: 650.53
+Desvio Padrão: 96.65
+Mínimo: 350
+Máximo: 850
+Interpretação: A maioria dos clientes possui uma pontuação de crédito acima da média, mas há uma gama considerável de pontuações. 
+Isso pode influenciar a propensão dos clientes a deixar a empresa.
+
+Age
+Média: 38.92 anos
+Desvio Padrão: 10.49 anos
+Mínimo: 18 anos
+Máximo: 92 anos
+Interpretação: A faixa etária é ampla, com muitos clientes na faixa de 30 a 50 anos. 
+A idade pode ser um fator relevante para entender o comportamento do cliente em relação à rotatividade.
+
+Tenure
+Média: 5.01 anos
+Desvio Padrão: 2.89 anos
+Mínimo: 0 anos
+Máximo: 10 anos
+Interpretação: A média de permanência é razoável, mas alguns clientes têm uma permanência de zero anos. 
+Pode ser útil analisar a relação entre o tempo de permanência e a rotatividade.
+
+Balance
+Média: 76.485
+Desvio Padrão: 62.397
+Mínimo: 0
+Máximo: 250.898
+Interpretação: O saldo médio dos clientes é positivo, mas há um número significativo de clientes com saldo zero. 
+Isso pode indicar potenciais insatisfações ou necessidade de serviços.
+
+NumOfProducts
+Média: 1.53
+Desvio Padrão: 0.58
+Mínimo: 1 produto
+Máximo: 4 produtos
+Interpretação: A maioria dos clientes possui entre 1 e 2 produtos. É interessante observar se os clientes que têm mais produtos tendem a sair menos.
+
+EstimatedSalary
+Média: 100.090
+Desvio Padrão: 57.510
+Mínimo: 11.58
+Máximo: 199.992
+Interpretação: O salário médio é alto, com uma ampla gama de salários. 
+Isso pode indicar diferentes níveis de satisfação e diferentes comportamentos em relação à rotatividade.
+
+----------
+
+2.5 Identificação de Relações entre Variáveis
+Explorar relações entre as variáveis pode ajudar a identificar fatores que influenciam a rotatividade.
+
+Matriz de Correlação:
+
+----------
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Selecionando apenas as colunas numéricas
+dados_numericos = dados.select_dtypes(include=['float64', 'int64'])
+
+# Gerando a matriz de correlação
+correlacao = dados_numericos.corr()
+
+# Criando um heatmap da matriz de correlação
+plt.figure(figsize=(12, 8))
+sns.heatmap(correlacao, annot=True, fmt='.2f', cmap='coolwarm', square=True)
+plt.title('Matriz de Correlação')
+plt.show()
+
+----------
+
+Gráfico de Dispersão:
+
+----------
+
+# Gráfico de dispersão entre 'Age' e 'Exited'
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=dados, x='Age', y='Exited', hue='Gender', alpha=0.6)
+plt.title('Idade dos Clientes vs Status de Saída')
+plt.xlabel('Idade')
+plt.ylabel('Status de Saída (0 = Não Saiu, 1 = Saiu)')
+plt.show()
+
+----------
+
+2.6 Documentação dos Resultados
+Ao final da análise, registre suas descobertas e insights.
+
+----------
+
+# Entendimento dos Dados
+
+## 1. Importação do Conjunto de Dados
+- O conjunto de dados foi carregado com sucesso.
+
+## 2. Estrutura do Conjunto de Dados
+- **Colunas disponíveis**: RowNumber, CustomerId, Surname, CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary, Exited
+- **Tipos de dados**: Numéricos e Categóricos.
+
+## 3. Valores Ausentes
+- Não foram encontrados valores ausentes.
+
+## 4. Análise das Variáveis
+- A análise das variáveis categóricas revelou que [incluir insights].
+- As variáveis numéricas apresentaram as seguintes estatísticas: [incluir insights].
+
+## 5. Relações entre Variáveis
+- A matriz de correlação mostrou que [incluir insights].
+- O gráfico de dispersão indicou que [incluir insights].
+
+## 6. Próximas Etapas
+- Preparação dos dados para modelagem.
+
+----------
+
+Etapa 3: Preparação dos Dados, onde você irá transformar e preparar os dados para a modelagem preditiva. 
+Esta etapa é crucial, pois os dados precisam estar em um formato adequado para os algoritmos de aprendizado de máquina.
+
+Etapa 3: Preparação dos Dados
+Nesta etapa, você realizará as seguintes atividades:
+- Transformação de Variáveis Categóricas em Numéricas
+- Normalização das Variáveis Numéricas
+- Divisão do Conjunto de Dados em Treinamento e Teste
+
+3.1. Transformação de Variáveis Categóricas
+As variáveis categóricas precisam ser convertidas em um formato numérico. 
+Usaremos o OneHotEncoder do sklearn para isso, o que permitirá que cada categoria seja representada como uma coluna binária.
+
+3.2. Normalização das Variáveis Numéricas
+É comum normalizar as variáveis numéricas para garantir que todas estejam na mesma escala, especialmente quando se utiliza algoritmos sensíveis a escalas, 
+como KNN ou SVM. O StandardScaler do sklearn pode ser utilizado para normalização.
+
+3.3. Divisão do Conjunto de Dados
+A divisão do conjunto de dados em conjuntos de treinamento e teste é necessária para avaliar o desempenho do modelo. 
+Vamos separar 80% dos dados para treinamento e 20% para teste.
+
+Código para Preparação dos Dados
+
+----------
+
+# Importando bibliotecas necessárias
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler
+
+# Carregando os dados
+# Aqui, assumimos que você já carregou os dados em um DataFrame chamado 'dados'
+
+# 1. Transformação de variáveis categóricas em numéricas
+variaveis_categoricas = ['Geography', 'Gender']
+encoder = OneHotEncoder(sparse_output=False, drop='first')  # drop='first' para evitar a armadilha da variável dummy
+dados_encoded = encoder.fit_transform(dados[variaveis_categoricas])
+
+# Criando um DataFrame com as variáveis codificadas
+dados_encoded_df = pd.DataFrame(dados_encoded, columns=encoder.get_feature_names_out(variaveis_categoricas))
+
+# Concatenando o DataFrame original (sem as variáveis categóricas) com as variáveis codificadas
+dados = pd.concat([dados.drop(columns=variaveis_categoricas), dados_encoded_df], axis=1)
+
+# 2. Separando as variáveis independentes (X) e dependentes (y)
+X = dados.drop(columns='Exited')  # Variáveis independentes
+y = dados['Exited']                # Variável dependente
+
+# 3. Normalizando as variáveis numéricas
+variaveis_numericas = X.select_dtypes(include=['float64', 'int64']).columns
+scaler = StandardScaler()
+X[variaveis_numericas] = scaler.fit_transform(X[variaveis_numericas])
+
+# 4. Dividindo o conjunto de dados em conjuntos de treinamento e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+# Exibindo as dimensões dos conjuntos de dados
+print("Dimensões do conjunto de treinamento:", X_train.shape, y_train.shape)
+print("Dimensões do conjunto de teste:", X_test.shape, y_test.shape)
+
+----------
+
+RESPOSTA:
+
+Dimensões do conjunto de treinamento: (8000, 14) (8000,)
+Dimensões do conjunto de teste: (2000, 14) (2000,)
+
+----------
+
+Comentários sobre o Código
+1 - OneHotEncoder:
+-- O drop='first' é usado para evitar a armadilha da variável dummy, que pode ocorrer quando uma coluna para cada categoria é criada, levando a multicolinearidade.
+
+2 - Normalização:
+-- O StandardScaler transforma os dados para que tenham média 0 e desvio padrão 1, o que é útil para muitos algoritmos de aprendizado de máquina.
+
+3 - Divisão do Conjunto de Dados:
+-- O parâmetro stratify=y garante que a proporção das classes na variável alvo Exited seja mantida nos conjuntos de treinamento e teste, o que é especialmente importante quando há um desbalanceamento nas classes.
+
+----------
+
+#PROMPT6
+Mais alguma coisa pode ser implementada na etapa 3?
+
+----------
+
+Etapa 3: Preparação dos Dados, além das transformações que já foram implementadas, você pode considerar algumas etapas adicionais para garantir que os dados estejam 
+prontos para a modelagem preditiva. Aqui estão algumas sugestões:
+
+3.1. Tratamento de Valores Ausentes
+Se houver valores ausentes, é essencial decidir como lidar com eles, seja preenchendo com a média, mediana, moda ou removendo as linhas/colunas.
+
+----------
+
+# Verificando valores ausentes
+valores_ausentes = dados.isnull().sum()
+print("Valores Ausentes em Cada Variável:\n", valores_ausentes[valores_ausentes > 0])
+
+# Exemplo de tratamento: Preencher valores ausentes com a média
+if 'Balance' in dados.columns:
+    dados['Balance'] = dados['Balance'].fillna(dados['Balance'].mean())  # Preenchendo com a média
+
+
+----------
+
+3.2. Tratamento de Outliers
+Identificar e tratar outliers pode ajudar a melhorar a robustez do modelo.
+
+----------
+
+# Identificando outliers com o método IQR
+Q1 = dados['Balance'].quantile(0.25)
+Q3 = dados['Balance'].quantile(0.75)
+IQR = Q3 - Q1
+
+# Remover outliers
+dados = dados[~((dados['Balance'] < (Q1 - 1.5 * IQR)) | (dados['Balance'] > (Q3 + 1.5 * IQR)))]
+
+----------
+
+3.3. Balanceamento de Classes
+Se a variável alvo estiver desbalanceada, você pode aplicar técnicas de balanceamento, como Oversampling ou Undersampling.
+
+----------
+
+from imblearn.over_sampling import SMOTE
+
+# Verificando se as variáveis X_train e y_train estão definidas e não estão vazias
+if 'X_train' in locals() and 'y_train' in locals():
+    # Garantindo que apenas variáveis numéricas sejam usadas
+    X_train_numeric = X_train.select_dtypes(include=['int64', 'float64'])
+
+    # Aplicando SMOTE para balancear as classes
+    smote = SMOTE(random_state=42)
+    X_balanced, y_balanced = smote.fit_resample(X_train_numeric, y_train)
+
+    print(f"Dimensões após balanceamento - X: {X_balanced.shape}, y: {y_balanced.shape}")
+else:
+    print("X_train ou y_train não estão definidos.")
+
+----------
+RESULTADO:
+
+Dimensões após balanceamento - X: (12740, 13), y: (12740,)
+
+----------
