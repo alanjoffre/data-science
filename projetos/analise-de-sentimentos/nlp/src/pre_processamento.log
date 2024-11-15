@@ -1,0 +1,18 @@
+2024-11-15 07:32:15,199:INFO:Início do processamento de dados.
+2024-11-15 07:32:15,335:INFO:Recursos NLTK baixados.
+2024-11-15 07:32:15,363:INFO:Dataset carregado com sucesso.
+2024-11-15 07:32:15,363:INFO:Colunas renomeadas com sucesso.
+2024-11-15 07:32:15,402:INFO:Informações iniciais do dataset:
+None
+Dask DataFrame Structure:
+                    id timestamp
+npartitions=1                   
+               float64   float64
+                   ...       ...
+Dask Name: describe-numeric, 27 graph layers
+2024-11-15 07:32:15,402:INFO:Colunas do dataset: Index(['id', 'timestamp', 'created_at', 'query', 'user', 'text'], dtype='object')
+2024-11-15 07:32:15,402:INFO:Coluna created_at tratada para fusos horários desconhecidos.
+2024-11-15 07:32:15,431:INFO:Análise de sentimentos aplicada.
+2024-11-15 07:32:15,449:INFO:Funções de limpeza aplicadas ao dataset.
+2024-11-15 07:32:15,452:INFO:Valores ausentes e duplicatas tratados.
+2024-11-15 08:11:21,598:INFO:Primeiras linhas do dataset após limpeza exibidas.

@@ -1,0 +1,32 @@
+Etapas do Projeto de Análise de Sentimentos em Tweets
+
+1 - Carregamento e Pré-processamento de Dados:
+- Carregar o dataset do arquivo Parquet usando Dask.
+- Realizar limpeza dos dados: remoção de URLs, menções, caracteres especiais, emojis, etc.
+- Tratar valores ausentes e duplicatas.
+
+2 - Análise Exploratória de Dados (EDA):
+- Visualizar a distribuição dos tweets por sentimento.
+- Identificar as palavras mais frequentes em cada classe de sentimento.
+
+3 - Feature Engineering:
+- Criação de novas features, como contagem de palavras, presença de emojis, etc.
+- Transformação de texto em vetores usando técnicas como TF-IDF ou Word Embeddings.
+
+4 - Divisão dos Dados:
+- Dividir o dataset em conjuntos de treino, validação e teste.
+ 
+5 - Modelagem:
+- Selecionar e treinar modelos de Machine Learning/DL (Logistic Regression, Random Forest, LSTM, BERT, etc.).
+- Ajustar hiperparâmetros usando técnicas como Grid Search ou Random Search.
+
+6 - Avaliação:
+- Avaliar o desempenho dos modelos utilizando métricas como acurácia, precisão, recall e F1-score.
+- Visualizar as métricas de avaliação.
+
+7 - Implementação:
+- Implementar o melhor modelo em um pipeline automatizado.
+- Realizar previsões em tempo real.
+
+8 - Visualização dos Resultados:
+- Criar dashboards interativos para apresentar os resultados das análises e previsões.

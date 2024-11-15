@@ -1,0 +1,8 @@
+EXPLICAR CÓDIGO
+explique-me no idioma portugues, o codigo a seguir, linha a linha, sendo que não tenho total conhecimento em programação:
+
+REESCREVER O CÓDIGO, EXPLICANDO LINHA A LINHA E COM COMENTÁRIO
+Considerando o código a seguir, preciso que reescreva o código e a cada linha, mencione o que está sendo feito atraves de comentário (#). Tem que ser feito no idioma portugues e com detalhismo: 
+
+
+

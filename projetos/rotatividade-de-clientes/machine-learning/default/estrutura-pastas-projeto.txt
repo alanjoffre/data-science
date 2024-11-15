@@ -1,0 +1,43 @@
+D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/
+│
+├── config/                    # Configurações do projeto
+│   └── config.yaml            # Arquivo de configuração
+│
+├── data/                      # Dados do projeto
+│   ├── raw/                   # Dados brutos (não processados)
+│   │   └── rclientes.csv
+│   ├── processed/             # Dados já processados
+│   │   └── rclientes_preprocessado.csv
+│   └── new_data.csv           # Dados novos ou atualizados
+│
+├── logs/                      # Logs gerados durante a execução
+│   └── ...                    # Arquivos de log
+│
+├── models/                    # Modelos treinados e finalizados
+│   ├── scaler.joblib          # Scaler utilizado no pré-processamento
+│   └── final_model.joblib     # Modelo final
+│
+├── notebook/                  # Notebooks de desenvolvimento
+│   └── ...                    # Arquivos .ipynb para análise e prototipagem
+│
+├── predictions/               # Resultados de previsões realizadas
+│   └── predictions.csv        # Arquivo de previsões
+│
+├── preprocessors/             # Pré-processadores salvos
+│   └── preprocessor.joblib    # Pipeline de pré-processamento
+│
+├── reports/                   # Relatórios gerados e figuras
+│   ├── figures/               # Figuras e gráficos salvos
+│   │   └── ...                # Arquivos de imagem
+│   ├── classification_report_initial.txt
+│   ├── classification_report_best.txt
+│   ├── classification_report_cross_val.txt
+│   ├── classification_report_threshold.txt
+│   ├── classification_report_final.txt
+│   ├── classification_report.txt         # Relatório de avaliação geral
+│   └── classification_threshold_report.txt
+│
+├── src/                       # Código fonte dos módulos do projeto
+│   └── ...                    # Scripts Python do projeto (ex.: data_processing.py, model_training.py)
+│
+└── README.md                  # Documentação do projeto

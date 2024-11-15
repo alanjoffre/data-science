@@ -1,0 +1,465 @@
+2024-11-15 07:00:37,748:INFO:Início do processamento de dados.
+2024-11-15 07:00:37,776:INFO:Dataset carregado com sucesso.
+2024-11-15 07:00:45,254:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 07:00:53,911:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 07:01:02,111:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 07:01:02,111:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 07:01:02,111:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 07:01:06,831:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 07:01:07,616:INFO:Início da análise exploratória dos dados.
+2024-11-15 07:01:20,650:INFO:Número de linhas: 1549505
+2024-11-15 07:01:20,650:INFO:Número de colunas: 9
+2024-11-15 07:01:20,667:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 07:01:20,673:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 07:01:20,678:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 07:01:38,610:INFO:Visualização da distribuição de datas salva.
+2024-11-15 07:02:13,257:INFO:Visualização da contagem de sentimentos salva.
+2024-11-15 07:02:13,257:INFO:Etapa 2 concluída com sucesso.
+2024-11-15 07:02:13,257:INFO:Início da extração e análise de hashtags e menções.
+2024-11-15 07:02:13,257:INFO:Hashtags e menções extraídas com sucesso.
+2024-11-15 07:02:21,150:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 07:02:21,316:INFO:Hashtags mais frequentes salvas com sucesso.
+2024-11-15 07:02:21,781:INFO:Menções mais frequentes salvas com sucesso.
+2024-11-15 07:02:22,091:INFO:Visualização das Top 20 Hashtags salva com sucesso.
+2024-11-15 07:02:22,392:INFO:Visualização das Top 20 Menções salva com sucesso.
+2024-11-15 07:02:22,392:INFO:Etapa 3 concluída com sucesso.
+2024-11-15 07:02:22,392:INFO:Início da análise de bigrams e trigrams.
+2024-11-15 07:02:30,074:INFO:Bigrams mais comuns salvos com sucesso.
+2024-11-15 07:02:37,778:INFO:Trigrams mais comuns salvos com sucesso.
+2024-11-15 07:08:36,074:INFO:Início do processamento de dados.
+2024-11-15 07:08:36,114:INFO:Dataset carregado com sucesso.
+2024-11-15 07:08:43,560:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 07:08:52,072:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 07:09:00,240:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 07:09:00,240:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 07:09:00,240:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 07:09:04,973:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 07:09:05,607:INFO:Início da análise exploratória dos dados.
+2024-11-15 07:09:18,573:INFO:Número de linhas: 1549505
+2024-11-15 07:09:18,573:INFO:Número de colunas: 9
+2024-11-15 07:09:18,587:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 07:09:18,591:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 07:09:18,592:INFO:É esperado sair NaN para os campos: Mean e Std (Coluna - Data)
+2024-11-15 07:09:18,600:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 07:09:36,489:INFO:Visualização da distribuição de datas salva.
+2024-11-15 07:11:12,399:INFO:Início do processamento de dados.
+2024-11-15 07:11:12,424:INFO:Dataset carregado com sucesso.
+2024-11-15 07:11:19,888:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 07:11:28,457:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 07:11:36,603:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 07:11:36,603:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 07:11:36,604:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 07:11:41,321:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 07:11:41,954:INFO:Início da análise exploratória dos dados.
+2024-11-15 07:11:55,050:INFO:Número de linhas: 1549505
+2024-11-15 07:11:55,051:INFO:Número de colunas: 9
+2024-11-15 07:11:55,055:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 07:11:55,066:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 07:11:55,066:INFO:É esperado sair NaN para os campos: Mean e Std (Coluna - Data)
+2024-11-15 07:11:55,076:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 07:12:12,920:INFO:Visualização da distribuição de datas salva.
+2024-11-15 07:12:47,302:INFO:Visualização da contagem de sentimentos salva.
+2024-11-15 07:12:47,302:INFO:Etapa 2 concluída com sucesso.
+2024-11-15 07:12:47,302:INFO:Início da extração e análise de hashtags e menções.
+2024-11-15 07:12:47,302:INFO:Hashtags e menções extraídas com sucesso.
+2024-11-15 07:12:55,152:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 07:12:55,320:INFO:Hashtags mais frequentes salvas com sucesso.
+2024-11-15 07:12:55,786:INFO:Menções mais frequentes salvas com sucesso.
+2024-11-15 07:12:56,104:INFO:Visualização das Top 20 Hashtags salva com sucesso.
+2024-11-15 07:12:56,403:INFO:Visualização das Top 20 Menções salva com sucesso.
+2024-11-15 07:12:56,403:INFO:Etapa 3 concluída com sucesso.
+2024-11-15 07:12:56,403:INFO:Início da análise de bigrams e trigrams.
+2024-11-15 07:13:12,352:INFO:Bigrams mais comuns salvos com sucesso.
+2024-11-15 07:13:12,352:INFO:Trigrams mais comuns salvos com sucesso.
+2024-11-15 07:13:12,636:INFO:Visualização dos Top 20 Bigrams salva com sucesso.
+2024-11-15 07:13:12,919:INFO:Visualização dos Top 20 Trigrams salva com sucesso.
+2024-11-15 07:13:12,919:INFO:Etapa 4 concluída com sucesso.
+2024-11-15 07:13:12,919:INFO:Início da análise de sentimentos.
+2024-11-15 07:13:12,957:INFO:Análise de sentimentos aplicada com sucesso.
+2024-11-15 07:15:04,763:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 07:15:57,466:INFO:Resultados da análise de sentimentos salvos com sucesso.
+2024-11-15 07:15:59,270:INFO:Visualização da distribuição de sentimentos salva com sucesso.
+2024-11-15 07:15:59,270:INFO:Etapa 5 concluída com sucesso.
+2024-11-15 07:15:59,270:INFO:Início da limpeza final, verificação e salvamento dos dados.
+2024-11-15 07:16:03,691:INFO:DataFrame recarregado com sucesso para verificação final.
+2024-11-15 07:16:04,065:INFO:Contagem de valores NaN no DataFrame final:
+id                0
+timestamp         0
+created_at        0
+query             0
+user              0
+text              0
+sentiment         0
+text_cleaned      0
+text_processed    0
+hashtags          0
+mentions          0
+dtype: int64
+2024-11-15 07:17:14,213:INFO:DataFrame final salvo com sucesso em arquivos Parquet e CSV.
+2024-11-15 07:17:14,213:INFO:Etapa 6 concluída com sucesso.
+2024-11-15 07:18:07,246:INFO:Início do processamento de dados.
+2024-11-15 07:18:07,276:INFO:Dataset carregado com sucesso.
+2024-11-15 07:18:14,762:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 07:18:23,698:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 07:18:32,829:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 07:18:32,829:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 07:18:32,829:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 07:18:38,008:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 07:18:38,727:INFO:Início da análise exploratória dos dados.
+2024-11-15 07:18:52,510:INFO:Número de linhas: 1549505
+2024-11-15 07:18:52,510:INFO:Número de colunas: 9
+2024-11-15 07:18:52,527:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 07:18:52,531:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 07:18:52,531:INFO:É esperado sair NaN para os campos: Mean e Std (Coluna - Data)
+2024-11-15 07:18:52,545:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 07:19:10,892:INFO:Visualização da distribuição de datas salva.
+2024-11-15 07:19:46,202:INFO:Visualização da contagem de sentimentos salva.
+2024-11-15 07:19:46,202:INFO:Etapa 2 concluída com sucesso.
+2024-11-15 07:19:46,202:INFO:Início da extração e análise de hashtags e menções.
+2024-11-15 07:19:46,212:INFO:Hashtags e menções extraídas com sucesso.
+2024-11-15 07:19:54,432:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 07:19:54,602:INFO:Hashtags mais frequentes salvas com sucesso.
+2024-11-15 07:19:55,107:INFO:Menções mais frequentes salvas com sucesso.
+2024-11-15 07:19:55,448:INFO:Visualização das Top 20 Hashtags salva com sucesso.
+2024-11-15 07:19:55,743:INFO:Visualização das Top 20 Menções salva com sucesso.
+2024-11-15 07:19:55,759:INFO:Etapa 3 concluída com sucesso.
+2024-11-15 07:19:55,759:INFO:Início da análise de bigrams e trigrams.
+2024-11-15 07:20:14,005:INFO:Bigrams mais comuns salvos com sucesso.
+2024-11-15 07:20:14,009:INFO:Trigrams mais comuns salvos com sucesso.
+2024-11-15 07:20:14,363:INFO:Visualização dos Top 20 Bigrams salva com sucesso.
+2024-11-15 07:20:14,718:INFO:Visualização dos Top 20 Trigrams salva com sucesso.
+2024-11-15 07:20:14,718:INFO:Etapa 4 concluída com sucesso.
+2024-11-15 07:20:14,721:INFO:Início da análise de sentimentos.
+2024-11-15 07:20:14,746:INFO:Análise de sentimentos aplicada com sucesso.
+2024-11-15 07:22:14,749:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 07:23:11,409:INFO:Resultados da análise de sentimentos salvos com sucesso.
+2024-11-15 07:23:13,378:INFO:Visualização da distribuição de sentimentos salva com sucesso.
+2024-11-15 07:23:13,379:INFO:Etapa 5 concluída com sucesso.
+2024-11-15 07:23:13,379:INFO:Início da limpeza final, verificação e salvamento dos dados.
+2024-11-15 07:23:19,123:INFO:DataFrame recarregado com sucesso para verificação final.
+2024-11-15 07:23:19,623:INFO:Contagem de valores NaN no DataFrame final:
+id                0
+timestamp         0
+created_at        0
+query             0
+user              0
+text              0
+sentiment         0
+text_cleaned      0
+text_processed    0
+hashtags          0
+mentions          0
+dtype: int64
+2024-11-15 07:24:35,923:INFO:DataFrame final salvo com sucesso em arquivos Parquet e CSV.
+2024-11-15 07:24:35,923:INFO:Etapa 6 concluída com sucesso.
+2024-11-15 08:31:17,070:INFO:Início do processamento de dados.
+2024-11-15 08:31:17,180:INFO:Recursos NLTK baixados.
+2024-11-15 08:31:17,207:INFO:Dataset carregado com sucesso.
+2024-11-15 08:31:17,207:INFO:Colunas renomeadas com sucesso.
+2024-11-15 08:31:17,246:INFO:Informações iniciais do dataset:
+None
+Dask DataFrame Structure:
+                    id timestamp
+npartitions=1                   
+               float64   float64
+                   ...       ...
+Dask Name: describe-numeric, 27 graph layers
+2024-11-15 08:31:17,246:INFO:Colunas do dataset: Index(['id', 'timestamp', 'created_at', 'query', 'user', 'text'], dtype='object')
+2024-11-15 08:31:17,253:INFO:Coluna created_at tratada para fusos horários desconhecidos.
+2024-11-15 08:31:17,276:INFO:Análise de sentimentos aplicada.
+2024-11-15 08:31:17,295:INFO:Funções de limpeza aplicadas ao dataset.
+2024-11-15 08:31:17,301:INFO:Valores ausentes e duplicatas tratados.
+2024-11-15 09:10:21,465:INFO:Primeiras linhas do dataset após limpeza exibidas.
+2024-11-15 09:49:01,283:INFO:Dataset convertido para Pandas DataFrame.
+2024-11-15 09:49:05,440:INFO:Dataset limpo salvo com sucesso em D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\processed\\asentimentos_cleaned.parquet.
+2024-11-15 09:49:05,440:INFO:Dataset limpo recarregado.
+2024-11-15 09:49:09,969:INFO:Colunas com NaNs: []
+2024-11-15 09:49:09,969:INFO:Contagem de NaNs por coluna:
+Series([], dtype: float64)
+2024-11-15 09:49:15,081:INFO:Contagem de NaNs após correção:
+id                0
+timestamp         0
+created_at        0
+query             0
+user              0
+text              0
+sentiment         0
+text_cleaned      0
+text_processed    0
+dtype: int64
+2024-11-15 09:49:23,612:INFO:Dataset limpo salvo novamente com sucesso em D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\processed\\final_asentiments.parquet.
+2024-11-15 09:52:03,724:INFO:Início do processamento de dados.
+2024-11-15 09:52:03,756:INFO:Dataset carregado com sucesso.
+2024-11-15 09:52:11,333:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 09:52:19,832:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 09:52:27,940:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 09:52:27,940:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 09:52:27,940:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 09:52:32,772:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 09:52:33,572:INFO:Início da análise exploratória dos dados.
+2024-11-15 09:52:47,682:INFO:Número de linhas: 1549505
+2024-11-15 09:52:47,682:INFO:Número de colunas: 9
+2024-11-15 09:52:47,698:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 09:52:47,704:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 09:52:47,705:INFO:É esperado sair NaN para os campos: Mean e Std (Coluna - Data)
+2024-11-15 09:52:47,715:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 09:53:06,377:INFO:Visualização da distribuição de datas salva.
+2024-11-15 09:53:41,631:INFO:Visualização da contagem de sentimentos salva.
+2024-11-15 09:53:41,631:INFO:Etapa 2 concluída com sucesso.
+2024-11-15 09:53:41,631:INFO:Início da extração e análise de hashtags e menções.
+2024-11-15 09:53:41,642:INFO:Hashtags e menções extraídas com sucesso.
+2024-11-15 09:53:49,873:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 09:53:50,033:INFO:Hashtags mais frequentes salvas com sucesso.
+2024-11-15 09:53:50,473:INFO:Menções mais frequentes salvas com sucesso.
+2024-11-15 09:53:50,789:INFO:Visualização das Top 20 Hashtags salva com sucesso.
+2024-11-15 09:53:51,105:INFO:Visualização das Top 20 Menções salva com sucesso.
+2024-11-15 09:53:51,105:INFO:Etapa 3 concluída com sucesso.
+2024-11-15 09:53:51,105:INFO:Início da análise de bigrams e trigrams.
+2024-11-15 09:54:07,050:INFO:Bigrams mais comuns salvos com sucesso.
+2024-11-15 09:54:07,050:INFO:Trigrams mais comuns salvos com sucesso.
+2024-11-15 09:54:07,050:INFO:Início da análise de sentimentos.
+2024-11-15 09:54:07,083:INFO:Análise de sentimentos aplicada com sucesso.
+2024-11-15 09:56:01,797:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 09:56:54,671:INFO:Resultados da análise de sentimentos salvos com sucesso.
+2024-11-15 09:56:56,385:INFO:Visualização da distribuição de sentimentos salva com sucesso.
+2024-11-15 09:56:56,385:INFO:Etapa 5 concluída com sucesso.
+2024-11-15 09:56:56,385:INFO:Início da limpeza final, verificação e salvamento dos dados.
+2024-11-15 09:57:01,148:INFO:DataFrame recarregado com sucesso para verificação final.
+2024-11-15 09:57:01,531:INFO:Contagem de valores NaN no DataFrame final:
+id                0
+timestamp         0
+created_at        0
+query             0
+user              0
+text              0
+sentiment         0
+text_cleaned      0
+text_processed    0
+hashtags          0
+mentions          0
+dtype: int64
+2024-11-15 09:58:10,025:INFO:DataFrame final salvo com sucesso em arquivos Parquet e CSV.
+2024-11-15 09:58:10,025:INFO:Etapa 6 concluída com sucesso.
+2024-11-15 10:31:24,264:INFO:Início do processamento de dados.
+2024-11-15 10:31:24,286:INFO:Dataset carregado com sucesso.
+2024-11-15 10:31:31,588:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 10:31:40,050:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 10:31:48,272:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 10:31:48,272:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 10:31:48,272:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 10:31:52,850:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 10:31:53,510:INFO:Início da análise exploratória dos dados.
+2024-11-15 10:32:06,615:INFO:Número de linhas: 1549505
+2024-11-15 10:32:06,615:INFO:Número de colunas: 9
+2024-11-15 10:32:06,631:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 10:32:06,644:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 10:32:06,644:INFO:É esperado sair NaN para os campos: Mean e Std (Coluna - Data)
+2024-11-15 10:32:06,657:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 10:32:24,880:INFO:Visualização da distribuição de datas salva.
+2024-11-15 10:32:59,564:INFO:Visualização da contagem de sentimentos salva.
+2024-11-15 10:32:59,564:INFO:Etapa 2 concluída com sucesso.
+2024-11-15 10:32:59,564:INFO:Início da extração e análise de hashtags e menções.
+2024-11-15 10:32:59,588:INFO:Hashtags e menções extraídas com sucesso.
+2024-11-15 10:33:07,966:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 10:33:08,131:INFO:Hashtags mais frequentes salvas com sucesso.
+2024-11-15 10:33:08,598:INFO:Menções mais frequentes salvas com sucesso.
+2024-11-15 10:33:08,943:INFO:Visualização das Top 20 Hashtags salva com sucesso.
+2024-11-15 10:33:09,231:INFO:Visualização das Top 20 Menções salva com sucesso.
+2024-11-15 10:33:09,231:INFO:Etapa 3 concluída com sucesso.
+2024-11-15 10:33:09,231:INFO:Início da análise de bigrams e trigrams.
+2024-11-15 10:33:25,564:INFO:Bigrams mais comuns salvos com sucesso.
+2024-11-15 10:33:25,564:INFO:Trigrams mais comuns salvos com sucesso.
+2024-11-15 10:33:25,564:INFO:Início da análise de sentimentos.
+2024-11-15 10:33:25,599:INFO:Análise de sentimentos aplicada com sucesso.
+2024-11-15 10:35:18,544:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 10:36:11,122:INFO:Resultados da análise de sentimentos salvos com sucesso.
+2024-11-15 10:36:12,846:INFO:Visualização da distribuição de sentimentos salva com sucesso.
+2024-11-15 10:36:12,846:INFO:Etapa 5 concluída com sucesso.
+2024-11-15 10:36:12,846:INFO:Início da limpeza final, verificação e salvamento dos dados.
+2024-11-15 10:36:17,637:INFO:DataFrame recarregado com sucesso para verificação final.
+2024-11-15 10:36:17,971:INFO:Contagem de valores NaN no DataFrame final:
+id                0
+timestamp         0
+created_at        0
+query             0
+user              0
+text              0
+sentiment         0
+text_cleaned      0
+text_processed    0
+hashtags          0
+mentions          0
+dtype: int64
+2024-11-15 10:37:27,413:INFO:DataFrame final salvo com sucesso em arquivos Parquet e CSV.
+2024-11-15 10:37:27,413:INFO:Etapa 6 concluída com sucesso.
+2024-11-15 10:53:14,070:INFO:Início do processamento de dados.
+2024-11-15 10:53:14,092:INFO:Dataset carregado com sucesso.
+2024-11-15 10:53:21,504:INFO:Número de valores NaN na coluna 'created_at' antes do tratamento: 0
+2024-11-15 10:53:29,971:INFO:Número de valores NaN na coluna 'created_at' após o tratamento: 0
+2024-11-15 10:53:38,086:INFO:Média da coluna 'created_at': 2009-05-31 05:29:24.698950400
+2024-11-15 10:53:38,086:INFO:Desvio padrão dos timestamps da coluna 'created_at': 1482977.3944285496
+2024-11-15 10:53:38,086:INFO:Tratamento de NaN na coluna created_at concluído.
+2024-11-15 10:53:42,753:INFO:Etapa 1 concluída com sucesso.
+2024-11-15 10:53:43,403:INFO:Início da análise exploratória dos dados.
+2024-11-15 10:53:56,715:INFO:Número de linhas: 1549505
+2024-11-15 10:53:56,715:INFO:Número de colunas: 9
+2024-11-15 10:53:56,738:INFO:Primeiras 5 linhas:
+   id   timestamp          created_at  ... sentiment                                       text_cleaned                                     text_processed
+0   0  1467810672 2009-04-06 22:19:49  ...  negative  upset cant update facebook texting might cry r...  [upset, cant, update, facebook, texting, might...
+1   0  1467810917 2009-04-06 22:19:53  ...  positive  @kenichan dived many times ball managed save r...  [@, kenichan, dived, many, time, ball, managed...
+2   0  1467811184 2009-04-06 22:19:57  ...  negative                   whole body feels itchy like fire             [whole, body, feel, itchy, like, fire]
+3   0  1467811193 2009-04-06 22:19:57  ...  negative          @nationwideclass behaving im mad cant see  [@, nationwideclass, behaving, im, mad, cant, ...
+4   0  1467811372 2009-04-06 22:20:00  ...   neutral                               @kwesidei whole crew                         [@, kwesidei, whole, crew]
+
+[5 rows x 9 columns]
+2024-11-15 10:53:56,743:INFO:Descrição estatística:
+                 id     timestamp           created_at
+count  1.549505e+06  1.549505e+06              1549505
+min    0.000000e+00  1.467811e+09  2009-04-06 22:19:49
+25%    0.000000e+00  1.968900e+09  2009-05-29 22:29:54
+50%    0.000000e+00  2.031911e+09  2009-06-04 10:29:48
+75%    4.000000e+00  2.193602e+09  2009-06-16 08:40:50
+max    4.000000e+00  2.329206e+09  2009-06-25 10:28:31
+mean   2.006855e+00  1.997886e+09                  NaN
+std    1.999989e+00  1.938250e+08                  NaN
+2024-11-15 10:53:56,743:INFO:É esperado sair NaN para os campos: Mean e Std (Coluna - Data)
+2024-11-15 10:53:56,749:INFO:Análise exploratória concluída e resultados salvos.
+2024-11-15 10:54:14,462:INFO:Visualização da distribuição de datas salva.
+2024-11-15 10:54:49,392:INFO:Visualização da contagem de sentimentos salva.
+2024-11-15 10:54:49,392:INFO:Etapa 2 concluída com sucesso.
+2024-11-15 10:54:49,392:INFO:Início da extração e análise de hashtags e menções.
+2024-11-15 10:54:49,392:INFO:Hashtags e menções extraídas com sucesso.
+2024-11-15 10:54:57,435:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 10:54:57,589:INFO:Hashtags mais frequentes salvas com sucesso.
+2024-11-15 10:54:58,045:INFO:Menções mais frequentes salvas com sucesso.
+2024-11-15 10:54:58,360:INFO:Visualização das Top 20 Hashtags salva com sucesso.
+2024-11-15 10:54:58,644:INFO:Visualização das Top 20 Menções salva com sucesso.
+2024-11-15 10:54:58,644:INFO:Etapa 3 concluída com sucesso.
+2024-11-15 10:54:58,644:INFO:Início da análise de bigrams e trigrams.
+2024-11-15 10:55:15,401:INFO:Bigrams mais comuns salvos com sucesso.
+2024-11-15 10:55:15,401:INFO:Trigrams mais comuns salvos com sucesso.
+2024-11-15 10:55:15,418:INFO:Início da análise de sentimentos.
+2024-11-15 10:55:15,441:INFO:Análise de sentimentos aplicada com sucesso.
+2024-11-15 10:57:06,738:INFO:Conversão do Dask DataFrame para Pandas DataFrame concluída.
+2024-11-15 10:57:57,459:INFO:Resultados da análise de sentimentos salvos com sucesso.
+2024-11-15 10:57:59,172:INFO:Visualização da distribuição de sentimentos salva com sucesso.
+2024-11-15 10:57:59,172:INFO:Etapa 5 concluída com sucesso.
+2024-11-15 10:57:59,172:INFO:Início da limpeza final, verificação e salvamento dos dados.
+2024-11-15 10:58:03,888:INFO:DataFrame recarregado com sucesso para verificação final.
+2024-11-15 10:58:04,219:INFO:Contagem de valores NaN no DataFrame final:
+id                0
+timestamp         0
+created_at        0
+query             0
+user              0
+text              0
+sentiment         0
+text_cleaned      0
+text_processed    0
+hashtags          0
+mentions          0
+dtype: int64
+2024-11-15 10:59:11,318:INFO:DataFrame final salvo com sucesso em arquivos Parquet e CSV.
+2024-11-15 10:59:11,318:INFO:Etapa 6 concluída com sucesso.

@@ -1,0 +1,29 @@
+# Carregamento / Pre-processamento dos Dados
+## Instalar as bibliotecas necessárias
+## Importar bibliotecas
+## Carregar as configurações do arquivo config.yaml
+## Configurar logging
+## Função para configurar o logger
+## Baixar recursos necessários do NLTK: stopwords, punkt, wordnet
+## Carregar o dataset do arquivo Parquet usando Dask
+## Renomear as colunas
+## Verificação inicial das colunas e dados
+## Função para tratar a coluna created_at com fusos horários desconhecidos
+## Função para analisar sentimentos usando VADER
+## Função para limpar texto conforme configurações do config.yaml
+## Função para remover stopwords
+## Função para tokenizar texto
+## Função para lematizar texto
+## Função para remover emojis usando emoji.demojize
+## Função para processar texto usando Dask Delayed
+## Aplicar as funções de limpeza no dataset
+## Tratar valores ausentes e duplicatas
+## Visualizar as mudanças
+## Converter o Dask DataFrame para Pandas DataFrame para análise exploratória
+## Salvar o dataset limpo
+## Carregar o dataset do arquivo Parquet usando Dask
+## Identificar colunas com NaNs
+## Mostrar a contagem de NaNs por coluna
+## Tratar valores NaN nas colunas numéricas
+## Verificar se ainda há NaNs
+## Salvar o dataset limpo novamente
