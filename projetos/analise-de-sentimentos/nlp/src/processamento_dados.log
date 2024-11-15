@@ -463,3 +463,20 @@ mentions          0
 dtype: int64
 2024-11-15 10:59:11,318:INFO:DataFrame final salvo com sucesso em arquivos Parquet e CSV.
 2024-11-15 10:59:11,318:INFO:Etapa 6 concluída com sucesso.
+2024-11-15 11:51:54,195:INFO:Início do processamento de dados.
+2024-11-15 11:51:54,322:INFO:Recursos NLTK baixados.
+2024-11-15 11:51:54,354:INFO:Dataset carregado com sucesso.
+2024-11-15 11:51:54,354:INFO:Colunas renomeadas com sucesso.
+2024-11-15 11:51:54,391:INFO:Informações iniciais do dataset:
+None
+Dask DataFrame Structure:
+                    id timestamp
+npartitions=1                   
+               float64   float64
+                   ...       ...
+Dask Name: describe-numeric, 27 graph layers
+2024-11-15 11:51:54,392:INFO:Colunas do dataset: Index(['id', 'timestamp', 'created_at', 'query', 'user', 'text'], dtype='object')
+2024-11-15 11:51:54,397:INFO:Coluna created_at tratada para fusos horários desconhecidos.
+2024-11-15 11:51:54,419:INFO:Análise de sentimentos aplicada.
+2024-11-15 11:51:54,431:INFO:Funções de limpeza aplicadas ao dataset.
+2024-11-15 11:51:54,443:INFO:Valores ausentes e duplicatas tratados.
