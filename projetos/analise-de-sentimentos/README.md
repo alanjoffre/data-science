@@ -80,6 +80,8 @@ python src/preprocess/tokenization.py
 - 8 - Execute o script de remoção de stop words:
 python src/preprocess/remove_stopwords.py
 
-# Contato
-https://alanjoffre.github.io/my-profile/
+- 9 - Execute o script de stemming e lematização:
+python src/preprocess/stemming_lemmatization.py
+
+# Contato: https://alanjoffre.github.io/my-profile/
 
