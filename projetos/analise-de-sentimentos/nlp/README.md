@@ -82,5 +82,5 @@ python src/preprocess/remove_stopwords.py
 - 9 - Execute o script de stemming e lematização:
 python src/preprocess/stemming_lemmatization.py
 
-# Contato: ## https://alanjoffre.github.io/my-profile/
-
+# Contato: 
+## https://alanjoffre.github.io/my-profile/
