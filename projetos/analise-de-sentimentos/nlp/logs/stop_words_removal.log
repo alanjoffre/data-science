@@ -1,0 +1,4 @@
+2024-11-17 21:53:38,785 - __main__ - INFO - Iniciando a etapa de remoção de stop words...
+2024-11-17 23:07:12,879 - __main__ - INFO - Arquivo Parquet salvo e lido com sucesso.
+2024-11-17 23:07:12,879 - __main__ - INFO - Stop words removidas e dados salvos com sucesso.
+2024-11-17 23:07:12,879 - __main__ - INFO - Arquivo de configuração atualizado em: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\config\config.yaml

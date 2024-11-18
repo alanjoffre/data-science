@@ -1,0 +1,13 @@
+dask[dataframe]
+pandas
+scikit-learn
+matplotlib
+seaborn
+spacy
+cython
+visions
+pandas-profiling
+pydantic
+pyyaml
+fastparquet
+pyarrow

@@ -1,0 +1,38 @@
+import yaml
+
+# Configuração inicial do projeto
+config = {
+    'directories': {
+        'raw_data': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\raw\\',
+        'processed_data': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\processed\\',
+        'config': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\config\\',
+        'logs': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\logs\\',
+        'reports': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\reports\\',
+        'reports_figures': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\reports\\figures\\',
+        'models': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\models\\',
+        'predictions': 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\predictions\\',
+    },
+    'files': {
+        'initial_dataset': 'asentimentos.parquet'
+    },
+    'parameters': {
+        'dask_partitions': 4,
+        'batch_size': 1000,
+        'random_state': 42
+    },
+    'logging': {
+        'level': 'INFO',
+        'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        'handlers': ['console', 'file']
+    }
+}
+
+# Diretório para salvar o config.yaml
+config_dir = 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\config\\'
+config_path = config_dir + 'config.yaml'
+
+# Salvar o arquivo de configuração
+with open(config_path, 'w') as file:
+    yaml.dump(config, file)
+
+print(f"Arquivo de configuração salvo em: {config_path}")
