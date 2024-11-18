@@ -53,10 +53,9 @@ D:\Github\data-science\projetos\analise-de-sentimentos\nlp\
 - Fastparquet
 - Pyarrow
 
-# Como Executar
+# Como executar
 - 1 - Configure o ambiente virtual:
 python -m venv venv_nome
-source venv_nome/bin/activate  # Linux/Mac
 .\venv_nome\Scripts\activate  # Windows
 
 - 2 - Instale as dependências:
@@ -83,5 +82,5 @@ python src/preprocess/remove_stopwords.py
 - 9 - Execute o script de stemming e lematização:
 python src/preprocess/stemming_lemmatization.py
 
-# Contato: https://alanjoffre.github.io/my-profile/
+# Contato: ## https://alanjoffre.github.io/my-profile/
 
