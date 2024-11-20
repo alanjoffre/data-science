@@ -1,17 +1,16 @@
 directories:
-  raw_data: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\raw\\asentimentos.parquet'
-  processed_data: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\processed\\'
-  interim_data: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\data\\interim\\'
-  logs: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\logs\\'
-  models: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\models\\'
-  predictions: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\predictions\\'
-  reports: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\reports\\'
-  figures: 'D:\\Github\\data-science\\projetos\\analise-de-sentimentos\\nlp\\reports\\figures\\'
-
-logs:
-  level: INFO
-  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-  file: 'stemming_lemmatization.log'
-
+  figures: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\figures\
+  logs: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\logs\
+  models: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\models\
+  predictions: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\predictions\
+  processed_data: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\
+  raw_data: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\
+  reports: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\
 files:
-  processed_dataset: 'stemming_lemmatization.parquet'
+  processed_dataset: etapa3_analise_exploratoria.parquet
+  raw_dataset: asentimentos.parquet
+  test_dataset: test_data.parquet
+  train_dataset: train_data.parquet
+logs:
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  level: INFO

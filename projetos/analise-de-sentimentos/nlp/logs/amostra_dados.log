@@ -1,0 +1,7 @@
+2024-11-20 19:34:29,438 - __main__ - INFO - Carregando dataset original do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\asentimento.parquet
+2024-11-20 19:35:25,289 - __main__ - INFO - Carregando dataset original do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\asentimentos.parquet
+2024-11-20 19:35:25,350 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:35:25,350 - __main__ - INFO - Renomeando colunas do dataset.
+2024-11-20 19:35:25,353 - __main__ - INFO - Selecionando as primeiras 2000 linhas do dataset.
+2024-11-20 19:35:28,687 - __main__ - INFO - Salvando a amostra no caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\amostra.parquet
+2024-11-20 19:35:28,699 - __main__ - INFO - Amostra salva com sucesso!

@@ -1,86 +1,84 @@
-# Projeto: Analise de Sentimentos X
-
-- O arquivo README.md incluirá as informações do projeto e instruções para executar o código.
-
 # Projeto de Análise de Sentimentos
 
-## Descrição
-Este projeto visa realizar uma análise de sentimentos em um grande conjunto de dados utilizando as bibliotecas Dask e Spacy para lidar com a performance e processamento de dados.
+Este projeto tem como objetivo realizar uma análise de sentimentos em um conjunto de dados grande, utilizando a biblioteca Dask para manipulação de dados em paralelo.
 
-## Estrutura de Diretórios
+## Estrutura do Projeto
+
 ```plaintext
-D:\Github\data-science\projetos\analise-de-sentimentos\nlp\
-│
-├── config\
+analise-de-sentimentos/
+├── config/
 │   └── config.yaml
-├── data\
-│   ├── raw\
-│   │   └── asentimentos.parquet
-│   ├── processed\
-│   └── interim\
-├── logs\
-├── models\
-├── predictions\
-├── reports\
-│   ├── figures\
-│   └── EDA_report.html
-└── src\
-    ├── etl\
-    │   └── load_data.py
-    ├── preprocess\
-    │   └── data_cleaning.py
-    │   └── text_normalization.py
-    │   └── tokenization.py
-    │   └── remove_stopwords.py
-    ├── eda\
-    ├── modeling\
-    ├── evaluation\
-    ├── deployment\
-    └── utils\
+├── data/
+│   ├── processed/
+│   └── raw/
+│       └── asentimentos.parquet
+├── logs/
+├── models/
+├── predictions/
+├── reports/
+│   ├── figures/
+│   └── README.md
+├── src/
+│   ├── etapa1_carregamento_dados.py
+│   ├── etapa1_teste_unitario.py
+│   ├── etapa2_preprocessamento.py
+│   ├── etapa2_teste_unitario.py
+│   ├── etapa3_analise_exploratoria.py
+│   ├── etapa3_teste_unitario.py
+│   ├── etapa4_preparacao_dados.py
+│   ├── etapa4_teste_unitario.py
+│   ├── etapa5_modelagem.py
+│   ├── etapa5_teste_unitario.py
+│   ├── etapa6_avaliacao_modelo.py
+│   ├── etapa6_teste_unitario.py
+│   ├── etapa7_implementacao_monitoramento.py
+│   ├── etapa7_teste_unitario.py
+│   └── etapa8_dashboard.py
+└── README.md
 ```
-# Dependências
-- Dask
-- Pandas
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- Spacy
-- Cython
-- Visions
-- Pandas-profiling
-- Pydantic
-- PyYAML
-- Fastparquet
-- Pyarrow
+# Instruções de Configuração
+- Crie um ambiente virtual:
 
-# Como executar
-- 1 - Configure o ambiente virtual:
-python -m venv venv_nome
-.\venv_nome\Scripts\activate  # Windows
+No Windows:
+python -m venv venv
+venv\Scripts\activate
 
-- 2 - Instale as dependências:
+# Instale as dependências:
 pip install -r requirements.txt
 
-- 3 - Instale o modelo spaCy en_core_web_sm:
+# Baixar e Instalar o Modelo en_core_web_sm do spaCy:
 python -m spacy download en_core_web_sm
 
-- 4 - Execute o script de limpeza de dados:
-python src/etl/load_data.py
+# Executando o Projeto
+## Etapa 1: Carregamento de Dados
 
-- 5 - Execute o script de limpeza de dados:
-python src/preprocess/data_cleaning.py
+- Execute o script de carregamento de dados:
+python src/etapa1_carregamento_dados.py
 
-- 6 - Execute o script de normalização de texto:
-python src/preprocess/text_normalization.py
+- Teste a Etapa de Carregamento de Dados:
+python src/etapa1_teste_unitario.py
 
-- 7 - Execute o script de tokenização de texto:
-python src/preprocess/tokenization.py
+# Estrutura do Projeto
+O projeto é organizado em várias etapas, cada uma contendo scripts específicos para execução e testes unitários:
 
-- 8 - Execute o script de remoção de stop words:
-python src/preprocess/remove_stopwords.py
+- Etapa 1: Carregamento de Dados
+- Etapa 2: Pré-processamento de Dados
+- Etapa 3: Análise Exploratória de Dados (EDA)
+- Etapa 4: Preparação de Dados para Modelagem
+- Etapa 5: Modelagem de Machine Learning
+- Etapa 6: Avaliação do Modelo
+- Etapa 7: Implementação e Monitoramento
+- Etapa 8: Dashboard Completo com Flask
 
-- 9 - Execute o script de stemming e lematização:
-python src/preprocess/stemming_lemmatization.py
+# Diretórios e Arquivos
+- config/: Contém o arquivo de configuração do projeto config.yaml.
+- data/raw/: Contém o dataset bruto asentimentos.parquet.
+- data/processed/: Armazena os datasets processados de cada etapa.
+- logs/: Armazena os arquivos de log das execuções dos scripts.
+- models/: Salva os modelos treinados.
+- predictions/: Armazena as previsões geradas pelos modelos.
+- reports/figures/: Contém gráficos e visualizações gerados durante o projeto.
+- src/: Contém os scripts das etapas e os testes unitários.
 
-# Licença
-- Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
+# Contato
+- Para mais informações ou dúvidas, entre em contato.

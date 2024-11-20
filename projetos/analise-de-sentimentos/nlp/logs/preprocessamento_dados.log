@@ -1,0 +1,141 @@
+2024-11-20 16:53:03,306 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 16:53:03,362 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 16:53:03,362 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 16:53:03,387 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 16:53:28,380 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 16:53:28,393 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 17:13:08,061 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 17:13:08,130 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 17:13:08,143 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 17:13:08,161 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 17:13:09,860 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 17:14:48,329 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 17:14:48,332 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 17:18:40,918 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet
+2024-11-20 17:18:41,006 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 17:18:41,020 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 17:18:41,039 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 17:18:42,901 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 17:20:06,615 - __main__ - INFO - Todos os tweets estão em minúsculas: False
+2024-11-20 17:20:16,041 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 17:20:16,046 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 17:21:17,529 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet
+2024-11-20 17:21:17,605 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 17:21:17,625 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 17:21:17,650 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 17:21:19,515 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 17:22:41,321 - __main__ - INFO - Todos os tweets estão em minúsculas: False
+2024-11-20 17:22:50,720 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 17:22:50,725 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 17:23:51,414 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet
+2024-11-20 17:23:51,484 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 17:23:51,495 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 17:24:09,211 - __main__ - INFO - Verificação após normalização: Todos os tweets estão em minúsculas: False
+2024-11-20 17:24:10,175 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 17:24:12,177 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 17:25:46,580 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 17:25:46,647 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 17:25:46,658 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 17:26:09,136 - __main__ - INFO - Verificação após normalização: Todos os tweets estão em minúsculas: True
+2024-11-20 17:26:10,311 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 17:26:12,334 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 17:27:19,571 - __main__ - INFO - Verificação final: Todos os tweets estão em minúsculas: False
+2024-11-20 17:27:28,657 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 17:27:28,662 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 18:02:17,590 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 18:02:17,659 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 18:02:17,670 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 18:02:17,695 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 18:02:19,636 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 18:02:19,654 - __main__ - INFO - Texto normalizado novamente com sucesso!
+2024-11-20 18:04:11,203 - __main__ - INFO - Verificação final: Todos os tweets estão em minúsculas: False
+2024-11-20 18:04:22,273 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 18:04:22,276 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 18:06:15,867 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 18:06:15,940 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 18:06:15,950 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 18:08:12,513 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 18:08:12,582 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 18:08:12,595 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 18:08:12,603 - __main__ - INFO - Texto normalizado com sucesso!
+2024-11-20 18:08:14,436 - __main__ - INFO - Stop words removidas e lematização aplicada com sucesso!
+2024-11-20 18:10:56,403 - __main__ - INFO - Lematização aplicada corretamente: False
+2024-11-20 18:10:56,411 - __main__ - INFO - Texto normalizado novamente com sucesso!
+2024-11-20 18:12:39,148 - __main__ - INFO - Verificação final: Todos os tweets estão em minúsculas: False
+2024-11-20 18:12:49,030 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 18:12:49,035 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 18:17:26,181 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 18:17:26,248 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 18:17:26,265 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 18:17:27,956 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 18:19:10,104 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 18:19:10,182 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 18:19:10,212 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 18:19:12,500 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:37:07,335 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:37:07,390 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:37:07,404 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:37:08,829 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:37:15,408 - __main__ - INFO - Verificação final: Todos os tweets estão em minúsculas: True, Lematização correta: False
+2024-11-20 19:37:15,430 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 19:37:15,433 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 19:43:11,239 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet
+2024-11-20 19:43:11,290 - __main__ - ERROR - Erro ao carregar o dataset: D:/Github/data-science/projetos/analise-de-sentimentos/nlp/data/processed/etapa2_preprocessamento.parquet
+2024-11-20 19:43:48,177 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:43:48,259 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:43:48,273 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:45:31,052 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:45:31,116 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:45:31,125 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:45:32,580 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:45:36,293 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 100.00%
+2024-11-20 19:45:36,308 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 19:45:36,313 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 19:48:13,550 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:48:13,615 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:48:13,637 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:48:15,472 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:48:19,236 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 94.95%
+2024-11-20 19:48:19,252 - __main__ - INFO - Dataset pré-processado salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 19:48:19,255 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 19:50:30,236 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:50:30,285 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:50:30,296 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:50:31,797 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:50:35,179 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 94.95%
+2024-11-20 19:50:35,202 - __main__ - INFO - Dataset pré-processado completo salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento_completo.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento_completo.csv
+2024-11-20 19:50:35,207 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 19:52:36,396 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:52:36,472 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:52:36,492 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:52:38,351 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:52:42,326 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 94.95%
+2024-11-20 19:52:42,359 - __main__ - INFO - Dataset pré-processado completo salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 19:52:42,364 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 19:58:56,791 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 19:58:56,853 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 19:58:56,865 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 19:58:58,565 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 19:59:02,523 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 94.95%
+2024-11-20 19:59:02,549 - __main__ - INFO - Dataset pré-processado completo salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 19:59:02,552 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 20:06:44,938 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet
+2024-11-20 20:06:44,994 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 20:06:45,006 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 20:06:46,521 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 20:06:49,763 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 94.95%
+2024-11-20 20:06:49,793 - __main__ - INFO - Dataset pré-processado completo salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 20:06:49,796 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 20:10:56,280 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 20:10:56,333 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 20:10:56,343 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 20:10:57,716 - __main__ - INFO - Texto pré-processado com sucesso!
+2024-11-20 20:11:01,545 - __main__ - INFO - Percentual de textos convertidos para minúsculas: 94.95%
+2024-11-20 20:11:01,571 - __main__ - INFO - Dataset pré-processado completo salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 20:11:01,574 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.
+2024-11-20 20:19:46,951 - __main__ - INFO - Carregando dataset processado do caminho: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa1_carregamento_dados.parquet
+2024-11-20 20:19:46,994 - __main__ - INFO - Dataset carregado com sucesso!
+2024-11-20 20:19:47,004 - __main__ - INFO - Dados limpos com sucesso!
+2024-11-20 20:19:48,175 - __main__ - INFO - Texto pré-processado e sentimentos classificados com sucesso!
+2024-11-20 20:19:51,740 - __main__ - INFO - Dataset pré-processado completo salvo em D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.parquet e D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\etapa2_preprocessamento.csv
+2024-11-20 20:19:51,743 - __main__ - INFO - Arquivo de configuração atualizado com sucesso.

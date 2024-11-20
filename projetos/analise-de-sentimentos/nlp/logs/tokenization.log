@@ -1,4 +1,0 @@
-2024-11-17 14:40:51,799 - __main__ - INFO - Iniciando a etapa de tokenização de texto...
-2024-11-17 15:56:24,240 - __main__ - INFO - Arquivo Parquet salvo e lido com sucesso.
-2024-11-17 15:56:24,243 - __main__ - INFO - Texto tokenizado e salvo com sucesso.
-2024-11-17 15:56:24,244 - __main__ - INFO - Arquivo de configuração atualizado em: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\config\config.yaml
