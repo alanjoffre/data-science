@@ -1,0 +1,47 @@
+2024-11-22 20:10:23,132 - INFO - Carregando o dataset com stopwords removidas.
+2024-11-22 20:10:23,165 - INFO - Dataset carregado com sucesso.
+2024-11-22 20:10:23,165 - INFO - Aplicando stemming.
+2024-11-22 20:10:23,171 - INFO - Aplicando lematização.
+2024-11-22 20:10:23,305 - INFO - Removendo documentos vazios ou contendo apenas stop words.
+2024-11-22 20:10:43,547 - INFO - Total de linhas antes da remoção: 2000
+2024-11-22 20:11:24,468 - INFO - Total de linhas após a remoção: 2000
+2024-11-22 20:11:24,468 - INFO - Número de linhas excluídas: 0
+2024-11-22 20:11:24,468 - INFO - Salvando dataset com stemming e lematização em formato Parquet e CSV.
+2024-11-22 20:11:45,047 - INFO - Dataset salvo com sucesso.
+2024-11-22 20:11:45,047 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 21:24:07,708 - INFO - Dataset carregado com sucesso com 2000 linhas.
+2024-11-22 21:24:07,763 - INFO - Documentos após pré-processamento:
+2024-11-22 21:24:07,763 - INFO - u p s e t c a n ' t u p d a t e F a c e b o o k t e x t I n g m I g h t c r y r e s u l t S c h o o l t o d a y a l s o B l a h
+2024-11-22 21:24:07,763 - INFO - @ K e n I c h a n d I v e d m a n y t I m e s b a l l M a n a g e d s a v e 5 0 r e s t g o b o u n d s
+2024-11-22 21:24:07,763 - INFO - w h o l e b o d y f e e l s I t c h y l I k e f I r e
+2024-11-22 21:24:07,763 - INFO - @ n a t I o n w i d e c l a s s ' s b e h a v I n g ' m m a d c a n ' t s e e
+2024-11-22 21:24:07,763 - INFO - @ K w e s I d e I w h o l e c r e w
+2024-11-22 21:24:07,881 - INFO - Dataset salvo com sucesso.
+2024-11-22 21:24:07,884 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 21:25:39,856 - INFO - Dataset carregado com sucesso com 2000 linhas.
+2024-11-22 21:25:39,910 - INFO - Documentos após pré-processamento:
+2024-11-22 21:25:39,910 - INFO - u p s e t c a n ' t u p d a t e F a c e b o o k t e x t I n g m I g h t c r y r e s u l t S c h o o l t o d a y a l s o B l a h
+2024-11-22 21:25:39,910 - INFO - @ K e n I c h a n d I v e d m a n y t I m e s b a l l M a n a g e d s a v e 5 0 r e s t g o b o u n d s
+2024-11-22 21:25:39,910 - INFO - w h o l e b o d y f e e l s I t c h y l I k e f I r e
+2024-11-22 21:25:39,910 - INFO - @ n a t I o n w i d e c l a s s ' s b e h a v I n g ' m m a d c a n ' t s e e
+2024-11-22 21:25:39,910 - INFO - @ K w e s I d e I w h o l e c r e w
+2024-11-22 21:25:40,045 - INFO - Dataset salvo com sucesso.
+2024-11-22 21:25:40,048 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 21:27:25,657 - INFO - Dataset carregado com sucesso com 2000 linhas.
+2024-11-22 21:27:25,732 - INFO - Documentos após pré-processamento:
+2024-11-22 21:27:25,732 - INFO - u p s e t c a n ' t u p d a t e F a c e b o o k t e x t I n g m I g h t c r y r e s u l t S c h o o l t o d a y a l s o B l a h
+2024-11-22 21:27:25,733 - INFO - @ K e n I c h a n d I v e d m a n y t I m e s b a l l M a n a g e d s a v e 5 0 r e s t g o b o u n d s
+2024-11-22 21:27:25,733 - INFO - w h o l e b o d y f e e l s I t c h y l I k e f I r e
+2024-11-22 21:27:25,733 - INFO - @ n a t I o n w i d e c l a s s ' s b e h a v I n g ' m m a d c a n ' t s e e
+2024-11-22 21:27:25,734 - INFO - @ K w e s I d e I w h o l e c r e w
+2024-11-22 21:27:25,869 - INFO - Dataset salvo com sucesso.
+2024-11-22 21:27:25,869 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 21:30:51,572 - INFO - Dataset carregado com sucesso com 2000 linhas.
+2024-11-22 21:30:51,642 - INFO - Documentos após pré-processamento:
+2024-11-22 21:30:51,643 - INFO - u p s e t c a n ' t u p d a t e F a c e b o o k t e x t I n g m I g h t c r y r e s u l t S c h o o l t o d a y a l s o B l a h
+2024-11-22 21:30:51,644 - INFO - @ K e n I c h a n d I v e d m a n y t I m e s b a l l M a n a g e d s a v e 5 0 r e s t g o b o u n d s
+2024-11-22 21:30:51,644 - INFO - w h o l e b o d y f e e l s I t c h y l I k e f I r e
+2024-11-22 21:30:51,644 - INFO - @ n a t I o n w i d e c l a s s ' s b e h a v I n g ' m m a d c a n ' t s e e
+2024-11-22 21:30:51,644 - INFO - @ K w e s I d e I w h o l e c r e w
+2024-11-22 21:30:51,767 - INFO - Dataset salvo com sucesso.
+2024-11-22 21:30:51,767 - INFO - Arquivo config.yaml atualizado com sucesso.

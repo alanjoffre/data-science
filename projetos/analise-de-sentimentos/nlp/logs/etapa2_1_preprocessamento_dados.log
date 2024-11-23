@@ -1,0 +1,6 @@
+2024-11-22 18:35:12,066 - INFO - Carregando o dataset processado.
+2024-11-22 18:35:12,082 - INFO - Dataset carregado com sucesso.
+2024-11-22 18:35:12,082 - INFO - Limpando os textos.
+2024-11-22 18:35:12,104 - INFO - Salvando dataset pré-processado em formato Parquet e CSV.
+2024-11-22 18:35:12,422 - INFO - Dataset salvo com sucesso.
+2024-11-22 18:35:12,422 - INFO - Arquivo config.yaml atualizado com sucesso.

@@ -1,0 +1,18 @@
+2024-11-22 19:52:37,616 - INFO - Carregando o dataset tokenizado.
+2024-11-22 19:52:37,679 - INFO - Dataset carregado com sucesso.
+2024-11-22 19:52:37,679 - INFO - Removendo stopwords.
+2024-11-22 19:52:37,687 - INFO - Salvando dataset com stopwords removidas em formato Parquet e CSV.
+2024-11-22 19:52:37,735 - INFO - Dataset salvo com sucesso.
+2024-11-22 19:52:37,737 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 19:56:43,837 - INFO - Carregando o dataset tokenizado.
+2024-11-22 19:56:43,907 - INFO - Dataset carregado com sucesso.
+2024-11-22 19:56:43,908 - INFO - Removendo stopwords.
+2024-11-22 19:56:43,916 - INFO - Salvando dataset com stopwords removidas em formato Parquet e CSV.
+2024-11-22 19:56:43,974 - INFO - Dataset salvo com sucesso.
+2024-11-22 19:56:43,976 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 20:02:50,425 - INFO - Carregando o dataset tokenizado.
+2024-11-22 20:02:50,480 - INFO - Dataset carregado com sucesso.
+2024-11-22 20:02:50,495 - INFO - Removendo stopwords.
+2024-11-22 20:02:50,495 - INFO - Salvando dataset com stopwords removidas em formato Parquet e CSV.
+2024-11-22 20:02:50,562 - INFO - Dataset salvo com sucesso.
+2024-11-22 20:02:50,564 - INFO - Arquivo config.yaml atualizado com sucesso.
