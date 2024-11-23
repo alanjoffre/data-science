@@ -52,3 +52,5 @@
 2024-11-22 21:21:19,770 - INFO - @ K w e s I d e I w h o l e c r e w
 2024-11-22 21:21:19,914 - INFO - Dataset salvo com sucesso.
 2024-11-22 21:21:19,914 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-22 22:55:55,858 - INFO - Dataset carregado com sucesso com 2000 linhas.
+2024-11-22 22:55:55,859 - ERROR - Erro ao preprocessar os dados: 'tokens_lemmatized'
