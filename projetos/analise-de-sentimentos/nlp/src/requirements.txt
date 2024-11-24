@@ -1,6 +1,6 @@
-numpy==1.24.4
+numpy>=1.22,<1.24
 pandas==1.2.5
-dask[dataframe]==2021.9.1
+dask[dataframe]>=2021.9.1
 pyarrow==4.0.1
 nltk==3.6.3
 gensim==4.0.1
@@ -23,3 +23,10 @@ imbalanced-learn==0.8.0
 emoji==2.6.0
 symspellpy==6.7.8
 spacy==3.7.6
+vaderSentiment==3.0.0
+torch==2.0.0
+transformers==4.46.3
+tensorflow>=2.12.0
+typing-extensions!=4.7.0,>=4.6.0
+lightgbm==3.3.1
+

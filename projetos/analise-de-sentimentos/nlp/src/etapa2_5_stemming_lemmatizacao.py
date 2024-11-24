@@ -3,7 +3,11 @@ import logging
 import yaml
 import os
 import spacy
+import pandas as pd
 from nltk.stem import SnowballStemmer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from transformers import pipeline
+from sklearn.preprocessing import LabelEncoder
 import pyarrow as pa
 import pyarrow.parquet as pq
 
@@ -55,6 +59,36 @@ def remover_documentos_vazios(df):
         logger.error("Erro ao remover documentos vazios: %s", e)
         raise
 
+# Função para classificar sentimentos usando VADER
+analyzer = SentimentIntensityAnalyzer()
+
+def classificar_sentimento_vader(texto):
+    analise = analyzer.polarity_scores(texto)
+    if analise['compound'] >= 0.05:
+        return 'positivo'
+    elif analise['compound'] <= -0.05:
+        return 'negativo'
+    else:
+        return 'neutro'
+
+# Função para classificar sentimentos usando BERT
+bert_classifier = pipeline('sentiment-analysis')
+
+def classificar_sentimento_bert(texto):
+    resultado = bert_classifier(texto)[0]
+    if resultado['label'] == 'POSITIVE':
+        return 'positivo'
+    elif resultado['label'] == 'NEGATIVE':
+        return 'negativo'
+    else:
+        return 'neutro'
+
+def combinar_sentimentos(sentimento_vader, sentimento_bert):
+    if sentimento_vader == sentimento_bert:
+        return sentimento_vader
+    else:
+        return sentimento_bert
+
 def stemming_lemmatizacao():
     try:
         logger.info("Carregando o dataset com stopwords removidas.")
@@ -67,10 +101,24 @@ def stemming_lemmatizacao():
         
         logger.info("Aplicando lematização.")
         df['tokens_lemmatized'] = df['tokens_sem_stopwords'].apply(aplicar_lemmatizacao, meta=('tokens_lemmatized', object))
-        
+
         df = remover_documentos_vazios(df)
         
-        logger.info("Salvando dataset com stemming e lematização em formato Parquet e CSV.")
+        # Adicionar colunas de sentimento usando VADER e BERT
+        logger.info("Classificando sentimentos usando VADER e BERT.")
+        df['sentimento_vader'] = df['tweet'].apply(classificar_sentimento_vader, meta=('sentimento_vader', object))
+        df['sentimento_bert'] = df['tweet'].apply(classificar_sentimento_bert, meta=('sentimento_bert', object))
+
+        # Combinar os sentimentos conforme a regra definida
+        df['sentimento'] = df.apply(lambda row: combinar_sentimentos(row['sentimento_vader'], row['sentimento_bert']), axis=1, meta=('sentimento', object))
+
+        # Codificar variáveis categóricas de sentimento
+        logger.info("Codificando sentimentos.")
+        df['sentimento_codificado'] = df.map_partitions(lambda part: pd.Series(LabelEncoder().fit(part['sentimento']).transform(part['sentimento'])), meta=('sentimento_codificado', int))
+
+        df = remover_documentos_vazios(df)
+        
+        logger.info("Salvando dataset com stemming, lematização e classificação de sentimentos em formato Parquet e CSV.")
         stemmed_lemmatized_data_path = os.path.join(config['directories']['processed_data'], "etapa2_5_stemming_lemmatizacao.parquet")
         stemmed_lemmatized_data_csv_path = os.path.join(config['directories']['processed_data'], "etapa2_5_stemming_lemmatizacao.csv")
         
@@ -81,13 +129,20 @@ def stemming_lemmatizacao():
         
         logger.info("Dataset salvo com sucesso.")
         
+        # Gerar uma amostra do dataset para revisão manual
+        logger.info("Gerando amostra do dataset.")
+        amostra = df[['tweet', 'sentimento']].sample(n=30, random_state=42)
+        amostra_path = os.path.join(config['directories']['processed_data'], "amostra_classificacao_sentimentos.csv")
+        amostra.to_csv(amostra_path, index=False)
+        logger.info(f"Amostra do dataset salva em: {amostra_path}")
+        
         # Atualizar config.yaml para a próxima etapa
         atualizar_config(config, 'files', {'log_file': "etapa2_5_stemming_lemmatizacao.log",
                                            'processed_dataset': "etapa2_5_stemming_lemmatizacao.parquet",
                                            'processed_dataset_csv': "etapa2_5_stemming_lemmatizacao.csv",
                                            'raw_dataset': "asentimentos.parquet"})
     except Exception as e:
-        logger.error("Erro ao aplicar stemming e lematização: %s", e)
+        logger.error("Erro ao aplicar stemming, lematização e classificação de sentimentos: %s", e)
         raise
 
 if __name__ == "__main__":

@@ -1,46 +1,32 @@
-2024-11-22 18:38:31,008 - INFO - Carregando o dataset normalizado.
-2024-11-22 18:38:31,024 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:38:31,024 - INFO - Tokenizando os textos.
-2024-11-22 18:38:31,134 - INFO - Criando bigramas.
-2024-11-22 18:38:31,149 - INFO - Convertendo para pandas e ajustando tipos.
-2024-11-22 18:38:43,381 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
-2024-11-22 18:38:43,433 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:38:43,435 - INFO - Arquivo config.yaml atualizado com sucesso.
-2024-11-22 18:43:59,551 - INFO - Carregando o dataset normalizado.
-2024-11-22 18:43:59,577 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:43:59,577 - INFO - Tokenizando os textos.
-2024-11-22 18:43:59,691 - INFO - Criando bigramas.
-2024-11-22 18:43:59,707 - INFO - Convertendo para pandas e ajustando tipos.
-2024-11-22 18:44:11,750 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
-2024-11-22 18:44:11,779 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:44:11,783 - INFO - Arquivo config.yaml atualizado com sucesso.
-2024-11-22 18:49:08,920 - INFO - Carregando o dataset normalizado.
-2024-11-22 18:49:08,942 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:49:08,942 - INFO - Tokenizando os textos.
-2024-11-22 18:49:09,066 - INFO - Criando bigramas.
-2024-11-22 18:49:09,074 - INFO - Convertendo para pandas e ajustando tipos.
-2024-11-22 18:49:21,620 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
-2024-11-22 18:49:21,654 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:49:21,657 - INFO - Arquivo config.yaml atualizado com sucesso.
-2024-11-22 19:25:36,504 - INFO - Carregando o dataset normalizado.
-2024-11-22 19:25:36,555 - INFO - Dataset carregado com sucesso.
-2024-11-22 19:25:36,555 - INFO - Tokenizando os textos.
-2024-11-22 19:25:36,687 - INFO - Criando bigramas.
-2024-11-22 19:25:36,692 - INFO - Convertendo para pandas e ajustando tipos.
-2024-11-22 19:25:49,479 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
-2024-11-22 19:25:49,507 - INFO - Dataset tokenizado salvo com sucesso.
-2024-11-22 19:27:07,621 - INFO - Carregando o dataset normalizado.
-2024-11-22 19:27:07,665 - INFO - Dataset carregado com sucesso.
-2024-11-22 19:27:07,665 - INFO - Tokenizando os textos.
-2024-11-22 19:27:07,788 - INFO - Criando bigramas.
-2024-11-22 19:27:07,803 - INFO - Convertendo para pandas e ajustando tipos.
-2024-11-22 19:27:19,949 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
-2024-11-22 19:27:19,979 - INFO - Dataset tokenizado salvo com sucesso.
-2024-11-22 19:30:25,820 - INFO - Carregando o dataset normalizado.
-2024-11-22 19:30:25,874 - INFO - Dataset carregado com sucesso.
-2024-11-22 19:30:25,874 - INFO - Tokenizando os textos.
-2024-11-22 19:30:26,020 - INFO - Criando bigramas.
-2024-11-22 19:30:26,020 - INFO - Convertendo para pandas e ajustando tipos.
-2024-11-22 19:30:38,442 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
-2024-11-22 19:30:38,480 - INFO - Dataset tokenizado salvo com sucesso.
-2024-11-22 19:30:38,481 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 08:03:43,055 - INFO - Carregando o dataset normalizado.
+2024-11-23 08:03:43,108 - INFO - Dataset carregado com sucesso.
+2024-11-23 08:03:43,108 - INFO - Tokenizando os textos.
+2024-11-23 08:03:43,224 - INFO - Criando bigramas.
+2024-11-23 08:03:43,224 - INFO - Convertendo para pandas e ajustando tipos.
+2024-11-23 08:03:54,441 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
+2024-11-23 08:03:54,485 - INFO - Dataset tokenizado salvo com sucesso.
+2024-11-23 08:03:54,486 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 12:40:41,630 - INFO - Carregando o dataset normalizado.
+2024-11-23 12:40:41,682 - INFO - Dataset carregado com sucesso.
+2024-11-23 12:40:41,683 - INFO - Tokenizando os textos.
+2024-11-23 12:40:41,794 - INFO - Criando bigramas.
+2024-11-23 12:40:41,810 - INFO - Convertendo para pandas e ajustando tipos.
+2024-11-23 12:40:53,249 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
+2024-11-23 12:40:53,286 - INFO - Dataset tokenizado salvo com sucesso.
+2024-11-23 12:40:53,289 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 19:24:09,862 - INFO - Carregando o dataset normalizado.
+2024-11-23 19:24:09,928 - INFO - Dataset carregado com sucesso.
+2024-11-23 19:24:09,928 - INFO - Tokenizando os textos.
+2024-11-23 19:24:10,099 - INFO - Criando bigramas.
+2024-11-23 19:24:10,104 - INFO - Convertendo para pandas e ajustando tipos.
+2024-11-23 19:24:29,741 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
+2024-11-23 19:24:29,800 - INFO - Dataset tokenizado salvo com sucesso.
+2024-11-23 19:24:29,806 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 21:23:50,772 - INFO - Carregando o dataset normalizado.
+2024-11-23 21:23:50,862 - INFO - Dataset carregado com sucesso.
+2024-11-23 21:23:50,862 - INFO - Tokenizando os textos.
+2024-11-23 21:23:51,081 - INFO - Criando bigramas.
+2024-11-23 21:23:51,091 - INFO - Convertendo para pandas e ajustando tipos.
+2024-11-23 21:25:32,672 - INFO - Salvando dataset tokenizado em formato Parquet e CSV.
+2024-11-23 21:25:32,824 - INFO - Dataset tokenizado salvo com sucesso.
+2024-11-23 21:25:32,826 - INFO - Arquivo config.yaml atualizado com sucesso.

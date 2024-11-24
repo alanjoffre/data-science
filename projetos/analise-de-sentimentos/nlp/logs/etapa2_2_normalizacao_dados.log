@@ -1,24 +1,24 @@
-2024-11-22 18:21:02,778 - INFO - Carregando o dataset pré-processado.
-2024-11-22 18:21:02,805 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:21:02,805 - INFO - Normalizando os textos.
-2024-11-22 18:21:04,221 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
-2024-11-22 18:21:15,402 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:21:15,402 - INFO - Arquivo config.yaml atualizado com sucesso.
-2024-11-22 18:25:03,671 - INFO - Carregando o dataset pré-processado.
-2024-11-22 18:25:03,687 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:25:03,687 - INFO - Normalizando os textos.
-2024-11-22 18:25:05,117 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
-2024-11-22 18:25:16,309 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:25:16,309 - INFO - Arquivo config.yaml atualizado com sucesso.
-2024-11-22 18:29:25,977 - INFO - Carregando o dataset pré-processado.
-2024-11-22 18:29:25,993 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:29:25,993 - INFO - Normalizando os textos.
-2024-11-22 18:29:27,476 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
-2024-11-22 18:29:39,143 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:29:39,143 - INFO - Arquivo config.yaml atualizado com sucesso.
-2024-11-22 18:35:27,496 - INFO - Carregando o dataset pré-processado.
-2024-11-22 18:35:27,514 - INFO - Dataset carregado com sucesso.
-2024-11-22 18:35:27,515 - INFO - Normalizando os textos.
-2024-11-22 18:35:28,908 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
-2024-11-22 18:35:40,228 - INFO - Dataset salvo com sucesso.
-2024-11-22 18:35:40,228 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 08:01:56,290 - INFO - Carregando o dataset pré-processado.
+2024-11-23 08:01:56,310 - INFO - Dataset carregado com sucesso.
+2024-11-23 08:01:56,311 - INFO - Normalizando os textos.
+2024-11-23 08:01:57,606 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
+2024-11-23 08:02:08,122 - INFO - Dataset salvo com sucesso.
+2024-11-23 08:02:08,122 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 12:39:39,929 - INFO - Carregando o dataset pré-processado.
+2024-11-23 12:39:39,944 - INFO - Dataset carregado com sucesso.
+2024-11-23 12:39:39,944 - INFO - Normalizando os textos.
+2024-11-23 12:39:41,386 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
+2024-11-23 12:39:52,786 - INFO - Dataset salvo com sucesso.
+2024-11-23 12:39:52,786 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 19:22:53,447 - INFO - Carregando o dataset pré-processado.
+2024-11-23 19:22:53,472 - INFO - Dataset carregado com sucesso.
+2024-11-23 19:22:53,472 - INFO - Normalizando os textos.
+2024-11-23 19:22:55,409 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
+2024-11-23 19:23:10,571 - INFO - Dataset salvo com sucesso.
+2024-11-23 19:23:10,574 - INFO - Arquivo config.yaml atualizado com sucesso.
+2024-11-23 21:21:54,023 - INFO - Carregando o dataset pré-processado.
+2024-11-23 21:21:54,047 - INFO - Dataset carregado com sucesso.
+2024-11-23 21:21:54,048 - INFO - Normalizando os textos.
+2024-11-23 21:21:56,615 - INFO - Salvando dataset normalizado em formato Parquet e CSV.
+2024-11-23 21:23:25,890 - INFO - Dataset salvo com sucesso.
+2024-11-23 21:23:25,892 - INFO - Arquivo config.yaml atualizado com sucesso.
