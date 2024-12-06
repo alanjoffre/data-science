@@ -1,11 +1,8 @@
 directories:
-  figures: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\figures\
-  logs: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\logs\
+  logs: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\logs
   processed_data: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\
+  raw_data: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\
+  reports: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\figures\
 files:
-  log_file: etapa3_2_visualizacoes.log
-  processed_dataset: etapa2_6_vetorizacao_texto.parquet
-  processed_dataset_csv: etapa2_6_vetorizacao_texto.csv
+  log_file: etapa2_6_vetorizacao_texto.log
   raw_dataset: asentimentos.parquet
-  test_data_parquet: test_data.parquet
-  train_data_parquet: train_data.parquet

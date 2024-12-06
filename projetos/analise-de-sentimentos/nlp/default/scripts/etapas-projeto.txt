@@ -78,7 +78,7 @@ Quanto a performance do projeto não esqueça de:
 
 Etapa 4: Preparação de Dados para Modelagem
 - 4.1: Divisão de Dados:
-- Dividir o conjunto de dados em conjuntos de treinamento e teste (e.g., 80/20).
+- Dividir o conjunto de dados em conjuntos de treinamento e teste (e.g., 70/30).
 - 4.2: Codificação de Variáveis Alvo:
 - Codificar variáveis categóricas para a análise de sentimentos (e.g., positivo, neutro, negativo).
 - 4.3: Balanceamento de Classes:

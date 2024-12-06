@@ -1,0 +1,37 @@
+# Importar as bibliotecas
+# Função de Feature Engineering
+# Carregar o dataset em pedaços utilizando Dask
+# Processar cada pedaço
+# Concatenar todos os pedaços processados
+# Features e target
+# Vetorização de textos com TF-IDF
+# Dividir o dataset em conjunto de treinamento e teste (70/30)
+# Transformar a coluna de texto para TF-IDF
+# Adicionar as outras features
+# Verificar a distribuição das classes no conjunto de treinamento
+# Aplicar SMOTE para balancear as classes
+# Verificar a distribuição das classes após o SMOTE
+# Função para treinar e ajustar hiperparâmetros do modelo
+# Treinar e ajustar o modelo
+# Função para gerar e imprimir relatórios de classificação
+    print("Relatório de Classificação - Conjunto de Treinamento:")
+    print("Relatório de Classificação - Conjunto de Teste:")
+# Gera e imprime os relatórios de classificação
+# Validação cruzada e relatório de classificação
+# Função para encontrar o melhor threshold e gerar o relatório de classificação
+    print("Melhor Threshold:", melhor_threshold)
+# Encontrar e aplicar o melhor threshold
+# Função para aplicar o melhor threshold e gerar o relatório de classificação
+    print("Relatório de Classificação - Conjunto de Treinamento com Melhor Threshold:")
+    print("Relatório de Classificação - Conjunto de Teste com Melhor Threshold:")
+# Aplicar o melhor threshold e gerar relatórios de classificação
+# Salvar o vetor de TfidfVectorizer
+# Salvar o modelo treinado
+# Salvar os hiperparâmetros
+# Função para encontrar o melhor threshold e gerar o relatório de classificação
+# Encontrar e aplicar o melhor threshold
+# Função para aplicar o melhor threshold e gerar o relatório de classificação
+    # Relatório de classificação para o conjunto de treinamento com o melhor threshold
+    # Relatório de classificação para o conjunto de teste com o melhor threshold
+# Aplicar o melhor threshold e gerar relatórios de classificação
+print("Avaliação e visualização dos resultados concluídas!")
