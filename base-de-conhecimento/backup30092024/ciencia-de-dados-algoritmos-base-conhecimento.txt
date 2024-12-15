@@ -1,0 +1,988 @@
+CIENCIA DE DADOS - ALGORITMOS - QUANDO USAR - COMO USAR
+
+----------
+
+NOTEBOOK / ARVORE DE DECISÃO - CLASSIFICAÇÃO
+
+# Execute os blocos de códigos no Jupyter Notebook, conforme indicação: 
+
+## Bloco1
+from sklearn.datasets import load_iris
+import pandas as pd
+import warnings
+iris = load_iris()
+x = pd.DataFrame(iris.data, columns=[iris.feature_names])
+y = pd.Series(iris.target)
+warnings.filterwarnings('ignore')
+
+## Bloco2
+x.head()
+
+## Bloco3
+import numpy as np
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+
+#Definindo os valores que serão testados em DecisionTree:
+minimos_split = np.array([2,3,4,5,6,7,8])
+maximo_nivel = np.array([3,4,5,6])
+algoritmo = ['gini', 'entropy']
+valores_grid = {'min_samples_split': minimos_split, 'max_depth': maximo_nivel, 'criterion':algoritmo}
+
+#Criação do modelo:
+modelo = DecisionTreeClassifier()
+
+#Criando os grids:
+gridDecisionTree = GridSearchCV(estimator = modelo, param_grid = valores_grid, cv=5)
+gridDecisionTree.fit(x,y)
+
+#Imprimindo os melhores parâmetros:
+print ("Mínimo split: ", gridDecisionTree.best_estimator_.min_samples_split)
+print ("Máximo profundidade: ", gridDecisionTree.best_estimator_.max_depth)
+print ("Algoritmo escolhido: ", gridDecisionTree.best_estimator_.criterion)
+print ("Acurácia: ", gridDecisionTree.best_score_)
+
+## Bloco4
+pip install graphviz
+
+## Bloco5
+import graphviz
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+
+## Bloco6
+#Criando o arquivo que irá armazenar a árvore:
+arquivo = 'D:/Github/data-science/curso-didaticatech/machine-learning/primeiro-modulo/algoritmos/algoritmo-decision-trees/exemplo.dot'
+melhor_modelo = DecisionTreeClassifier(min_samples_split=2, max_depth=3, criterion='gini')
+melhor_modelo.fit(x,y)
+
+#Gerando o gráfico da árvore de decisão:
+export_graphviz(melhor_modelo, out_file = arquivo, feature_names = iris.feature_names)
+with open(arquivo) as aberto:
+    grafico_dot = aberto.read()
+h = graphviz.Source(grafico_dot)
+h.view()
+
+----------
+
+REGRESSÃO LINEAR - (FAZER PREVISÕES)
+
+A regressão linear é uma técnica fundamental em machine learning utilizada para prever um valor numérico contínuo 
+com base em um ou mais atributos. Imagine que você quer prever o preço de um apartamento baseado em sua área, 
+número de quartos e localização. A regressão linear é uma ferramenta ideal para essa tarefa.
+
+-Prever um valor númerico - Variavel Dependente/Independente.
+-prever investimento inicial (variavel dependente). 
+-taxa anual de franquia (variavel independente).
+-As variaveis independentes são usadas para prever a variavel dependente.
+-Se temos uma variavel independente: Regressão Linear Simples
+-Se temos mais de uma variavel independente: Regressão Linear Múltipla
+-O que é preciso? Dados históricos para criar um modelo para servir como base para as previsões.
+
+REGRESSÃO LINEAR - PROJETO: PREVENDO CUSTOS PARA ABRIR FRANQUIA - CÓDIGO MODELO
+
+Importação das Bibliotecas
+import streamlit as st
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+
+st.title("Previsão Inicial de Custo para Franquia")
+
+dados = pd.read_csv("slr12.csv", sep=";")
+
+X = dados[['FrqAnual']]
+y = dados['CusInic']
+
+modelo = LinearRegression().fit(X,y)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header("Dados")
+    st.table(dados.head(10))
+
+with col2:
+    st.header("Gráfico de Dispersão")
+    fig, ax = plt.subplots()
+    ax.scatter(X,y, color='blue')
+    ax.plot(X, modelo.predict(X), color='red')
+    st.pyplot(fig)
+
+st.header("Valor Anual da Franquia:")
+novo_valor = st.number_input("Insira Novo Valor",min_value=1.0, max_value=999999.0,value=1500.0, step=0.01)
+processar = st.button("Processar")
+
+if processar:
+    dados_novo_valor = pd.DataFrame([[novo_valor]], columns=['FrqAnual'])
+    prev = modelo.predict(dados_novo_valor)
+    st.header(f"Previsão de Custo Inicial R$: {prev[0]:.2f}")
+
+----------
+
+Nota: Teste - 30% / Treino - 70%
+
+----------
+
+NAIVE BAYES - CLASSIFICAÇÃO
+
+Nota: Dados históricos, permitem prever e classificar dados com Machine Learning
+
+O modelo Naive Bayes é um algoritmo de classificação probabilístico amplamente utilizado em machine learning. 
+Ele é especialmente útil para problemas de classificação de texto, filtragem de spam, recomendação de produtos e muitos outros.
+
+NAIVE BAYES - PROJETO: PREVENDO A QUALIDADE DE VEICULOS - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.naive_bayes import CategoricalNB
+from sklearn.metrics import accuracy_score //calcular a acurácia do modelo.
+
+st.set_page_config(
+    page_title="Classificação de Veículos",
+    layout="wide"
+)
+
+@st.cache_data
+def load_data_and_model():
+    carros = pd.read_csv("car.csv",sep=",")
+    encoder = OrdinalEncoder()
+
+    for col in carros.columns.drop('class'):
+        carros[col] = carros[col].astype('category')
+
+    X_encoded = encoder.fit_transform(carros.drop('class',axis=1))
+
+    y = carros['class'].astype('category').cat.codes
+
+    X_train,X_test, y_train, y_test = train_test_split(X_encoded,y, test_size=0.3, random_state=42)
+
+    modelo = CategoricalNB()
+    modelo.fit(X_train,y_train)
+
+    y_pred = modelo.predict(X_test)
+    acuracia = accuracy_score(y_test, y_pred)
+
+    return encoder, modelo, acuracia, carros
+
+encoder, modelo, acuracia, carros = load_data_and_model()
+
+st.title("Previsão de Qualidade de Veículo")
+st.write(f"Acurácia do modelo: {acuracia:.2f}")
+
+input_features  = [
+        st.selectbox("Preço:",carros['buying'].unique()),
+        st.selectbox("Manutenção:",carros['maint'].unique()),
+        st.selectbox("Portas:",carros['doors'].unique()),
+        st.selectbox("Capacidade de Passegeiros:",carros['persons'].unique()),
+        st.selectbox("Porta Malas:",carros['lug_boot'].unique()),
+        st.selectbox("Segurança:",carros['safety'].unique()),
+        ]
+
+if st.button("Processar"):
+    input_df = pd.DataFrame([input_features], columns=carros.columns.drop('class'))
+    input_encoded = encoder.transform(input_df)
+    predict_encoded = modelo.predict(input_encoded)
+    previsao = carros['class'].astype('category').cat.categories[predict_encoded][0]
+    st.header(f"Resultado da previsão:  {previsao}")
+	
+Nota: Muitos algoritmos de machine learning, como os algoritmos de árvores de decisão e Naive Bayes, funcionam melhor com dados categóricos.
+
+----------
+
+SÉRIES TEMPORAIS - (FAZER PREVISÕES)
+
+Modelos de séries temporais são ferramentas poderosas em machine learning, utilizadas para analisar e prever dados que se modificam ao longo do tempo. 
+Pense em dados como o preço de ações, a temperatura diária, o número de vendas mensais ou o tráfego em um site. 
+Todos esses dados apresentam um componente temporal intrínseco e podem ser modelados como séries temporais.
+
+Dados coletados em intervalos regulares de tempo.
+
+Tecnicas de previsão: ARIMA
+
+SÉRIES TEMPORAIS - PROJETO: PREVEENDO A PRODUÇÃO DE LEITE - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from statsmodels.tsa.seasonal import seasonal_decompose
+import matplotlib.pyplot as plt
+from datetime import date
+from io import StringIO
+
+st.set_page_config(page_title="Sistema de Análise e Previsão de Séries Temporais", 
+                   layout="wide")
+
+st.title("Sistema de Análise e Previsão de Séries Temporais")
+
+with st.sidebar:
+    uploaded_file = st.file_uploader("Escolha o arquivo:", type=['csv'])
+    if uploaded_file is not None:
+        stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+        data = pd.read_csv(stringio, header=None)
+        data_inicio = date(2000,1,1)
+        periodo = st.date_input("Período Inicial da Série", data_inicio)
+        periodo_previsao = st.number_input("Informe quantos meses quer prever", min_value=1, max_value=48, value=12)
+        processar = st.button("Processar")
+
+if uploaded_file is not None and processar:
+    try:
+        ts_data = pd.Series(data.iloc[:,0].values, index= pd.date_range(
+                start=periodo, periods=len(data), freq='M'  ))
+        decomposicao = seasonal_decompose(ts_data, model='additive')
+        fig_decomposicao = decomposicao.plot()
+        fig_decomposicao.set_size_inches(10,8)
+
+        modelo = SARIMAX(ts_data,order=(2,0,0), seasonal_order=(0,1,1,12))
+        modelo_fit = modelo.fit()
+        previsao = modelo_fit.forecast(steps=periodo_previsao)
+
+        fig_previsao, ax = plt.subplots(figsize=(10,5))
+        ax = ts_data.plot(ax=ax)
+        previsao.plot(ax=ax, style='r--')
+
+        col1, col2, col3  = st.columns([3,3,2])
+        with col1:
+            st.write("Decomposição")
+            st.pyplot(fig_decomposicao)
+        with col2:
+            st.write("Previsão")
+            st.pyplot(fig_previsao)
+        with col3:
+            st.write("Dados da Previsão")
+            st.dataframe(previsao)
+
+        
+    except Exception as e:
+        st.error(f"Erro ao processar os dados: {e}")
+		
+----------		
+
+DISTRIBUIÇÃO DE POISSON - Mede a probabilidade da ocorrência de eventos em intervalo de tempo
+
+Contagens e eventos raros.
+
+A distribuição de Poisson é um conceito estatístico fundamental que encontra diversas aplicações em machine learning, 
+especialmente quando lidamos com dados que representam contagens de eventos.
+
+DISTRIBUIÇÃO DE POISSON - PROJETO: AVALIANDO A PROBABILIDADE DE QUEBRA DE EQUIPAMENTOS - CÓDIGO MODELO
+
+import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import poisson
+
+st.set_page_config(page_title="Probabilidade de Falhas em Equipamentos")
+st.title("Probabilidade de Falhas em Equipamentos")
+
+with st.sidebar:
+    st.header("Configurações")
+    tipo = st.radio("Selecione o Cálculo", options=["Prob. Exata","Menos que","Mais que"])
+    ocorrencia = st.number_input("Ocorrência Atual",min_value=1,max_value=99, value=2, step=1)
+    processar = st.button("Processar")
+
+if processar:
+    lamb = ocorrencia
+    inic = lamb -2
+    fim = lamb + 2
+    x_vals = np.arange(inic,fim+1)
+
+    if tipo =="Prob. Exata":
+        probs = poisson.pmf(x_vals, lamb)
+        tit = "Probabilidades de Ocorrência"
+    elif tipo == "Menos que":
+        probs = poisson.cdf(x_vals, lamb)
+        tit = "Probabilidades de Ocorrência Igual ou Menor que:"
+    else:
+        probs = poisson.sf(x_vals, lamb)
+        tit = "Probabilidades de Ocorrência Maior que:"
+
+    z_vals = np.round(probs,4)
+    labels = [f"{i} prob.: {p}" for i,p in zip(x_vals,z_vals)]
+
+    fig, ax = plt.subplots()
+    ax.bar(x_vals, probs, tick_label=labels, color= plt.cm.gray(np.linspace(0.4,0.8, len(x_vals))))
+    ax.set_title(tit)
+    plt.xticks(rotation=45,ha="right")
+    plt.tight_layout()
+    st.pyplot(fig)
+	
+----------	
+	
+NORMALIDADE - NORMALMENTE DISTRIBUIDOS
+
+Teste de Shapiro Wilk
+
+A normalidade, em termos estatísticos, refere-se à distribuição normal, também conhecida como curva em forma de sino. 
+Em machine learning, a normalidade desempenha um papel crucial em diversas etapas, desde a preparação dos dados até a construção e avaliação de modelos.
+
+Quando a normalidade não é necessária?
+
+Algoritmos robustos: Alguns algoritmos, como as árvores de decisão e as florestas aleatórias, são menos sensíveis à distribuição dos dados.
+Dados não contínuos: Variáveis categóricas ou binárias não seguem uma distribuição normal e não precisam ser normalizadas.
+
+NORMALIDADE - PROJETO: AVALIANDO A NORMALIDADE DE DADOS - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
+st.set_page_config(page_title="Teste de Normalidade", layout="wide")
+st.title("Teste de Normalidade")
+
+with st.sidebar:
+    upload_file = st.file_uploader("Escolha o arquivo:",type=['csv'],
+                                   accept_multiple_files=False)
+    process_button = st.button("Processar")
+
+if process_button and upload_file is not None:
+    try:
+        data = pd.read_csv(upload_file, header=0)
+        if data.empty or data.iloc[:,0].isnull().all():
+            st.error("O arquivo está vazio ou a primeira coluna não tem dados válidos")
+        else:
+            col1, col2 = st.columns(2)
+            with col1:
+                fig_hist, ax_hist = plt.subplots()
+                ax_hist.hist(data.iloc[:,0].dropna(),bins="auto",
+                             color='blue', alpha=0.7, rwidth=0.85)
+                ax_hist.set_title("Histograma")
+                st.pyplot(fig_hist)
+            with col2:
+                fig_qq, ax_qq = plt.subplots()
+                stats.probplot(data.iloc[:,0].dropna(), dist='norm', plot=ax_qq)
+                ax_qq.set_title("QQ Plot")
+                st.pyplot(fig_qq)
+
+            shapiro_test = stats.shapiro(data.iloc[:,0].dropna())
+            st.write(f"Valor de P: {shapiro_test.pvalue:.5f}")
+            if shapiro_test.pvalue > 0.05:
+                st.success("Não existem evidências suficientes para rejeitar a hipótese de normalidade dos dados")
+            else:
+                st.warning("Existem evidências suficientes para rejeitar a hipótese de normalidade dos dados")
+    except Exception as e:
+        st.error(f"Erro ao processar o arquivo: {e}")
+
+		
+----------
+
+SISTEMA DE RECOMENDAÇÃO
+
+Sistemas de recomendação são algoritmos que utilizam técnicas de machine learning para filtrar informações e prever itens 
+que um usuário provavelmente irá gostar. Eles são amplamente utilizados em diversas plataformas, como Netflix, Amazon e Spotify, 
+para personalizar a experiência do usuário e aumentar o engajamento.
+
+Para que servem?
+
+* Personalização: A principal função dos sistemas de recomendação é oferecer sugestões personalizadas de produtos, filmes, músicas, notícias 
+e outros conteúdos, baseadas nos interesses e comportamentos de cada usuário.
+
+* Descoberta: Ajuda os usuários a descobrirem novos itens que eles talvez não encontrassem por conta própria, expandindo seus horizontes e aumentando a satisfação.
+
+* Eficiência: Filtrando a grande quantidade de informações disponíveis, os sistemas de recomendação economizam tempo e esforço dos usuários ao apresentar apenas o 
+conteúdo mais relevante.
+
+* Aumento de vendas: Ao oferecer recomendações personalizadas, as empresas podem aumentar as vendas e a fidelização de clientes.
+
+Mineração de Regras de Associação	
+
+Mineração de Dados
+
+SISTEMA DE RECOMENDAÇÃO - PROJETO: CRIANDO UM SISTEMA DE RECOMENDAÇÃO - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import apriori, association_rules
+import matplotlib.pyplot as plt
+
+st.set_page_config(page_title="Geração de Regras de Recomendação",
+                   layout="wide")
+st.title("Geração de Regras de Recomendação")
+
+with st.sidebar:
+    uploaded_file = st.file_uploader("Escolha o arquivo", type=['csv'])
+    suporte_minimo = st.number_input("Suporte Mínimo", 0.0001,1.0,0.01,0.01)
+    confianca_minima = st.number_input("Confiança Mínima", 0.0001,1.0,0.2,0.01)
+    lift_minimo = st.number_input("Lift Mínimo", 0.0001,10.0,1.0,0.1)
+    tamanho_minimo = st.number_input("Tamanho Mínimo", 1,10,2,1)
+    processar = st.button("Processar")
+
+if processar and uploaded_file is not None:
+    try:
+        transactions = []
+        for line in uploaded_file:
+            transaction = line.decode("utf-8").strip().split(',')
+            transactions.append(transaction)
+        te = TransactionEncoder()
+        te_ary = te.fit(transactions).transform(transactions)
+        df = pd.DataFrame(te_ary, columns=te.columns_)
+
+        frequent_itemsets = apriori(df, min_support=suporte_minimo, use_colnames=True)
+        regras = association_rules(frequent_itemsets, metric='confidence',
+                                   min_threshold=confianca_minima)
+        regras_filtradas = regras[(regras['lift'] >= lift_minimo) &
+                                 (regras['antecedents'].apply(lambda x: len(x)>= tamanho_minimo )) ]
+    
+        if not regras_filtradas.empty:
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.header("Transações")
+                st.dataframe(df)
+            with col2:
+                st.header("Regras Encontradas")
+                st.dataframe(regras_filtradas)
+            with col3:
+                st.header("Visualização")
+                fig,ax = plt.subplots()
+                scatter = ax.scatter(regras_filtradas['support'], regras_filtradas['confidence'],
+                                     alpha=0.5,c=regras_filtradas['lift'], cmap='viridis')
+                plt.colorbar(scatter, label='Lift')
+                ax.set_title("Regras de Associação")
+                ax.set_xlabel("Suporte")
+                ax.set_ylabel("Confiança")
+                st.pyplot(fig)
+            
+            st.header("Resumo das Regras")
+            st.write(f"Total de Regras Geradas: {len(regras_filtradas)}")
+            st.write(f"Suporte Médio: {regras_filtradas['support'].mean():.4f}")
+            st.write(f"Confiança Média: {regras_filtradas['confidence'].mean():.4f}")
+            st.write(f"Lift Médio: {regras_filtradas['lift'].mean():.4f}")
+
+            st.download_button(label="Exportar Regras como CSV",
+                               data=regras_filtradas.to_csv(index=False),
+                               file_name="regras_associacao.csv",
+                               mime='text/csv')
+        else:
+            st.write("Nenhuma regra foi encontrada com os parâmetros definidos")
+
+        
+    except Exception as e:
+        st.error(f"Erro ao processar o arquivo: {e}")
+
+----------
+
+SÉRIES TEMPORARIS - PRINCIPAIS MÉTODOS DE FORECAST (PREVISÃO)
+
+NAIVE: último valor
+MEAN: média
+DRIFT: acompanha tendencia da serie
+HOLT: considera pesos para os intervalos
+HOLT WINTER aditivo: captura sazonal aditivo
+ARIMA - ordem da parte autoregressiva, grau de diferenciação e ordem da média móvel
+
+SÉRIES TEMPORAIS (COMPARATIVO DE METODOS DE PREVISÃO) - PROJETO: BENCHMARK VISUAL DE PREVISÃO DE PRODUÇÃO - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+from statsmodels.tsa.api import Holt, ExponentialSmoothing
+from pmdarima import auto_arima
+from matplotlib import pyplot as plt
+
+st.set_page_config(page_title="Benchmark de Séries Temporais", layout="wide")
+st.title("Benchmark de Séries Temporais")
+
+def load_data(uploaded_file):
+    data = pd.read_csv(uploaded_file, header=None)
+    return data
+
+def plot_forecasts(actual, forecasts, titles):
+    plt.figure(figsize=(10,6))
+    plt.plot(actual, label="Dados Atuais")
+    for forecast, title in zip(forecasts,titles):
+        plt.plot(np.arange(len(actual), len(actual)+ len(forecast)), forecast, label=title)
+    plt.legend()
+    plt.title("Benchmark de Séries Temporais")
+    plt.grid(True)
+    return plt
+
+def forecast_methods(train, h, methods):
+    forecast = []
+    titles = []
+
+    if methods['naive']:
+        naive_forecast = np.tile(train.iloc[-1],h)
+        forecast.append(naive_forecast)
+        titles.append("Naive")
+    if methods['mean']:
+        mean_forecast =np.tile(train.mean(),h)
+        forecast.append(mean_forecast)
+        titles.append("Mean")
+    if methods['drift']:
+        drift_forecast = train.iloc[-1] + (np.arange(1,h+1) * 
+                            ((train.iloc[-1] - train.iloc[0]) / (len(train)-1)))
+        forecast.append(drift_forecast)
+        titles.append("Drift")       
+    if methods['holt']:
+        holt_forecast = Holt(train).fit().forecast(h)
+        forecast.append(holt_forecast)
+        titles.append("Holt")    
+    if methods['hw']:
+        hw_forecast = ExponentialSmoothing(train,seasonal='additive',
+                        seasonal_periods=12).fit().forecast(h)
+        forecast.append(hw_forecast)
+        titles.append("HW Additive")    
+    if methods['arima']:
+        arima_model = auto_arima(train, seasonal=True, m=12, suppress_warnings=True)
+        arima_forecast = arima_model.predict(n_periods=h)
+        forecast.append(arima_forecast)
+        titles.append("ARIMA")    
+
+    return forecast, titles
+
+with st.sidebar:
+    uploaded_file = st.file_uploader("Escolha um Arquivo CSV", type='csv')
+    if uploaded_file is not None:
+        data_range = st.date_input("Informe o Período",[])
+        forecast_horizon = st.number_input("Informe o Perído de Previsão",
+                                           min_value=1, value=24,step=1)
+        st.write("Escolha os Métodos de Previsão:")
+        methods = {
+            'naive': st.checkbox('Naive', value=True),
+            'mean': st.checkbox('Mean', value=True),
+            'drift': st.checkbox('Drift', value=True),
+            'holt': st.checkbox('Holt', value=True),
+            'hw': st.checkbox('Holt-Winters', value=True),
+            'arima': st.checkbox('ARIMA', value=True)                                               
+        }
+        process_button = st.button("Processar")
+
+if uploaded_file is not None:
+    data = load_data(uploaded_file) 
+    if process_button and len(data_range)==2:
+        col1 , col2 = st.columns([1,4])       
+        with col1:
+            st.dataframe(data)
+        with col2:
+            with st.spinner("Processando... Por Favor Aguarde!"):
+                start_date, end_date = data_range
+                train = data.iloc[:,0]
+                forecasts, titles = forecast_methods(train, forecast_horizon, methods)
+                plt = plot_forecasts(train, forecasts, titles)
+                st.pyplot(plt)
+    elif process_button:
+        st.warning("Por favor selecioone um perído de datas válidos")
+else:
+    st.sidebar.warning("Faça upload de um arquivo csv")
+	
+----------
+
+EDA - ANALISE EXPLORATORIA DE DADOS
+
+- Deve ser a primeira etapa em um processo de analise de dados qualquer
+- Objetivo é conhecer os dados, seja com resumos estatistico, seja com elementos gráficos
+- Proposta pelo Estatistico John Tukey
+
+TECNICAS: BOXPLOT / HISTOGRAMA / GRÁFICO DE DISPERSÃO / GRÁFICO DE PARETO / ETC...
+
+EDA - ANALISE EXPLORATORIA DE DADOS - PROJETO: ANALISANDO DADOS PUBLICOS DE DESPESAS - CÓDIGO MODELO
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+st.set_page_config(page_title="Análise Exploratória", layout="wide")
+st.title("Despesas de Empenho da Rubrica Diárias do País")
+
+@st.cache_data
+def load_data():
+    dados = pd.read_csv("dados.csv", sep=';')
+    dados['PROPORCAO'] = dados['VALOREMPENHO'] / dados['PIB']
+    return dados
+
+dados = load_data()
+
+with st.sidebar:
+    st.header("Configurações")
+    top_n = st.number_input("Selecione o número de entradas para exibir",
+                            min_value=1, max_value=len(dados), value=10)
+
+tab1, tab2, tab3 = st.tabs(["Visão Geral", "Análises Detalhadas", "Maiores Valores"])
+
+with tab1:
+    st.header("Resumo dos Dados")
+    st.write(dados.describe())
+
+with tab2:
+    st.header("Distribuição dos Dados")
+    col1, col2 = st.columns(2)
+    with col1:
+        fig1 = px.histogram(dados,x='VALOREMPENHO', 
+                            title="Histograma do Valor de Empenho")
+        st.plotly_chart(fig1, use_container_width=True)
+        fig2 = px.box(dados,x='VALOREMPENHO', 
+                            title="Boxplot do Valor de Empenho")
+        st.plotly_chart(fig2, use_container_width=True)
+
+    with col2:
+        fig3 = px.histogram(dados,x='PIB', 
+                            title="Histograma do PIB")
+        st.plotly_chart(fig3, use_container_width=True)
+        fig4 = px.box(dados,x='PIB', 
+                            title="Boxplot do PIB")
+        st.plotly_chart(fig4, use_container_width=True)
+
+with tab3:
+    st.header("Maiores Valores")
+    col1,col2, col3 = st.columns(3)
+    with col1:
+        Memprenho = dados.nlargest(top_n, 'VALOREMPENHO')
+        fig = px.bar(Memprenho, x='MUNICIPIO', y='VALOREMPENHO',
+                     title="Maiores Empenhos")
+        st.plotly_chart(fig, use_container_width=True)
+    with col2:
+        Mpibs = dados.nlargest(top_n, 'PIB')
+        fig2 = px.bar(Mpibs, x='MUNICIPIO', y='PIB',
+                     title="Maiores PIBs")
+        st.plotly_chart(fig2, use_container_width=True)
+    with col3:        
+        Mprop = dados.nlargest(top_n, 'PROPORCAO')
+        fig3 = px.pie(Mprop,values='PROPORCAO',names='MUNICIPIO',
+                       title="Maiores Proporções ao PIB")
+        st.plotly_chart(fig3, use_container_width=True)
+
+
+----------
+
+ALGORITMOS GENETICOS - OTIMIZAÇÃO E APRENDIZADO DE MAQUINA
+ 
+Algoritmos genéticos são inspirados no processo evolutivo natural, utilizando conceitos como seleção natural, cruzamento e mutação para
+encontrar soluções ótimas para problemas complexos. Em machine learning, eles são uma ferramenta poderosa para otimização e aprendizado de máquina.
+
+ALGORITMOS GENETICOS - PROJETO: OTIMIZAÇÃO DE LUCRO NO TRANSPORTE DE CARGAS - CÓDIGO MODELO
+	
+import streamlit as st
+import pandas as pd
+from geneticalgorithm import geneticalgorithm as ga
+
+st.set_page_config(page_title="Otimização de Transporte de Carga", layout="wide")
+st.title("Otimização de Transporte de Carga")
+
+def load_data(file):
+    return pd.read_csv(file, sep=";")
+
+def fitness_function(X,data, max_volume, max_weight):
+    selected_items = data.iloc[X.astype(bool),:]
+    total_weight = selected_items['PESO'].sum()
+    total_volume = selected_items['VOLUME'].sum()
+    if total_weight > max_weight or total_volume > max_volume:
+        return -1
+    else:
+        return -selected_items['VALOR'].sum()
+
+data = None
+
+col1, col2 = st.columns(2)
+
+with col1.expander("Dados"):
+    uploaded_file = st.file_uploader("Selecione o arquivo", type='csv')
+    if uploaded_file is not None:
+        data = load_data(uploaded_file)
+        calculated_button = st.button("Calcular Totais")
+        if calculated_button:
+            st.write(data)
+            st.write(f"Quantidade de Itens: {len(data)} ")
+            st.write(f"Peso Total: {data['PESO'].sum()} ")
+            st.write(f"Volume Total: {data['VOLUME'].sum()}")
+            st.write(f"Valor Total: {data['VALOR'].sum()}")
+
+with col2.expander("Processamento"):
+    if data is not None:
+        sobra_peso = st.number_input("Informa a sobra de Peso", value=6000)
+        sobra_volume = st.number_input("Informe a sobra de Volume", value=350)
+        iteracao = st.number_input("Informe a quantidade de Iterações", value=10)
+        process_button = st.button("Processar")
+        if process_button:
+            algorithm_param = {
+                'max_num_iteration': iteracao,
+                'population_size': 10,
+                'mutation_probability': 0.1,
+                'elit_ratio': 0.01,
+                'crossover_probability': 0.5,
+                'parents_portion': 0.3,
+                'crossover_type': 'uniform',
+                'max_iteration_without_improv': None
+            }
+            varbound =[[0,1]] * len(data)
+            model = ga(
+                function=lambda X: fitness_function(X, data, sobra_volume, sobra_peso),
+                dimension=len(data),
+                variable_type='bool',
+                variable_boundaries=varbound,
+                algorithm_parameters=algorithm_param
+            )
+            model.run()
+            solution = data.iloc[model.output_dict['variable'].astype(bool),:]
+            st.write(solution)
+            st.write(f"Quantidade Final: {len(solution)}")
+            st.write(f"Peso Final: {solution['PESO'].sum()}")
+            st.write(f"Volume Final: {solution['VOLUME'].sum()}")
+            st.write(f"Valor Total: {solution['VALOR'].sum()}")
+
+----------
+
+IA GENERATIVA
+
+É um ramo da inteligência artificial que se concentra em criar novos conteúdos, como textos, imagens, músicas, vídeos e até mesmo códigos de programação, 
+a partir de dados existentes. Em vez de apenas analisar dados, a IA Generativa aprende os padrões e as relações dentro desses dados e, em seguida, utiliza
+esse conhecimento para gerar novos conteúdos que se encaixam nesses padrões.
+
+Para que serve?
+
+As aplicações da IA Generativa são vastas e abrangem diversas áreas:
+
+Criatividade: Geração de obras de arte, música, design e escrita criativa.
+Design: Criação de logotipos, interfaces e outros elementos visuais.
+Desenvolvimento de software: Geração de código, testes e documentação.
+Medicina: Descoberta de novas drogas e proteínas.
+Entretenimento: Criação de jogos, filmes e animações.
+
+IA GENERATIVA - PROJETO: GERAÇÃO DE IMAGENS PARA EMPRESA DE MARKETING - CÓDIGO MODELO
+
+Nota:
+- Modelos Pré-Treinados: Foi treinada com todo tipo de imagem
+- Um ruido alatorio é introduzido na Rede Neural
+- Este ruido garante que a imagem seja exclusica  
+
+Biblioteca: Pytorch
+
+IA GENERATIVA - PROJETO: GERAÇÃO DE IMAGEN PARA EMPRESAS DE MARKETING - CÓDIGO MODELO
+
+import streamlit as st
+from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
+import torch
+
+st.set_page_config(page_title="IA Generativa", layout="wide")
+st.title("Gerador de Imagens com Stable Diffusion")
+
+def generate_images(prompt,negative_prompt,num_images_per_prompt,
+                    num_inference_steps,height, width, seed, guidance_scale):
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    pretrained_model_or_path = "stabilityai/stable-diffusion-2-1-base"
+    scheduler = EulerDiscreteScheduler.from_pretrained(pretrained_model_or_path, 
+                                                       subfolder="scheduler")
+    pipeline = StableDiffusionPipeline.from_pretrained(pretrained_model_or_path, 
+                                    scheduler=scheduler).to(device)
+    generator = torch.Generator(device=device).manual_seed(seed)
+    images = pipeline(prompt=prompt, num_images_per_prompt=num_images_per_prompt,
+                     negative_prompt=negative_prompt, num_inference_steps= num_inference_steps,
+                     height=height, width=width,generator=generator,
+                      guidance_scale=guidance_scale )['images']
+    return images
+
+with st.sidebar:
+    st.header("Configurações da Geração da Imagem")
+    prompt = st.text_area("Prompt","")
+    negative_prompt = st.text_area("Negative Prompt","")
+    num_images_per_prompt = st.slider("Número de Imagens", min_value=1,max_value=5, 
+                                      value=1)
+    num_inference_steps = st.number_input("Número de Passos de Inferência",
+                                          min_value=1,max_value=100, value=50)
+    height = st.selectbox("Altura da Imagem",[256,512,768,1024], index=1)
+    width = st.selectbox("Largura da Imagem",[256,512,768,1024], index=1)
+    seed = st.number_input("Seed", min_value=0, max_value=99999, value=42)
+    guidance_scale = st.number_input("Escala de Orientação", min_value=1.0, max_value=20.0,
+                                     value=7.5)
+    generate_button = st.button("Gerar Imagem")
+
+if generate_button and prompt:
+    with st.spinner("Gerando Imagens..."):
+        images = generate_images(prompt, negative_prompt,num_images_per_prompt,
+            num_inference_steps, height, width, seed, guidance_scale)
+        cols = st.columns(len(images))    
+        for idx, (col, img) in enumerate(zip(cols, images)):
+            with col:
+                st.image(img, caption=f"Imagem {idx + 1}", use_column_width=True,
+                         output_format='auto')
+    
+----------
+
+DASHBOARD - STREAMLIT - BOLSA DE VALORES
+
+DASHBOARD - PROJETO: MONITORAMENTO DE BOLSA DE VALORES - CÓDIGO MODELO
+
+import streamlit as st  # Biblioteca para criar interfaces web interativas
+import yfinance as yf  # Biblioteca para baixar dados financeiros do Yahoo Finance
+import plotly.graph_objects as go  # Biblioteca para criar gráficos interativos
+from datetime import date  # Biblioteca para trabalhar com datas
+
+st.set_page_config(page_title="Visualizador de Ações", layout="wide")  # Configura o título da página e o layout
+st.title("Visualizador de Ações")  # Adiciona o título principal da aplicação
+
+# Cria uma sidebar à esquerda da tela
+with st.sidebar:
+    # Cria um dropdown para o usuário selecionar a empresa
+    empresa_selecionada = st.selectbox("Selecione a empresa para visualizar:",
+                                      ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA'])
+    # Cria campos para o usuário inserir as datas de início e fim
+    start_date = st.date_input("Data de Início", value=date(2020, 1, 1))
+    end_date = st.date_input("Data de Fim", value=date(2020, 1, 15))
+    # Cria um botão para gerar os gráficos
+    gerar_graficos = st.button("Gerar Gráficos")
+
+# Verifica se o botão "Gerar Gráficos" foi clicado
+if gerar_graficos:
+    # Baixa os dados da ação selecionada no período especificado
+    data = yf.download(empresa_selecionada, start=start_date, end=end_date)
+    # Verifica se foram obtidos dados
+    if data.size > 0:
+        # Cria abas para os diferentes tipos de gráficos e dados
+        tab1, tab2, tab3, tab4 = st.tabs(["Preço Fechado Ajustado", "Volume",
+                                       "Gráfico de Velas", "Dados"])
+        # Aba 1: Preço Fechado Ajustado
+        with tab1:
+            fig_close = go.Figure()  # Cria um objeto Figure do Plotly
+            fig_close.add_trace(go.Scatter(x=data.index, y=data['Adj Close'],
+                                          mode='lines', name='Preço Fechado Ajustado'))  # Adiciona uma linha ao gráfico
+            fig_close.update_layout(title=f'Histórico de Preços para {empresa_selecionada}',
+                                   xaxis_title='Data', yaxis_title='Preço')  # Configura o layout do gráfico
+            st.plotly_chart(fig_close, use_container_width=True)  # Exibe o gráfico na aplicação Streamlit
+        # Aba 2: Volume
+        # ... (código similar para as outras abas)
+        # Aba 3: Gráfico de Velas
+        # ...
+        # Aba 4: Dados
+        # ...
+    else:
+        st.error("Erro ao carregar dados, por favor tente novamente")
+    
+----------
+
+STREAMLIT + INTELIGENCIA ARTIFICIAL = APP COMPLETA RODANDO WEB
+
+APP COMPLETA COM MULTIPLAS PAGINAS E PUBLICAÇÃO NA INTERNET.
+
+- MELHORIA DA APLICAÇÃO DE EDA
+--APLICAÇÃO COM VARIAS PÁGINAS
+--USO DE CACHE
+--USO DE SESSION
+
+-PUBLICAÇÃO NA INTERNET
+--GITHUB
+--DEPLOY
+
+APP - APP COMPLETA COM MULTIPLAS PAGINAS E PUBLICAÇÃO NA INTERNET - CÓDIGO MODELO
+
+PAGES - LSITAGEM.PY 
+
+import streamlit as st
+from st_aggrid import AgGrid
+
+st.header("Visualização de Dados")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    top_n = st.session_state.get('top_n', 10)
+    dados = st.session_state['dados']
+    dados_filtrados = dados.head(top_n)
+    AgGrid(dados_filtrados, fit_columns_on_grid_load=True)
+	
+PAGES - RESUMO.PY 
+
+import streamlit as st
+
+st.header("Resumo dos Dados")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    dados = st.session_state['dados'].describe().reset_index()
+    st.write(dados)
+	
+PAGES - ANALISEDETALHADA.PY 
+
+import streamlit as st
+import plotly.express as px
+
+st.header("Distribuição dos Dados")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    dados = st.session_state['dados']
+    col1, col2 = st.columns(2)
+    with col1:
+        fig1 = px.histogram(dados, x='VALOREMPENHO', 
+                            title='Histograma do valor de Empenho')
+        st.plotly_chart(fig1, use_container_width=True)
+
+        fig2 = px.box(dados, x='VALOREMPENHO', 
+                            title='BoxPlot do valor de Empenho')
+        st.plotly_chart(fig2, use_container_width=True)
+
+    with col2:
+        fig3 = px.histogram(dados, x='PIB', 
+                            title='Histograma do PIB')
+        st.plotly_chart(fig3, use_container_width=True)
+
+        fig4 = px.box(dados, x='PIB', 
+                            title='BoxPlot do PIB')
+        st.plotly_chart(fig4, use_container_width=True)     
+		
+PAGES - MAIORESVALORES.PY 
+
+import streamlit as st
+import plotly.express as px
+
+st.header("Maiores Valores")
+
+if 'dados' not in st.session_state:
+    st.error("Os dados não foram carregados")
+else:
+    top_n = st.session_state.get('top_n', 10)
+    dados = st.session_state['dados']
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        Mempenho = dados.nlargest(top_n, 'VALOREMPENHO')
+        fig1 = px.bar(Mempenho, x='MUNICIPIO',y='VALOREMPENHO',
+                     title='Maiores Empenhos')
+        st.plotly_chart(fig1, use_container_width=True)
+    with col2:
+        Mpibs = dados.nlargest(top_n, 'PIB')
+        fig2 = px.pie(Mpibs, values='PIB', names='MUNICIPIO',
+                     title='Maiores PIBs')
+        st.plotly_chart(fig2, use_container_width=True)
+
+    with col3:
+        Mprop = dados.nlargest(top_n, 'PROPORCAO')
+        fig3 = px.bar(Mempenho, x='MUNICIPIO',y='PROPORCAO',
+                     title='Maiores Gastos em Proporção ao PIB')
+        st.plotly_chart(fig3, use_container_width=True)     
+		
+APP.PY
+
+import streamlit as st
+import pandas as pd
+
+st.set_page_config(page_title="Análise Exploratória")
+st.title("Bem-vindo à Análise Exploratória das Despesas de Viagem")
+
+@st.cache_resource
+def load_data():
+    dados = pd.read_csv("dados.csv", sep=";")
+    dados['PROPORCAO'] = dados['VALOREMPENHO'] / dados['PIB']
+    return dados
+
+dados = load_data()
+st.session_state['dados'] = dados
+
+with st.sidebar:
+    st.header("Configurações Globais")
+    if 'top_n' in st.session_state:
+        default_top_n = st.session_state['top_n']
+    else:
+        default_top_n = 10
+
+    top_n = st.number_input("Selecione o número de dados para exibir:",
+                            min_value=1, max_value=len(dados),
+                            value=default_top_n)
+    st.session_state['top_n'] = top_n
+	
+--------------

@@ -1,0 +1,4 @@
+#PROMPT PARA ANALISE E ACURACIA
+
+Analise a coluna tweet, verifique o real sentimento, confronte com o resultado da coluna sentimento. 
+verifique se meu programa acertou ou errou o sentimento. no final, mostre a taxa de acertividade:

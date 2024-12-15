@@ -1,0 +1,191 @@
+Saída dos Dados
+Primeiras Linhas do DataFrame
+   Identificação  Ano de Nascimento Escolaridade Estado Civil    Renda  ...  Aceitou Campanha 2  Reclamação Custo de Contato  Receita  Resposta
+0           5524               1957   Graduation       Single  58138.0  ...                   0           0                3       11         1
+1           2174               1954   Graduation       Single  46344.0  ...                   0           0                3       11         0
+2           4141               1965   Graduation     Together  71613.0  ...                   0           0                3       11         0
+3           6182               1984   Graduation     Together  26646.0  ...                   0           0                3       11         0
+4           5324               1981          PhD      Married  58293.0  ...                   0           0                3       11         0
+
+Informações sobre o DataFrame
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2240 entries, 0 to 2239
+Data columns (total 29 columns):
+ #   Column                      Non-Null Count  Dtype
+---  ------                      --------------  -----
+ 0   Identificação               2240 non-null   int64
+ 1   Ano de Nascimento           2240 non-null   int64
+ 2   Escolaridade                2240 non-null   object
+ 3   Estado Civil                2240 non-null   object
+ 4   Renda                       2216 non-null   float64
+ 5   Crianças em Casa            2240 non-null   int64
+ 6   Adolescentes em Casa        2240 non-null   int64
+ 7   Data de Cadastro            2240 non-null   object
+ 8   Recência                    2240 non-null   int64
+ 9   Gasto em Vinhos             2240 non-null   int64
+ 10  Gasto em Frutas             2240 non-null   int64
+ 11  Gasto em Produtos de Carne  2240 non-null   int64
+ 12  Gasto em Produtos de Peixe  2240 non-null   int64
+ 13  Gasto em Produtos Doces     2240 non-null   int64
+ 14  Gasto em Produtos de Ouro   2240 non-null   int64
+ 15  Compras em Promoções        2240 non-null   int64
+ 16  Compras pela Internet       2240 non-null   int64
+ 17  Compras por Catálogo        2240 non-null   int64
+ 18  Compras na Loja             2240 non-null   int64
+ 19  Visitas ao Site por Mês     2240 non-null   int64
+ 20  Aceitou Campanha 3          2240 non-null   int64
+ 21  Aceitou Campanha 4          2240 non-null   int64
+ 22  Aceitou Campanha 5          2240 non-null   int64
+ 23  Aceitou Campanha 1          2240 non-null   int64
+ 24  Aceitou Campanha 2          2240 non-null   int64
+ 25  Reclamação                  2240 non-null   int64
+ 26  Custo de Contato            2240 non-null   int64
+ 27  Receita                     2240 non-null   int64
+ 28  Resposta                    2240 non-null   int64
+dtypes: float64(1), int64(25), object(3)
+memory usage: 507.6+ KB
+
+Verificação de Valores Ausentes
+Identificação                  0
+Ano de Nascimento              0
+Escolaridade                   0
+Estado Civil                   0
+Renda                         24
+Crianças em Casa               0
+Adolescentes em Casa           0
+Data de Cadastro               0
+Recência                       0
+Gasto em Vinhos                0
+Gasto em Frutas                0
+Gasto em Produtos de Carne     0
+Gasto em Produtos de Peixe     0
+Gasto em Produtos Doces        0
+Gasto em Produtos de Ouro      0
+Compras em Promoções           0
+Compras pela Internet          0
+Compras por Catálogo           0
+Compras na Loja                0
+Visitas ao Site por Mês        0
+Aceitou Campanha 3             0
+Aceitou Campanha 4             0
+Aceitou Campanha 5             0
+Aceitou Campanha 1             0
+Aceitou Campanha 2             0
+Reclamação                     0
+Custo de Contato               0
+Receita                        0
+Resposta                       0
+dtype: int64
+
+Os valores ausentes foram corretamente imputados e não há mais valores ausentes nos dados.
+
+Estatísticas Descritivas para "Ano de Nascimento" e "Renda"
+count    2240.000000
+mean     1968.805804
+std        11.984069
+min      1893.000000
+25%      1959.000000
+50%      1970.000000
+75%      1977.000000
+max      1996.000000
+Name: Ano de Nascimento, dtype: float64
+
+count      2240.000000
+mean      52247.251354
+std       25037.797168
+min        1730.000000
+25%       35538.750000
+50%       51741.500000
+75%       68289.750000
+max      666666.000000
+Name: Renda, dtype: float64
+
+Resultados de Normalização e KMeans
+Primeiras Linhas do DataFrame Após Normalização
+   Identificação  Ano de Nascimento Escolaridade Estado Civil     Renda  ...  Aceitou Campanha 2  Reclamação Custo de Contato  Receita  Resposta
+0           5524               1957   Graduation       Single  0.324008  ...                   0           0                3       11         1
+1           2174               1954   Graduation       Single -0.252397  ...                   0           0                3       11         0
+2           4141               1965   Graduation     Together  0.982568  ...                   0           0                3       11         0
+3           6182               1984   Graduation     Together -1.215093  ...                   0           0                3       11         0
+4           5324               1981          PhD      Married  0.331583  ...                   0           0                3       11         0
+
+Método do Cotovelo (SSE)
+K=1, SSE=26688.0
+K=2, SSE=16184.22665700457
+K=3, SSE=13503.8865151374
+K=4, SSE=12491.038969693138
+K=5, SSE=11711.381123375064
+K=6, SSE=11176.626152598632
+K=7, SSE=10712.660598222976
+K=8, SSE=10318.933376215182
+K=9, SSE=9972.37544854705
+K=10, SSE=9614.06205777577
+
+Análise do Coeficiente Silhueta
+K=2, Silhouette Score=0.3993293276013268
+K=3, Silhouette Score=0.3250047828607597
+K=4, Silhouette Score=0.29820192431548376
+K=5, Silhouette Score=0.2976156531367529
+K=6, Silhouette Score=0.25851209645327233
+K=7, Silhouette Score=0.24668068792093506
+K=8, Silhouette Score=0.2177749095527625
+K=9, Silhouette Score=0.21719948101329475
+K=10, Silhouette Score=0.16437504944568032
+
+Centros dos Clusters
+          Renda     Gasto em Vinhos  Gasto em Frutas  Gasto em Produtos de Carne  ...  Compras por Catálogo  Compras na Loja  Visitas ao Site por Mês  Cluster
+0  62484.125303       539.282974        30.467626                  159.417266  ...              3.505995         8.616307                 5.009592        0
+1  34504.078111        39.050898         4.780439                   21.115768  ...              0.529940         3.208583                 6.371257        1
+2  76947.722798       673.857143        39.901361                  502.680272  ...              6.476190         8.312925                 2.591837        2
+3  73973.055460       526.931452       105.733871                  432.169355  ...              5.620968         8.362903                 2.983871        3
+4  49268.864094       320.741445        11.011407                   95.155894  ...              2.098859         6.011407                 7.235741        4
+
+Análise dos Clusters
+
+Cluster 0
+Renda: 62,484
+Gasto em Vinhos: 539
+Gasto em Carne: 159
+Compras na Loja: 8.6
+Visitas ao Site por Mês: 5
+Perfil: Clientes com renda média e altos gastos em vinhos e carne. Provavelmente estão interessados em produtos premium de vinhos e carnes.
+
+Cluster 1
+Renda: 34,504
+Gasto em Vinhos: 39
+Gasto em Carne: 21
+Compras na Loja: 3.2
+Visitas ao Site por Mês: 6.4
+Perfil: Clientes com renda baixa e gastos baixos em todas as categorias. Eles podem ser mais sensíveis a preços e interessados em promoções e ofertas.
+
+Cluster 2
+Renda: 76,948
+Gasto em Vinhos: 674
+Gasto em Carne: 503
+Compras na Loja: 8.3
+Visitas ao Site por Mês: 2.6
+Perfil: Clientes com alta renda e altos gastos em todas as categorias, especialmente vinhos e carne. Provavelmente valorizam produtos de alta qualidade e experiências premium.
+
+Cluster 3
+Renda: 73,973
+Gasto em Vinhos: 527
+Gasto em Carne: 432
+Compras na Loja: 8.4
+Visitas ao Site por Mês: 3
+Perfil: Clientes com renda alta e altos gastos em vinhos, carne e frutas. Eles podem estar interessados em produtos saudáveis e de alta qualidade.
+
+Cluster 4
+Renda: 49,269
+Gasto em Vinhos: 321
+Gasto em Carne: 95
+Compras na Loja: 6
+Visitas ao Site por Mês: 7.2
+Perfil: Clientes com renda média-baixa e gastos moderados em vinhos e carne. Eles podem apreciar ofertas e produtos com bom custo-benefício.
+
+Próximos Passos
+Com essas análises, você pode direcionar estratégias de marketing e campanhas promocionais para cada segmento de cliente. Aqui estão algumas sugestões:
+Cluster 0: Ofereça produtos premium de vinhos e carnes com promoções exclusivas.
+Cluster 1: Crie campanhas promocionais com ofertas e descontos para aumentar o engajamento.
+Cluster 2: Desenvolva pacotes premium e programas de fidelidade para clientes de alta renda.
+Cluster 3: Personalize recomendações de produtos saudáveis e de alta qualidade.
+Cluster 4: Ofereça produtos com bom custo-benefício e pacotes promocionais.

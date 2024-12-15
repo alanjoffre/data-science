@@ -1,0 +1,93 @@
+# 1. Pré-processamento: data_preprocessing.py
+- Importar bibliotecas
+- Configurar logger
+- Função carregar arquivo config.yaml: 
+- Função valida se as colunas necessárias estão presentes no DataFrame
+- Função carregar dados a partir do caminho especificado no arquivo de configuração
+- Função tratar valores ausentes e duplicados no dataset
+- Função criar um pré-processador para colunas numéricas
+- Função aplicar SMOTE para balanceamento de classes
+- Função salvar o pré-processador
+- Função obter os nomes das colunas originais após a aplicação do pré-processador
+- Função salvar o dataset processado em um arquivo CSV e imprimir as primeiras 5 linhas no console
+- Função gerar gráficos do dataset preprocessado e salvar no diretório especificado.
+- Gerar graficos e salvar no diretório: Histograma, Box Plot, Scatter Plot, Gráfico de Linha, Heatmap de Correlaçã, Pairplot
+- Função principal para preprocessar dados.
+- Criar Pipeline com as seguintes etapas: Carregar configurações do arquivo YAML, Carregar o dataset bruto, Validar a presença de colunas necessárias, Tratar valores ausentes e duplicados.
+  Criar e aplicar o pré-processador para normalização das colunas numéricas, Aplicar SMOTE para balanceamento de classes, Salvar o pré-processador, Gerar gráficos detalhados do dataset preprocessado.
+  Salvar o dataset processado em um arquivo CSV e imprimir as primeiras 5 linhas.
+- Chamada da função: preprocessamento_dados)
+    
+# 2. Treinamento do Modelo: model_training.py
+- Importar as bibliotecas
+- Configurar o logger
+- Função carregar configurações de um arquivo YAML
+- Aplicar Central Limit Theorem (CLT) e testes de significância, quando necessário
+- Função carregar dados a partir do caminho especificado no arquivo de configuração
+- Função preprocessar dados (codificação de variáveis categóricas)
+- Função dividir dados em conjunto de treino e teste.
+- Função treinar diferentes modelos de machine learning e retornar o melhor modelo
+- Informar o melhor modelo treinado, o nome do melhor modelo, e os resultados de F1-Score para cada modelo
+- Função avaliar o modelo e gerar relatório de classificação detalhado
+- Salvar relatório em TXT
+- Função ajustar hiperparâmetros do modelo
+- Informar o melhor modelo ajustado com os hiperparâmetros otimizados
+- Salvar melhores hiperparâmetros em um arquivo txt
+- Função efetuar validação cruzada e retornar o resultado
+- Salvar resultado da validação cruzada em um arquivo txt
+- Função identificar o melhor threshold usando a curva ROC
+- Informar o melhor o melhor threshold usando a curva ROC
+- Salvar resultado em um arquivo txt
+- Função aplicar o melhor threshold e retornar as previsões ajustadas
+- Função salvar o modelo treinado em um arquivo txt
+- Função principal para executar o treinamento, ajuste de hiperparâmetros e avaliação do modelo: Pré-processar os dados, Dividir os dados em conjuntos de treino e teste
+  Treinar os modelos e obter o melhor modelo, Avaliar o melhor modelo, Gerar relatório detalhado dos modelos treinados, Ajustar hiperparâmetros do melhor modelo,
+  Avaliar o modelo ajustado com hiperparâmetros otimizados, Validar o modelo ajustado, identificar o melhor threshold com ROC, Aplicar o melhor threshold, 
+  Relatório de classificação após aplicar threshold, Salvar o modelo final
+- Chamada da função: config e executar_treinamento
+
+# 3. Avaliação: evaluation.py
+- Importar as bibliotecas
+- Configurar o logger
+- Função carregar configurações de um arquivo YAML
+- Função carregar dados e modelo treinado a partir dos caminhos especificados no arquivo de configuração
+- Função avaliar o modelo usando métricas de classificação e salvar os resultados
+- Salvar relatório em TXT
+- Função principal para executar a avaliação do modelo: Carrega as configurações do arquivo YAML, Carrega os dados processados e o modelo treinado, 
+  Divide os dados em conjuntos de treino e teste, Avalia o modelo usando métricas de classificação e salva os resultados
+- Chamada da função principal
+
+# 4. pipeline.py
+- Importar as bibliotecas
+- Adicionar o diretório 'src' ao sys.path: sys.path.append(os.path.join('D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\src'))
+- Configurar logger
+- Função executar pipeline pré-processamento e treinamento: Chama a função de pré-processamento, Passa a configuração para a função de treinamento
+- Chamada da função: executar_pipeline()
+
+# 5. Inferência.py
+- Importar as bibliotecas
+- Configurar logger
+- Função carrega as configurações do arquivo YAML
+- Função carrega o modelo salvo
+- Função carrega o pré-processador salvo
+- Função que faz a inferência utilizando o modelo e pré-processador carregados: Carregar modelo e pré-processador, Preprocessar os dados, Fazer previsão, salvar resultados,
+- Chamada da função: config_path, config, e fazer_inferencia
+
+# 6. Inferência_input.py
+- Importar as bibliotecas
+- Configurar logger
+- Função carrega as configurações do arquivo YAML
+- Função carrega o modelo salvo
+- Função carrega o pré-processador salvo
+- Função coleta dados do cliente via entrada do usuário
+- Função que faz a inferência utilizando o modelo e pré-processador carregados: carregar modelo e pré-processador, Coletar dados do cliente, Preprocessar os dados, Fazer previsão
+- Chamada da função: config_path, config e fazer_inferencia
+
+# 7. config.yaml
+- Configurações de Diretórios para o Projeto
+- Caminhos para o Armazenamento de Modelos
+- Caminhos para Pré-processadores
+- Caminhos para os Dados
+- Configurações de Relatórios
+- Configurações de Pré-processamento
+- Configurações de Previsões

@@ -1,0 +1,5 @@
+Ridge Regression
+
+A Ridge Regression é um método de regularização do modelo que tem como principal objetivo suavizar atributos que sejam relacionados uns aos outros e que aumentam o ruído no modelo (A.K.A multicolinearidade). 
+
+https://mineracaodedados.wordpress.com/2015/06/20/qual-a-diferenca-entre-lasso-e-ridge-regression/#:~:text=A%20Ridge%20Regression%20%C3%A9%20um,no%20modelo%20(A.K.A%20multicolinearidade).

@@ -1,0 +1,14 @@
+data:
+  raw_data_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/data/raw/creditcard.csv'
+  processed_data_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/data/processed/creditcard_processed.csv'
+paths:
+  logs_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/logs/'
+  figures_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/reports/figures/'
+  reports_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/reports/'
+  models_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/models/'
+  preprocessors_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/preprocessors/'
+  predictions_path: 'D:/Github/data-science/projetos/creditcard_fraud_detection/creditcard/predictions/'
+model:
+  params:
+    test_size: 0.3
+    random_state: 42

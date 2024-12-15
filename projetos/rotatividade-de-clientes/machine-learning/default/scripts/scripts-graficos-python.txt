@@ -1,0 +1,34 @@
+Tipo de Graficos em Python: 
+- Gráficos de Linhas (Line Plot)
+- Gráficos de Barras (Bar Plot)
+- Gráficos de Barras Empilhadas (Stacked Bar Plot)
+- Histogramas (Histogram)
+- Gráficos de Dispersão (Scatter Plot)
+- Boxplots (Box Plot)
+- Gráficos de Violino (Violin Plot)
+- Gráficos de Pizza (Pie Chart)
+- Heatmaps (Mapa de Calor)
+- Gráficos de Barras Horizontais (Horizontal Bar Plot)
+- Pair Plots
+- Gráficos de Regressão (Regression Plot)
+- Gráficos de Áreas (Area Plot)
+- Gráficos 3D
+- Gráficos de Rosca (Donut Chart)
+- Gráficos de Densidade (Density Plot)
+- Gráficos de Hexbin (Hexagonal Bin Plot)
+- Gráficos de Mapas Geográficos (Geographic Maps)
+- Gráficos de Séries Temporais com Intervalo de Confiança
+- Gráficos de Correlograma (Correlogram)
+- Gráficos de Contorno (Contour Plot)
+- Gráficos de Pirâmide Etária (Population Pyramid)
+- Gráficos de Funil (Funnel Chart)
+- Gráficos de Aranha ou Radar (Spider/Radar Plot)
+- Gráficos de Cascata (Waterfall Chart)
+- Gráficos de Funil Invertido (Inverted Funnel Chart)
+- Gráficos de Séries Temporais com Eixos Multivariados (Multivariate Time Series Plot)
+- Gráficos Sankey (Sankey Diagram)
+- Gráficos de Bolhas (Bubble Plot)
+- Gráficos de Hierarquia (Treemap)
+- Gráficos de Cordas (Chord Diagram)
+- Gráficos de Reticulado ou Facet Grid
+- Gráficos de Pareto

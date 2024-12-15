@@ -1,0 +1,4 @@
+Comando para rodar: Flask
+
+$env:FLASK_APP = "06_app.py"
+>> flask run

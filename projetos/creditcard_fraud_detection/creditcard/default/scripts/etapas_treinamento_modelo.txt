@@ -1,0 +1,28 @@
+# Importar as bibliotecas
+# Registrar a hora inicial do processamento
+# Configurar logging
+# Carregar os dados processados e normalizados
+# Dividir o dataset em conjunto de treinamento e teste (70/30)
+# Verificar a distribuição das classes no conjunto de treinamento
+# Lidar com dados desbalanceados utilizando SMOTE
+# Verificar a distribuição das classes após o SMOTE
+# Treinando o modelo de Random Forest.
+# Relatorio completo de Classificação do modelo de Random Forest:
+# Encontrar os melhores hiperparametros em treino
+# Informar os melhores hiperparamentros em treino
+# Aplicar os melhores hiperparamentros em dados de treino
+# Relatorio de classificação completo
+# Aplicar os melhores hiperparamentros nos dados de teste
+# Relatorio de Classificação completo
+# Realizar validação cruzada estratificada nos dados de treino
+# Relatorio de classificação completo
+# Realizar validação cruzada estratificada nos dados de teste
+# Encontrar o melhor theshold para o conjunto de treino
+# Aplicar o melhor theshold para o conjunto de treino
+# Relatorio de classificação completo
+# Aplicar o melhor theshold para o conjunto de teste
+# Relatorio de classificação completo
+# Salvar o melhor modelo apos a validação cruzada
+# Salvar o modelo e o preprocessador
+# Registrar a hora final do processamento
+# print("Etapa de Modelagem concluída.")

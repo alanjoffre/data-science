@@ -1,0 +1,49 @@
+#TREINAMENTO DE MODELOS - ENCONTRAR MELHOR MODELO
+
+# Importe as bibliotecas
+# Carregar o dataset
+# Features e target
+# Dividir o dataset em conjunto de treinamento e teste (70/30)
+# Vetorização de textos
+# Verificar a distribuição das classes no conjunto de treinamento
+# Lidar com dados desbalanceados utilizando SMOTE
+# Verificar a distribuição das classes após o SMOTE
+# Treinar modelos de Machine Learning
+# Avaliar modelos de Machine Learning
+# Determinar o melhor modelo baseado no F1-Score médio ponderado
+# Relatorio de classificação
+# Avaliar o modelo no conjunto de teste
+# Relatorio de classificação
+
+# TREINAMENTO DO MELHOR MODELO - Nayve Bayes
+
+# Importe as bibliotecas
+# Registrar a hora inicial do processamento
+# Carregar o dataset com Dask
+# Definir o número de linhas por bloco
+# Inicializar o vetor de TfidfVectorizer
+# Inicializar o modelo Naive Bayes com partial_fit
+# Listas para armazenar métricas e dados de cada bloco
+# Ajustar o vetor de TF-IDF em todo o conjunto de dados
+# Salvar o vetor de TF-IDF ajustado
+# Processar cada bloco de 1000 linhas
+    # Vetorização de textos usando o vetor de TF-IDF ajustado
+    # Lidar com dados desbalanceados utilizando SMOTE
+    # Guardar os dados para posterior uso na busca de hiperparâmetros
+    # Dividir o bloco em conjunto de treinamento e teste
+    # Treinar o modelo incrementalmente
+    # Avaliar o modelo no conjunto de treinamento
+    # Avaliar o modelo no conjunto de teste
+# Função para agrupar os resultados de múltiplos blocos
+# Agregar resultados de todos os blocos
+# Exibir o relatório de classificação final
+# Encontrar os melhores hiperparâmetros usando RandomizedSearchCV
+# Selecionar uma amostra menor para a busca de hiperparâmetros devido ao grande volume de dados
+# Ajustar a busca de hiperparâmetros na amostra selecionada
+# Treinar novamente o modelo com os melhores hiperparâmetros
+# Aplicar validação cruzada em uma amostra do conjunto de dados
+# Salvar o modelo treinado após a validação cruzada
+# Salvar os hiperparâmetros
+# Registrar a hora final do processamento
+# Calcular a duração do processamento
+# Converter duração para horas, minutos e segundos
