@@ -1,0 +1,4 @@
+Balance,Age,CreditScore,Tenure,EstimatedSalary,Exited
+1000.0,30,600.0,3,50000.0,0
+1500.0,40,650.0,4,60000.0,1
+2000.0,25,700.0,3,55000.0,0

@@ -1,0 +1,25 @@
+[paths]
+# Caminho para os dados brutos
+raw_data_path = "D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/data/raw/rclientes.csv"
+# Caminho para os dados processados
+processed_data_path = "D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/data/processed/rclientes_preprocessado.csv"
+# Caminho para o modelo final salvo
+model_path = "D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/models/xgboost_model.joblib"
+# Caminho para as imagens do relatório
+reports_path = "D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/reports/figures/"
+
+[project]
+# Nome do projeto
+name = "Churn de Clientes"
+# Descrição do projeto
+description = "Previsão da rotatividade de clientes utilizando XGBoost e Random Forest"
+
+[status]
+# Percentual de progresso do projeto
+progress = 0.75
+# Fase atual do projeto
+current_phase = "Modelagem e Avaliação"
+
+[menu]
+# Itens do menu
+menu_items = ["Página Inicial", "Dashboard", "Pipeline de Produção", "Avaliação", "Inferência", "Previsão de Clientes"]

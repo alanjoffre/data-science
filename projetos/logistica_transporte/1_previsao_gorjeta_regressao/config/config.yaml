@@ -1,0 +1,29 @@
+# Configurações de Diretórios para o Projeto
+paths:
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/config/config.yaml'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/src/'
+
+# Caminhos para o Armazenamento de Modelos
+models:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/models/final_model.joblib'
+
+# Caminhos para Pré-processadores
+preprocessors:
+  path: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/preprocessors/preprocessor.joblib'
+
+
+# Caminhos para os Dados
+data:
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/data/logistica_transportadora_2018_2022.csv'
+  processed: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/processed/preprocessado.csv'
+
+
+# Configurações de Relatórios
+reports:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/figures/'
+  

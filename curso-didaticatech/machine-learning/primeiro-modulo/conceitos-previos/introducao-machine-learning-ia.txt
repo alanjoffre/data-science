@@ -1,0 +1,16 @@
+# O que é inteligência artificial?
+
+A inteligência artificial é uma constelação de muitas tecnologias diferentes trabalhando juntas para permitir que as máquinas detectem, compreendam, ajam e aprendam com níveis de inteligência semelhantes aos dos humanos. Talvez seja por isso que parece que a definição de inteligência artificial que as pessoas dão é diferente: A Inteligência Artificial não é só uma única coisa.
+
+Tecnologias como fazem parte do cenário de AI. Cada um está evoluindo ao longo de seu próprio caminho e, quando aplicado em combinação com dados, análises e automação, pode ajudar as empresas a atingir seus objetivos, seja melhorando o atendimento ao cliente ou otimizando a cadeia de suprimentos.
+
+Inteligência Artificial limitada (ou "fraca")
+Alguns vão ainda mais longe, definindo a inteligência artificial como Inteligência Artificial "limitada" e "geral". A maior parte do que experimentamos em nosso dia a dia é a Inteligência Artificial limitada, que realiza uma única tarefa ou um conjunto de tarefas intimamente relacionadas. Alguns exemplos incluem:
+
+Aplicativos meteorológicos
+Assistentes digitais
+Software que analisa dados para otimizar uma determinada função de negócio
+Esses sistemas são poderosos, mas o campo de atuação é limitado: Tendem a se concentrar em aumentar as eficiências. Mas, com a aplicação certa, a Inteligência Artificial limitada tem imenso poder de transformação — e continua influenciando a forma como trabalhamos e vivemos em escala global.
+
+Inteligência Artificial geral (ou "forte")
+A Inteligência Artificial geral é mais parecida com o que você vê em filmes de ficção científica, em que máquinas sensíveis emulam a inteligência humana, pensando de forma estratégica, abstrata e criativa, com capacidade para lidar com uma série de tarefas complexas. Embora as máquinas possam executar algumas tarefas melhor do que os seres humanos (por exemplo, processamento de dados), essa visão totalmente real da Inteligência Artificial geral ainda não existe fora do cinema. É por isso que a colaboração entre máquina e homem é crucial — no mundo de hoje, a inteligência artificial continua sendo uma extensão das capacidades humanas, não uma substituição.

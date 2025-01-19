@@ -1,0 +1,12 @@
+# config.yaml
+
+# Caminhos para os diretórios do projeto
+input_dir: "D:/Github/data-science/projetos/reconhecimento_optico_de_caracteres_tesseract/ocr/reports/figures"
+output_dir: "D:/Github/data-science/projetos/reconhecimento_optico_de_caracteres_tesseract/ocr/data/processed"
+tesseract_cmd: "C:/Program Files/Tesseract-OCR/tesseract.exe"
+log_dir: "D:/Github/data-science/projetos/reconhecimento_optico_de_caracteres_tesseract/ocr/logs"
+
+
+# Configurações do OCR
+language: "eng"
+psm: 6  # Página Segmentation Mode (6 é o modo de OCR para blocos de texto)

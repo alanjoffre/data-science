@@ -1,0 +1,22 @@
+2024-11-11 16:46:16,124 - INFO - Iniciando a execução do pipeline.
+2024-11-11 16:46:16,128 - INFO - Configuração carregada com sucesso.
+2024-11-11 16:46:16,128 - INFO - Iniciando o pipeline de pré-processamento...
+2024-11-11 16:46:17,129 - INFO - [Pré-processamento (início)] Uso de CPU: 1.4%
+2024-11-11 16:46:17,129 - INFO - [Pré-processamento (início)] Uso de memória: 49.3%
+2024-11-11 16:46:18,151 - INFO - [Pré-processamento (fim)] Uso de CPU: 1.0%
+2024-11-11 16:46:18,151 - INFO - [Pré-processamento (fim)] Uso de memória: 49.2%
+2024-11-11 16:46:18,151 - INFO - Iniciando o treinamento do modelo...
+2024-11-11 16:46:19,152 - INFO - [Treinamento (início)] Uso de CPU: 1.0%
+2024-11-11 16:46:19,152 - INFO - [Treinamento (início)] Uso de memória: 49.2%
+2024-11-11 16:46:20,324 - INFO - [Treinamento (fim)] Uso de CPU: 6.9%
+2024-11-11 16:46:20,324 - INFO - [Treinamento (fim)] Uso de memória: 49.6%
+2024-11-11 16:46:20,324 - INFO - Avaliando o modelo...
+2024-11-11 16:46:20,343 - INFO - Métricas de desempenho do modelo:
+2024-11-11 16:46:20,343 - INFO - Acurácia: 0.8437
+2024-11-11 16:46:20,343 - INFO - Recall: 0.8075
+2024-11-11 16:46:20,343 - INFO - Precisão: 0.8630
+2024-11-11 16:46:20,343 - INFO - F1-Score: 0.8343
+2024-11-11 16:46:20,343 - INFO - AUC: 0.9229
+2024-11-11 16:46:20,343 - INFO - Salvando o modelo...
+2024-11-11 16:46:20,346 - INFO - Modelo salvo com sucesso em D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/models/final_model.joblib.
+2024-11-11 16:46:20,347 - INFO - Pipeline concluído com sucesso.

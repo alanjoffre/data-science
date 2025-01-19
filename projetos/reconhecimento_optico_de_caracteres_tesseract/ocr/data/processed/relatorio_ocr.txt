@@ -1,0 +1,4 @@
+Relatório de OCR - Processamento Concluído
+Data: 2025-01-18 12:52:14.092476
+Imagens Processadas: 3
+Falhas: 0

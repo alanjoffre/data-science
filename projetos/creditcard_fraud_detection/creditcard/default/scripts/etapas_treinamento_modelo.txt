@@ -1,0 +1,33 @@
+# Importar as bibliotecas
+# Registrar a hora inicial do processamento
+# Configurar logging
+# Carregar os dados processados e normalizados
+# Verificar e tratar valores NaN na variável de destino 'Class'
+# Dividir o dataset em conjunto de treinamento e teste (70/30)
+# Verificar a distribuição das classes no conjunto de treinamento
+# Lidar com dados desbalanceados utilizando SMOTE
+# Verificar a distribuição das classes após o SMOTE
+# Treinar o modelo de Random Forest
+# Refine a grade de hiperparâmetros
+# Utilizar RandomizedSearchCV para uma busca mais eficiente
+# Aplicar os melhores hiperparâmetros em dados de treino
+# Aplicar os melhores hiperparâmetros nos dados de teste
+# Realizar validação cruzada estratificada nos dados de treino
+# Realizar validação cruzada estratificada nos dados de teste
+# Encontrar o melhor threshold para o conjunto de treino
+# Aplicar o melhor threshold para o conjunto de teste
+# Salvar o melhor modelo após a aplicação do threshold no conjunto de teste
+# print("4 - Etapa de Modelagem concluída.")
+# --- Análise Segmentada ---
+# Adicionar as previsões e probabilidades ao DataFrame
+# Analisar desempenho por segmentos (ex: valor da transação)
+# Filtrar categorias válidas antes de calcular as métricas
+# Verificar as categorias presentes
+# Criar um gráfico de barras para visualizar o desempenho por categoria de valor da transação
+# Função para ajustar o threshold para cada categoria
+# print(f"Melhor threshold para a categoria {categoria}: {best_threshold}")
+# print(f"Melhor F1-score para a categoria {categoria}: {best_f1_score}")
+# Aplicar o melhor threshold para a categoria
+# Aplicar a função de ajuste de threshold para todas as categorias
+print("Etapa 5: Análise Segmentada concluída.")
+# Registrar a hora final do processamento

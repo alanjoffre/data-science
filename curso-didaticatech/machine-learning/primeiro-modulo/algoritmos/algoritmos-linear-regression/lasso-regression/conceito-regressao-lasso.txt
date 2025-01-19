@@ -1,0 +1,5 @@
+Regressão Lasso
+
+Esta técnica é um tipo de regressão linear e ajuda a diminuir a limitação do modelo. Os valores dos dados encolhem para o centro ou média para evitar o sobreajustamento dos dados. Utilizando o contexto da Regressão de Ridge, compreenderemos esta técnica em detalhe em palavras simples abaixo.
+
+https://datascience.eu/pt/aprendizado-de-maquina/regressao-lasso-definicao-simples/

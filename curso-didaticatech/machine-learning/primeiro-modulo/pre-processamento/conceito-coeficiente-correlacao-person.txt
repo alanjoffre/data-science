@@ -1,0 +1,34 @@
+Coeficiente de correlação de Pearson
+
+Esta página cita fontes, mas que não cobrem todo o conteúdo. Ajude a inserir referências. Conteúdo não verificável pode ser removido.—Encontre fontes: Google (notícias, livros e acadêmico) (Agosto de 2011)
+Em estatística descritiva, o coeficiente de correlação de Pearson, também chamado de "coeficiente de correlação produto-momento" ou simplesmente de "ρ de Pearson" mede o grau da correlação (e a direcção dessa correlação - se positiva ou negativa) entre duas variáveis de escala métrica (intervalar ou de rácio/razão).
+
+Este coeficiente, normalmente representado por ρ assume apenas valores entre -1 e 1.
+
+{\displaystyle \rho =1}{\displaystyle \rho =1} Significa uma correlação perfeita positiva entre as duas variáveis.
+{\displaystyle \rho =-1}{\displaystyle \rho =-1} Significa uma correlação negativa perfeita entre as duas variáveis - Isto é, se uma aumenta, a outra sempre diminui.
+{\displaystyle \rho =0}{\displaystyle \rho =0} Significa que as duas variáveis não dependem linearmente uma da outra. No entanto, pode existir uma dependência não linear. Assim, o resultado {\displaystyle \rho =0}{\displaystyle \rho =0} deve ser investigado por outros meios.
+
+A análise correlacional indica a relação entre 2 variáveis lineares e os valores sempre serão entre +1 e -1. O sinal indica a direção, se a correlação é positiva ou negativa, e o tamanho da variavel indica a força da correlação.
+
+Cabe observar que, como o coeficiente é concebido a partir do ajuste linear, então a fórmula não contém informações do ajuste, ou seja, é composta apenas dos dados.
+
+Interpretando {\displaystyle \rho }\rho [1]
+0.9 para mais ou para menos indica uma correlação muito forte.
+0.7 a 0.9 positivo ou negativo indica uma correlação forte.
+0.5 a 0.7 positivo ou negativo indica uma correlação moderada.
+0.3 a 0.5 positivo ou negativo indica uma correlação fraca.
+0 a 0.3 positivo ou negativo indica uma correlação desprezível.
+
+O coeficiente de correlação não é outro senão o cosseno do ângulo α entre os dois vetores!
+
+Se {\displaystyle \rho }\rho  = 1, o ângulo α = 0, os dois vetores são colineares (paralelos).
+Se {\displaystyle \rho }\rho  = 0, o ângulo α = 90°, os dois vetores são ortogonais.
+Se {\displaystyle \rho }\rho  = -1, o ângulo α = 180°, os dois vetores são colineares com sentidos opostos.
+Mais geralmente : {\displaystyle \alpha =\arccos(\rho )}{\displaystyle \alpha =\arccos(\rho )}, ({\displaystyle \arccos }{\displaystyle \arccos } é a inversa da função cosseno).
+Referências
+ Mukaka, M.M. «Statistics Corner: A guide to appropriate uso of Correlation coefficient in medical research». Malawai Medical Journal. PMC 3576830Acessível livremente. Consultado em 4 de janeiro de 2016
+
+ https://pt.wikipedia.org/wiki/Coeficiente_de_correla%C3%A7%C3%A3o_de_Pearson
+
+ 

@@ -1,0 +1,64 @@
+paths:
+  logs: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\logs\
+  figures: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\reports\figures\
+  reports: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\reports\
+  config: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\config\config.yaml
+  models: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\models\
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  filename: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\logs\app.log
+
+model:
+  type: KMeans
+  params:
+    n_clusters: 5
+    n_init: 10
+    random_state: 42
+
+data:
+  source: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\data\raw\customer_segmentation.csv
+  columns:
+    - ID
+    - Year_Birth
+    - Education
+    - Marital_Status
+    - Income
+    - Kidhome
+    - Teenhome
+    - Dt_Customer
+    - Recency
+    - MntWines
+    - MntFruits
+    - MntMeatProducts
+    - MntFishProducts
+    - MntSweetProducts
+    - MntGoldProds
+    - NumDealsPurchases
+    - NumWebPurchases
+    - NumCatalogPurchases
+    - NumStorePurchases
+    - NumWebVisitsMonth
+    - AcceptedCmp3
+    - AcceptedCmp4
+    - AcceptedCmp5
+    - AcceptedCmp1
+    - AcceptedCmp2
+    - Complain
+    - Z_CostContact
+    - Z_Revenue
+    - Response
+  target: Cluster
+
+preprocessing:
+  handle_missing_values:
+    strategy: mean
+  remove_outliers:
+    year_birth: 1900
+    income: 100000
+  scale_features: True
+
+visualization:
+  save_figures: True
+  figures_path: D:\Github\data-science\projetos\segmentacao_de_clientes_clustering\clustering\reports\figures\

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Dados de Usuário</title>
+</head>
+<body>
+    <h1>Alterar Dados de Usuário</h1>
+    <form method="post">
+        <input type="text" name="old_name" placeholder="Nome Atual do Usuário">
+        <input type="text" name="new_name" placeholder="Novo Nome do Usuário">
+        <button type="submit">Alterar</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}">Voltar para o Dashboard</a>
+</body>
+</html>
+

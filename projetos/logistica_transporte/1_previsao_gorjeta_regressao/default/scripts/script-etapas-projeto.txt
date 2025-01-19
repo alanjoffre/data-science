@@ -1,0 +1,186 @@
+Necessidade:
+1. Previsão de Gorjeta (Regressão)
+Objetivo: Prever o valor da gorjeta com base em várias características da viagem. 
+Métodos: Regressão Linear, Random Forest Regressor, Gradient Boosting Regressor.
+Resultado Esperado: Um modelo que pode prever com precisão o valor da gorjeta esperado para uma viagem, considerando fatores como a distância da viagem, 
+a área de origem e destino, e o total da viagem.
+
+Etapas do projeto: Previsão de Gorjeta (Regressão)
+
+1. Definição do Problema e Objetivos
+Objetivo: Prever o valor da gorjeta baseado em várias características da viagem.
+Método: Aplicar algoritmos de regressão (Regressão Linear, Random Forest Regressor, Gradient Boosting Regressor).
+Resultado Esperado: Modelos capazes de prever com precisão o valor da gorjeta, considerando a distância da viagem, áreas de origem e destino, e o total da viagem.
+
+2. Coleta e Entendimento dos Dados
+Linguagem a ser utilizada: Python
+Importar o dataset em: D:\Github\data-science\projetos\logistica_transporte\data\logistica_transportadora_2018_2022.csv
+
+Considere config.yaml:
+# Configurações de Diretórios para o Projeto
+paths:
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/config/config.yaml'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/src/'
+
+# Caminhos para o Armazenamento de Modelos
+models:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/models/final_model.joblib'
+
+# Caminhos para Pré-processadores
+preprocessors:
+  path: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/preprocessors/preprocessor.joblib'
+
+
+# Caminhos para os Dados
+data:
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/data/logistica_transportadora_2018_2022.csv'
+  processed: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/processed/preprocessado.csv'
+
+
+# Configurações de Relatórios
+reports:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/figures/'
+
+Renomear as colunas para:
+Trip ID: id_viagem
+Trip Start Timestamp: horario_inicio_viagem
+Trip End Timestamp: horario_fim_viagem
+Trip Seconds: segundo_da_viagem
+Trip Miles: milhas_viagem (fazer transformação para kilometros)
+Pickup Census Tract: area_censitaria_origem
+Dropoff Census Tract: area_censitaria_destino
+Pickup Community Area: area_comunitaria_origem
+Dropoff Community Area: area_comunitaria_cestino
+Fare: tarifa
+Tip: gorjeta
+Additional Charges: cobrancas_adicionais
+Trip Total: total_viagem
+Shared Trip Authorized: viagem_compartilhada_autorizada
+Trips Pooled: viagens_agrupadas
+Pickup Centroid Latitude: latitude_centroide_origem
+Pickup Centroid Longitude: longitude_centroide_origem
+Pickup Centroid Location: localizacao_centroide_origem
+Dropoff Centroid Latitude: latitude_centroide_destino
+Dropoff Centroid Longitude: longitude_centroide_destino
+Dropoff Centroid Location: localizacao_centroide_destino
+
+Selecionar o periodo inicial na coluna: horario_inicio_viagem para 01/01/2018 até 31/06/2018
+
+Toda vez que for necessário atualizar o config.yaml, favor informar.
+
+Coleta de Dados: 
+Entendimento dos Dados: Analise a estrutura do dataset, entenda as características das colunas e suas distribuições estatísticas. 
+Utilize ferramentas como Pandas e Seaborn para gerar descrições estatísticas e visualizações preliminares.
+
+3. Preparação dos Dados
+Tratamento de Valores Ausentes: Identifique e trate valores ausentes. Para colunas com muitos valores ausentes, avalie se é melhor removê-las ou imputar valores.
+Codificação de Variáveis Categóricas: Transforme variáveis categóricas (como áreas de origem e destino) em variáveis numéricas usando técnicas como One-Hot Encoding.
+Normalização/Escala dos Dados: Normalize ou padronize variáveis numéricas para garantir que todas as características tenham igual peso nos modelos de regressão.
+
+4. Análise Exploratória de Dados (EDA)
+Visualização de Dados: Utilize visualizações para explorar relações entre variáveis. Por exemplo, use gráficos de dispersão para ver a relação entre a distância da viagem 
+e o valor da gorjeta.
+Análise de Correlação: Calcule correlações entre variáveis para identificar quais delas têm maior impacto no valor da gorjeta. 
+Use heatmaps para visualizar essas correlações.
+
+5. Engenharia de Features
+Criação de Novas Features: Crie novas features que possam melhorar a performance do modelo. Por exemplo, crie variáveis que representem a hora do dia ou o dia da semana baseado 
+nos timestamps de início e fim da viagem.
+Seleção de Features: Utilize técnicas de seleção de features como Recursive Feature Elimination (RFE) ou análise de importância de features baseada em modelos (como Random Forest)
+para selecionar as características mais relevantes.
+
+6. Divisão do Dataset
+Divisão em Conjuntos de Treinamento e Teste: Divida o dataset em conjuntos de treinamento (80%) e teste (20%) para validar a performance do modelo. 
+Utilize train_test_split do Scikit-learn.
+
+7. Treinamento de Modelos
+Regressão Linear:
+Treine o modelo de regressão linear nos dados de treinamento.
+Avalie a performance do modelo usando métricas como RMSE, MAE e R².
+Random Forest Regressor:
+Treine o modelo de Random Forest nos dados de treinamento.
+Ajuste os hiperparâmetros usando técnicas como Random Search ou Grid Search.
+Avalie a performance do modelo usando as mesmas métricas.
+Gradient Boosting Regressor:
+Treine o modelo de Gradient Boosting nos dados de treinamento.
+Ajuste os hiperparâmetros para otimizar a performance.
+Avalie a performance do modelo.
+
+8. Avaliação e Validação do Modelo
+Validação Cruzada: Utilize validação cruzada (k-fold cross-validation) para garantir que o modelo não está overfitted e que generaliza bem.
+Comparação de Modelos: Compare os modelos treinados usando as métricas de performance e selecione o melhor modelo com base nos resultados.
+
+9. Interpretação dos Resultados
+Análise de Importância de Features: Analise quais features têm maior impacto nas previsões de gorjeta usando técnicas de importância de features.
+Interpretação do Modelo: Use técnicas como SHAP (SHapley Additive exPlanations) para interpretar como as diferentes características afetam as previsões.
+
+10. Implementação e Deploy
+Pipeline de Modelo: Crie um pipeline completo para pré-processamento dos dados, treinamento do modelo e previsão.
+Deploy do Modelo: Utilize plataformas como Flask ou FastAPI para criar uma API que permita a integração do modelo em sistemas de produção.
+Monitoramento: Estabeleça um sistema de monitoramento para acompanhar a performance do modelo em produção e garantir que ele continue funcionando corretamente ao longo do tempo.
+
+11. Documentação e Apresentação
+Documentação: Documente todas as etapas do projeto, desde a coleta e preparação dos dados até o treinamento e implementação dos modelos.
+Apresentação: Prepare uma apresentação para compartilhar os resultados do projeto com stakeholders, destacando os insights obtidos e o impacto potencial do modelo.
+
+----------
+
+Renomei as colunas do dataset:
+Trip ID: ID da Viagem
+Trip Start Timestamp: Horário de Início da Viagem
+Trip End Timestamp: Horário de Fim da Viagem
+Trip Seconds: Segundos da Viagem
+Trip Miles: Milhas da Viagem
+Pickup Census Tract: Área Censitária de Origem
+Dropoff Census Tract: Área Censitária de Destino
+Pickup Community Area: Área Comunitária de Origem
+Dropoff Community Area: Área Comunitária de Destino
+Fare: Tarifa
+Tip: Gorjeta
+Additional Charges: Cobranças Adicionais
+Trip Total: Total da Viagem
+Shared Trip Authorized: Viagem Compartilhada Autorizada
+Trips Pooled: Viagens Agrupadas
+Pickup Centroid Latitude: Latitude do Centroide de Origem
+Pickup Centroid Longitude: Longitude do Centroide de Origem
+Pickup Centroid Location: Localização do Centroide de Origem
+Dropoff Centroid Latitude: Latitude do Centroide de Destino
+Dropoff Centroid Longitude: Longitude do Centroide de Destino
+Dropoff Centroid Location: Localização do Centroide de Destino
+
+
+
+
+
+
+
+
+
+
+Processo estruturado - Modelagem preditiva
+
+- Aplicar Central Limit Theorem (CLT) e testes de significância, quando necessário:
+- Treinar os modelos de machine learning possiveis
+- Informar na console qual o melhor modelo obtido e seu relatório de classificação detalhado
+- Gerar o relatorio em txt: relatorio de classificação detalhado dos modelos 
+- Informar na console qual o melhor modelo obtido e seu relatório de classificação detalhado
+- Gerar o relatório em txt: melhor modelo obtido com as informações do seu modelo de classificação detalhado
+- Identificar os hiperparâmetros para o melhor modelo obtido
+- Informar quais são os hiperparâmetros obtidos
+- Gerar o relatório em txt: melhor hiperparamentros obtidos para o melhor modelo
+- Aplicar os hiperparâmetros otidos ao melhor modelo
+- Relatório de classificação detalhado em txt, com as informações do melhores hiperparâmetros aplicados
+- Efetuar validação cruzada
+- Relatório de classificação detalhado em txt, dos dados com validação cruzada
+- Identificar o melhor threshold com ROC
+- Relatório em txt do melhor threshopld com ROC
+- Aplicar o melhor threshold com ROC
+- Relatório de classificação detalhado após aplicar thresholds e ROC
+- Salvar modelo_final
+
+Essas etapas permitem um processo de modelagem eficaz e garantem que você esteja otimizando o modelo de forma robusta e criteriosa.

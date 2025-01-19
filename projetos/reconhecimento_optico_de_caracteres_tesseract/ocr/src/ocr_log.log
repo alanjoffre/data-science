@@ -1,0 +1,15 @@
+2025-01-18 11:10:20,113 - INFO - Carregando imagem: D:\Github\data-science\projetos\reconhecimento_optico_de_caracteres_tesseract\machine-learning\reports\figures\versiculo.png
+2025-01-18 11:10:20,130 - INFO - Imagem convertida para escala de cinza.
+2025-01-18 11:10:20,130 - INFO - Limiarização aplicada na imagem.
+2025-01-18 11:10:20,132 - INFO - Imagem redimensionada para 200% do tamanho original.
+2025-01-18 11:10:20,132 - INFO - Caminho para o Tesseract configurado.
+2025-01-18 11:10:20,132 - INFO - Executando OCR com configuração: --psm 6 -l eng
+2025-01-18 11:10:20,397 - INFO - OCR concluído com sucesso.
+2025-01-18 11:12:02,609 - ERROR - Arquivo não encontrado: D:\Github\data-science\projetos\reconhecimento_optico_de_caracteres_tesseract\machine-learning\reports\figures\texto.png
+2025-01-18 11:12:23,942 - INFO - Carregando imagem: D:\Github\data-science\projetos\reconhecimento_optico_de_caracteres_tesseract\machine-learning\reports\figures\texto.jpeg
+2025-01-18 11:12:23,958 - INFO - Imagem convertida para escala de cinza.
+2025-01-18 11:12:23,958 - INFO - Limiarização aplicada na imagem.
+2025-01-18 11:12:23,958 - INFO - Imagem redimensionada para 200% do tamanho original.
+2025-01-18 11:12:23,958 - INFO - Caminho para o Tesseract configurado.
+2025-01-18 11:12:23,958 - INFO - Executando OCR com configuração: --psm 6 -l eng
+2025-01-18 11:12:24,547 - INFO - OCR concluído com sucesso.

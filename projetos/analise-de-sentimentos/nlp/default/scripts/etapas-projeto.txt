@@ -1,0 +1,122 @@
+Projeto: Analise de Sentimentos
+- O projeto será em Dask e Spacy, pelo fato do dateset ter 1600000 linhas
+
+- Ao usar Dask não esqueça:
+- 1: Leitura e Manipulação de Dados em Paralelo
+- 2: Cálculo de Estatísticas Descritivas em Paralelo:
+
+- Ao usar Spacy não esqueça:
+- 1: Processamento de Texto em Lote (Batch Processing):
+- 2: Otimizando o Modelo de Linguagem
+
+Quanto a performance do projeto não esqueça de:
+- 1: Utilizar gerenciamento de Memória.
+- 2: Configuração de Parâmetros Adequados:
+- 2.1: Ajuste os parâmetros do dask, como o número de partições e o tamanho dos lotes, para otimizar o desempenho de acordo com os recursos do meu sistema.
+- 3: Profiling e Monitoramento:
+- 3.1: Utilize ferramentas de profiling para identificar gargalos de desempenho e ajustar seu código de acordo.
+
+- O dataset se encontra em: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\asentimentos.parquet
+
+- Cada etapa terá um programa, ao término de cada programa será salvo um arquivo CSV e também um parquet. O nome do arquivo pode ser o nome da etapa. Segue o diretório para salvar os datasets: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\
+
+- O programa sempre importará o dataset final salvo da etapa anterior, assim manterá sempre a manipulação dos dados tratados e limpos. Óbvio que o primeiro programa importara o dataset: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\asentimentos.parquet
+
+- Não utilize no código diretórios. Sempre faça chamada no config.yaml. 
+
+- Gere meu config.yaml. Este será salvo no diretório: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\config\
+
+- Ao final de cada programa, gere o config.yaml atualizado para que não gere erro ao executar o programa.
+
+- O projeto tem que ter logs, que deverão aparecer na console informando: erros, inicio e termino de cada etapa (iniciado com sucesso, executado e finalizado com sucesso).
+
+- Todos os logs dos programas serão salvos em: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\logs\
+
+- Não é necessário plotar na tela os gráficos, mas importantíssimo serem gerados e salvos no diretório: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\figures\
+
+- Para cada programa, gere também o programa de teste_unitario_NOME_DA_ETAPA.py
+
+- O codigo precisa ter comentários detalhados
+
+- O código no geral não pode ter redundância
+
+- O modelo final será salvo em: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\models\
+
+- Gere relatórios quando preciso e salve em: O programa no geral se precisar de relatórios D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\
+
+- As previsoes serão salvas em: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\predictions\
+
+- Gere as informações do requerimentos.txt do projeto. Sempre que atualizado, gere um novo e informe.
+
+- Etapas do projeto: Análise de sentimentos 
+
+- Etapa 1: Carregamento de Dados
+- 1.1 Definição do Problema e Objetivos, Especificar o objetivo da análise de sentimentos, Identificar as métricas-chave de sucesso.
+- 1.2 Coleta de Dados: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\asentimentos.parquet
+
+- Etapa 2: Pré-processamento de Dados
+- 2.1 Limpeza de Dados: Remover duplicatas e dados irrelevantes, Tratar valores ausentes.
+- 2.2 Normalização de Texto: Converter texto para minúsculas, Remover pontuações, números e caracteres especiais.
+- 2.3 Tokenização: Dividir o texto em palavras ou tokens.
+- 2.4 Remoção de Stop Words: Remover palavras comuns que não adicionam valor semântico (e.g., "e", "de", "é").
+- 2.5 Stemming e Lemmatization:Reduzir palavras à sua raiz ou forma base.
+- 2.6 Codificação de Texto: Converter texto em representações numéricas (e.g., Bag of Words, TF-IDF, Word Embeddings).
+- cuidado em remover hasgtags, pois usaremos
+- cuidado em remover emoticons, pois usaremos
+
+- Etapa 3: Análise Exploratória de Dados (EDA)
+- 3.1: Análise Estatística:
+- Descrever distribuições de frequências.
+- Calcular estatísticas descritivas.
+- 3.2: Visualizações:
+- Criar gráficos de dispersão, histogramas, box plots.
+- Visualizar nuvens de palavras para identificar os termos mais frequentes.
+- 3.3: Detecção de Outliers:
+- Identificar e tratar outliers nos dados.
+- 3.4: Análise de Correlação:
+- Analisar correlações entre variáveis.
+
+Etapa 4: Preparação de Dados para Modelagem
+- 4.1: Divisão de Dados:
+- Dividir o conjunto de dados em conjuntos de treinamento e teste (e.g., 70/30).
+- 4.2: Codificação de Variáveis Alvo:
+- Codificar variáveis categóricas para a análise de sentimentos (e.g., positivo, neutro, negativo).
+- 4.3: Balanceamento de Classes:
+- Implementar técnicas para lidar com dados desbalanceados (e.g., oversampling, undersampling).
+
+Etapa 5: Modelagem de Machine Learning
+- 5.1: Seleção de Modelos:
+- Escolher modelos iniciais (e.g., DistilBERT, GPT-3.5, BERTje).
+- 5.2: Construção de Pipelines:
+- Criar pipelines de pré-processamento e modelagem.
+- 5.3: Treinamento de Modelos:
+- Treinar modelos utilizando o conjunto de treinamento.
+- 5.4: Ajuste de Hiperparâmetros:
+- Utilizar Grid Search ou Random Search para encontrar os melhores hiperparâmetros.
+- 5.5: Validação Cruzada:
+- Validar os modelos utilizando técnicas de validação cruzada para assegurar a generalização.
+
+Etapa 6: Avaliação do Modelo
+- 6.1: Avaliação com Métricas:
+- Utilizar métricas como acurácia, precisão, recall e F1-score.
+- 6.2: Análise de Matriz de Confusão:
+- Visualizar e interpretar a matriz de confusão.
+- 6.3: Ajuste de Thresholds:
+- Ajustar thresholds para maximizar a métrica de interesse.
+
+Etapa 7: Implementação e Monitoramento
+- 7.1: Salvar Modelos Treinados:
+- Salvar modelos em formato adequado: joblib
+- 7.2: Implementação em Produção:
+- Criar APIs para integrar modelos em aplicações (e.g., Flask, FastAPI).
+- 7.3: Monitoramento de Desempenho:
+- Implementar sistemas de monitoramento para rastrear a performance do modelo em produção.
+- 7.4: Atualização e Manutenção do Modelo:
+- Atualizar modelos periodicamente com novos dados.
+- Realizar manutenção preventiva para garantir a precisão contínua.
+
+- Gere meu README com as informações do projeto.
+
+- Gere a estrutura dos diretorios do projeto para maior entendimento. 
+
+- Para cada etapa principal do projeto, gere um programa. O código de cada programa pode ser gerado em dez passos, não esqueça de sempre gerar ao término do programa o config.yaml, atualizado da operação e o teste unitário do programa/etapa. Pode gerar o primeiro passo.

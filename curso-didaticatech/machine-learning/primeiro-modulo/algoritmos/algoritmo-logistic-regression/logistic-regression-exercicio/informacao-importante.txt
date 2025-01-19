@@ -1,0 +1,18 @@
+Como dessa vez estamos carregando o dataset de uma forma diferente (em vez de utilizar um arquivo csv baixado do computador,
+estamos carregando o dataset de dentro do pacote sklearn), provavelmente esse procedimento tenha ficado um pouco confuso. 
+Uma dica para compreender o que foi feito é, logo após rodar a primeira célula, colocar em outra célula o comando print(dados).
+Assim, você vai poder enxergar que dataset é esse que estamos importando (antes de fazer a separação entre variáveis 
+preditoras e variável target). Você vai reparar que esse dataset é um dicionário com chaves e valores (na realidade se você
+perguntar o type(dados) a resposta será Bunch, não Dictionary, mas Bunch é uma espécie de dicionário de dentro do sklearn).
+Se você ainda não possui familiaridade com dicionários em Python, assista esse vídeo. Observe que 'data' e 'feature_names' 
+(as duas informações que estamos coletando) são chaves desse dicionário, enquanto os valores dessas chaves são justamente 
+as informações que queremos.
+
+Ao usar o comando dados.data e dados.feature_names estamos coletando os valores correspondentes dessas chaves.
+No código que usamos, estamos colocando essas informações dentro do comando pd.DataFrame do pandas. 
+Ou seja, estamos criando um dataframe onde os dados do dataframe (linhas e colunas) são os valores que estavam
+dentro da chave 'data' do dicionário, e os nomes das colunas desse dataframe são os valores que estavam dentro
+da chave 'feature_names' do dicionário.
+
+*Correção: no vídeo eu disse que a classe 1 possui câncer e a classe 0 não possui. 
+Na realidade, a classe 1 corresponde a tumor benigno e 0 corresponde a tumor maligno.
