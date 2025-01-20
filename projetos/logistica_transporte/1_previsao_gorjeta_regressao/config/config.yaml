@@ -15,15 +15,12 @@ models:
 preprocessors:
   path: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/preprocessors/preprocessor.joblib'
 
-
 # Caminhos para os Dados
 data:
-  raw: 'D:/Github/data-science/projetos/logistica_transporte/data/logistica_transportadora_2018_2022.csv'
-  processed: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/processed/preprocessado.csv'
-
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/raw/dataset_preprocessado.parquet'
+  processed: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/processed/processado.parquet'
 
 # Configurações de Relatórios
 reports:
   directory: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/'
   figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/figures/'
-  
