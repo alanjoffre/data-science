@@ -14,7 +14,7 @@ Resultado Esperado: Modelos capazes de prever com precisão o valor da gorjeta, 
 
 2. Coleta e Entendimento dos Dados
 Linguagem a ser utilizada: Python
-Importar o dataset em: D:\Github\data-science\projetos\logistica_transporte\data\logistica_transportadora_2018_2022.csv
+Importar o dataset em: D:\Github\data-science\projetos\logistica_transporte\1_previsao_gorjeta_regressao\data\raw\dataset_preprocessado.parquet
 
 Considere config.yaml:
 # Configurações de Diretórios para o Projeto
@@ -37,39 +37,14 @@ preprocessors:
 
 # Caminhos para os Dados
 data:
-  raw: 'D:/Github/data-science/projetos/logistica_transporte/data/logistica_transportadora_2018_2022.csv'
-  processed: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/processed/preprocessado.csv'
+  raw: 'D:\Github\data-science\projetos\logistica_transporte\1_previsao_gorjeta_regressao\data\raw\dataset_preprocessado.parquet'
+  processed: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/processed/processado.parquet'
 
 
 # Configurações de Relatórios
 reports:
   directory: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/'
   figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/reports/figures/'
-
-Renomear as colunas para:
-Trip ID: id_viagem
-Trip Start Timestamp: horario_inicio_viagem
-Trip End Timestamp: horario_fim_viagem
-Trip Seconds: segundo_da_viagem
-Trip Miles: milhas_viagem (fazer transformação para kilometros)
-Pickup Census Tract: area_censitaria_origem
-Dropoff Census Tract: area_censitaria_destino
-Pickup Community Area: area_comunitaria_origem
-Dropoff Community Area: area_comunitaria_cestino
-Fare: tarifa
-Tip: gorjeta
-Additional Charges: cobrancas_adicionais
-Trip Total: total_viagem
-Shared Trip Authorized: viagem_compartilhada_autorizada
-Trips Pooled: viagens_agrupadas
-Pickup Centroid Latitude: latitude_centroide_origem
-Pickup Centroid Longitude: longitude_centroide_origem
-Pickup Centroid Location: localizacao_centroide_origem
-Dropoff Centroid Latitude: latitude_centroide_destino
-Dropoff Centroid Longitude: longitude_centroide_destino
-Dropoff Centroid Location: localizacao_centroide_destino
-
-Selecionar o periodo inicial na coluna: horario_inicio_viagem para 01/01/2018 até 31/06/2018
 
 Toda vez que for necessário atualizar o config.yaml, favor informar.
 
@@ -152,14 +127,6 @@ Pickup Centroid Location: Localização do Centroide de Origem
 Dropoff Centroid Latitude: Latitude do Centroide de Destino
 Dropoff Centroid Longitude: Longitude do Centroide de Destino
 Dropoff Centroid Location: Localização do Centroide de Destino
-
-
-
-
-
-
-
-
 
 
 Processo estruturado - Modelagem preditiva
