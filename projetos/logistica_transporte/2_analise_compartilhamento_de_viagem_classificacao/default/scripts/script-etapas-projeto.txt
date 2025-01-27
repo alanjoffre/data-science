@@ -1,22 +1,77 @@
-Processo estruturado - Modelagem preditiva
+Detalhe todas as etapas a nivel senior do meu projeto de analise compartilhamento de viagem - utilizando classificacao
 
-- Aplicar Central Limit Theorem (CLT) e testes de significância, quando necessário:
-- Treinar os modelos de machine learning possiveis
-- Informar na console qual o melhor modelo obtido e seu relatório de classificação detalhado
-- Gerar o relatorio em txt: relatorio de classificação detalhado dos modelos 
-- Informar na console qual o melhor modelo obtido e seu relatório de classificação detalhado
-- Gerar o relatório em txt: melhor modelo obtido com as informações do seu modelo de classificação detalhado
-- Identificar os hiperparâmetros para o melhor modelo obtido
-- Informar quais são os hiperparâmetros obtidos
-- Gerar o relatório em txt: melhor hiperparamentros obtidos para o melhor modelo
-- Aplicar os hiperparâmetros otidos ao melhor modelo
-- Relatório de classificação detalhado em txt, com as informações do melhores hiperparâmetros aplicados
-- Efetuar validação cruzada
-- Relatório de classificação detalhado em txt, dos dados com validação cruzada
-- Identificar o melhor threshold com ROC
-- Relatório em txt do melhor threshopld com ROC
-- Aplicar o melhor threshold com ROC
-- Relatório de classificação detalhado após aplicar thresholds e ROC
-- Salvar modelo_final
+linguagem: python
 
-Essas etapas permitem um processo de modelagem eficaz e garantem que você esteja otimizando o modelo de forma robusta e criteriosa.
+Config.yaml:
+# Configurações de Diretórios para o Projeto
+paths:
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/config/config.yaml'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/src/'
+
+# Caminhos para o Armazenamento de Modelos
+models:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/final_model.joblib'
+
+# Caminhos para Pré-processadores
+preprocessors:
+  path: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors/preprocessor.joblib'
+
+# Caminhos para os Dados
+data:
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/raw/dataset_preprocessado.parquet'
+  processed: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/processed/processado.parquet'
+
+# Configurações de Relatórios
+reports:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/'
+
+Nome das colunas: 
+id_viagem,segundos_da_viagem,milhas_da_viagem,trato_do_censo_do_embarque,trato_do_censo_do_desembarque,area_comunitaria_do_embarque,area_comunitaria_do_desembarque,tarifa,gorjeta,cobrancas_adicionais,total_da_viagem,viagem_compartilhada_autorizada,viagens_agrupadas,latitude_do_centroide_do_embarque,longitude_do_centroide_do_embarque,local_do_centroide_do_embarque,latitude_do_centroide_do_desembarque,longitude_do_centroide_do_desembarque,local_do_centroide_do_desembarque,data_inicio,hora_inicio,data_final,hora_final
+
+1 - Definição do Problema e Escopo do Projeto
+- Objetivo: Analise Compartilhamento de viagem, utilizando classificação
+
+2 - Coleta e Pré-processamento de Dados
+- Limpeza de Dados: Tratar dados ausentes, eliminar outliers, corrigir inconsistências e garantir a qualidade dos dados.
+- Transformação de Dados: Realizar transformações necessárias, como normalização, codificação de variáveis categóricas, e criação de novas features relevantes (ex. hora do dia, dia da semana, etc.).
+
+3 - Análise Exploratória de Dados (EDA)
+- Visualização: Utilizar gráficos e visualizações para entender melhor a distribuição dos dados e relações entre variáveis.
+- Estatísticas Descritivas: Calcular estatísticas importantes (média, mediana, desvio padrão) para entender a tendência central e dispersão dos dados.
+- Identificação de Padrões: Buscar padrões iniciais nos dados que possam indicar insights valiosos.
+
+4 - Seleção e Engenharia de Features
+- Feature Selection: Identificar as features mais relevantes que influenciam a variável alvo, utilizando técnicas como correlação e análise de importância de features.
+- Feature Engineering: Criar novas features que possam melhorar a performance do modelo de classificação.
+
+5 - Divisão dos Dados
+- Dataset de Treinamento e Teste: Dividir os dados em conjuntos de treinamento e teste para validar a performance do modelo.
+
+6 - Escolha do Modelo de Classificação
+- Selecionar Algoritmos: Considerar diferentes algoritmos de classificação (ex. Random Forest, Gradient Boosting, SVM, Redes Neurais) e escolher os mais adequados para o problema.
+- Implementação: Implementar os modelos selecionados utilizando bibliotecas como Scikit-learn, TensorFlow, ou PyTorch.
+
+7 - Treinamento do Modelo
+- Treinar Modelos: Treinar os modelos de classificação utilizando o conjunto de dados de treinamento.
+- Validação Cruzada: Utilizar técnicas de validação cruzada para avaliar a performance e ajustar hiperparâmetros dos modelos.
+
+8 - Avaliação do Modelo
+- Métricas de Performance: Avaliar os modelos utilizando métricas como acurácia, precisão, recall, F1-score, AUC-ROC, etc.
+- Comparação de Modelos: Comparar a performance dos diferentes modelos e selecionar o melhor.
+
+9 - Ajuste e Otimização
+- Ajustar Hiperparâmetros: Refinar os modelos otimizando hiperparâmetros para melhorar a performance.
+- Tuning Final: Realizar ajustes finais nos modelos antes da implementação.
+
+10 - Deploy e Monitoramento
+- Implementação: Deploy do modelo escolhido em um ambiente de produção.
+- Monitoramento: Monitorar a performance do modelo em produção, ajustando conforme necessário para manter a precisão e eficiência.
+
+11 - Documentação e Comunicação
+- Documentação: Criar documentação detalhada de todo o processo, incluindo escolhas de modelagem, resultados e interpretações.
+- Relatórios e Apresentação: Preparar relatórios e apresentações para comunicar os resultados e insights aos stakeholders.

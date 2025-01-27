@@ -1,174 +1,133 @@
-import sys
-import os
-import time
-import psutil
-import logging
-import yaml
-from datetime import datetime
-from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score, roc_auc_score
-from xgboost import XGBClassifier
+import pandas as pd
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
 import joblib
-from sklearn.model_selection import train_test_split
-import pandas as pd  # Importando pandas para carregar os dados
+from imblearn.over_sampling import SMOTE
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-# Adicionar o diretório 'src' ao sys.path
-sys.path.append(os.path.join('D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\src'))
+# Objetivo do Projeto
+objetivo = "Analisar o compartilhamento de viagem utilizando métodos de classificação para determinar os fatores que influenciam a probabilidade de uma viagem ser compartilhada."
 
-# Definir o diretório de logs e o nome do arquivo de log com data e hora da execução
-log_dir = 'D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\logs'
-log_file_path = os.path.join(log_dir, f"pipeline_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
+# Identificação das Partes Interessadas
+stakeholders = ["Gestores de Operações", "Equipes de Marketing", "Desenvolvedores de Produto"]
 
-# Garantir que o diretório de logs exista
-if not os.path.exists(log_dir):
-    os.makedirs(log_dir)
+# Requisitos de Negócio e Técnicos
+requisitos_negocio = ["Prever demanda por viagens compartilhadas", "Otimização de rotas", "Personalização da experiência do usuário"]
+requisitos_tecnicos = ["Indicadores-chave de desempenho (KPIs)", "Conformidade com regulamentos de dados"]
 
-# Configuração do logger
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+# Carregar dados de diferentes fontes
+data_raw_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/raw/dataset_preprocessado.parquet'
+data = pd.read_parquet(data_raw_path)
 
-# Configurar o FileHandler para o arquivo de log e o StreamHandler para o console
-file_handler = logging.FileHandler(log_file_path, mode='a')
-file_handler.setLevel(logging.INFO)
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
+# Quantidade de linhas no dataset
+num_linhas = data.shape[0]
+print(f"Número de linhas no dataset: {num_linhas}")
 
-# Definir o formato dos logs
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-console_handler.setFormatter(formatter)
+# Tipos de cada coluna
+tipos_colunas = data.dtypes
+print("Tipos de cada coluna:\n", tipos_colunas)
 
-# Adicionar os handlers ao logger
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
+# Verificação de valores ausentes
+valores_ausentes = data.isnull().sum()
+print("Valores ausentes por coluna:\n", valores_ausentes)
 
-# Função para monitorar a latência e o uso de recursos
-def monitorar_performance(etapa):
-    """Monitora o uso de recursos do sistema (CPU e memória)."""
-    try:
-        cpu_usage = psutil.cpu_percent(interval=1)
-        memory_usage = psutil.virtual_memory().percent
-        logger.info(f"[{etapa}] Uso de CPU: {cpu_usage}%")
-        logger.info(f"[{etapa}] Uso de memória: {memory_usage}%")
-    except Exception as e:
-        logger.error(f"Erro ao monitorar performance na etapa {etapa}: {e}")
+# Trabalhar com uma amostra do dataset (exemplo: 5% do dataset)
+amostra = data.sample(frac=0.05, random_state=42)
+amostra_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/raw/dataset_amostra.parquet'
+amostra.to_parquet(amostra_path)
+print(f"Amostra do dataset salva em: {amostra_path}")
 
-# Função para calcular e registrar as métricas de performance do modelo
-def avaliar_modelo(modelo, X_test, y_test):
-    """Avalia o modelo usando métricas de classificação e registra as métricas no log."""
-    try:
-        # Fazer predições
-        y_pred = modelo.predict(X_test)
-        y_prob = modelo.predict_proba(X_test)[:, 1]
+# Tratar dados ausentes - Exemplo de preenchimento com a média (para colunas numéricas) e moda (para colunas categóricas)
+amostra['segundos_da_viagem'].fillna(amostra['segundos_da_viagem'].mean(), inplace=True)
+amostra['milhas_da_viagem'].fillna(amostra['milhas_da_viagem'].mean(), inplace=True)
+amostra['trato_do_censo_do_embarque'].fillna(amostra['trato_do_censo_do_embarque'].median(), inplace=True)
+amostra['trato_do_censo_do_desembarque'].fillna(amostra['trato_do_censo_do_desembarque'].median(), inplace=True)
+amostra['area_comunitaria_do_embarque'].fillna(amostra['area_comunitaria_do_embarque'].median(), inplace=True)
+amostra['area_comunitaria_do_desembarque'].fillna(amostra['area_comunitaria_do_desembarque'].median(), inplace=True)
+amostra['tarifa'].fillna(amostra['tarifa'].mean(), inplace=True)
+amostra['gorjeta'].fillna(amostra['gorjeta'].mean(), inplace=True)
+amostra['cobrancas_adicionais'].fillna(amostra['cobrancas_adicionais'].mean(), inplace=True)
+amostra['total_da_viagem'].fillna(amostra['total_da_viagem'].mean(), inplace=True)
+amostra['latitude_do_centroide_do_embarque'].fillna(amostra['latitude_do_centroide_do_embarque'].median(), inplace=True)
+amostra['longitude_do_centroide_do_embarque'].fillna(amostra['longitude_do_centroide_do_embarque'].median(), inplace=True)
+amostra['local_do_centroide_do_embarque'].fillna(amostra['local_do_centroide_do_embarque'].mode()[0], inplace=True)
+amostra['latitude_do_centroide_do_desembarque'].fillna(amostra['latitude_do_centroide_do_desembarque'].median(), inplace=True)
+amostra['longitude_do_centroide_do_desembarque'].fillna(amostra['longitude_do_centroide_do_desembarque'].median(), inplace=True)
+amostra['local_do_centroide_do_desembarque'].fillna(amostra['local_do_centroide_do_desembarque'].mode()[0], inplace=True)
 
-        # Calcular métricas
-        accuracy = accuracy_score(y_test, y_pred)
-        recall = recall_score(y_test, y_pred)
-        precision = precision_score(y_test, y_pred)
-        f1 = f1_score(y_test, y_pred)
-        auc = roc_auc_score(y_test, y_prob)
+# Verificar se ainda existem valores ausentes
+valores_ausentes_pos_tratamento = amostra.isnull().sum()
+print("Valores ausentes após tratamento:\n", valores_ausentes_pos_tratamento)
 
-        # Registrar as métricas no log
-        logger.info(f"Métricas de desempenho do modelo:")
-        logger.info(f"Acurácia: {accuracy:.4f}")
-        logger.info(f"Recall: {recall:.4f}")
-        logger.info(f"Precisão: {precision:.4f}")
-        logger.info(f"F1-Score: {f1:.4f}")
-        logger.info(f"AUC: {auc:.4f}")
-    except Exception as e:
-        logger.error(f"Erro ao avaliar o modelo: {e}")
+# Eliminar outliers
+amostra = amostra[amostra['milhas_da_viagem'] < 100]
 
-# Função para carregar a configuração do arquivo YAML
-def carregar_configuracao(config_path='D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\config\\config.yaml'):
-    """Carregar configurações de um arquivo YAML."""
-    try:
-        with open(config_path, 'r') as file:
-            config = yaml.safe_load(file)
-        logger.info("Configuração carregada com sucesso.")
-        return config
-    except FileNotFoundError:
-        logger.error(f"Arquivo de configuração não encontrado: {config_path}")
-        raise
-    except yaml.YAMLError as e:
-        logger.error(f"Erro ao ler o arquivo de configuração: {e}")
-        raise
+# Validação de Dados
+amostra['data_inicio'] = pd.to_datetime(amostra['data_inicio'], errors='coerce')
+amostra['data_final'] = pd.to_datetime(amostra['data_final'], errors='coerce')
+amostra = amostra.dropna(subset=['data_inicio', 'data_final'])
 
-# Função de pré-processamento de dados
-def preprocessamento_dados():
-    """Processa os dados e retorna X_train, X_test, y_train e y_test."""
-    try:
-        # Carregar dados e realizar o pré-processamento
-        dados = pd.read_csv('D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\data\\processed\\rclientes_preprocessado.csv')
+# Normalização e Codificação
+numerical_features = ['segundos_da_viagem', 'milhas_da_viagem', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem']
+categorical_features = ['trato_do_censo_do_embarque', 'trato_do_censo_do_desembarque', 'area_comunitaria_do_embarque', 'area_comunitaria_do_desembarque', 'hora_inicio', 'data_inicio']
 
-        # Separar as variáveis independentes (X) e dependentes (y)
-        X = dados.drop('Exited', axis=1)  # Ajuste conforme seu dataset
-        y = dados['Exited']  # Ajuste conforme seu dataset
+# Criação de novas features
+amostra['hora_inicio'] = amostra['hora_inicio'].apply(lambda x: int(x.split(':')[0]))  # Extrair hora
+amostra['dia_da_semana'] = amostra['data_inicio'].dt.weekday  # Extrair dia da semana
 
-        # Dividir os dados em treino e teste
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Atualizar lista de features categóricas
+categorical_features.append('dia_da_semana')
 
-        return X_train, X_test, y_train, y_test
-    except Exception as e:
-        logger.error(f"Erro ao processar os dados: {e}")
-        raise
+# Pipeline para transformação
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', StandardScaler(), numerical_features),
+        ('cat', OneHotEncoder(), categorical_features)
+    ]
+)
 
-# Função para treinar o modelo
-def treinar_modelo(X_train, y_train):
-    """Treina o modelo XGBoost e retorna o modelo treinado."""
-    try:
-        # Treinamento do modelo
-        modelo = XGBClassifier()
-        modelo.fit(X_train, y_train)
-        return modelo
-    except Exception as e:
-        logger.error(f"Erro ao treinar o modelo: {e}")
-        raise
+# Aplicar pré-processamento
+data_preprocessed = preprocessor.fit_transform(amostra)
 
-# Função para salvar o modelo treinado
-def salvar_modelo(modelo, caminho):
-    """Salva o modelo treinado em um arquivo."""
-    try:
-        joblib.dump(modelo, caminho)
-        logger.info(f"Modelo salvo com sucesso em {caminho}.")
-    except Exception as e:
-        logger.error(f"Erro ao salvar o modelo: {e}")
-        raise
+# Salvar o preprocessor
+preprocessor_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors/preprocessor.joblib'
+joblib.dump(preprocessor, preprocessor_path)
 
-# Função para executar o pipeline
-def executar_pipeline():
-    """Executar o pipeline de pré-processamento, treinamento e avaliação do modelo."""
-    try:
-        # Carregar configuração
-        config = carregar_configuracao()
-        
-        # Iniciar pré-processamento
-        logger.info("Iniciando o pipeline de pré-processamento...")
-        monitorar_performance("Pré-processamento (início)")
-        X_train, X_test, y_train, y_test = preprocessamento_dados()  # Chama a função de pré-processamento
-        monitorar_performance("Pré-processamento (fim)")
+# Verificar a integridade dos dados integrados
+num_linhas_colunas = amostra.shape
+print("Número de linhas e colunas no dataset:", num_linhas_colunas)
 
-        # Iniciar treinamento do modelo
-        logger.info("Iniciando o treinamento do modelo...")
-        monitorar_performance("Treinamento (início)")
-        modelo = treinar_modelo(X_train, y_train)  # Chama a função de treinamento e obtém o modelo
-        monitorar_performance("Treinamento (fim)")
+# Verificar se todas as fontes de dados foram corretamente integradas
+colunas_disponiveis = amostra.columns
+print("Colunas disponíveis no dataset:", colunas_disponiveis)
 
-        # Avaliar e registrar as métricas de performance do modelo
-        logger.info("Avaliando o modelo...")
-        avaliar_modelo(modelo, X_test, y_test)
+# Balancear a variável de destino
+X = data_preprocessed
+y = amostra['viagem_compartilhada_autorizada']
 
-        # Salvando o modelo treinado
-        logger.info("Salvando o modelo...")
-        salvar_modelo(modelo, config['models']['final_model'])
+smote = SMOTE(random_state=42)
+X_res, y_res = smote.fit_resample(X, y)
 
-        logger.info("Pipeline concluído com sucesso.")
-    except Exception as e:
-        logger.error(f"Erro durante a execução do pipeline: {e}", exc_info=True)
+distribuicao_balanceamento = y_res.value_counts()
+print("Distribuição após balanceamento:", distribuicao_balanceamento)
 
-if __name__ == "__main__":
-    logger.info("Iniciando a execução do pipeline.")
-    
-    executar_pipeline()
+# Calcular a correlação entre as variáveis
+correlation_matrix = amostra.corr()
 
-    # Remover handlers e fechar o FileHandler para garantir a gravação no arquivo
-    logger.removeHandler(file_handler)
-    file_handler.close()
+# Plotar a matriz de correlação e salvar o gráfico
+plt.figure(figsize=(12, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+correlation_plot_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/correlation_matrix.png'
+plt.savefig(correlation_plot_path)
+plt.close()
+print(f"Gráfico de correlação salvo em: {correlation_plot_path}")
+
+# Gerar um relatório descritivo
+report = amostra.describe()
+
+# Salvar o relatório em um arquivo CSV
+report_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/relatorio_descritivo.csv'
+report.to_csv(report_path)
+
+print(f"Relatório descritivo salvo em {report_path}")
