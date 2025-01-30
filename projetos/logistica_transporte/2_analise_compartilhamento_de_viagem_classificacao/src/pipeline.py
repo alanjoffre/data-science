@@ -85,7 +85,7 @@ limite_distancia = 48.28
 df = df.filter(df["milhas_da_viagem"] <= limite_distancia)
 
 # Remoção de duplicatas
-duplicatas_removidas = df.duplicated().sum()
+duplicatas_removidas = df.unique(maintain_order=True).height - df.height
 df = df.unique()
 print(f"Número de registros duplicados removidos: {duplicatas_removidas}")
 
