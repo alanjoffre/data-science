@@ -1,26 +1,44 @@
-# Configurações de Diretórios para o Projeto
+# Configuração Inicial do Projeto de Análise de Compartilhamento de Viagem
+
 paths:
   config_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/config/config.yaml'
   logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/logs/'
   notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/notebook/'
   src_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/src/'
 
-# Caminhos para o Armazenamento de Modelos
 models:
   directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/'
   scaler: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/scaler.joblib'
   final_model: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/final_model.joblib'
 
-# Caminhos para Pré-processadores
 preprocessors:
   path: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors/preprocessor.joblib'
 
-# Caminhos para os Dados
 data:
-  raw: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/raw/dataset_preprocessado.parquet'
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/raw/logistica_transportadora_2018_2022.csv'
   processed: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/processed/processado.parquet'
 
-# Configurações de Relatórios
 reports:
   directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/'
   figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/'
+
+# Requisitos do Ambiente
+python:
+  version: '3.8'
+
+dependencies:
+  - pandas
+  - numpy
+  - polars
+  - scikit-learn
+  - joblib
+  - matplotlib
+  - seaborn
+  - dask
+  - fastapi
+  - uvicorn
+  - pyyaml
+  - requests
+  - time
+  - tqdm
+  - os
