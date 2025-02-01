@@ -1,0 +1,309 @@
+Projeto: Analise compartilhamento de viagem classificacao
+
+Dataset: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\data\raw\logistica_transportadora_2018_2022.csv
+
+# 🚀 **2. Renomeação das colunas**
+colunas = {
+    'Trip ID': 'id_viagem',
+    'Trip Start Timestamp': 'data_inicio',
+    'Trip End Timestamp': 'data_final',
+    'Trip Seconds': 'segundos_da_viagem',
+    'Trip Miles': 'milhas_da_viagem',
+    'Pickup Census Tract': 'trato_do_censo_do_embarque',
+    'Dropoff Census Tract': 'trato_do_censo_do_desembarque',
+    'Pickup Community Area': 'area_comunitaria_do_embarque',
+    'Dropoff Community Area': 'area_comunitaria_do_desembarque',
+    'Fare': 'tarifa',
+    'Tip': 'gorjeta',
+    'Additional Charges': 'cobrancas_adicionais',
+    'Trip Total': 'total_da_viagem',
+    'Shared Trip Authorized': 'viagem_compartilhada_autorizada',
+    'Trips Pooled': 'viagens_agrupadas',
+    'Pickup Centroid Latitude': 'latitude_do_centroide_do_embarque',
+    'Pickup Centroid Longitude': 'longitude_do_centroide_do_embarque',
+    'Dropoff Centroid Latitude': 'latitude_do_centroide_do_desembarque',
+    'Dropoff Centroid Longitude': 'longitude_do_centroide_do_desembarque'
+	
+# 🚀 **3. Tipo de dado de cada coluna**
+data columns (total 21 columns):
+ #   Column                                 Non-Null Count  Dtype
+---  ------                                 --------------  -----
+ 0   id_viagem                              48112 non-null  object
+ 1   data_inicio                            48112 non-null  object
+ 2   data_final                             48112 non-null  object
+ 3   segundos_da_viagem                     48110 non-null  float64
+ 4   milhas_da_viagem                       48112 non-null  float64
+ 5   trato_do_censo_do_embarque             34238 non-null  float64
+ 6   trato_do_censo_do_desembarque          34155 non-null  float64
+ 7   area_comunitaria_do_embarque           45263 non-null  float64
+ 8   area_comunitaria_do_desembarque        45051 non-null  float64
+ 9   tarifa                                 48112 non-null  float32
+ 10  gorjeta                                48112 non-null  float64
+ 11  cobrancas_adicionais                   48112 non-null  float64
+ 12  total_da_viagem                        48112 non-null  float64
+ 13  viagem_compartilhada_autorizada        48112 non-null  category
+ 14  viagens_agrupadas                      48112 non-null  float64
+ 15  latitude_do_centroide_do_embarque      45297 non-null  float64
+ 16  longitude_do_centroide_do_embarque     45297 non-null  float64
+ 17  Pickup Centroid Location               45297 non-null  object
+ 18  latitude_do_centroide_do_desembarque   45088 non-null  float64
+ 19  longitude_do_centroide_do_desembarque  45088 non-null  float64
+ 20  Dropoff Centroid Location              45088 non-null  object
+dtypes: category(1), float32(1), float64(14), object(5)
+
+# 🚀 **4. Classificação das colunas: Númericas, Categóricas e Temporais**
+
+- Variáveis Temporais
+  - data_inicio
+    - Tipo: Temporal (timestamp)
+    - Relevância:
+      - Permite extrair informações de sazonalidade (dia da semana, hora do dia, mês) que podem influenciar a demanda e o comportamento das viagens.
+      - Fundamental para calcular a duração real da viagem (em conjunto com data_final).
+
+  - data_final
+    - Tipo: Temporal (timestamp)
+    - Relevância:
+      - Em conjunto com data_inicio, possibilita a validação e o cálculo da duração da viagem.
+      - Pode ajudar a identificar padrões de término (por exemplo, horários de pico ou períodos com menor demanda).
+
+- Variáveis Numéricas (Contínuas ou Discretas)
+  - segundos_da_viagem
+    - Tipo: Numérica (contínua)
+    - Relevância:
+      - Indicador direto da duração da viagem em segundos.
+      - Útil para análises de eficiência e para modelar relações entre tempo e custos.
+
+  - milhas_da_viagem
+    - Tipo: Numérica (contínua)
+    - Relevância:
+      - Representa a distância percorrida, servindo para avaliar custos, consumo de combustível e a eficiência de rotas.
+
+  - tarifa
+    - Tipo: Numérica (contínua)
+    - Relevância:
+      - Base para o cálculo do custo da viagem.
+      - Pode ser correlacionada com distância, duração e localização.
+
+  - gorjeta
+    - Tipo: Numérica (contínua)
+    - Relevância:
+      - Indicador do comportamento do usuário e da satisfação com o serviço.
+      - Ajuda a entender a variabilidade na remuneração dos motoristas e a influência de fatores externos.
+
+   - cobrancas_adicionais
+     - Tipo: Numérica (contínua)
+     - Relevância:
+       - Reflete encargos extras aplicados à viagem (como taxas de pedágio ou serviços adicionais).
+       - Essencial para uma visão completa do custo total.
+
+   - total_da_viagem
+     - Tipo: Numérica (contínua)
+     - Relevância:
+       - Soma de tarifa, gorjeta e cobranças adicionais.
+       - Variável chave para análises de receita, faturamento e avaliação econômica do serviço.
+
+   - latitude_do_centroide_do_embarque e longitude_do_centroide_do_embarque
+     - Tipo: Numéricas (contínuas)
+     - Relevância:
+       - Coordenadas geográficas do ponto central do embarque.
+       - Permitem análises espaciais e a identificação de clusters ou hotspots de demanda.
+
+   - latitude_do_centroide_do_desembarque e longitude_do_centroide_do_desembarque
+     - Tipo: Numéricas (contínuas)
+     - Relevância:
+       - Coordenadas do ponto central do desembarque.
+       - Auxiliam no mapeamento dos destinos e na análise de padrões de deslocamento.
+
+- Variáveis Categóricas (ou Identificadores)
+
+   - id_viagem
+     - Tipo: Identificador único (pode ser tratado como categórico ou string)
+     - Relevância:
+       - Serve para identificar individualmente cada registro.
+       - Geralmente não é utilizada como feature preditiva, mas é útil para junções e rastreamento de dados.
+
+   - trato_do_censo_do_embarque
+     - Tipo: Categórica (ou discreta, dependendo de como os dados são codificados)
+     - Relevância:
+       - Reflete a divisão geográfica (censo) do local de embarque.
+       - Pode indicar áreas com maior concentração de chamadas ou identificar regiões de alta demanda.
+
+   - trato_do_censo_do_desembarque
+     - Tipo: Categórica (ou discreta)
+     - Relevância:
+       - Similar ao embarque, mas para o local de desembarque.
+       - Útil para compreender a distribuição espacial dos destinos das viagens.
+
+   - area_comunitaria_do_embarque
+     - Tipo: Categórica
+     - Relevância:
+       - Indica a área comunitária do embarque.
+       - Ajuda na segmentação geográfica e na identificação de bairros ou zonas com características particulares de demanda.
+
+   - area_comunitaria_do_desembarque
+     - Tipo: Categórica
+     - Relevância:
+       - Identifica a área comunitária de desembarque.
+       - Auxilia na análise de padrões de deslocamento e na avaliação de zonas de destino.
+
+   - viagem_compartilhada_autorizada
+     - Tipo: Categórica (geralmente binária, como Sim/Não ou True/False)
+     - Relevância:
+        - Variável central para o problema de classificação de viagens compartilhadas.
+        - Permite analisar os fatores que influenciam a autorização para o compartilhamento de uma viagem.
+
+
+   - viagens_agrupadas
+     - Tipo: Pode ser numérica (por exemplo, contagem) ou categórica (indicando se a viagem foi agrupada)
+     - Relevância:
+        - Informa se a viagem foi realizada em regime de pooling (agrupamento) e, se numérica, quantifica o grau de agrupamento.
+        - Essencial para análises de eficiência operacional e para entender a dinâmica do compartilhamento de viagens.
+		
+# 🚀 **5. Relatório incial: Completude, Consistencia, Acuracia e Atualidade. 
+
+1. Completude
+A métrica de completude indica a proporção de registros não nulos para cada coluna:
+
+id_viagem, data_inicio, data_final, milhas_da_viagem, tarifa, gorjeta, cobrancas_adicionais, total_da_viagem, viagem_compartilhada_autorizada, viagens_agrupadas:
+Todas apresentam valor 1.0, ou seja, 100% dos registros estão preenchidos nessas colunas.
+
+segundos_da_viagem:
+Aproximadamente 0.99996 (99,996% dos registros têm valor), o que sugere a existência de poucos registros com valores ausentes.
+
+trato_do_censo_do_embarque e trato_do_censo_do_desembarque:
+Aproximadamente 0.71, indicando que cerca de 29% dos registros estão ausentes nessas variáveis. Se essas informações forem críticas para a análise, pode ser necessário aplicar técnicas de imputação ou avaliar o impacto da sua ausência.
+
+area_comunitaria_do_embarque e area_comunitaria_do_desembarque:
+Valores próximos a 0.94, ou seja, 94% dos registros têm dados preenchidos, o que é razoável, mas ainda assim merece atenção caso essas variáveis sejam determinantes para o modelo ou análise.
+
+latitude/longitude dos centroides e colunas relacionadas a localização:
+Completude em torno de 0.94 a 0.941 para os pontos de embarque e 0.937 para os de desembarque, indicando que há uma porcentagem pequena de registros com informações geoespaciais faltantes.
+
+2. Consistência
+Essa métrica avalia regras de negócio e integridade dos dados:
+
+Datas (data_inicio ≤ data_final):
+Valor de 0.99996 indica que quase todos os registros cumprem a regra temporal esperada (a data de início é anterior ou igual à data final).
+
+Valores numéricos não negativos:
+Para as colunas numéricas críticas (segundos_da_viagem, milhas_da_viagem, tarifa, gorjeta, cobrancas_adicionais e total_da_viagem), a proporção de registros com valores não negativos é praticamente 1.0 (com exceção de segundos_da_viagem, que está em 0.99996). Isso indica que as regras de integridade para valores numéricos estão sendo bem respeitadas.
+
+3. Acurácia
+Tarifa:
+O valor de 0.99166 significa que 99,17% dos registros possuem tarifa menor ou igual ao valor do 99º percentil dessa variável. Essa abordagem é um indicativo simples para identificar possíveis outliers. Ou seja, aproximadamente 0,83% dos registros podem ser considerados atípicos ou discrepantes, dependendo do contexto.
+
+4. Atualidade
+Atualidade_dias:
+O valor de 895 dias indica que a data mais recente (em data_inicio) é de 895 dias atrás em relação à data corrente (no momento do processamento).
+Dados_atuais:
+Como o critério adotado é que os dados devem ter no máximo 30 dias de defasagem, o valor false para dados_atuais demonstra que a base está desatualizada.
+Implicação: Isso pode afetar análises que dependem de dados recentes, como predições de demanda ou comportamento atual dos usuários. Uma ação pode ser necessária para atualizar a base ou adaptar o modelo a essa defasagem temporal.
+
+Conclusão e Próximos Passos
+Completude e Consistência:
+Em geral, o dataset apresenta alta completude para a maioria das variáveis e boa consistência nas regras de integridade. No entanto, algumas colunas (como os tratos censitários) possuem uma proporção considerável de valores faltantes e podem demandar ações específicas (imputação, exclusão ou criação de uma categoria para "desconhecido").
+
+Acurácia:
+A presença de alguns outliers em tarifa deve ser avaliada de acordo com o contexto do negócio. Pode ser interessante investigar se esses outliers representam casos reais ou erros de entrada.
+
+Atualidade:
+A base de dados não está atualizada, o que é um ponto crítico se a aplicação exigir dados recentes. Verifique se esse cenário é esperado (por exemplo, se a base histórica é utilizada para análises retrospectivas) ou se há necessidade de atualizar a base para análises preditivas e operacionais.
+
+# 🚀 **6. Relatório inicial 2:
+# Medidas de tendência central (média, mediana), dispersão (desvio padrão, variância, IQR) e assimetria.
+# Testes de normalidade (Shapiro-Wilk, Kolmogorov-Smirnov) para entender a distribuição dos dados.
+
+Os logs indicam que o pipeline foi executado com sucesso e que a etapa de Análise Exploratória de Dados (EDA) produziu resultados detalhados para cada coluna numérica. A seguir, destaco alguns pontos relevantes dos resultados:
+
+Medidas de Tendência Central e Dispersão
+
+Para cada variável numérica foram calculadas a média, mediana, desvio padrão, variância e o IQR.
+Por exemplo, para a coluna segundos_da_viagem foi registrada uma média de aproximadamente 1053,71 e uma mediana de 859, o que, aliado a um alto desvio padrão (800,11), sugere uma grande variabilidade nos tempos das viagens.
+Assimetria (Skewness)
+
+Muitas variáveis apresentam índices elevados de assimetria.
+O caso de segundos_da_viagem (skewness ≈ 11,33) e gorjeta (skewness ≈ 4,68) indica distribuições fortemente enviesadas, o que pode ser esperado em dados de tempos de viagem e pagamentos, por exemplo.
+Testes de Normalidade
+
+Shapiro-Wilk: Para todas as variáveis numéricas avaliadas, os testes retornaram valores de p iguais a 0.0 (ou muito próximos de zero, considerando a precisão numérica), indicando que, estatisticamente, a hipótese de normalidade pode ser rejeitada para essas variáveis.
+Kolmogorov-Smirnov (KS): Da mesma forma, os testes KS também apresentaram p-valores de 0.0 para todas as colunas, corroborando o achado de que as distribuições dos dados se afastam significativamente da normal.
+Interpretação Geral
+
+Os resultados dos testes (com p-valores praticamente nulos) sugerem que a maioria das variáveis numéricas não segue uma distribuição normal.
+Essa não normalidade pode estar associada a fatores como presença de outliers, distribuições assimétricas ou a própria natureza dos dados (por exemplo, tempos e valores monetários frequentemente apresentam caudas longas).
+Implicações para Modelagem e Análises Posteriores
+
+Dependendo do modelo a ser aplicado, pode ser necessário considerar transformações (por exemplo, logaritmo ou Box-Cox) para reduzir a assimetria ou adotar modelos robustos a desvios da normalidade.
+Além disso, o conhecimento dessas características pode orientar a escolha de técnicas estatísticas ou de machine learning que não assumam normalidade dos dados.
+Em resumo, a etapa de EDA proporcionou uma visão abrangente da distribuição dos dados, evidenciando que muitas variáveis apresentam distribuições não normais e alta variabilidade. Esses insights são fundamentais para definir estratégias de pré-processamento e escolher modelos que sejam adequados às características do dataset.
+
+# 🚀 **7. Considerações 1:
+
+1. Carga e Conversão dos Dados
+Carga:
+Foram carregados 48.112 registros em 21 colunas.
+
+Conversão de Colunas Temporais:
+As colunas “data_inicio” e “data_final” foram convertidas para o formato datetime, permitindo operações temporais.
+
+2. Estatísticas Descritivas e Testes de Normalidade
+Exemplos de Estatísticas:
+segundos_da_viagem:
+Média ≈ 1053,71, Mediana = 859, Desvio padrão ≈ 800, IQR = 856.
+A alta assimetria (≈ 11,33) e os p‑valores 0.0 nos testes de normalidade (Shapiro-Wilk e KS) indicam uma distribuição fortemente enviesada.
+milhas_da_viagem:
+Média ≈ 5,88, Mediana = 3,6, Desvio padrão ≈ 6,61 e assimetria de 3,86.
+tarifa:
+Média ≈ 10,90, Mediana = 7,5, Desvio padrão ≈ 9,30 e assimetria de 3,72.
+gorjeta:
+Média ≈ 0,56, Mediana = 0, e assimetria elevada (≈ 4,68).
+Testes de Normalidade:
+Para praticamente todas as variáveis numéricas, os testes Shapiro‑Wilk e Kolmogorov‑Smirnov retornaram p‑valores iguais a 0.0, rejeitando a hipótese de normalidade.
+3. Valores Ausentes e Imputação
+Percentual de Ausentes:
+
+A maioria das colunas possui 0% de valores ausentes, exceto:
+trato_do_censo_do_embarque: 28,84%
+trato_do_censo_do_desembarque: 29,01%
+area_comunitaria_do_embarque: 5,92%
+area_comunitaria_do_desembarque: 6,36%
+Latitude/Longitude dos centroides: entre 5,85% e 6,29%
+Tratamento:
+
+Para colunas com poucos ausentes (<10%), foi utilizada a imputação simples pela mediana (para numéricas) ou pela moda (para categóricas).
+Para as colunas “trato_do_censo_do_embarque” e “trato_do_censo_do_desembarque”, que apresentam quase 29% de ausentes, foi aplicada imputação multivariada (IterativeImputer), conforme indicado nos warnings.
+Após o tratamento, todos os campos ficaram sem valores ausentes, conforme os logs.
+4. Correção de Discrepâncias Temporais
+Foram identificados 2 registros onde “data_inicio” era maior que “data_final”.
+O pipeline corrigiu automaticamente esses registros invertendo os valores das colunas correspondentes, garantindo a consistência temporal dos dados.
+5. Detecção de Outliers
+Método IQR e Z-score:
+Para cada coluna numérica, foram aplicados os dois métodos para identificar outliers.
+Por exemplo, na coluna “segundos_da_viagem”:
+Método IQR: 1916 outliers encontrados (limites: -762 e 2662).
+Método Z-score: 609 outliers (|z| > 3).
+Outliers também foram detectados em “milhas_da_viagem”, “tarifa”, “gorjeta”, “cobrancas_adicionais”, “total_da_viagem” e nas colunas de coordenadas.
+Observações:
+Em colunas como “trato_do_censo_do_embarque” e “trato_do_censo_do_desembarque”, embora os testes de outlier não tenham apresentado valores (usando z-score), o método IQR encontrou um número razoável de outliers (1512 e 1791, respectivamente).
+Os números elevados de outliers em algumas variáveis podem indicar que os dados têm uma alta variabilidade ou que existem valores extremos reais (ou possivelmente erros de medição) que devem ser analisados com cautela antes de usá-los em modelos.
+6. Outras Verificações
+Valores Negativos:
+Não foram encontrados valores negativos em colunas onde não se esperam (como “tarifa”, “gorjeta”, etc.).
+
+Duplicatas:
+Não foram encontrados registros duplicados.
+
+Conclusão Geral
+Integridade dos Dados:
+O pipeline realizou corretamente a carga, conversão e renomeação das colunas, garantindo que as datas estejam no formato correto e que os tipos de dados estejam otimizados.
+
+Valores Ausentes:
+O tratamento de valores ausentes foi aplicado com estratégias diferenciadas: imputação simples para colunas com menos de 10% de ausentes e imputação multivariada (MICE) para colunas com altos percentuais, como “trato_do_censo_do_embarque” e “trato_do_censo_do_desembarque”. Essa abordagem minimiza o viés potencial dos dados imputados.
+
+Discrepâncias Temporais:
+A identificação e correção automática dos 2 registros com discrepâncias temporais garantem a consistência dos dados para análises futuras.
+
+Outliers:
+A detecção dos outliers utilizando métodos IQR e z-score mostra que muitas variáveis apresentam um número elevado de valores extremos. Essa situação sugere a necessidade de uma análise adicional para decidir se esses valores devem ser tratados (por exemplo, removidos ou transformados) antes de utilizar os dados em modelos preditivos.
+
+Em resumo, a saída dos logs demonstra que o pipeline executou todas as etapas propostas, mas também destaca áreas importantes para atenção futura, principalmente a necessidade de analisar a natureza dos outliers e o impacto dos altos percentuais de ausentes em determinadas colunas (especialmente as de censo) na análise e modelagem. Essas informações são cruciais para ajustar os métodos de pré-processamento e garantir a robustez dos modelos que serão desenvolvidos posteriormente.
