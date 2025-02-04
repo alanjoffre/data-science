@@ -26,19 +26,3 @@ reports:
 python:
   version: '3.8'
 
-dependencies:
-  - pandas
-  - numpy
-  - polars
-  - scikit-learn
-  - joblib
-  - matplotlib
-  - seaborn
-  - dask
-  - fastapi
-  - uvicorn
-  - pyyaml
-  - requests
-  - time
-  - tqdm
-  - os
