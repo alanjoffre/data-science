@@ -1,0 +1,1 @@
+{'KShape': {'n_clusters': 2, 'silhouette_score': 0.24645548662739516}, 'DBSCAN': {'eps': 0.5, 'min_samples': 3, 'silhouette_score': None}}

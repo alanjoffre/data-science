@@ -1,0 +1,22 @@
+Tratamento e Limpeza
+
+Limpeza de Dados
+1 - Remoção de Duplicatas: Verifique se há registros duplicados e remova-os para evitar redundâncias.
+2 - Tratamento de Valores Ausentes: Identifique dados faltantes e decida se deve preencher com valores médios, mediana, ou simplesmente remover esses registros.
+3 - Correção de Erros: Procure e corrija erros de digitação, formatação inconsistente e outros erros humanos.
+
+Normalização e Padronização
+1 - Consistência de Formatos: Certifique-se de que todos os dados estão em um formato consistente (por exemplo, datas no mesmo formato, texto em caixa baixa/alta, etc.).
+2 - Conversão de Unidades: Unifique as unidades de medida (por exemplo, transformar todas as distâncias em quilômetros ou todas as moedas em uma mesma moeda).
+
+Análise e Tratamento de Outliers
+1 - Identificação de Outliers: Use técnicas estatísticas para identificar valores que estão fora do padrão.
+2 - Decisão sobre Outliers: Decida se esses outliers são erros que devem ser corrigidos/removidos ou se são dados válidos que devem ser mantidos.
+
+Validação e Verificação
+1 - Revisão de Amostras: Verifique uma amostra dos dados tratados para garantir que os processos aplicados foram eficazes.
+2 - Automatização de Processos: Sempre que possível, automatize processos de limpeza para garantir consistência e eficiência.
+
+Documentação
+1 - Registro de Alterações: Mantenha registros detalhados das alterações feitas nos dados para futuras referências.
+2 - Metadados: Documente os metadados, como a origem dos dados, o significado de cada coluna e qualquer transformação aplicada.

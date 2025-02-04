@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusteriza%C3%A7%C3%A3o_series_temporais/src/mlruns/578098583800796681/8100c9e1a47e4e27b8e9ca45f53abd1e/artifacts
+end_time: 1738698046076
+entry_point_name: ''
+experiment_id: '578098583800796681'
+lifecycle_stage: active
+run_id: 8100c9e1a47e4e27b8e9ca45f53abd1e
+run_name: adaptable-kite-371
+run_uuid: 8100c9e1a47e4e27b8e9ca45f53abd1e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738698040537
+status: 3
+tags: []
+user_id: alanj
