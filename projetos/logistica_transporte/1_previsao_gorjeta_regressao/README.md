@@ -98,3 +98,43 @@ pip install -r requirements.txt
 ├── modelo_previsao.py
 ├── pipeline_modelo.py
 └── app.py
+
+
+# Como Executar
+
+1. Pré-processamento e Feature Engineering
+Execute o script pipeline.py para:
+
+Carregar os dados raw.
+Realizar o pré-processamento e a criação de novas features.
+Gerar visualizações e salvar os datasets processados.
+
+python pipeline.py
+
+
+2. Treinamento e Avaliação dos Modelos
+Para treinar e comparar os modelos de regressão:
+python treinando_modelos.py
+
+Para executar o script de treinamento alternativo e avaliação:
+python modelo_previsao.py
+
+3. Otimização do Pipeline com Optuna
+Utilize o script pipeline_modelo.py para:
+
+Executar a otimização dos hiperparâmetros com Optuna.
+Validar o pipeline com validação cruzada e salvar o pipeline treinado.
+python pipeline_modelo.py
+
+4. Deploy da API de Previsão
+Inicie o servidor Flask para servir as previsões:
+python app.py
+
+- A API estará disponível em http://0.0.0.0:5000 e as métricas poderão ser acessadas via http://<host>:8000/metrics.
+
+# Monitoramento e Logs
+- Logging: Os scripts utilizam o módulo logging para registrar informações importantes e erros, facilitando a depuração.
+- Métricas: A API implementa o monitoramento via Prometheus, permitindo a coleta de métricas de requisições e performance.
+
+# Considerações Finais
+Este projeto foi desenvolvido com foco em escalabilidade e eficiência, aplicando as melhores práticas de engenharia de dados e machine learning. Sinta-se à vontade para ajustar os pipelines, testar novas abordagens de modelagem e integrar novas técnicas de MLOps para aprimorar a performance e a robustez da solução.
