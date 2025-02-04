@@ -1,5 +1,0 @@
-# Start os serviços pelo cmd como administrador:
-# Cada comando em uma janela
-# iniciar o Spark: spark-shell
-# Iniciar o HDFS (Hadoop Distributed File System):start-dfs
-# Iniciar o YARN (Yet Another Resource Negotiator):start-yarn

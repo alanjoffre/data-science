@@ -1,7 +1,7 @@
 # Configuração Inicial do Projeto de Análise de Compartilhamento de Viagem
 
 paths:
-  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/config/config.yaml'
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/config/'
   logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/logs/'
   notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/notebook/'
   src_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/src/'
@@ -22,7 +22,9 @@ reports:
   directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/'
   figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/'
 
+metrics:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/metrics/'
+
 # Requisitos do Ambiente
 python:
   version: '3.8'
-
