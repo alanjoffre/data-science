@@ -1,4 +1,4 @@
-liste detalhadamente a nivel senior um projeto de Analise compartilhamento de viagem utilizando classificação.
+liste detalhadamente a nivel senior um projeto de detecção de anomalias em tarifas.
 
 linguagem: python
 
