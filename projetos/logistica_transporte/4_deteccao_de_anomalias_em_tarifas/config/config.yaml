@@ -1,29 +1,30 @@
 # Configuração Inicial do Projeto de Análise de Compartilhamento de Viagem
 
 paths:
-  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/config/'
-  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/logs/'
-  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/notebook/'
-  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/src/'
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/config/'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/src/'
 
 models:
-  directory: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/models/'
-  scaler: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/models/scaler.joblib'
-  final_model: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/models/final_model.joblib'
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/models/final_model.joblib'
 
 preprocessors:
-  path: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/preprocessors/preprocessor.joblib'
+  path: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/preprocessors/preprocessor.joblib'
 
 data:
-  raw: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/data/raw/logistica_transportadora_2018_2022.csv'
-  processed: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/data/processed/processado.parquet'
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/amostra.parquet'
+  processed_parquet: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/processado.parquet'
+  processed_csv: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/processado.csv'
 
 reports:
-  directory: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/reports/'
-  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/reports/figures/'
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/reports/figures/'
 
 metrics:
-  directory: 'D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusterização_series_temporais/metrics/'
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/metrics/'
 
 # Requisitos do Ambiente
 python:

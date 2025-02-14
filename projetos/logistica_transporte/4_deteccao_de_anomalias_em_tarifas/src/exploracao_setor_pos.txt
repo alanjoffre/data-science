@@ -1,0 +1,70 @@
+===== Análise de setor_censitario_de_partida =====
+Estatísticas descritivas:
+count     5.000000e+04
+unique    7.560000e+02
+top       1.703124e+10
+freq      1.447600e+04
+
+Contagem de valores únicos (top 20):
+17031010100.0    24
+17031010201.0    39
+17031010202.0    33
+17031010300.0    44
+17031010400.0    46
+17031010501.0    21
+17031010502.0    27
+17031010503.0    28
+17031010600.0    52
+17031010701.0    11
+17031010702.0    30
+17031020100.0    10
+17031020200.0    18
+17031020301.0     3
+17031020302.0     4
+17031020400.0     8
+17031020500.0    24
+17031020601.0     6
+17031020602.0     7
+17031020701.0     4
+...
+
+Histograma salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\histograma_setor_censitario_de_partida.png
+Gráfico salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\countplot_setor_censitario_de_partida.png
+
+==================================================
+
+===== Análise de setor_censitario_de_destino =====
+Estatísticas descritivas:
+count     5.000000e+04
+unique    7.640000e+02
+top       1.703124e+10
+freq      1.465300e+04
+
+Contagem de valores únicos (top 20):
+17031010100.0    29
+17031010201.0    43
+17031010202.0    17
+17031010300.0    28
+17031010400.0    64
+17031010501.0    24
+17031010502.0    24
+17031010503.0    23
+17031010600.0    52
+17031010701.0    12
+17031010702.0    37
+17031020100.0     8
+17031020200.0    20
+17031020301.0     5
+17031020302.0    11
+17031020400.0     9
+17031020500.0    19
+17031020601.0     7
+17031020602.0    12
+17031020701.0     4
+...
+
+Histograma salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\histograma_setor_censitario_de_destino.png
+Gráfico salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\countplot_setor_censitario_de_destino.png
+
+==================================================
+
