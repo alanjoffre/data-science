@@ -1,22 +1,89 @@
-Processo estruturado - Modelagem preditiva
+1. Definição do Problema e Requisitos do Projeto
+Objetivos de Negócio e KPIs:
+Alinhar os objetivos (por exemplo, identificar padrões de mobilidade, otimizar rotas, detectar gargalos) com os stakeholders.
+Definir métricas e indicadores (fluxo de pessoas/veículos, densidade, tempos de deslocamento, etc.).
+Requisitos Funcionais e Não-Funcionais:
+Escalabilidade e performance (grandes volumes de dados de rastreamento).
+Segurança e governança dos dados geoespaciais.
+Compatibilidade com APIs e ferramentas de visualização interativas (ex.: Kepler.gl, Deck.gl, Folium).
 
-- Aplicar Central Limit Theorem (CLT) e testes de significância, quando necessário:
-- Treinar os modelos de machine learning possiveis
-- Informar na console qual o melhor modelo obtido e seu relatório de classificação detalhado
-- Gerar o relatorio em txt: relatorio de classificação detalhado dos modelos 
-- Informar na console qual o melhor modelo obtido e seu relatório de classificação detalhado
-- Gerar o relatório em txt: melhor modelo obtido com as informações do seu modelo de classificação detalhado
-- Identificar os hiperparâmetros para o melhor modelo obtido
-- Informar quais são os hiperparâmetros obtidos
-- Gerar o relatório em txt: melhor hiperparamentros obtidos para o melhor modelo
-- Aplicar os hiperparâmetros otidos ao melhor modelo
-- Relatório de classificação detalhado em txt, com as informações do melhores hiperparâmetros aplicados
-- Efetuar validação cruzada
-- Relatório de classificação detalhado em txt, dos dados com validação cruzada
-- Identificar o melhor threshold com ROC
-- Relatório em txt do melhor threshopld com ROC
-- Aplicar o melhor threshold com ROC
-- Relatório de classificação detalhado após aplicar thresholds e ROC
-- Salvar modelo_final
+2. Aquisição e Integração de Dados
+Fontes de Dados:
 
-Essas etapas permitem um processo de modelagem eficaz e garantem que você esteja otimizando o modelo de forma robusta e criteriosa.
+Dados primários: sensores GPS, dispositivos móveis, logs de transporte, sistemas IoT.
+Dados secundários: mapas base (OpenStreetMap, Mapbox), dados demográficos e socioeconômicos.
+Integração de Dados:
+
+Estabelecer pipelines de ingestão robustos utilizando ferramentas como Apache NiFi, Kafka ou Spark Streaming.
+Integração com bancos de dados espaciais (ex.: PostGIS, MongoDB com extensões geoespaciais) para armazenamento e consulta eficiente.
+Validação e Governança:
+
+Implementar regras de qualidade dos dados (consistência, completude e integridade).
+Uso de ferramentas de ETL (ex.: Apache Airflow, dbt) para orquestração e versionamento.
+
+3. Pré-processamento e Preparação dos Dados
+Limpeza e Normalização:
+
+Remover outliers, corrigir erros de geocodificação e tratar dados faltantes.
+Converter os dados para um sistema de referência espacial comum (por exemplo, WGS84 ou SIRGAS2000).
+Enriquecimento e Feature Engineering:
+
+Gerar atributos derivados (ex.: distância, tempo de deslocamento, clusterização de pontos).
+Aplicar transformações geométricas (buffer, interseção e união de polígonos) utilizando bibliotecas como Shapely e GeoPandas.
+Indexação Espacial e Otimização:
+
+Criar índices espaciais (R-tree, GiST) para acelerar consultas.
+Dividir os dados em partições geográficas ou temporais para análise paralela.
+
+4. Análise Exploratória e Modelagem Geoespacial
+Exploração Visual e Estatística:
+
+Mapear a distribuição espacial dos pontos de origem e destino.
+Analisar padrões de fluxo usando estatísticas descritivas e análises de cluster (por exemplo, DBSCAN para identificar zonas de alta densidade).
+Modelagem e Análise Avançada:
+
+Utilizar algoritmos de rede (graph theory) para modelar trajetórias e identificar nós críticos na mobilidade.
+Aplicar técnicas de interpolação e análise de kernel density estimation (KDE) para criar heatmaps que evidenciem áreas de concentração.
+Integrar métodos de Machine Learning para previsão de fluxo e detecção de anomalias (por exemplo, modelos baseados em séries temporais ou redes neurais para predição de mobilidade).
+Ferramentas e Bibliotecas:
+
+Python: GeoPandas, Shapely, PySAL, scikit-learn e TensorFlow/PyTorch.
+Spark + Sedona (antigo GeoSpark): Para processamento distribuído de dados geoespaciais em larga escala.
+
+5. Visualização e Apresentação dos Dados
+Construção de Dashboards Interativos:
+
+Utilizar bibliotecas como Kepler.gl, Deck.gl ou frameworks web (ex.: Dash, Bokeh, ou Streamlit) para criar visualizações interativas e responsivas.
+Desenvolvimento de mapas de calor, fluxogramas (flow maps) e diagramas de redes para ilustrar origens e destinos.
+Integração com Mapas Base e APIs:
+
+Configurar camadas sobre mapas base utilizando Mapbox ou OpenLayers.
+Incorporar filtros dinâmicos (por data, hora, categorias) para permitir análises customizadas.
+Considerações de Performance:
+
+Uso de técnicas de renderização incremental e otimizações no frontend (por exemplo, WebGL para renderizações em larga escala).
+Cache de consultas e pré-cálculo de agregações para reduzir a latência.
+
+6. Deploy e Automação do Pipeline
+Containerização e Orquestração:
+
+Utilizar Docker e Kubernetes para containerizar a aplicação, facilitando a escalabilidade e a manutenção.
+Implementar pipelines CI/CD para deploy contínuo, garantindo testes automatizados e versionamento dos modelos e scripts.
+Monitoramento e Logging:
+
+Monitorar a performance da aplicação e dos pipelines de dados com ferramentas como Prometheus, Grafana e ELK Stack.
+Estabelecer alertas para anomalias na qualidade dos dados ou falhas no processamento.
+Documentação e Governança:
+
+Documentar todas as etapas do pipeline, desde a aquisição até a visualização dos dados.
+Garantir a rastreabilidade e a auditabilidade dos dados e dos processos, atendendo às políticas de compliance.
+
+7. Feedback, Validação e Iteração
+Validação dos Resultados:
+
+Realizar análises comparativas e validar os insights com dados históricos ou benchmarks de mercado.
+Engajar stakeholders para feedback iterativo, refinando os modelos e as visualizações conforme as necessidades do negócio.
+Iteração e Evolução:
+
+Incorporar novas fontes de dados e técnicas emergentes (ex.: deep learning para detecção de padrões complexos) conforme o projeto evolui.
+Revisar periodicamente a arquitetura para incorporar inovações em processamento geoespacial e visualização de dados.
