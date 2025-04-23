@@ -1,0 +1,1214 @@
+- Só faça o que for solicitado!
+- Tudo o que for gerado para o projeto tem que ser a nivel: SENIOR.
+- Todas as paginas serão em Streamlit, utilize o que há de mais moderno dessa biblioteca.
+- Todos os programas estão no seguinte diretorio: D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\src\
+- Os programas já estão funcionando, não altere nada envolvendo códigos e programas com extensão .py
+- Considere meu config.yaml, contendo todos os diretorios do meu projeto:
+
+----------
+# Configurações de Diretórios para o Projeto
+paths:
+  config_dir: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/config/'
+  logs_dir: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/src/'
+
+# Caminhos para o Armazenamento de Modelos
+models:
+  directory: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/models/'
+  scaler: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/models/final_model.joblib'
+
+# Caminhos para Pré-processadores
+preprocessors:
+  path: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/preprocessors/preprocessor.joblib'
+  input_features:  # Adicionado para a inferência
+    - CreditScore
+    - Age
+    - Tenure
+    - Balance
+    - NumOfProducts
+    - HasCrCard
+    - IsActiveMember
+    - EstimatedSalary
+    - Geography_France
+    - Geography_Germany
+    - Geography_Spain
+    - Gender_Female
+    - Gender_Male
+
+# Caminhos para os Dados
+data:
+  raw: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/data/raw/rclientes.csv'
+  data_processed: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/data/processed/rclientes_dados_tratados.csv'
+  processed: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/data/processed/rclientes_preprocessado.csv'
+  new_data: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/data/new_data.csv'
+
+# Configurações de Relatórios
+reports:
+  directory: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/reports/figures/'
+  classification_initial: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/reports/classification_initial.txt'
+  classification_final: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/reports/classification_final.txt'
+  classification_threshold: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/reports/classification_threshold.txt'
+
+# Configurações de Pré-processamento
+preprocessing:
+  numeric_features: ["CreditScore", "Age", "Tenure", "Balance", "EstimatedSalary"]
+  categorical_features: ["Geography", "Gender", "HasCrCard", "IsActiveMember"]
+
+# Configurações de Previsões
+predictions:
+  output: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/predictions/predictions.csv'
+  directory: 'D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/predictions/'
+----------
+
+- O projeto será realizado por etapas: Primeira: Configurações, Segunda: Pagina Principal, Terceira: Pagina de Dashborad, Quarta: Pagina de Pipeline de Produção, Quinta: Pagina de Avaliação, Sexta: Pagina de Inferência, Setima: Pagina de Previsão de Clientes.
+- Não pule etapas, só vá para a proxima quando for solicitado, pois pode haver correções!
+- Explique tudo o que tem que ser feito em cada etapa: passo a passo.
+
+- Primeira etapa: Configurações.
+- Informe todas as configurações necessárias, alem de pastas e diretorios.
+
+- Segunda etapa: Pagina Principal - App.py
+- Crie uma pagina principal de boas vindas do meu projeto: Churn de Clientes
+- Fale nessa pagina principal do intuito do projeto e sua aplicação.
+- Essa pagina principal terá um menu onde permitira que o usuário acesse as serguintes paginas: Dashboard, Pipeline de Produção, Avaliação, Inferencia, Previsão de clientes.
+- Pode gerar todas as outras paginas com um texto padrão por enquanto: "A DESENVOLVER"
+- Pergunte-me antes de terminar essa etapa se ha mais alguma coisa a implementar.
+- Solicite o que a terceira etapa contemplara.
+- Pergunte se pode prosseguir para a proxima etapa. 
+
+- Terceira etapa: Pagina de Dashboard
+- A pagina page_dashboard.py, terá o mesmo layout do titulo e cor de fundo da pagina app.py
+- A pagina de dashboard acessará o arquivo no seguinte diretório: D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\data\processed\rclientes_dados_tratados.csv
+- O arquivo .csv possui as seguintes colunas:RowNumber,CustomerId,Surname,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited
+- Quais graficos importantes podemos utilizar nesse dashboard, considerando essas colunas?
+- Gere a pagina dashboard, com os graficos citados, organizados visualmente, totalmente prossifional e que gere bons insights.
+- Permita montar um grafico, caso o cliente queira especificar.
+- Permita salvar/download dos graficos gerados.
+- Pergunte-me antes de terminar essa etapa se ha mais alguma coisa a implementar.
+- Pergunte se pode prosseguir para a proxima etapa. 
+
+
+- Quarta etapa: Pagina de Pipeline de Produção
+- A pagina page_pipeline.py, terá o mesmo layout do titulo e cor de fundo da pagina page_dashboard.py
+- Quanto a pagina Pipeline de produção, o programa possui o nome: pipeline.py, já está rodando 100% e está no diretório: D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\src
+- Informe ao usuário que esse programa realiza as seguintes etapas: Carrega as configurações, Preprocessamento dos dados, Treinamento dos modelos e Salva o melhor modelo final.
+- Ele já conversa com os programas do mesmo diretório: data_preprocessing.py e model_training.py.
+- Nessa mesma pagina coloque um botao para executar o programa: pipeline.py.
+- A pagina terá que mostrar o status do programa ao ser executado.
+- Pergunte se pode prosseguir para a proxima etapa. 
+- Para você saber o que será rodado em cada programa seguem os códigos:
+
+pipeline.py:
+import sys
+import os
+# Adicionar o diretório 'src' ao sys.path
+sys.path.append(os.path.join('D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\src'))
+
+import logging
+import yaml
+from data_preprocessing import preprocessamento_dados
+from model_training import main as treinar_modelo
+from model_training import salvar_modelo
+
+# Configurar logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def carregar_configuracao(config_path='D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\config\\config.yaml'):
+    """Carregar configurações de um arquivo YAML."""
+    try:
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+        logger.info("Configuração carregada com sucesso.")
+        return config
+    except FileNotFoundError:
+        logger.error(f"Arquivo de configuração não encontrado: {config_path}")
+        raise
+    except yaml.YAMLError as e:
+        logger.error(f"Erro ao ler o arquivo de configuração: {e}")
+        raise
+
+def executar_pipeline():
+    """Executar o pipeline de pré-processamento e treinamento."""
+    try:
+        config = carregar_configuracao()
+        
+        logger.info("Iniciando o pipeline de pré-processamento...")
+        preprocessamento_dados()  # Chama a função de pré-processamento
+
+        logger.info("Iniciando o treinamento do modelo...")
+        modelo = treinar_modelo()  # Chama a função de treinamento e obtém o modelo
+        
+        logger.info("Salvando o modelo...")
+        salvar_modelo(modelo, config['models']['final_model'])  # Salva o modelo
+        
+        logger.info("Pipeline concluído com sucesso.")
+    except Exception as e:
+        logger.error(f"Erro durante a execução do pipeline: {e}")
+
+if __name__ == "__main__":
+    executar_pipeline()
+
+data_preprocessing.py em duas partes pois o codigo é extenso, primeira parte:
+
+#primeira parte
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from imblearn.over_sampling import SMOTE
+import yaml
+import os
+import logging
+import joblib
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import roc_curve, auc, confusion_matrix, ConfusionMatrixDisplay
+
+# Configurar logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def carregar_configuracao(config_path='D:\\Github\\data-science\\projetos\\rotatividade-de-clientes\\machine-learning\\config\\config.yaml'):
+    """
+    Carregar configurações de um arquivo YAML.
+
+    Parameters:
+    config_path (str): O caminho para o arquivo de configuração YAML.
+
+    Returns:
+    dict: Um dicionário contendo as configurações carregadas do arquivo.
+
+    Raises:
+    FileNotFoundError: Se o arquivo de configuração não for encontrado.
+    YAMLError: Se houver um erro ao ler o arquivo YAML.
+    """
+    try:
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+        logger.info("Configuração carregada com sucesso.")
+        return config
+    except FileNotFoundError:
+        logger.error(f"Arquivo de configuração não encontrado: {config_path}")
+        raise
+    except yaml.YAMLError as e:
+        logger.error(f"Erro ao ler o arquivo de configuração: {e}")
+        raise
+
+def validar_colunas(df, cols):
+    """
+    Valida se as colunas necessárias estão presentes no DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): O DataFrame a ser validado.
+    cols (list): Lista de colunas necessárias.
+
+    Raises:
+    ValueError: Se alguma coluna necessária estiver ausente no DataFrame.
+    """
+    missing_cols = [col for col in cols if col not in df.columns]
+    if missing_cols:
+        logger.error(f"Colunas ausentes no dataset: {missing_cols}")
+        raise ValueError(f"Colunas ausentes: {missing_cols}")
+    logger.info("Todas as colunas necessárias estão presentes.")
+
+def carregar_dados(config):
+    """
+    Carregar dados a partir do caminho especificado no arquivo de configuração.
+
+    Parameters:
+    config (dict): Dicionário contendo as configurações do projeto, incluindo o caminho dos dados.
+
+    Returns:
+    pd.DataFrame: DataFrame contendo os dados carregados.
+
+    Raises:
+    Exception: Se houver um erro ao carregar os dados.
+    """
+    raw_data_path = config['data']['raw']
+    try:
+        df = pd.read_csv(raw_data_path)
+        logger.info(f'Dataset bruto carregado de: {raw_data_path}')
+        return df
+    except Exception as e:
+        logger.error(f"Erro ao carregar o dataset bruto: {e}")
+        raise
+
+def tratar_dados(df, num_cols, config):
+    """
+    Tratar valores ausentes e duplicados no dataset e salvar os dados tratados em um arquivo CSV.
+
+    Parameters:
+    df (pd.DataFrame): DataFrame contendo os dados brutos.
+    num_cols (list): Lista de colunas numéricas que precisam ser tratadas.
+    config (dict): Dicionário contendo as configurações do projeto, incluindo o caminho para salvar os dados tratados.
+
+    Returns:
+    pd.DataFrame: DataFrame com valores ausentes tratados e duplicados removidos.
+    """
+    # Tratar valores ausentes
+    logger.info("Verificando dados ausentes...")
+    missing_values = df.isnull().sum()
+    logger.info(f"Valores ausentes por coluna:\n{missing_values[missing_values > 0]}")
+
+    for col in num_cols:
+        if col in df.columns:
+            mean_value = df[col].mean()
+            df[col] = df[col].fillna(mean_value)
+            logger.info(f"Valores ausentes na coluna '{col}' substituídos pela média: {mean_value}.")
+        else:
+            logger.warning(f"Coluna '{col}' não encontrada no dataset.")
+
+    # Verificar e remover duplicados
+    logger.info("Verificando duplicados...")
+    duplicates = df.duplicated().sum()
+    logger.info(f"Número de duplicados encontrados: {duplicates}")
+    if duplicates > 0:
+        df = df.drop_duplicates()
+        logger.info("Duplicados removidos.")
+    
+    # Salvar dados tratados em um arquivo CSV
+    processed_data_path = config['data']['data_processed']
+    df.to_csv(processed_data_path, index=False)
+    logger.info(f"Dados tratados salvos em: {processed_data_path}")
+
+    return df
+
+def criar_preprocessador(num_cols):
+    """
+    Criar um pré-processador para colunas numéricas.
+
+    Parameters:
+    num_cols (list): Lista de colunas numéricas para normalização.
+
+    Returns:
+    ColumnTransformer: Um objeto ColumnTransformer configurado para normalização das colunas numéricas.
+    """
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', StandardScaler(), num_cols)  # Normalização das colunas numéricas
+        ]
+    )
+    return preprocessor
+
+def aplicar_smote(X, y):
+    """
+    Aplicar SMOTE para balanceamento de classes.
+
+    Parameters:
+    X (pd.DataFrame): DataFrame com as características (features) dos dados.
+    y (pd.Series): Série com as etiquetas (labels) dos dados.
+
+    Returns:
+    pd.DataFrame, pd.Series: DataFrame e Série balanceados.
+    """
+    logger.info("Aplicando SMOTE para balanceamento de classes...")
+    smote = SMOTE(random_state=42)
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+    logger.info("Balanceamento de classes concluído.")
+    logger.info(f"Nova distribuição de classes:\n{pd.Series(y_resampled).value_counts()}")
+    return X_resampled, y_resampled
+
+def salvar_preprocessador(preprocessor, preprocessor_path):
+    """
+    Salvar o pré-processador.
+
+    Parameters:
+    preprocessor (ColumnTransformer): O pré-processador a ser salvo.
+    preprocessor_path (str): O caminho onde o pré-processador será salvo.
+    """
+    try:
+        joblib.dump(preprocessor, preprocessor_path)
+        logger.info(f'Pré-processador salvo em: {preprocessor_path}')
+    except Exception as e:
+        logger.error(f"Erro ao salvar o pré-processador: {e}")
+        raise
+
+def obter_nomes_colunas(preprocessor, num_cols):
+    """
+    Obter os nomes das colunas originais após a aplicação do pré-processador.
+
+    Parameters:
+    preprocessor (ColumnTransformer): O pré-processador aplicado.
+    num_cols (list): Lista de colunas numéricas originais.
+
+    Returns:
+    list: Lista de nomes de colunas originais.
+    """
+    return num_cols
+
+def salvar_dataset_processado(X, y, processed_path, original_cols):
+    """
+    Salvar o dataset processado em um arquivo CSV e imprimir as primeiras 5 linhas no console.
+
+    Parameters:
+    X (pd.DataFrame): DataFrame contendo as características (features) dos dados.
+    y (pd.Series): Série contendo as etiquetas (labels) dos dados.
+    processed_path (str): Caminho onde o dataset processado será salvo.
+    original_cols (list): Lista de nomes das colunas originais.
+
+    Raises:
+    Exception: Se houver um erro ao salvar o dataset processado.
+    """
+    df_resampled = pd.concat([pd.DataFrame(X, columns=original_cols), pd.Series(y, name='Exited')], axis=1)
+    try:
+        df_resampled.to_csv(processed_path, index=False)
+        logger.info(f'Dataset processado salvo em: {processed_path}')
+        print("\nPrimeiras 5 linhas do dataset processado:\n", df_resampled.head())
+    except Exception as e:
+        logger.error(f"Erro ao salvar o dataset processado: {e}")
+        raise
+		
+#segunda parte
+def gerar_graficos(df, output_dir):
+    """
+    Gerar gráficos do dataset preprocessado e salvar no diretório especificado.
+
+    Parameters:
+    df (pd.DataFrame): DataFrame contendo os dados preprocessados.
+    output_dir (str): Diretório onde os gráficos serão salvos.
+
+    Raises:
+    Exception: Se houver um erro ao salvar os gráficos.
+    """
+    logger.info("Gerando gráficos...")
+
+    # Verificar se o diretório existe, se não, criar
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Histograma de Idades
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df['Age'], kde=True)
+    plt.title('Distribuição de Idades')
+    plt.xlabel('Idade')
+    plt.ylabel('Frequência')
+    plt.savefig(os.path.join(output_dir, 'distribuicao_idades.png'))
+    plt.close()
+
+    # Box Plot de EstimatedSalary por Exited
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='Exited', y='EstimatedSalary', data=df)
+    plt.title('Salário Estimado vs. Exited')
+    plt.xlabel('Exited')
+    plt.ylabel('Salário Estimado')
+    plt.savefig(os.path.join(output_dir, 'salario_vs_exited.png'))
+    plt.close()
+
+    # Scatter Plot de Idade vs. Saldo
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(x='Age', y='Balance', hue='Exited', data=df)
+    plt.title('Idade vs. Saldo')
+    plt.xlabel('Idade')
+    plt.ylabel('Saldo')
+    plt.savefig(os.path.join(output_dir, 'scatter_idade_vs_saldo.png'))
+    plt.close()
+
+    # Gráfico de Linha de Saldo ao Longo dos Anos
+    plt.figure(figsize=(10, 6))
+    sns.lineplot(x='Tenure', y='Balance', hue='Exited', data=df)
+    plt.title('Saldo ao Longo dos Anos de Permanência')
+    plt.xlabel('Anos de Permanência')
+    plt.ylabel('Saldo')
+    plt.savefig(os.path.join(output_dir, 'line_saldo_anos.png'))
+    plt.close()
+
+    # Heatmap de Correlação
+    plt.figure(figsize=(12, 10))
+    correlation_matrix = df.corr()
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+    plt.title('Mapa de Calor de Correlação')
+    plt.savefig(os.path.join(output_dir, 'heatmap_correlacao.png'))
+    plt.close()
+
+    # Histograma de Distribuição do Score de Crédito
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df['CreditScore'], kde=True)
+    plt.title('Distribuição do Score de Crédito')
+    plt.xlabel('Score de Crédito')
+    plt.ylabel('Frequência')
+    plt.savefig(os.path.join(output_dir, 'distribuicao_credit_score.png'))
+    plt.close()
+
+    # Pairplot das Variáveis com Hue para Exited
+    plt.figure(figsize=(12, 10))
+    sns.pairplot(df[['Balance', 'Age', 'CreditScore', 'Tenure', 'EstimatedSalary', 'Exited']], hue='Exited', diag_kind='kde')
+    plt.savefig(os.path.join(output_dir, 'pairplot_com_hue.png'))
+    plt.close()
+
+    logger.info("Gráficos gerados e salvos com sucesso.")
+
+def preprocessamento_dados():
+    """
+    Função principal para preprocessar dados.
+
+    Este pipeline inclui as seguintes etapas:
+    1. Carregar configurações do arquivo YAML.
+    2. Carregar o dataset bruto.
+    3. Validar a presença de colunas necessárias.
+    4. Tratar valores ausentes e duplicados.
+    5. Criar e aplicar o pré-processador para normalização das colunas numéricas.
+    6. Aplicar SMOTE para balanceamento de classes.
+    7. Salvar o pré-processador.
+    8. Gerar gráficos detalhados do dataset preprocessado.
+    9. Salvar o dataset processado em um arquivo CSV e imprimir as primeiras 5 linhas.
+
+    Raises:
+    Exception: Se houver um erro em qualquer etapa do processamento.
+    """
+    config = carregar_configuracao()
+    
+    # Carregar o dataset bruto
+    df = carregar_dados(config)
+
+    # Definir colunas numéricas
+    num_cols = ['Balance', 'Age', 'CreditScore', 'Tenure', 'EstimatedSalary']
+    required_cols = num_cols + ['Exited']
+
+    # Validar colunas
+    validar_colunas(df, required_cols)
+
+    # Tratar dados
+    df = tratar_dados(df, num_cols, config)
+
+    # Criar e aplicar o pré-processador
+    preprocessor = criar_preprocessador(num_cols)
+    X = df.drop('Exited', axis=1)
+    y = df['Exited']
+    X_transformed = preprocessor.fit_transform(X)
+    logger.info("Pré-processamento concluído.")
+
+    # Obter nomes das colunas após o pré-processamento
+    colunas_originais = obter_nomes_colunas(preprocessor, num_cols)
+
+    # Aplicar SMOTE para balanceamento de classes
+    X_resampled, y_resampled = aplicar_smote(X_transformed, y)
+
+    # Salvar o pré-processador
+    salvar_preprocessador(preprocessor, config['preprocessors']['path'])
+
+    # Gerar gráficos com o dataset pré-processado
+    df_resampled = pd.concat([pd.DataFrame(X_resampled, columns=colunas_originais), pd.Series(y_resampled, name='Exited')], axis=1)
+    gerar_graficos(df_resampled, config['reports']['figures_dir'])
+
+    # Salvar o dataset processado e imprimir as primeiras 5 linhas
+    salvar_dataset_processado(X_resampled, y_resampled, config['data']['processed'], colunas_originais)
+
+if __name__ == "__main__":
+    preprocessamento_dados()
+	
+model_training.py em duas partes pois o codigo é extenso, primeira parte:
+
+#primeira parte
+import joblib
+import pandas as pd
+import yaml
+import logging
+import numpy as np
+import os
+from sklearn.metrics import classification_report, roc_curve, auc, f1_score, accuracy_score
+from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV, cross_val_score
+from sklearn.ensemble import GradientBoostingClassifier
+from xgboost import XGBClassifier
+from sklearn.linear_model import LogisticRegression
+
+# Configurar o logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def carregar_configuracao(config_path='D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/config/config.yaml'):
+    """
+    Carregar configurações de um arquivo YAML.
+
+    Parameters:
+    config_path (str): O caminho para o arquivo de configuração YAML.
+
+    Returns:
+    dict: Um dicionário contendo as configurações carregadas do arquivo.
+
+    Raises:
+    Exception: Se houver um erro ao carregar as configurações.
+    """
+    try:
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+        logger.info("Configuração carregada com sucesso.")
+        return config
+    except Exception as e:
+        logger.error(f"Erro ao carregar configuração: {e}")
+        raise
+
+def carregar_dados(config):
+    """
+    Carregar dados a partir do caminho especificado no arquivo de configuração.
+
+    Parameters:
+    config (dict): Dicionário contendo as configurações do projeto, incluindo o caminho dos dados.
+
+    Returns:
+    pd.DataFrame: DataFrame contendo os dados carregados.
+
+    Raises:
+    Exception: Se houver um erro ao carregar os dados.
+    """
+    processed_data_path = config['data']['processed']
+    try:
+        df = pd.read_csv(processed_data_path)
+        logger.info(f"Dados carregados a partir de {processed_data_path} com {df.shape[0]} linhas e {df.shape[1]} colunas.")
+        return df
+    except Exception as e:
+        logger.error(f"Erro ao carregar dados: {e}")
+        raise
+
+def preprocessar_dados(df):
+    """
+    Preprocessar dados (codificação de variáveis categóricas).
+
+    Parameters:
+    df (pd.DataFrame): DataFrame contendo os dados brutos.
+
+    Returns:
+    pd.DataFrame: DataFrame com variáveis categóricas codificadas.
+
+    Raises:
+    Exception: Se houver um erro durante o pré-processamento.
+    """
+    df = pd.get_dummies(df, drop_first=True)
+    logger.info("Pré-processamento dos dados concluído.")
+    return df
+
+def dividir_dados(df):
+    """
+    Dividir dados em conjunto de treino e teste.
+
+    Parameters:
+    df (pd.DataFrame): DataFrame contendo os dados preprocessados.
+
+    Returns:
+    tuple: Conjuntos de treino e teste (X_train, X_test, y_train, y_test).
+
+    Raises:
+    Exception: Se houver um erro durante a divisão dos dados.
+    """
+    X = df.drop('Exited', axis=1)
+    y = df['Exited']
+    return train_test_split(X, y, test_size=0.2, random_state=42)
+
+def treinar_modelos(X_train, y_train):
+    """
+    Treinar diferentes modelos de machine learning e retornar o melhor modelo.
+
+    Parameters:
+    X_train (pd.DataFrame): Conjunto de características de treino.
+    y_train (pd.Series): Conjunto de etiquetas de treino.
+
+    Returns:
+    tuple: O melhor modelo treinado, o nome do melhor modelo, e os resultados de F1-Score para cada modelo.
+
+    Raises:
+    Exception: Se houver um erro durante o treinamento dos modelos.
+    """
+    modelos = {
+        "Gradient Boosting": GradientBoostingClassifier(),
+        "XGBoost": XGBClassifier(eval_metric='logloss'),
+        "Logistic Regression": LogisticRegression(max_iter=1000)
+    }
+
+    melhor_modelo = None
+    melhor_f1 = 0
+    resultados = {}
+
+    for nome, modelo in modelos.items():
+        logger.info(f"Treinando o modelo: {nome}...")
+        modelo.fit(X_train, y_train)
+        y_pred = modelo.predict(X_train)
+        f1 = f1_score(y_train, y_pred)
+        resultados[nome] = f1
+
+        if f1 > melhor_f1:
+            melhor_f1 = f1
+            melhor_modelo = modelo
+            melhor_nome = nome
+
+    logger.info(f"Melhor modelo: {melhor_nome} com F1-Score: {melhor_f1:.4f}")
+    return melhor_modelo, melhor_nome, resultados
+
+def ajustar_hiperparametros(modelo, X_train, y_train, config):
+    """
+    Ajustar hiperparâmetros do modelo usando RandomizedSearchCV.
+
+    Parameters:
+    modelo (object): O modelo de machine learning a ser ajustado.
+    X_train (pd.DataFrame): Conjunto de características de treino.
+    y_train (pd.Series): Conjunto de etiquetas de treino.
+    config (dict): Dicionário contendo as configurações do projeto.
+
+    Returns:
+    object: O melhor modelo ajustado com os hiperparâmetros otimizados.
+
+    Raises:
+    Exception: Se houver um erro durante o ajuste dos hiperparâmetros.
+    """
+    param_grid = {
+        'n_estimators': [50, 100, 200, 300],
+        'learning_rate': [0.01, 0.1, 0.2],
+        'max_depth': [3, 5, 7, 10]
+    }
+
+    randomized_search = RandomizedSearchCV(estimator=modelo, param_distributions=param_grid, n_iter=100, scoring='f1', cv=3, verbose=2, random_state=42, n_jobs=-1)
+    try:
+        randomized_search.fit(X_train, y_train)
+
+        # Salvar melhores hiperparâmetros em um arquivo
+        melhores_hyperparams_path = os.path.join(config['reports']['directory'], "melhores_hiperparametros.txt")
+        with open(melhores_hyperparams_path, 'w') as f:
+            f.write(str(randomized_search.best_params_))
+
+        logger.info(f"Melhores hiperparâmetros: {randomized_search.best_params_}")
+        logger.info(f"Melhores hiperparâmetros salvos em: {melhores_hyperparams_path}")
+        return randomized_search.best_estimator_
+    except Exception as e:
+        logger.error(f"Erro ao ajustar hiperparâmetros: {e}")
+        raise
+
+def avaliar_modelo(modelo, X_test, y_test, nome_modelo, config):
+    """
+    Avaliar o modelo e gerar relatório de classificação detalhado.
+
+    Parameters:
+    modelo (object): O modelo treinado a ser avaliado.
+    X_test (pd.DataFrame): Conjunto de características de teste.
+    y_test (pd.Series): Conjunto de etiquetas de teste.
+    nome_modelo (str): Nome do modelo treinado.
+    config (dict): Dicionário contendo as configurações do projeto.
+
+    Returns:
+    str: Relatório de classificação detalhado.
+
+    Raises:
+    Exception: Se houver um erro durante a avaliação do modelo.
+    """
+    y_pred = modelo.predict(X_test)
+    report = classification_report(y_test, y_pred)
+
+    # Salvar relatório em TXT
+    report_path = os.path.join(config['reports']['directory'], f"{nome_modelo}_relatorio_classificacao.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report)
+        logger.info(f"Relatório de classificação para o modelo {nome_modelo} salvo em: {report_path}")
+    except Exception as e:
+        logger.error(f"Erro ao salvar relatório de classificação: {e}")
+        raise
+
+    return report
+	
+#segunda parte
+
+def aplicar_threshold(y_prob, optimal_threshold):
+    """
+    Aplicar o melhor threshold e retornar as previsões ajustadas.
+
+    Parameters:
+    y_prob (np.ndarray): Probabilidades previstas pelo modelo.
+    optimal_threshold (float): Melhor threshold identificado.
+
+    Returns:
+    np.ndarray: Previsões ajustadas com o threshold aplicado.
+
+    Raises:
+    Exception: Se houver um erro ao aplicar o threshold.
+    """
+    try:
+        return (y_prob >= optimal_threshold).astype(int)
+    except Exception as e:
+        logger.error(f"Erro ao aplicar o threshold: {e}")
+        raise
+
+def validar_modelo(modelo, X, y, config):
+    """
+    Efetuar validação cruzada e retornar o resultado.
+
+    Parameters:
+    modelo (object): O modelo de machine learning a ser validado.
+    X (pd.DataFrame): Conjunto de características.
+    y (pd.Series): Conjunto de etiquetas.
+    config (dict): Dicionário contendo as configurações do projeto.
+
+    Returns:
+    np.ndarray: Scores de F1-Score da validação cruzada.
+
+    Raises:
+    Exception: Se houver um erro durante a validação cruzada.
+    """
+    try:
+        scores = cross_val_score(modelo, X, y, cv=5, scoring='f1')
+        logger.info(f"Validação cruzada F1-Score: {scores.mean():.4f} ± {scores.std():.4f}")
+
+        # Salvar resultado da validação cruzada em um arquivo
+        validacao_cruzada_path = os.path.join(config['reports']['directory'], "validacao_cruzada.txt")
+        with open(validacao_cruzada_path, 'w') as f:
+            f.write(f"Validação cruzada F1-Score: {scores.mean():.4f} ± {scores.std():.4f}")
+
+        logger.info(f"Resultado da validação cruzada salvo em: {validacao_cruzada_path}")
+        return scores
+    except Exception as e:
+        logger.error(f"Erro durante a validação cruzada: {e}")
+        raise
+
+def identificar_threshold(y_test, y_prob, config):
+    """
+    Identificar o melhor threshold usando a curva ROC.
+
+    Parameters:
+    y_test (pd.Series): Conjunto de etiquetas de teste.
+    y_prob (np.ndarray): Probabilidades previstas pelo modelo.
+    config (dict): Dicionário contendo as configurações do projeto.
+
+    Returns:
+    float: Melhor threshold identificado.
+
+    Raises:
+    Exception: Se houver um erro ao identificar o threshold.
+    """
+    try:
+        fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+        roc_auc = auc(fpr, tpr)
+        optimal_idx = np.argmax(tpr - fpr)
+        optimal_threshold = thresholds[optimal_idx]
+
+        # Salvar resultado em um arquivo
+        threshold_report_path = os.path.join(config['reports']['directory'], "melhor_threshold.txt")
+        with open(threshold_report_path, 'w') as f:
+            f.write(f"Melhor threshold: {optimal_threshold}\nAUC: {roc_auc}\n")
+
+        logger.info(f"Melhor threshold: {optimal_threshold} com AUC: {roc_auc}")
+        logger.info(f"Relatório de threshold salvo em: {threshold_report_path}")
+        return optimal_threshold
+    except Exception as e:
+        logger.error(f"Erro ao identificar o melhor threshold: {e}")
+        raise
+
+def salvar_modelo(modelo, model_path):
+    """
+    Salvar o modelo treinado em um arquivo.
+
+    Parameters:
+    modelo (object): O modelo de machine learning treinado.
+    model_path (str): O caminho onde o modelo será salvo.
+
+    Raises:
+    Exception: Se houver um erro ao salvar o modelo.
+    """
+    try:
+        joblib.dump(modelo, model_path)
+        logger.info(f"Modelo final salvo em: {model_path}")
+    except Exception as e:
+        logger.error(f"Erro ao salvar o modelo: {e}")
+        raise
+
+def executar_treinamento(config):
+    """
+    Função principal para executar o treinamento, ajuste de hiperparâmetros e avaliação do modelo.
+
+    Parameters:
+    config (dict): Dicionário contendo as configurações do projeto.
+
+    Returns:
+    object: O melhor modelo ajustado com os hiperparâmetros otimizados.
+    """
+    logger.info("Iniciando a execução do script...")
+    df = carregar_dados(config)
+
+    # Pré-processar os dados
+    df = preprocessar_dados(df)
+
+    # Dividir os dados em conjuntos de treino e teste
+    X_train, X_test, y_train, y_test = dividir_dados(df)
+
+    # Treinar os modelos e obter o melhor modelo
+    melhor_modelo, melhor_nome, resultados_modelos = treinar_modelos(X_train, y_train)
+
+    # Avaliar o melhor modelo
+    relatorio_inicial = avaliar_modelo(melhor_modelo, X_test, y_test, melhor_nome, config)
+
+    # Gerar relatório detalhado dos modelos treinados
+    modelos_report_path = os.path.join(config['reports']['directory'], "relatorio_modelos_treinados.txt")
+    with open(modelos_report_path, 'w') as f:
+        for nome, f1 in resultados_modelos.items():
+            f.write(f"Modelo: {nome}, F1-Score: {f1:.4f}\n")
+    logger.info(f"Relatório de classificação detalhado dos modelos treinados salvo em: {modelos_report_path}")
+
+    # Ajustar hiperparâmetros do melhor modelo
+    melhor_modelo_ajustado = ajustar_hiperparametros(melhor_modelo, X_train, y_train, config)
+
+    # Avaliar o modelo ajustado com hiperparâmetros otimizados
+    relatorio_ajustado = avaliar_modelo(melhor_modelo_ajustado, X_test, y_test, f"{melhor_nome}_ajustado", config)
+
+    # Validar o modelo ajustado
+    validar_modelo(melhor_modelo_ajustado, X_train, y_train, config)
+
+    # Identificar o melhor threshold com ROC
+    y_prob = melhor_modelo_ajustado.predict_proba(X_test)[:, 1]
+    optimal_threshold = identificar_threshold(y_test, y_prob, config)
+
+    # Aplicar o melhor threshold
+    y_pred_aplicado = aplicar_threshold(y_prob, optimal_threshold)
+
+    # Relatório de classificação após aplicar threshold
+    relatorio_threshold = classification_report(y_test, y_pred_aplicado)
+    threshold_report_path = os.path.join(config['reports']['directory'], "relatorio_threshold.txt")
+    with open(threshold_report_path, 'w') as f:
+        f.write(relatorio_threshold)
+    logger.info(f"Relatório de classificação após aplicar threshold salvo em: {threshold_report_path}")
+
+    # Retornar o modelo final ajustado
+    return melhor_modelo_ajustado
+
+def main(config_path='D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/config/config.yaml'):
+    """
+    Função principal para carregar a configuração e executar o treinamento do modelo.
+
+    Parameters:
+    config_path (str): O caminho para o arquivo de configuração YAML.
+    """
+    config = carregar_configuracao(config_path)
+    modelo = executar_treinamento(config)
+    return modelo
+
+if __name__ == "__main__":
+    main()
+
+- Quinta etapa: Avaliação
+- A pagina page_avaliacao.py, terá o mesmo layout do titulo e cor de fundo da pagina page_pipelie.py.py
+- A pagina de Avaliação será o programa que já está funcionando: evaluation.py.
+- Basta executa-lo e mostrar o seu resultado.
+- Segue o código do programa que sera executado no diretorio: D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\src\
+- Para você saber o que será rodado no programa evaluation.py segue o código:
+- Código do programa: evaluation.py
+
+import joblib
+import pandas as pd
+import yaml
+import logging
+import numpy as np
+from sklearn.metrics import classification_report, roc_curve, auc, accuracy_score, f1_score
+from sklearn.model_selection import train_test_split
+
+# Configurar o logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def carregar_configuracao(config_path='D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/config/config.yaml'):
+    """
+    Carregar configurações de um arquivo YAML.
+
+    Parameters:
+    config_path (str): O caminho para o arquivo de configuração YAML.
+
+    Returns:
+    dict: Um dicionário contendo as configurações carregadas do arquivo.
+
+    Raises:
+    Exception: Se houver um erro ao carregar as configurações.
+    """
+    try:
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+        logger.info("Configuração carregada com sucesso.")
+        return config
+    except Exception as e:
+        logger.error(f"Erro ao carregar configuração: {e}")
+        raise
+
+def carregar_dados_e_modelo(config):
+    """
+    Carregar dados e modelo treinado a partir dos caminhos especificados no arquivo de configuração.
+
+    Parameters:
+    config (dict): Dicionário contendo as configurações do projeto, incluindo os caminhos dos dados processados e do modelo treinado.
+
+    Returns:
+    tuple: DataFrame contendo os dados carregados e o modelo treinado.
+
+    Raises:
+    Exception: Se houver um erro ao carregar os dados ou o modelo.
+    """
+    try:
+        df = pd.read_csv(config['data']['processed'])
+        model = joblib.load(config['models']['final_model'])
+        logger.info("Dados e modelo carregados com sucesso.")
+        return df, model
+    except Exception as e:
+        logger.error(f"Erro ao carregar dados ou modelo: {e}")
+        raise
+
+def avaliar_modelo(model, X_test, y_test, config):
+    """
+    Avaliar o modelo usando métricas de classificação e salvar os resultados.
+
+    Parameters:
+    model (object): O modelo treinado a ser avaliado.
+    X_test (pd.DataFrame): Conjunto de características de teste.
+    y_test (pd.Series): Conjunto de etiquetas de teste.
+    config (dict): Dicionário contendo as configurações do projeto, incluindo os caminhos para salvar os relatórios.
+
+    Returns:
+    None
+
+    Raises:
+    Exception: Se houver um erro durante a avaliação do modelo.
+    """
+    try:
+        y_pred = model.predict(X_test)
+        y_prob = model.predict_proba(X_test)[:, 1]
+
+        report = classification_report(y_test, y_pred)
+        logger.info("Relatório de Classificação:\n%s", report)
+
+        # Salvar relatório em TXT
+        report_path = config['reports']['classification_final']
+        with open(report_path, 'w') as f:
+            f.write(report)
+        logger.info(f"Relatório de classificação salvo em: {report_path}")
+
+        fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+        roc_auc = auc(fpr, tpr)
+        optimal_idx = np.argmax(tpr - fpr)
+        optimal_threshold = thresholds[optimal_idx]
+        logger.info(f"AUC da curva ROC: {roc_auc:.4f}")
+        logger.info(f"Melhor threshold encontrado: {optimal_threshold:.4f}")
+
+        y_pred_optimal = (y_prob >= optimal_threshold).astype(int)
+        report_optimal = classification_report(y_test, y_pred_optimal)
+        logger.info("Relatório com Threshold Otimizado:\n%s", report_optimal)
+
+        report_threshold_path = config['reports']['classification_threshold']
+        with open(report_threshold_path, 'w') as f:
+            f.write(report_optimal)
+        logger.info(f"Relatório de classificação com threshold otimizado salvo em: {report_threshold_path}")
+    except Exception as e:
+        logger.error(f"Erro ao avaliar o modelo: {e}")
+        raise
+
+def main():
+    """
+    Função principal para executar a avaliação do modelo.
+
+    Esta função executa as seguintes etapas:
+    1. Carrega as configurações do arquivo YAML.
+    2. Carrega os dados processados e o modelo treinado.
+    3. Divide os dados em conjuntos de treino e teste.
+    4. Avalia o modelo usando métricas de classificação e salva os resultados.
+
+    Raises:
+    Exception: Se houver um erro em qualquer etapa da avaliação.
+    """
+    try:
+        config = carregar_configuracao()
+        df, model = carregar_dados_e_modelo(config)
+        
+        # Dividir os dados em conjuntos de treino e teste
+        X = df.drop('Exited', axis=1)
+        y = df['Exited']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        
+        # Avaliar o modelo
+        avaliar_modelo(model, X_test, y_test, config)
+    except Exception as e:
+        logger.error(f"Erro durante a execução do script: {e}")
+        raise
+
+if __name__ == "__main__":
+    main()
+	
+- Sexta etapa: Inferencia
+- A pagina page_inferencia.py, terá o mesmo layout do titulo e cor de fundo da pagina page_pipelie.py.py
+- A pagina de Inferencia será o programa que já está funcionando: inferencia.py
+- Basta executa-lo e mostrar o seu resultado.
+- Segue o código do programa que sera executado no diretorio: D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\src\
+- Código do programa: inferencia.py
+
+import pandas as pd
+import joblib
+import logging
+import yaml
+import os
+
+# Configurar logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def carregar_configuracoes(config_path):
+    """Carrega as configurações do arquivo YAML."""
+    try:
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+            logger.info(f"Configurações carregadas de: {config_path}")
+            return config
+    except Exception as e:
+        logger.error(f"Erro ao carregar o arquivo de configurações: {e}")
+        raise
+
+def carregar_modelo(model_path):
+    """Carrega o modelo salvo."""
+    try:
+        modelo = joblib.load(model_path)
+        logger.info(f"Modelo carregado de: {model_path}")
+        return modelo
+    except Exception as e:
+        logger.error(f"Erro ao carregar o modelo: {e}")
+        raise
+
+def carregar_preprocessador(preprocessor_path):
+    """Carrega o pré-processador salvo."""
+    try:
+        preprocessor = joblib.load(preprocessor_path)
+        logger.info(f"Pré-processador carregado de: {preprocessor_path}")
+        return preprocessor
+    except Exception as e:
+        logger.error(f"Erro ao carregar o pré-processador: {e}")
+        raise
+
+def fazer_inferencia(data_path, model_path, preprocessor_path):
+    """Faz a inferência utilizando o modelo e pré-processador carregados."""
+    # Carregar dados de entrada
+    try:
+        df = pd.read_csv(data_path)
+        logger.info(f'Dados de entrada carregados de: {data_path}')
+    except Exception as e:
+        logger.error(f"Erro ao carregar os dados de entrada: {e}")
+        raise
+
+    # Carregar modelo e pré-processador
+    modelo = carregar_modelo(model_path)
+    preprocessor = carregar_preprocessador(preprocessor_path)
+
+    # Preprocessar os dados
+    X = df.drop('Exited', axis=1) if 'Exited' in df.columns else df
+    X_transformed = preprocessor.transform(X)
+
+    # Fazer previsão
+    try:
+        previsoes = modelo.predict(X_transformed)
+        df['Predicao'] = previsoes
+        logger.info("Inferência concluída com sucesso.")
+    except Exception as e:
+        logger.error(f"Erro ao fazer a inferência: {e}")
+        raise
+
+    # Salvar resultados
+    resultados_path = os.path.join(config['predictions']['directory'], 'resultados_inferencia.csv')
+    try:
+        df.to_csv(resultados_path, index=False)
+        logger.info(f'Resultados da inferência salvos em: {resultados_path}')
+    except Exception as e:
+        logger.error(f"Erro ao salvar os resultados da inferência: {e}")
+        raise
+
+if __name__ == "__main__":
+    config_path = os.path.join('D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/config/config.yaml')
+    config = carregar_configuracoes(config_path)
+
+    fazer_inferencia(
+        data_path=config['data']['new_data'],  # Usando o caminho de dados novos
+        model_path=config['models']['final_model'],
+        preprocessor_path=config['preprocessors']['path']
+    )
+	
+- Setima estapa: Previsão de Clientes
+- A pagina page_inferencia_input.py, terá o mesmo layout do titulo e cor de fundo da pagina page_inferencia.py.py
+- A pagina de Previsão de clientes será a execução do programa: inferencia_input.py
+- Onde será solicitado o input dos dados, o programa será executado e retornará a previsão.
+- Segue o código do programa que sera executado no diretorio: D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\src\
+- O titulo e fundo deve seguir o mesmo layout da pege_inferencia.py
+- Código do programa: inferencia_input.py
+
+import pandas as pd
+import joblib
+import logging
+import yaml
+import os
+
+# Configurar logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Carregar configurações do arquivo YAML
+def carregar_configuracoes(config_path):
+    """Carrega as configurações do arquivo YAML."""
+    try:
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+            logger.info(f"Configurações carregadas de: {config_path}")
+            return config
+    except Exception as e:
+        logger.error(f"Erro ao carregar o arquivo de configurações: {e}")
+        raise
+
+def carregar_modelo(model_path):
+    """Carrega o modelo salvo."""
+    try:
+        modelo = joblib.load(model_path)
+        logger.info(f"Modelo carregado de: {model_path}")
+        return modelo
+    except Exception as e:
+        logger.error(f"Erro ao carregar o modelo: {e}")
+        raise
+
+def carregar_preprocessador(preprocessor_path):
+    """Carrega o pré-processador salvo."""
+    try:
+        preprocessor = joblib.load(preprocessor_path)
+        logger.info(f"Pré-processador carregado de: {preprocessor_path}")
+        return preprocessor
+    except Exception as e:
+        logger.error(f"Erro ao carregar o pré-processador: {e}")
+        raise
+
+def coletar_dados_cliente():
+    """Coleta dados do cliente via entrada do usuário."""
+    dados = {}
+    dados['CreditScore'] = float(input("Digite o Credit Score: "))
+    dados['Geography'] = input("Digite a Geografia: ")
+    dados['Gender'] = input("Digite o Gênero (Male/Female): ")
+    dados['Age'] = int(input("Digite a Idade: "))
+    dados['Tenure'] = int(input("Digite o Tempo de Permanência: "))
+    dados['Balance'] = float(input("Digite o Saldo: "))
+    dados['NumOfProducts'] = int(input("Digite o Número de Produtos: "))
+    dados['HasCrCard'] = int(input("Possui Cartão de Crédito? (1-Sim, 0-Não): "))
+    dados['IsActiveMember'] = int(input("É Membro Ativo? (1-Sim, 0-Não): "))
+    dados['EstimatedSalary'] = float(input("Digite o Salário Estimado: "))
+    return pd.DataFrame([dados])
+
+def fazer_inferencia():
+    """Faz a inferência utilizando o modelo e pré-processador carregados."""
+    # Carregar modelo e pré-processador
+    modelo = carregar_modelo(config['models']['final_model'])
+    preprocessor = carregar_preprocessador(config['preprocessors']['path'])
+
+    # Coletar dados do cliente
+    df_cliente = coletar_dados_cliente()
+
+    # Preprocessar os dados
+    X_transformed = preprocessor.transform(df_cliente)
+
+    # Fazer previsão
+    try:
+        previsoes = modelo.predict(X_transformed)
+        df_cliente['Predicao'] = previsoes
+        logger.info("Inferência concluída com sucesso.")
+        print("Resultado da previsão:", df_cliente[['Predicao']])
+    except Exception as e:
+        logger.error(f"Erro ao fazer a inferência: {e}")
+        raise
+
+if __name__ == "__main__":
+    config_path = os.path.join('D:/Github/data-science/projetos/rotatividade-de-clientes/machine-learning/config/config.yaml')
+    config = carregar_configuracoes(config_path)
+    fazer_inferencia()
+ 

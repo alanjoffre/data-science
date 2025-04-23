@@ -1,0 +1,438 @@
+2025-02-04 08:49:14,968 - INFO - Número de linhas importadas: 49500
+2025-02-04 08:49:14,968 - INFO - Colunas e tipos de dados:
+2025-02-04 08:49:14,968 - INFO - {'id_da_viagem': dtype('O'), 'data_hora_de_inicio_da_viagem': dtype('O'), 'data_hora_de_termino_da_viagem': dtype('O'), 'duracao_segundos_da_viagem': dtype('float64'), 'distancia_milhas_da_viagem': dtype('float64'), 'setor_censitario_de_partida': dtype('float64'), 'setor_censitario_de_destino': dtype('float64'), 'area_comunitaria_de_partida': dtype('float64'), 'area_comunitaria_de_destino': dtype('float64'), 'tarifa': dtype('float64'), 'gorjeta': dtype('float64'), 'cobrancas_adicionais': dtype('float64'), 'total_da_viagem': dtype('float64'), 'viagem_compartilhada_autorizada': dtype('bool'), 'viagens_compartilhadas': dtype('float64'), 'latitude_centro_de_partida': dtype('float64'), 'longitude_centro_de_partida': dtype('float64'), 'localizacao_centro_de_partida': dtype('O'), 'latitude_centro_de_destino': dtype('float64'), 'longitude_centro_de_destino': dtype('float64'), 'localizacao_centro_de_destino': dtype('O'), 'tarifa_por_milha': dtype('float64'), 'porcentagem_gorjeta': dtype('float64'), 'velocidade_media': dtype('float64'), 'razao_cobrancas': dtype('float64'), 'poly_tarifa': dtype('float64'), 'poly_duracao_segundos_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem': dtype('float64'), 'poly_tarifa^2': dtype('float64'), 'poly_tarifa duracao_segundos_da_viagem': dtype('float64'), 'poly_tarifa distancia_milhas_da_viagem': dtype('float64'), 'poly_duracao_segundos_da_viagem^2': dtype('float64'), 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem^2': dtype('float64')}
+2025-02-04 08:49:14,972 - INFO - Lista de colunas:
+2025-02-04 08:49:14,972 - INFO - ['id_da_viagem', 'data_hora_de_inicio_da_viagem', 'data_hora_de_termino_da_viagem', 'duracao_segundos_da_viagem', 'distancia_milhas_da_viagem', 'setor_censitario_de_partida', 'setor_censitario_de_destino', 'area_comunitaria_de_partida', 'area_comunitaria_de_destino', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem', 'viagem_compartilhada_autorizada', 'viagens_compartilhadas', 'latitude_centro_de_partida', 'longitude_centro_de_partida', 'localizacao_centro_de_partida', 'latitude_centro_de_destino', 'longitude_centro_de_destino', 'localizacao_centro_de_destino', 'tarifa_por_milha', 'porcentagem_gorjeta', 'velocidade_media', 'razao_cobrancas', 'poly_tarifa', 'poly_duracao_segundos_da_viagem', 'poly_distancia_milhas_da_viagem', 'poly_tarifa^2', 'poly_tarifa duracao_segundos_da_viagem', 'poly_tarifa distancia_milhas_da_viagem', 'poly_duracao_segundos_da_viagem^2', 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem', 'poly_distancia_milhas_da_viagem^2']
+2025-02-04 08:49:14,973 - INFO - Verificação de dados faltantes:
+2025-02-04 08:49:15,000 - INFO - id_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,000 - INFO - data_hora_de_inicio_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,001 - INFO - data_hora_de_termino_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,001 - INFO - duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,001 - INFO - distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,001 - INFO - setor_censitario_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,002 - INFO - setor_censitario_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,002 - INFO - area_comunitaria_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,002 - INFO - area_comunitaria_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,002 - INFO - tarifa: 0 faltantes, 0.00%
+2025-02-04 08:49:15,003 - INFO - gorjeta: 0 faltantes, 0.00%
+2025-02-04 08:49:15,003 - INFO - cobrancas_adicionais: 0 faltantes, 0.00%
+2025-02-04 08:49:15,003 - INFO - total_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,003 - INFO - viagem_compartilhada_autorizada: 0 faltantes, 0.00%
+2025-02-04 08:49:15,003 - INFO - viagens_compartilhadas: 0 faltantes, 0.00%
+2025-02-04 08:49:15,003 - INFO - latitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - longitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - localizacao_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - latitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - longitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - localizacao_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - tarifa_por_milha: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - porcentagem_gorjeta: 0 faltantes, 0.00%
+2025-02-04 08:49:15,004 - INFO - velocidade_media: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - razao_cobrancas: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - poly_tarifa: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - poly_duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - poly_distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - poly_tarifa^2: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - poly_tarifa duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,005 - INFO - poly_tarifa distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,006 - INFO - poly_duracao_segundos_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 08:49:15,006 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,006 - INFO - poly_distancia_milhas_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 08:49:15,074 - INFO - Número de linhas duplicadas: 0 (0.00%)
+2025-02-04 08:49:15,075 - INFO - Verificação de outliers (Z-score) para colunas numéricas:
+2025-02-04 08:49:15,082 - INFO - duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 08:49:15,084 - INFO - distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 08:49:15,086 - INFO - setor_censitario_de_partida: 0 outliers, 0.00%
+2025-02-04 08:49:15,087 - INFO - setor_censitario_de_destino: 0 outliers, 0.00%
+2025-02-04 08:49:15,089 - INFO - area_comunitaria_de_partida: 0 outliers, 0.00%
+2025-02-04 08:49:15,091 - INFO - area_comunitaria_de_destino: 0 outliers, 0.00%
+2025-02-04 08:49:15,093 - INFO - tarifa: 940 outliers, 1.90%
+2025-02-04 08:49:15,097 - INFO - gorjeta: 1794 outliers, 3.62%
+2025-02-04 08:49:15,099 - INFO - cobrancas_adicionais: 1331 outliers, 2.69%
+2025-02-04 08:49:15,101 - INFO - total_da_viagem: 1015 outliers, 2.05%
+2025-02-04 08:49:15,102 - INFO - viagens_compartilhadas: 1494 outliers, 3.02%
+2025-02-04 08:49:15,103 - INFO - latitude_centro_de_partida: 627 outliers, 1.27%
+2025-02-04 08:49:15,105 - INFO - longitude_centro_de_partida: 1435 outliers, 2.90%
+2025-02-04 08:49:15,107 - INFO - latitude_centro_de_destino: 598 outliers, 1.21%
+2025-02-04 08:49:15,109 - INFO - longitude_centro_de_destino: 1651 outliers, 3.34%
+2025-02-04 08:49:15,113 - INFO - tarifa_por_milha: 534 outliers, 1.08%
+2025-02-04 08:49:15,116 - INFO - porcentagem_gorjeta: 941 outliers, 1.90%
+2025-02-04 08:49:15,117 - INFO - velocidade_media: 8 outliers, 0.02%
+2025-02-04 08:49:15,119 - INFO - razao_cobrancas: 159 outliers, 0.32%
+2025-02-04 08:49:15,121 - INFO - poly_tarifa: 940 outliers, 1.90%
+2025-02-04 08:49:15,123 - INFO - poly_duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 08:49:15,125 - INFO - poly_distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 08:49:15,127 - INFO - poly_tarifa^2: 940 outliers, 1.90%
+2025-02-04 08:49:15,131 - INFO - poly_tarifa duracao_segundos_da_viagem: 1178 outliers, 2.38%
+2025-02-04 08:49:15,133 - INFO - poly_tarifa distancia_milhas_da_viagem: 1091 outliers, 2.20%
+2025-02-04 08:49:15,134 - INFO - poly_duracao_segundos_da_viagem^2: 972 outliers, 1.96%
+2025-02-04 08:49:15,136 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 1173 outliers, 2.37%
+2025-02-04 08:49:15,138 - INFO - poly_distancia_milhas_da_viagem^2: 1015 outliers, 2.05%
+2025-02-04 08:49:15,138 - INFO - Número de linhas importadas: 49500
+2025-02-04 08:49:15,139 - INFO - Colunas e tipos de dados:
+2025-02-04 08:49:15,139 - INFO - {'id_da_viagem': dtype('O'), 'data_hora_de_inicio_da_viagem': dtype('O'), 'data_hora_de_termino_da_viagem': dtype('O'), 'duracao_segundos_da_viagem': dtype('float64'), 'distancia_milhas_da_viagem': dtype('float64'), 'setor_censitario_de_partida': dtype('float64'), 'setor_censitario_de_destino': dtype('float64'), 'area_comunitaria_de_partida': dtype('float64'), 'area_comunitaria_de_destino': dtype('float64'), 'tarifa': dtype('float64'), 'gorjeta': dtype('float64'), 'cobrancas_adicionais': dtype('float64'), 'total_da_viagem': dtype('float64'), 'viagem_compartilhada_autorizada': dtype('bool'), 'viagens_compartilhadas': dtype('float64'), 'latitude_centro_de_partida': dtype('float64'), 'longitude_centro_de_partida': dtype('float64'), 'localizacao_centro_de_partida': dtype('O'), 'latitude_centro_de_destino': dtype('float64'), 'longitude_centro_de_destino': dtype('float64'), 'localizacao_centro_de_destino': dtype('O'), 'tarifa_por_milha': dtype('float64'), 'porcentagem_gorjeta': dtype('float64'), 'velocidade_media': dtype('float64'), 'razao_cobrancas': dtype('float64'), 'poly_tarifa': dtype('float64'), 'poly_duracao_segundos_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem': dtype('float64'), 'poly_tarifa^2': dtype('float64'), 'poly_tarifa duracao_segundos_da_viagem': dtype('float64'), 'poly_tarifa distancia_milhas_da_viagem': dtype('float64'), 'poly_duracao_segundos_da_viagem^2': dtype('float64'), 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem^2': dtype('float64')}
+2025-02-04 08:49:15,142 - INFO - Lista de colunas:
+2025-02-04 08:49:15,142 - INFO - ['id_da_viagem', 'data_hora_de_inicio_da_viagem', 'data_hora_de_termino_da_viagem', 'duracao_segundos_da_viagem', 'distancia_milhas_da_viagem', 'setor_censitario_de_partida', 'setor_censitario_de_destino', 'area_comunitaria_de_partida', 'area_comunitaria_de_destino', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem', 'viagem_compartilhada_autorizada', 'viagens_compartilhadas', 'latitude_centro_de_partida', 'longitude_centro_de_partida', 'localizacao_centro_de_partida', 'latitude_centro_de_destino', 'longitude_centro_de_destino', 'localizacao_centro_de_destino', 'tarifa_por_milha', 'porcentagem_gorjeta', 'velocidade_media', 'razao_cobrancas', 'poly_tarifa', 'poly_duracao_segundos_da_viagem', 'poly_distancia_milhas_da_viagem', 'poly_tarifa^2', 'poly_tarifa duracao_segundos_da_viagem', 'poly_tarifa distancia_milhas_da_viagem', 'poly_duracao_segundos_da_viagem^2', 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem', 'poly_distancia_milhas_da_viagem^2']
+2025-02-04 08:49:15,142 - INFO - Verificação de dados faltantes:
+2025-02-04 08:49:15,169 - INFO - id_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,170 - INFO - data_hora_de_inicio_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,170 - INFO - data_hora_de_termino_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,170 - INFO - duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,170 - INFO - distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,171 - INFO - setor_censitario_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,171 - INFO - setor_censitario_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,171 - INFO - area_comunitaria_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,171 - INFO - area_comunitaria_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,171 - INFO - tarifa: 0 faltantes, 0.00%
+2025-02-04 08:49:15,171 - INFO - gorjeta: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - cobrancas_adicionais: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - total_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - viagem_compartilhada_autorizada: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - viagens_compartilhadas: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - latitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - longitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - localizacao_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 08:49:15,172 - INFO - latitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - longitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - localizacao_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - tarifa_por_milha: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - porcentagem_gorjeta: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - velocidade_media: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - razao_cobrancas: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - poly_tarifa: 0 faltantes, 0.00%
+2025-02-04 08:49:15,173 - INFO - poly_duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_tarifa^2: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_tarifa duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_tarifa distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_duracao_segundos_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 08:49:15,174 - INFO - poly_distancia_milhas_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 08:49:15,239 - INFO - Número de linhas duplicadas: 0 (0.00%)
+2025-02-04 08:49:15,240 - INFO - Verificação de outliers (Z-score) para colunas numéricas:
+2025-02-04 08:49:15,246 - INFO - duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 08:49:15,248 - INFO - distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 08:49:15,251 - INFO - setor_censitario_de_partida: 0 outliers, 0.00%
+2025-02-04 08:49:15,252 - INFO - setor_censitario_de_destino: 0 outliers, 0.00%
+2025-02-04 08:49:15,254 - INFO - area_comunitaria_de_partida: 0 outliers, 0.00%
+2025-02-04 08:49:15,256 - INFO - area_comunitaria_de_destino: 0 outliers, 0.00%
+2025-02-04 08:49:15,258 - INFO - tarifa: 940 outliers, 1.90%
+2025-02-04 08:49:15,260 - INFO - gorjeta: 1794 outliers, 3.62%
+2025-02-04 08:49:15,262 - INFO - cobrancas_adicionais: 1331 outliers, 2.69%
+2025-02-04 08:49:15,265 - INFO - total_da_viagem: 1015 outliers, 2.05%
+2025-02-04 08:49:15,267 - INFO - viagens_compartilhadas: 1494 outliers, 3.02%
+2025-02-04 08:49:15,268 - INFO - latitude_centro_de_partida: 627 outliers, 1.27%
+2025-02-04 08:49:15,270 - INFO - longitude_centro_de_partida: 1435 outliers, 2.90%
+2025-02-04 08:49:15,272 - INFO - latitude_centro_de_destino: 598 outliers, 1.21%
+2025-02-04 08:49:15,273 - INFO - longitude_centro_de_destino: 1651 outliers, 3.34%
+2025-02-04 08:49:15,275 - INFO - tarifa_por_milha: 534 outliers, 1.08%
+2025-02-04 08:49:15,277 - INFO - porcentagem_gorjeta: 941 outliers, 1.90%
+2025-02-04 08:49:15,280 - INFO - velocidade_media: 8 outliers, 0.02%
+2025-02-04 08:49:15,283 - INFO - razao_cobrancas: 159 outliers, 0.32%
+2025-02-04 08:49:15,284 - INFO - poly_tarifa: 940 outliers, 1.90%
+2025-02-04 08:49:15,286 - INFO - poly_duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 08:49:15,288 - INFO - poly_distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 08:49:15,289 - INFO - poly_tarifa^2: 940 outliers, 1.90%
+2025-02-04 08:49:15,291 - INFO - poly_tarifa duracao_segundos_da_viagem: 1178 outliers, 2.38%
+2025-02-04 08:49:15,293 - INFO - poly_tarifa distancia_milhas_da_viagem: 1091 outliers, 2.20%
+2025-02-04 08:49:15,295 - INFO - poly_duracao_segundos_da_viagem^2: 972 outliers, 1.96%
+2025-02-04 08:49:15,298 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 1173 outliers, 2.37%
+2025-02-04 08:49:15,299 - INFO - poly_distancia_milhas_da_viagem^2: 1015 outliers, 2.05%
+2025-02-04 08:50:49,857 - INFO - Melhores hiperparâmetros encontrados: {'max_depth': 20, 'min_samples_split': 5, 'n_estimators': 100}
+2025-02-04 08:51:20,461 - INFO - Melhor threshold: 0.32 com F1-score = 0.9932
+2025-02-04 08:51:21,073 - INFO - Métricas salvas em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\metrics\metrics.json
+2025-02-04 08:51:21,114 - INFO - Modelo salvo em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\models\final_model.joblib
+2025-02-04 08:51:21,317 - INFO - Curva ROC salva em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\reports\figures\roc_curve.png
+2025-02-04 08:51:21,435 - INFO - Curva Precision-Recall salva em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\reports\figures\precision_recall_curve.png
+2025-02-04 09:10:14,832 - INFO - Número de linhas importadas: 49500
+2025-02-04 09:10:14,832 - INFO - Colunas e tipos de dados:
+2025-02-04 09:10:14,832 - INFO - {'id_da_viagem': dtype('O'), 'data_hora_de_inicio_da_viagem': dtype('O'), 'data_hora_de_termino_da_viagem': dtype('O'), 'duracao_segundos_da_viagem': dtype('float64'), 'distancia_milhas_da_viagem': dtype('float64'), 'setor_censitario_de_partida': dtype('float64'), 'setor_censitario_de_destino': dtype('float64'), 'area_comunitaria_de_partida': dtype('float64'), 'area_comunitaria_de_destino': dtype('float64'), 'tarifa': dtype('float64'), 'gorjeta': dtype('float64'), 'cobrancas_adicionais': dtype('float64'), 'total_da_viagem': dtype('float64'), 'viagem_compartilhada_autorizada': dtype('bool'), 'viagens_compartilhadas': dtype('float64'), 'latitude_centro_de_partida': dtype('float64'), 'longitude_centro_de_partida': dtype('float64'), 'localizacao_centro_de_partida': dtype('O'), 'latitude_centro_de_destino': dtype('float64'), 'longitude_centro_de_destino': dtype('float64'), 'localizacao_centro_de_destino': dtype('O'), 'tarifa_por_milha': dtype('float64'), 'porcentagem_gorjeta': dtype('float64'), 'velocidade_media': dtype('float64'), 'razao_cobrancas': dtype('float64'), 'poly_tarifa': dtype('float64'), 'poly_duracao_segundos_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem': dtype('float64'), 'poly_tarifa^2': dtype('float64'), 'poly_tarifa duracao_segundos_da_viagem': dtype('float64'), 'poly_tarifa distancia_milhas_da_viagem': dtype('float64'), 'poly_duracao_segundos_da_viagem^2': dtype('float64'), 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem^2': dtype('float64')}
+2025-02-04 09:10:14,836 - INFO - Lista de colunas:
+2025-02-04 09:10:14,836 - INFO - ['id_da_viagem', 'data_hora_de_inicio_da_viagem', 'data_hora_de_termino_da_viagem', 'duracao_segundos_da_viagem', 'distancia_milhas_da_viagem', 'setor_censitario_de_partida', 'setor_censitario_de_destino', 'area_comunitaria_de_partida', 'area_comunitaria_de_destino', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem', 'viagem_compartilhada_autorizada', 'viagens_compartilhadas', 'latitude_centro_de_partida', 'longitude_centro_de_partida', 'localizacao_centro_de_partida', 'latitude_centro_de_destino', 'longitude_centro_de_destino', 'localizacao_centro_de_destino', 'tarifa_por_milha', 'porcentagem_gorjeta', 'velocidade_media', 'razao_cobrancas', 'poly_tarifa', 'poly_duracao_segundos_da_viagem', 'poly_distancia_milhas_da_viagem', 'poly_tarifa^2', 'poly_tarifa duracao_segundos_da_viagem', 'poly_tarifa distancia_milhas_da_viagem', 'poly_duracao_segundos_da_viagem^2', 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem', 'poly_distancia_milhas_da_viagem^2']
+2025-02-04 09:10:14,865 - INFO - id_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,865 - INFO - data_hora_de_inicio_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,866 - INFO - data_hora_de_termino_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,866 - INFO - duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,866 - INFO - distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,866 - INFO - setor_censitario_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:10:14,867 - INFO - setor_censitario_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:10:14,867 - INFO - area_comunitaria_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:10:14,867 - INFO - area_comunitaria_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:10:14,867 - INFO - tarifa: 0 faltantes, 0.00%
+2025-02-04 09:10:14,868 - INFO - gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:10:14,868 - INFO - cobrancas_adicionais: 0 faltantes, 0.00%
+2025-02-04 09:10:14,868 - INFO - total_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,868 - INFO - viagem_compartilhada_autorizada: 0 faltantes, 0.00%
+2025-02-04 09:10:14,868 - INFO - viagens_compartilhadas: 0 faltantes, 0.00%
+2025-02-04 09:10:14,868 - INFO - latitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:10:14,869 - INFO - longitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:10:14,869 - INFO - localizacao_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:10:14,869 - INFO - latitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:10:14,869 - INFO - longitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:10:14,869 - INFO - localizacao_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:10:14,870 - INFO - tarifa_por_milha: 0 faltantes, 0.00%
+2025-02-04 09:10:14,870 - INFO - porcentagem_gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:10:14,870 - INFO - velocidade_media: 0 faltantes, 0.00%
+2025-02-04 09:10:14,870 - INFO - razao_cobrancas: 0 faltantes, 0.00%
+2025-02-04 09:10:14,870 - INFO - poly_tarifa: 0 faltantes, 0.00%
+2025-02-04 09:10:14,871 - INFO - poly_duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,871 - INFO - poly_distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,871 - INFO - poly_tarifa^2: 0 faltantes, 0.00%
+2025-02-04 09:10:14,871 - INFO - poly_tarifa duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,871 - INFO - poly_tarifa distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,871 - INFO - poly_duracao_segundos_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:10:14,872 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:10:14,872 - INFO - poly_distancia_milhas_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:10:14,956 - INFO - Linhas duplicadas: 0 (0.00%)
+2025-02-04 09:10:14,962 - INFO - duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:10:14,965 - INFO - distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:10:14,966 - INFO - setor_censitario_de_partida: 0 outliers, 0.00%
+2025-02-04 09:10:14,970 - INFO - setor_censitario_de_destino: 0 outliers, 0.00%
+2025-02-04 09:10:14,972 - INFO - area_comunitaria_de_partida: 0 outliers, 0.00%
+2025-02-04 09:10:14,974 - INFO - area_comunitaria_de_destino: 0 outliers, 0.00%
+2025-02-04 09:10:14,976 - INFO - tarifa: 940 outliers, 1.90%
+2025-02-04 09:10:14,978 - INFO - gorjeta: 1794 outliers, 3.62%
+2025-02-04 09:10:14,980 - INFO - cobrancas_adicionais: 1331 outliers, 2.69%
+2025-02-04 09:10:14,982 - INFO - total_da_viagem: 1015 outliers, 2.05%
+2025-02-04 09:10:14,983 - INFO - viagens_compartilhadas: 1494 outliers, 3.02%
+2025-02-04 09:10:14,987 - INFO - latitude_centro_de_partida: 627 outliers, 1.27%
+2025-02-04 09:10:14,989 - INFO - longitude_centro_de_partida: 1435 outliers, 2.90%
+2025-02-04 09:10:14,991 - INFO - latitude_centro_de_destino: 598 outliers, 1.21%
+2025-02-04 09:10:14,993 - INFO - longitude_centro_de_destino: 1651 outliers, 3.34%
+2025-02-04 09:10:14,995 - INFO - tarifa_por_milha: 534 outliers, 1.08%
+2025-02-04 09:10:14,997 - INFO - porcentagem_gorjeta: 941 outliers, 1.90%
+2025-02-04 09:10:14,999 - INFO - velocidade_media: 8 outliers, 0.02%
+2025-02-04 09:10:15,001 - INFO - razao_cobrancas: 159 outliers, 0.32%
+2025-02-04 09:10:15,004 - INFO - poly_tarifa: 940 outliers, 1.90%
+2025-02-04 09:10:15,006 - INFO - poly_duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:10:15,008 - INFO - poly_distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:10:15,010 - INFO - poly_tarifa^2: 940 outliers, 1.90%
+2025-02-04 09:10:15,012 - INFO - poly_tarifa duracao_segundos_da_viagem: 1178 outliers, 2.38%
+2025-02-04 09:10:15,014 - INFO - poly_tarifa distancia_milhas_da_viagem: 1091 outliers, 2.20%
+2025-02-04 09:10:15,016 - INFO - poly_duracao_segundos_da_viagem^2: 972 outliers, 1.96%
+2025-02-04 09:10:15,019 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 1173 outliers, 2.37%
+2025-02-04 09:10:15,022 - INFO - poly_distancia_milhas_da_viagem^2: 1015 outliers, 2.05%
+2025-02-04 09:10:15,071 - INFO - Pré-processador salvo em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\preprocessors\preprocessor.joblib
+2025-02-04 09:12:01,800 - INFO - Melhores hiperparâmetros encontrados: {'clf__max_depth': 20, 'clf__min_samples_split': 5, 'clf__n_estimators': 200}
+2025-02-04 09:12:01,801 - INFO - Hiperparâmetros salvos em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\hyperparameters\best_hyperparameters.json
+2025-02-04 09:13:04,451 - INFO - Melhor threshold: 0.32 com F1-score = 0.9937
+2025-02-04 09:13:05,547 - INFO - Métricas salvas em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/metrics.json
+2025-02-04 09:13:05,627 - INFO - Modelo salvo em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/final_model.joblib
+2025-02-04 09:13:05,764 - INFO - Curva ROC salva em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/roc_curve.png
+2025-02-04 09:13:05,877 - INFO - Curva Precision-Recall salva em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/precision_recall_curve.png
+2025-02-04 09:16:50,750 - INFO - Número de linhas importadas: 49500
+2025-02-04 09:16:50,750 - INFO - Colunas e tipos de dados:
+2025-02-04 09:16:50,750 - INFO - {'id_da_viagem': dtype('O'), 'data_hora_de_inicio_da_viagem': dtype('O'), 'data_hora_de_termino_da_viagem': dtype('O'), 'duracao_segundos_da_viagem': dtype('float64'), 'distancia_milhas_da_viagem': dtype('float64'), 'setor_censitario_de_partida': dtype('float64'), 'setor_censitario_de_destino': dtype('float64'), 'area_comunitaria_de_partida': dtype('float64'), 'area_comunitaria_de_destino': dtype('float64'), 'tarifa': dtype('float64'), 'gorjeta': dtype('float64'), 'cobrancas_adicionais': dtype('float64'), 'total_da_viagem': dtype('float64'), 'viagem_compartilhada_autorizada': dtype('bool'), 'viagens_compartilhadas': dtype('float64'), 'latitude_centro_de_partida': dtype('float64'), 'longitude_centro_de_partida': dtype('float64'), 'localizacao_centro_de_partida': dtype('O'), 'latitude_centro_de_destino': dtype('float64'), 'longitude_centro_de_destino': dtype('float64'), 'localizacao_centro_de_destino': dtype('O'), 'tarifa_por_milha': dtype('float64'), 'porcentagem_gorjeta': dtype('float64'), 'velocidade_media': dtype('float64'), 'razao_cobrancas': dtype('float64'), 'poly_tarifa': dtype('float64'), 'poly_duracao_segundos_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem': dtype('float64'), 'poly_tarifa^2': dtype('float64'), 'poly_tarifa duracao_segundos_da_viagem': dtype('float64'), 'poly_tarifa distancia_milhas_da_viagem': dtype('float64'), 'poly_duracao_segundos_da_viagem^2': dtype('float64'), 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem^2': dtype('float64')}
+2025-02-04 09:16:50,753 - INFO - Lista de colunas:
+2025-02-04 09:16:50,753 - INFO - ['id_da_viagem', 'data_hora_de_inicio_da_viagem', 'data_hora_de_termino_da_viagem', 'duracao_segundos_da_viagem', 'distancia_milhas_da_viagem', 'setor_censitario_de_partida', 'setor_censitario_de_destino', 'area_comunitaria_de_partida', 'area_comunitaria_de_destino', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem', 'viagem_compartilhada_autorizada', 'viagens_compartilhadas', 'latitude_centro_de_partida', 'longitude_centro_de_partida', 'localizacao_centro_de_partida', 'latitude_centro_de_destino', 'longitude_centro_de_destino', 'localizacao_centro_de_destino', 'tarifa_por_milha', 'porcentagem_gorjeta', 'velocidade_media', 'razao_cobrancas', 'poly_tarifa', 'poly_duracao_segundos_da_viagem', 'poly_distancia_milhas_da_viagem', 'poly_tarifa^2', 'poly_tarifa duracao_segundos_da_viagem', 'poly_tarifa distancia_milhas_da_viagem', 'poly_duracao_segundos_da_viagem^2', 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem', 'poly_distancia_milhas_da_viagem^2']
+2025-02-04 09:16:50,787 - INFO - id_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,788 - INFO - data_hora_de_inicio_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,788 - INFO - data_hora_de_termino_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,788 - INFO - duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,788 - INFO - distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,789 - INFO - setor_censitario_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:16:50,789 - INFO - setor_censitario_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:16:50,789 - INFO - area_comunitaria_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:16:50,790 - INFO - area_comunitaria_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:16:50,790 - INFO - tarifa: 0 faltantes, 0.00%
+2025-02-04 09:16:50,790 - INFO - gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:16:50,790 - INFO - cobrancas_adicionais: 0 faltantes, 0.00%
+2025-02-04 09:16:50,791 - INFO - total_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,791 - INFO - viagem_compartilhada_autorizada: 0 faltantes, 0.00%
+2025-02-04 09:16:50,791 - INFO - viagens_compartilhadas: 0 faltantes, 0.00%
+2025-02-04 09:16:50,791 - INFO - latitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:16:50,792 - INFO - longitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:16:50,792 - INFO - localizacao_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:16:50,792 - INFO - latitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:16:50,792 - INFO - longitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:16:50,792 - INFO - localizacao_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:16:50,794 - INFO - tarifa_por_milha: 0 faltantes, 0.00%
+2025-02-04 09:16:50,794 - INFO - porcentagem_gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:16:50,794 - INFO - velocidade_media: 0 faltantes, 0.00%
+2025-02-04 09:16:50,794 - INFO - razao_cobrancas: 0 faltantes, 0.00%
+2025-02-04 09:16:50,795 - INFO - poly_tarifa: 0 faltantes, 0.00%
+2025-02-04 09:16:50,795 - INFO - poly_duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,795 - INFO - poly_distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,795 - INFO - poly_tarifa^2: 0 faltantes, 0.00%
+2025-02-04 09:16:50,795 - INFO - poly_tarifa duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,796 - INFO - poly_tarifa distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,796 - INFO - poly_duracao_segundos_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:16:50,796 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:16:50,797 - INFO - poly_distancia_milhas_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:16:50,867 - INFO - Linhas duplicadas: 0 (0.00%)
+2025-02-04 09:16:50,873 - INFO - duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:16:50,876 - INFO - distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:16:50,879 - INFO - setor_censitario_de_partida: 0 outliers, 0.00%
+2025-02-04 09:16:50,880 - INFO - setor_censitario_de_destino: 0 outliers, 0.00%
+2025-02-04 09:16:50,882 - INFO - area_comunitaria_de_partida: 0 outliers, 0.00%
+2025-02-04 09:16:50,883 - INFO - area_comunitaria_de_destino: 0 outliers, 0.00%
+2025-02-04 09:16:50,885 - INFO - tarifa: 940 outliers, 1.90%
+2025-02-04 09:16:50,887 - INFO - gorjeta: 1794 outliers, 3.62%
+2025-02-04 09:16:50,889 - INFO - cobrancas_adicionais: 1331 outliers, 2.69%
+2025-02-04 09:16:50,891 - INFO - total_da_viagem: 1015 outliers, 2.05%
+2025-02-04 09:16:50,893 - INFO - viagens_compartilhadas: 1494 outliers, 3.02%
+2025-02-04 09:16:50,896 - INFO - latitude_centro_de_partida: 627 outliers, 1.27%
+2025-02-04 09:16:50,898 - INFO - longitude_centro_de_partida: 1435 outliers, 2.90%
+2025-02-04 09:16:50,900 - INFO - latitude_centro_de_destino: 598 outliers, 1.21%
+2025-02-04 09:16:50,901 - INFO - longitude_centro_de_destino: 1651 outliers, 3.34%
+2025-02-04 09:16:50,903 - INFO - tarifa_por_milha: 534 outliers, 1.08%
+2025-02-04 09:16:50,905 - INFO - porcentagem_gorjeta: 941 outliers, 1.90%
+2025-02-04 09:16:50,907 - INFO - velocidade_media: 8 outliers, 0.02%
+2025-02-04 09:16:50,909 - INFO - razao_cobrancas: 159 outliers, 0.32%
+2025-02-04 09:16:50,913 - INFO - poly_tarifa: 940 outliers, 1.90%
+2025-02-04 09:16:50,914 - INFO - poly_duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:16:50,916 - INFO - poly_distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:16:50,918 - INFO - poly_tarifa^2: 940 outliers, 1.90%
+2025-02-04 09:16:50,919 - INFO - poly_tarifa duracao_segundos_da_viagem: 1178 outliers, 2.38%
+2025-02-04 09:16:50,921 - INFO - poly_tarifa distancia_milhas_da_viagem: 1091 outliers, 2.20%
+2025-02-04 09:16:50,924 - INFO - poly_duracao_segundos_da_viagem^2: 972 outliers, 1.96%
+2025-02-04 09:16:50,926 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 1173 outliers, 2.37%
+2025-02-04 09:16:50,929 - INFO - poly_distancia_milhas_da_viagem^2: 1015 outliers, 2.05%
+2025-02-04 09:16:50,977 - INFO - Pré-processador salvo em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors\preprocessor.joblib
+2025-02-04 09:19:48,358 - INFO - Número de linhas importadas: 49500
+2025-02-04 09:19:48,358 - INFO - Colunas e tipos de dados:
+2025-02-04 09:19:48,359 - INFO - {'id_da_viagem': dtype('O'), 'data_hora_de_inicio_da_viagem': dtype('O'), 'data_hora_de_termino_da_viagem': dtype('O'), 'duracao_segundos_da_viagem': dtype('float64'), 'distancia_milhas_da_viagem': dtype('float64'), 'setor_censitario_de_partida': dtype('float64'), 'setor_censitario_de_destino': dtype('float64'), 'area_comunitaria_de_partida': dtype('float64'), 'area_comunitaria_de_destino': dtype('float64'), 'tarifa': dtype('float64'), 'gorjeta': dtype('float64'), 'cobrancas_adicionais': dtype('float64'), 'total_da_viagem': dtype('float64'), 'viagem_compartilhada_autorizada': dtype('bool'), 'viagens_compartilhadas': dtype('float64'), 'latitude_centro_de_partida': dtype('float64'), 'longitude_centro_de_partida': dtype('float64'), 'localizacao_centro_de_partida': dtype('O'), 'latitude_centro_de_destino': dtype('float64'), 'longitude_centro_de_destino': dtype('float64'), 'localizacao_centro_de_destino': dtype('O'), 'tarifa_por_milha': dtype('float64'), 'porcentagem_gorjeta': dtype('float64'), 'velocidade_media': dtype('float64'), 'razao_cobrancas': dtype('float64'), 'poly_tarifa': dtype('float64'), 'poly_duracao_segundos_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem': dtype('float64'), 'poly_tarifa^2': dtype('float64'), 'poly_tarifa duracao_segundos_da_viagem': dtype('float64'), 'poly_tarifa distancia_milhas_da_viagem': dtype('float64'), 'poly_duracao_segundos_da_viagem^2': dtype('float64'), 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem^2': dtype('float64')}
+2025-02-04 09:19:48,362 - INFO - Lista de colunas:
+2025-02-04 09:19:48,362 - INFO - ['id_da_viagem', 'data_hora_de_inicio_da_viagem', 'data_hora_de_termino_da_viagem', 'duracao_segundos_da_viagem', 'distancia_milhas_da_viagem', 'setor_censitario_de_partida', 'setor_censitario_de_destino', 'area_comunitaria_de_partida', 'area_comunitaria_de_destino', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem', 'viagem_compartilhada_autorizada', 'viagens_compartilhadas', 'latitude_centro_de_partida', 'longitude_centro_de_partida', 'localizacao_centro_de_partida', 'latitude_centro_de_destino', 'longitude_centro_de_destino', 'localizacao_centro_de_destino', 'tarifa_por_milha', 'porcentagem_gorjeta', 'velocidade_media', 'razao_cobrancas', 'poly_tarifa', 'poly_duracao_segundos_da_viagem', 'poly_distancia_milhas_da_viagem', 'poly_tarifa^2', 'poly_tarifa duracao_segundos_da_viagem', 'poly_tarifa distancia_milhas_da_viagem', 'poly_duracao_segundos_da_viagem^2', 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem', 'poly_distancia_milhas_da_viagem^2']
+2025-02-04 09:19:48,392 - INFO - id_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,393 - INFO - data_hora_de_inicio_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,393 - INFO - data_hora_de_termino_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,393 - INFO - duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,393 - INFO - distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,393 - INFO - setor_censitario_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:19:48,393 - INFO - setor_censitario_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:19:48,394 - INFO - area_comunitaria_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:19:48,394 - INFO - area_comunitaria_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:19:48,394 - INFO - tarifa: 0 faltantes, 0.00%
+2025-02-04 09:19:48,394 - INFO - gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:19:48,395 - INFO - cobrancas_adicionais: 0 faltantes, 0.00%
+2025-02-04 09:19:48,395 - INFO - total_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,395 - INFO - viagem_compartilhada_autorizada: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - viagens_compartilhadas: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - latitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - longitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - localizacao_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - latitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - longitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - localizacao_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:19:48,396 - INFO - tarifa_por_milha: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - porcentagem_gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - velocidade_media: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - razao_cobrancas: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - poly_tarifa: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - poly_duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - poly_distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - poly_tarifa^2: 0 faltantes, 0.00%
+2025-02-04 09:19:48,397 - INFO - poly_tarifa duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,398 - INFO - poly_tarifa distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,398 - INFO - poly_duracao_segundos_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:19:48,398 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:19:48,398 - INFO - poly_distancia_milhas_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:19:48,465 - INFO - Linhas duplicadas: 0 (0.00%)
+2025-02-04 09:19:48,473 - INFO - duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:19:48,475 - INFO - distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:19:48,477 - INFO - setor_censitario_de_partida: 0 outliers, 0.00%
+2025-02-04 09:19:48,479 - INFO - setor_censitario_de_destino: 0 outliers, 0.00%
+2025-02-04 09:19:48,481 - INFO - area_comunitaria_de_partida: 0 outliers, 0.00%
+2025-02-04 09:19:48,482 - INFO - area_comunitaria_de_destino: 0 outliers, 0.00%
+2025-02-04 09:19:48,485 - INFO - tarifa: 940 outliers, 1.90%
+2025-02-04 09:19:48,487 - INFO - gorjeta: 1794 outliers, 3.62%
+2025-02-04 09:19:48,489 - INFO - cobrancas_adicionais: 1331 outliers, 2.69%
+2025-02-04 09:19:48,492 - INFO - total_da_viagem: 1015 outliers, 2.05%
+2025-02-04 09:19:48,494 - INFO - viagens_compartilhadas: 1494 outliers, 3.02%
+2025-02-04 09:19:48,495 - INFO - latitude_centro_de_partida: 627 outliers, 1.27%
+2025-02-04 09:19:48,497 - INFO - longitude_centro_de_partida: 1435 outliers, 2.90%
+2025-02-04 09:19:48,499 - INFO - latitude_centro_de_destino: 598 outliers, 1.21%
+2025-02-04 09:19:48,500 - INFO - longitude_centro_de_destino: 1651 outliers, 3.34%
+2025-02-04 09:19:48,502 - INFO - tarifa_por_milha: 534 outliers, 1.08%
+2025-02-04 09:19:48,505 - INFO - porcentagem_gorjeta: 941 outliers, 1.90%
+2025-02-04 09:19:48,508 - INFO - velocidade_media: 8 outliers, 0.02%
+2025-02-04 09:19:48,510 - INFO - razao_cobrancas: 159 outliers, 0.32%
+2025-02-04 09:19:48,512 - INFO - poly_tarifa: 940 outliers, 1.90%
+2025-02-04 09:19:48,513 - INFO - poly_duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:19:48,515 - INFO - poly_distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:19:48,517 - INFO - poly_tarifa^2: 940 outliers, 1.90%
+2025-02-04 09:19:48,518 - INFO - poly_tarifa duracao_segundos_da_viagem: 1178 outliers, 2.38%
+2025-02-04 09:19:48,520 - INFO - poly_tarifa distancia_milhas_da_viagem: 1091 outliers, 2.20%
+2025-02-04 09:19:48,522 - INFO - poly_duracao_segundos_da_viagem^2: 972 outliers, 1.96%
+2025-02-04 09:19:48,526 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 1173 outliers, 2.37%
+2025-02-04 09:19:48,528 - INFO - poly_distancia_milhas_da_viagem^2: 1015 outliers, 2.05%
+2025-02-04 09:19:48,572 - INFO - Pré-processador salvo em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors\preprocessor.joblib
+2025-02-04 09:26:39,410 - INFO - Nested CV F1-score médio: 0.9435
+2025-02-04 09:26:39,420 - INFO - Hiperparâmetros salvos em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\hyperparameters\best_hyperparameters.json
+2025-02-04 09:30:05,594 - INFO - Número de linhas importadas: 49500
+2025-02-04 09:30:05,595 - INFO - Colunas e tipos de dados:
+2025-02-04 09:30:05,595 - INFO - {'id_da_viagem': dtype('O'), 'data_hora_de_inicio_da_viagem': dtype('O'), 'data_hora_de_termino_da_viagem': dtype('O'), 'duracao_segundos_da_viagem': dtype('float64'), 'distancia_milhas_da_viagem': dtype('float64'), 'setor_censitario_de_partida': dtype('float64'), 'setor_censitario_de_destino': dtype('float64'), 'area_comunitaria_de_partida': dtype('float64'), 'area_comunitaria_de_destino': dtype('float64'), 'tarifa': dtype('float64'), 'gorjeta': dtype('float64'), 'cobrancas_adicionais': dtype('float64'), 'total_da_viagem': dtype('float64'), 'viagem_compartilhada_autorizada': dtype('bool'), 'viagens_compartilhadas': dtype('float64'), 'latitude_centro_de_partida': dtype('float64'), 'longitude_centro_de_partida': dtype('float64'), 'localizacao_centro_de_partida': dtype('O'), 'latitude_centro_de_destino': dtype('float64'), 'longitude_centro_de_destino': dtype('float64'), 'localizacao_centro_de_destino': dtype('O'), 'tarifa_por_milha': dtype('float64'), 'porcentagem_gorjeta': dtype('float64'), 'velocidade_media': dtype('float64'), 'razao_cobrancas': dtype('float64'), 'poly_tarifa': dtype('float64'), 'poly_duracao_segundos_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem': dtype('float64'), 'poly_tarifa^2': dtype('float64'), 'poly_tarifa duracao_segundos_da_viagem': dtype('float64'), 'poly_tarifa distancia_milhas_da_viagem': dtype('float64'), 'poly_duracao_segundos_da_viagem^2': dtype('float64'), 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem': dtype('float64'), 'poly_distancia_milhas_da_viagem^2': dtype('float64')}
+2025-02-04 09:30:05,598 - INFO - Lista de colunas:
+2025-02-04 09:30:05,598 - INFO - ['id_da_viagem', 'data_hora_de_inicio_da_viagem', 'data_hora_de_termino_da_viagem', 'duracao_segundos_da_viagem', 'distancia_milhas_da_viagem', 'setor_censitario_de_partida', 'setor_censitario_de_destino', 'area_comunitaria_de_partida', 'area_comunitaria_de_destino', 'tarifa', 'gorjeta', 'cobrancas_adicionais', 'total_da_viagem', 'viagem_compartilhada_autorizada', 'viagens_compartilhadas', 'latitude_centro_de_partida', 'longitude_centro_de_partida', 'localizacao_centro_de_partida', 'latitude_centro_de_destino', 'longitude_centro_de_destino', 'localizacao_centro_de_destino', 'tarifa_por_milha', 'porcentagem_gorjeta', 'velocidade_media', 'razao_cobrancas', 'poly_tarifa', 'poly_duracao_segundos_da_viagem', 'poly_distancia_milhas_da_viagem', 'poly_tarifa^2', 'poly_tarifa duracao_segundos_da_viagem', 'poly_tarifa distancia_milhas_da_viagem', 'poly_duracao_segundos_da_viagem^2', 'poly_duracao_segundos_da_viagem distancia_milhas_da_viagem', 'poly_distancia_milhas_da_viagem^2']
+2025-02-04 09:30:05,630 - INFO - id_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,630 - INFO - data_hora_de_inicio_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,630 - INFO - data_hora_de_termino_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,631 - INFO - duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,631 - INFO - distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,631 - INFO - setor_censitario_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:30:05,631 - INFO - setor_censitario_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:30:05,631 - INFO - area_comunitaria_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:30:05,631 - INFO - area_comunitaria_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - tarifa: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - cobrancas_adicionais: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - total_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - viagem_compartilhada_autorizada: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - viagens_compartilhadas: 0 faltantes, 0.00%
+2025-02-04 09:30:05,633 - INFO - latitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - longitude_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - localizacao_centro_de_partida: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - latitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - longitude_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - localizacao_centro_de_destino: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - tarifa_por_milha: 0 faltantes, 0.00%
+2025-02-04 09:30:05,634 - INFO - porcentagem_gorjeta: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - velocidade_media: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - razao_cobrancas: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - poly_tarifa: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - poly_duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - poly_distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - poly_tarifa^2: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - poly_tarifa duracao_segundos_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,635 - INFO - poly_tarifa distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,636 - INFO - poly_duracao_segundos_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:30:05,636 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 0 faltantes, 0.00%
+2025-02-04 09:30:05,636 - INFO - poly_distancia_milhas_da_viagem^2: 0 faltantes, 0.00%
+2025-02-04 09:30:05,704 - INFO - Linhas duplicadas: 0 (0.00%)
+2025-02-04 09:30:05,712 - INFO - duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:30:05,714 - INFO - distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:30:05,716 - INFO - setor_censitario_de_partida: 0 outliers, 0.00%
+2025-02-04 09:30:05,718 - INFO - setor_censitario_de_destino: 0 outliers, 0.00%
+2025-02-04 09:30:05,720 - INFO - area_comunitaria_de_partida: 0 outliers, 0.00%
+2025-02-04 09:30:05,722 - INFO - area_comunitaria_de_destino: 0 outliers, 0.00%
+2025-02-04 09:30:05,724 - INFO - tarifa: 940 outliers, 1.90%
+2025-02-04 09:30:05,726 - INFO - gorjeta: 1794 outliers, 3.62%
+2025-02-04 09:30:05,729 - INFO - cobrancas_adicionais: 1331 outliers, 2.69%
+2025-02-04 09:30:05,731 - INFO - total_da_viagem: 1015 outliers, 2.05%
+2025-02-04 09:30:05,733 - INFO - viagens_compartilhadas: 1494 outliers, 3.02%
+2025-02-04 09:30:05,735 - INFO - latitude_centro_de_partida: 627 outliers, 1.27%
+2025-02-04 09:30:05,736 - INFO - longitude_centro_de_partida: 1435 outliers, 2.90%
+2025-02-04 09:30:05,738 - INFO - latitude_centro_de_destino: 598 outliers, 1.21%
+2025-02-04 09:30:05,740 - INFO - longitude_centro_de_destino: 1651 outliers, 3.34%
+2025-02-04 09:30:05,742 - INFO - tarifa_por_milha: 534 outliers, 1.08%
+2025-02-04 09:30:05,745 - INFO - porcentagem_gorjeta: 941 outliers, 1.90%
+2025-02-04 09:30:05,747 - INFO - velocidade_media: 8 outliers, 0.02%
+2025-02-04 09:30:05,749 - INFO - razao_cobrancas: 159 outliers, 0.32%
+2025-02-04 09:30:05,751 - INFO - poly_tarifa: 940 outliers, 1.90%
+2025-02-04 09:30:05,753 - INFO - poly_duracao_segundos_da_viagem: 740 outliers, 1.49%
+2025-02-04 09:30:05,755 - INFO - poly_distancia_milhas_da_viagem: 963 outliers, 1.95%
+2025-02-04 09:30:05,756 - INFO - poly_tarifa^2: 940 outliers, 1.90%
+2025-02-04 09:30:05,757 - INFO - poly_tarifa duracao_segundos_da_viagem: 1178 outliers, 2.38%
+2025-02-04 09:30:05,761 - INFO - poly_tarifa distancia_milhas_da_viagem: 1091 outliers, 2.20%
+2025-02-04 09:30:05,764 - INFO - poly_duracao_segundos_da_viagem^2: 972 outliers, 1.96%
+2025-02-04 09:30:05,766 - INFO - poly_duracao_segundos_da_viagem distancia_milhas_da_viagem: 1173 outliers, 2.37%
+2025-02-04 09:30:05,767 - INFO - poly_distancia_milhas_da_viagem^2: 1015 outliers, 2.05%
+2025-02-04 09:30:05,815 - INFO - Pré-processador salvo em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors\preprocessor.joblib
+2025-02-04 09:37:25,281 - INFO - Nested CV F1-score médio: 0.9435
+2025-02-04 09:37:25,289 - INFO - Hiperparâmetros salvos em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\hyperparameters\best_hyperparameters.json
+2025-02-04 09:38:17,411 - INFO - Melhor threshold: 0.39 com F1-score = 0.9816
+2025-02-04 09:38:18,507 - INFO - Métricas salvas em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/metrics.json
+2025-02-04 09:38:18,588 - INFO - Modelo salvo em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/final_model.joblib
+2025-02-04 09:38:18,727 - INFO - Curva ROC salva em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/roc_curve.png
+2025-02-04 09:38:18,836 - INFO - Curva Precision-Recall salva em: D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/precision_recall_curve.png

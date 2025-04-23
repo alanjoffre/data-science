@@ -1,0 +1,138 @@
+2025-02-13 20:01:02,882 - INFO - Configuração carregada do arquivo YAML.
+2025-02-13 20:01:02,984 - INFO - Dataset carregado de: D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/amostra.parquet
+2025-02-13 20:01:02,988 - INFO - Número de linhas: 50000
+Número de colunas: 21
+Colunas e tipos de dados:
+id_da_viagem                        object
+data_hora_de_inicio_da_viagem       object
+data_hora_de_termino_da_viagem      object
+duracao_segundos_da_viagem         float64
+distancia_milhas_da_viagem         float64
+setor_censitario_de_partida        float64
+setor_censitario_de_destino        float64
+area_comunitaria_de_partida        float64
+area_comunitaria_de_destino        float64
+tarifa                             float64
+gorjeta                            float64
+cobrancas_adicionais               float64
+total_da_viagem                    float64
+viagem_compartilhada_autorizada       bool
+viagens_compartilhadas             float64
+latitude_centro_de_partida         float64
+longitude_centro_de_partida        float64
+localizacao_centro_de_partida       object
+latitude_centro_de_destino         float64
+longitude_centro_de_destino        float64
+localizacao_centro_de_destino       object
+dtype: object
+2025-02-13 20:01:02,988 - INFO - --------------------------------------------------
+2025-02-13 20:01:03,666 - INFO - === Início da Verificação e Limpeza de Dados ===
+2025-02-13 20:01:03,718 - INFO - Registros duplicados encontrados: 0 (0.00%)
+2025-02-13 20:01:03,770 - INFO - Registros duplicados removidos: 0
+2025-02-13 20:01:03,797 - INFO - Valores faltantes antes da imputação por coluna:
+2025-02-13 20:01:03,859 - INFO - duracao_segundos_da_viagem           1
+setor_censitario_de_partida      14339
+setor_censitario_de_destino      14570
+area_comunitaria_de_partida       2800
+area_comunitaria_de_destino       3261
+latitude_centro_de_partida        2755
+longitude_centro_de_partida       2755
+localizacao_centro_de_partida     2755
+latitude_centro_de_destino        3217
+longitude_centro_de_destino       3217
+localizacao_centro_de_destino     3217
+dtype: int64
+2025-02-13 20:01:03,920 - INFO - Total de valores faltantes imputados: 52887 (100.00% resolvidos)
+2025-02-13 20:01:03,923 - INFO - Coluna setor_censitario_de_partida convertida para categoria.
+2025-02-13 20:01:03,926 - INFO - Coluna setor_censitario_de_destino convertida para categoria.
+2025-02-13 20:01:03,926 - INFO - Verificação de valores fora dos limites:
+2025-02-13 20:01:03,928 - INFO -  - duracao_segundos_da_viagem: 2 registros fora do limite [0, 10000]
+2025-02-13 20:01:03,935 - INFO -  - distancia_milhas_da_viagem: 0 registros fora do limite [0, 500]
+2025-02-13 20:01:03,944 - INFO -  - area_comunitaria_de_partida: 0 registros fora do limite [0, 10000]
+2025-02-13 20:01:03,952 - INFO -  - area_comunitaria_de_destino: 0 registros fora do limite [0, 10000]
+2025-02-13 20:01:03,962 - INFO -  - tarifa: 1 registros fora do limite [0, 200]
+2025-02-13 20:01:03,967 - INFO -  - gorjeta: 0 registros fora do limite [0, 50]
+2025-02-13 20:01:03,974 - INFO -  - cobrancas_adicionais: 0 registros fora do limite [0, 50]
+2025-02-13 20:01:03,983 - INFO -  - total_da_viagem: 0 registros fora do limite [0, 300]
+2025-02-13 20:01:03,991 - INFO -  - viagens_compartilhadas: 247 registros fora do limite [0, 5]
+2025-02-13 20:01:03,997 - INFO -  - latitude_centro_de_partida: 0 registros fora do limite [-90, 90]
+2025-02-13 20:01:04,003 - INFO -  - longitude_centro_de_partida: 0 registros fora do limite [-180, 180]
+2025-02-13 20:01:04,010 - INFO -  - latitude_centro_de_destino: 0 registros fora do limite [-90, 90]
+2025-02-13 20:01:04,017 - INFO -  - longitude_centro_de_destino: 0 registros fora do limite [-180, 180]
+2025-02-13 20:01:04,020 - INFO - Total de correções aplicadas (valores fora dos limites): 250 (0.50%)
+2025-02-13 20:01:04,025 - INFO - Detecção e correção de outliers (método IQR):
+2025-02-13 20:01:04,031 - INFO -  - duracao_segundos_da_viagem: 2016 outliers detectados e corrigidos
+2025-02-13 20:01:04,043 - INFO -  - distancia_milhas_da_viagem: 4261 outliers detectados e corrigidos
+2025-02-13 20:01:04,056 - INFO -  - area_comunitaria_de_partida: 3357 outliers detectados e corrigidos
+2025-02-13 20:01:04,065 - INFO -  - area_comunitaria_de_destino: 3598 outliers detectados e corrigidos
+2025-02-13 20:01:04,079 - INFO -  - tarifa: 3982 outliers detectados e corrigidos
+2025-02-13 20:01:04,092 - INFO -  - gorjeta: 8983 outliers detectados e corrigidos
+2025-02-13 20:01:04,100 - INFO -  - cobrancas_adicionais: 13084 outliers detectados e corrigidos
+2025-02-13 20:01:04,114 - INFO -  - total_da_viagem: 5379 outliers detectados e corrigidos
+2025-02-13 20:01:04,126 - INFO -  - viagens_compartilhadas: 9714 outliers detectados e corrigidos
+2025-02-13 20:01:04,135 - INFO -  - latitude_centro_de_partida: 5906 outliers detectados e corrigidos
+2025-02-13 20:01:04,146 - INFO -  - longitude_centro_de_partida: 4227 outliers detectados e corrigidos
+2025-02-13 20:01:04,157 - INFO -  - latitude_centro_de_destino: 5888 outliers detectados e corrigidos
+2025-02-13 20:01:04,166 - INFO -  - longitude_centro_de_destino: 4405 outliers detectados e corrigidos
+2025-02-13 20:01:04,168 - INFO - Total de correções aplicadas (outliers via IQR): 74800 (149.60%)
+2025-02-13 20:01:04,169 - INFO - Número final de linhas: 50000 (100.00% do total original)
+2025-02-13 20:01:04,169 - INFO - === Fim da Verificação e Limpeza ===
+
+2025-02-13 20:01:04,173 - INFO - Número de linhas: 50000
+Número de colunas: 21
+Colunas e tipos de dados:
+id_da_viagem                         object
+data_hora_de_inicio_da_viagem        object
+data_hora_de_termino_da_viagem       object
+duracao_segundos_da_viagem          float64
+distancia_milhas_da_viagem          float64
+setor_censitario_de_partida        category
+setor_censitario_de_destino        category
+area_comunitaria_de_partida         float64
+area_comunitaria_de_destino         float64
+tarifa                              float64
+gorjeta                             float64
+cobrancas_adicionais                float64
+total_da_viagem                     float64
+viagem_compartilhada_autorizada        bool
+viagens_compartilhadas              float64
+latitude_centro_de_partida          float64
+longitude_centro_de_partida         float64
+localizacao_centro_de_partida        object
+latitude_centro_de_destino          float64
+longitude_centro_de_destino         float64
+localizacao_centro_de_destino        object
+dtype: object
+2025-02-13 20:01:04,174 - INFO - --------------------------------------------------
+2025-02-13 20:01:04,530 - INFO - Número de linhas: 50000
+Número de colunas: 26
+Colunas e tipos de dados:
+id_da_viagem                               object
+data_hora_de_inicio_da_viagem      datetime64[ns]
+data_hora_de_termino_da_viagem     datetime64[ns]
+duracao_segundos_da_viagem                float64
+distancia_milhas_da_viagem                float64
+setor_censitario_de_partida              category
+setor_censitario_de_destino              category
+area_comunitaria_de_partida               float64
+area_comunitaria_de_destino               float64
+tarifa                                    float64
+gorjeta                                   float64
+cobrancas_adicionais                      float64
+total_da_viagem                           float64
+viagem_compartilhada_autorizada              bool
+viagens_compartilhadas                    float64
+latitude_centro_de_partida                float64
+longitude_centro_de_partida               float64
+localizacao_centro_de_partida              object
+latitude_centro_de_destino                float64
+longitude_centro_de_destino               float64
+localizacao_centro_de_destino              object
+duracao_minutos                           float64
+inicio_hora                                 int64
+inicio_dia                                  int64
+inicio_mes                                  int64
+inicio_dia_semana                           int64
+dtype: object
+2025-02-13 20:01:04,530 - INFO - --------------------------------------------------
+2025-02-13 20:32:49,375 - INFO - Tempo total de processamento: 00hr 31min 46.50seg

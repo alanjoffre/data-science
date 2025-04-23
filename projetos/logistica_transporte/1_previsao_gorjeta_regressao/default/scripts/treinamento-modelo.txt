@@ -1,0 +1,14 @@
+# Importar as bibliotecas
+# Função para avaliar o modelo
+# Carregar o dataset
+# Selecionar apenas as colunas numéricas
+# Dividir o dataset em conjunto de treinamento e teste (70/30)
+# Inicializar o modelo Gradient Boosting Regressor
+# Definir a função objetivo para o Optuna
+# Realizar a busca de hiperparâmetros com Optuna
+# Aplicar os melhores hiperparâmetros
+# Avaliar o modelo nos dados de treino
+# Avaliar o modelo nos dados de teste
+# Realizar validação cruzada nos dados de treino
+# Salvar o modelo
+# Salvar o preprocessador (no caso, apenas a amostra de colunas numéricas)

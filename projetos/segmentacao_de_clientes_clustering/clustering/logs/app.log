@@ -1,0 +1,82 @@
+2024-12-13 20:55:19,088 - root - INFO - Carregando os dados.
+2024-12-13 20:55:19,095 - root - INFO - Nomes das colunas traduzidos.
+2024-12-13 20:55:19,095 - root - INFO - Verificando as primeiras linhas do dataframe.
+2024-12-13 20:55:19,103 - root - INFO - Verificando informações do dataframe.
+2024-12-13 20:55:19,125 - root - INFO - Removendo duplicatas.
+2024-12-13 20:55:19,128 - root - INFO - Verificando valores ausentes.
+2024-12-13 20:55:19,133 - root - INFO - Imputando valores ausentes na coluna 'Renda'.
+2024-12-13 20:55:19,133 - root - INFO - Verificando novamente se há valores ausentes.
+2024-12-13 20:55:19,137 - root - INFO - Verificando range de valores para possíveis erros.
+2024-12-13 20:55:19,143 - root - INFO - Corrigindo dados fora de intervalo razoável.
+2024-12-13 20:55:19,144 - root - INFO - Normalizando as colunas.
+2024-12-13 20:55:19,148 - root - INFO - Dados normalizados.
+2024-12-13 20:55:19,170 - root - INFO - Gerando histograma de renda.
+2024-12-13 20:55:22,253 - root - INFO - Gerando box plot de renda por nível de escolaridade.
+2024-12-13 20:55:25,571 - root - INFO - Calculando Método do Cotovelo.
+2024-12-13 20:55:25,673 - root - INFO - K=1, SSE=26688.0
+2024-12-13 20:55:25,694 - root - INFO - K=2, SSE=16184.22665700457
+2024-12-13 20:55:25,731 - root - INFO - K=3, SSE=13503.8865151374
+2024-12-13 20:55:25,772 - root - INFO - K=4, SSE=12491.038969693138
+2024-12-13 20:55:25,824 - root - INFO - K=5, SSE=11711.381123375064
+2024-12-13 20:55:25,872 - root - INFO - K=6, SSE=11176.626152598632
+2024-12-13 20:55:25,937 - root - INFO - K=7, SSE=10712.660598222978
+2024-12-13 20:55:26,005 - root - INFO - K=8, SSE=10318.933376215182
+2024-12-13 20:55:26,070 - root - INFO - K=9, SSE=9972.37544854705
+2024-12-13 20:55:26,150 - root - INFO - K=10, SSE=9614.06205777577
+2024-12-13 20:55:29,085 - root - INFO - Calculando Coeficiente Silhueta.
+2024-12-13 20:55:29,293 - root - INFO - K=2, Silhouette Score=0.3993293276013268
+2024-12-13 20:55:29,409 - root - INFO - K=3, Silhouette Score=0.3250047828607597
+2024-12-13 20:55:29,529 - root - INFO - K=4, Silhouette Score=0.29820192431548376
+2024-12-13 20:55:29,656 - root - INFO - K=5, Silhouette Score=0.2976156531367529
+2024-12-13 20:55:29,808 - root - INFO - K=6, Silhouette Score=0.25851209645327233
+2024-12-13 20:55:29,967 - root - INFO - K=7, Silhouette Score=0.24668068792093506
+2024-12-13 20:55:30,104 - root - INFO - K=8, Silhouette Score=0.2177749095527625
+2024-12-13 20:55:30,256 - root - INFO - K=9, Silhouette Score=0.21719948101329475
+2024-12-13 20:55:30,403 - root - INFO - K=10, Silhouette Score=0.16437504944568032
+2024-12-13 20:55:32,385 - root - INFO - Treinando modelo KMeans com k=5.
+2024-12-13 20:55:32,535 - root - INFO - Atribuindo clusters aos clientes.
+2024-12-13 20:55:32,535 - root - INFO - Recuperando centros dos clusters.
+2024-12-13 20:55:32,560 - root - INFO - Salvando modelo KMeans.
+2024-12-13 20:55:32,561 - root - INFO - Gerando visualização dos clusters.
+2024-12-13 20:55:34,366 - root - INFO - Processo concluído.
+2024-12-13 20:57:10,329 - root - INFO - Carregando os dados.
+2024-12-13 20:57:10,344 - root - INFO - Nomes das colunas traduzidos.
+2024-12-13 20:57:10,344 - root - INFO - Verificando as primeiras linhas do dataframe.
+2024-12-13 20:57:10,360 - root - INFO - Verificando informações do dataframe.
+2024-12-13 20:57:10,377 - root - INFO - Removendo duplicatas.
+2024-12-13 20:57:10,382 - root - INFO - Verificando valores ausentes.
+2024-12-13 20:57:10,387 - root - INFO - Imputando valores ausentes na coluna 'Renda'.
+2024-12-13 20:57:10,387 - root - INFO - Verificando novamente se há valores ausentes.
+2024-12-13 20:57:10,388 - root - INFO - Verificando range de valores para possíveis erros.
+2024-12-13 20:57:10,388 - root - INFO - Corrigindo dados fora de intervalo razoável.
+2024-12-13 20:57:10,388 - root - INFO - Normalizando as colunas.
+2024-12-13 20:57:10,401 - root - INFO - Dados normalizados.
+2024-12-13 20:57:10,420 - root - INFO - Gerando histograma de renda.
+2024-12-13 20:57:12,599 - root - INFO - Gerando box plot de renda por nível de escolaridade.
+2024-12-13 20:57:13,933 - root - INFO - Calculando Método do Cotovelo.
+2024-12-13 20:57:14,068 - root - INFO - K=1, SSE=26688.0
+2024-12-13 20:57:14,091 - root - INFO - K=2, SSE=16184.22665700457
+2024-12-13 20:57:14,133 - root - INFO - K=3, SSE=13503.8865151374
+2024-12-13 20:57:14,175 - root - INFO - K=4, SSE=12491.038969693138
+2024-12-13 20:57:14,216 - root - INFO - K=5, SSE=11711.381123375064
+2024-12-13 20:57:14,277 - root - INFO - K=6, SSE=11176.626152598632
+2024-12-13 20:57:14,337 - root - INFO - K=7, SSE=10712.660598222976
+2024-12-13 20:57:14,402 - root - INFO - K=8, SSE=10318.933376215182
+2024-12-13 20:57:14,468 - root - INFO - K=9, SSE=9972.37544854705
+2024-12-13 20:57:14,551 - root - INFO - K=10, SSE=9614.06205777577
+2024-12-13 20:57:15,725 - root - INFO - Calculando Coeficiente Silhueta.
+2024-12-13 20:57:15,853 - root - INFO - K=2, Silhouette Score=0.3993293276013268
+2024-12-13 20:57:15,985 - root - INFO - K=3, Silhouette Score=0.3250047828607597
+2024-12-13 20:57:16,113 - root - INFO - K=4, Silhouette Score=0.29820192431548376
+2024-12-13 20:57:16,247 - root - INFO - K=5, Silhouette Score=0.2976156531367529
+2024-12-13 20:57:16,383 - root - INFO - K=6, Silhouette Score=0.25851209645327233
+2024-12-13 20:57:16,532 - root - INFO - K=7, Silhouette Score=0.24668068792093506
+2024-12-13 20:57:16,665 - root - INFO - K=8, Silhouette Score=0.2177749095527625
+2024-12-13 20:57:16,817 - root - INFO - K=9, Silhouette Score=0.21719948101329475
+2024-12-13 20:57:16,972 - root - INFO - K=10, Silhouette Score=0.16437504944568032
+2024-12-13 20:57:18,399 - root - INFO - Treinando modelo KMeans com k=5.
+2024-12-13 20:57:18,551 - root - INFO - Atribuindo clusters aos clientes.
+2024-12-13 20:57:18,551 - root - INFO - Recuperando centros dos clusters.
+2024-12-13 20:57:18,567 - root - INFO - Salvando modelo KMeans.
+2024-12-13 20:57:18,567 - root - INFO - Gerando visualização dos clusters.
+2024-12-13 20:57:20,607 - root - INFO - Processo concluído.

@@ -1,0 +1,12 @@
+# Quais as diferenças entre mineração de dados, machine learning e deep learning?
+
+Embora todos esses métodos tenham o mesmo objetivo – extrair insights, padrões e relações que podem ser usado nas tomadas de decisão – eles possuem abordagens e capacidades diferentes.
+
+Mineração de dados
+A mineração de dados pode ser considerada um superconjunto de muitos métodos diferentes para extrair insights dos dados. Ela pode envolver métodos estatísticos tradicionais e machine learning. A mineração de dados aplica métodos de áreas diversas para identificar padrões anteriormente desconhecidos nos dados. Isso pode incluir algoritmos estatísticos, machine learning, análise de texto, análises de séries temporais e outras áreas de analytics. A mineração de dados também inclui o estudo e a prática de armazenamento e manipulação de dados.
+
+Machine Learning
+A principal diferença do machine learning é que, igualmente modelos estatísticos, o objetivo é entender a estrutura dos dados – encaixar distribuições teóricas em dados bem entendidos. Assim, há uma teoria por trás de modelos estatísticos que é comprovada matematicamente, mas isso requer que os dados também atendam a certos pressupostos. O aprendizado de máquina foi desenvolvido a partir da capacidade de usar computadores para examinar a estrutura dos dados, mesmo se não soubermos como essa estrutura se parece. O teste para um modelo de machine learning é um erro de validação em dados novos e não um teste teórico que prova uma hipótese nula. Como machine learning geralmente usa uma abordagem iterativa para aprender com os dados, o aprendizado pode ser facilmente automatizado. As etapas são executadas através dos dados até que um padrão robusto seja encontrado.
+
+Deep learning
+Deep learning combina avanços no poder computacional e tipos especiais de redes neurais para aprender padrões complicados em grandes quantidades de dados. Técnicas de deep learning são o que há de mais avançado hoje para identificar objetos em imagens e palavras em sons. Os pesquisadores estão tentando aplicar esses sucessos no reconhecimento de padrões em tarefas mais complexas, como na tradução automática de idiomas, diagnósticos médicos e diversos outros problemas sociais e corporativos.

@@ -1,0 +1,35 @@
+don't,do not
+can't,cannot
+won't,will not
+i'm,i am
+you're,you are
+we're,we are
+they're,they are
+it's,it is
+i'll,i will
+you'll,you will
+he'll,he will
+she'll,she will
+we'll,we will
+they'll,they will
+i've,i have
+you've,you have
+we've,we have
+they've,they have
+isn't,is not
+aren't,are not
+wasn't,was not
+weren't,were not
+haven't,have not
+hasn't,has not
+hadn't,had not
+won't,will not
+wouldn't,would not
+don't,do not
+doesn't,does not
+didn't,did not
+can't,cannot
+couldn't,could not
+shouldn't,should not
+mightn't,might not
+mustn't,must not

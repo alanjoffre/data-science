@@ -1,0 +1,27 @@
+# Prometheus
+# Abra o powershell
+# Acesse o diretorio de instalação: cd C:\prometheus
+# Digite: ./prometheus --config.file=prometheus.yml
+# Deixe a janela aberta do prompt de comando
+
+Abra o browser e acesse: http://127.0.0.1:5000/metrics
+
+Abra o browser e acesse o Prometheus: http://localhost:9090
+
+# Você vê métricas como:
+python_gc_objects_collected_total: Número de objetos coletados durante a coleta de lixo.
+python_gc_objects_uncollectable_total: Objetos não coletáveis encontrados durante a coleta de lixo.
+python_gc_collections_total: Número de vezes que cada geração foi coletada.
+python_info: Informações sobre a plataforma Python.
+request_count_total: Número total de requisições.
+
+# Grafana
+# Abra o powershell
+# Acesse o diretorio de instalação: cd C:\Program Files\GrafanaLabs\grafana\bin
+# Inicie o servidor: cd "C:\Program Files\GrafanaLabs\grafana\bin"
+.\grafana-server.exe
+# Deixe a janela aberta do prompt de comando
+
+Abra o browser e acesse o Grafana: http://localhost:3001
+usuário: admin
+senha: default

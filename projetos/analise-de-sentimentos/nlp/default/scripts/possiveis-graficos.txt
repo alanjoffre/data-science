@@ -1,0 +1,7 @@
+Gráficos Possíveis para Análise Exploratória de Dados
+Distribuição de Sentimentos (Gráfico de barras ou pizza)
+Histograma de Comprimento de Tweets (Analisando a variação de tamanho dos tweets)
+Análise de Frequência de Palavras (Nuvem de palavras)
+Gráfico de Dispersão (Sentimentos vs. Frequência de Postagens)
+Análise de Correlação entre Sentimentos e Variáveis (Data/Username)
+Boxplot de Comprimento de Tweets por Sentimento

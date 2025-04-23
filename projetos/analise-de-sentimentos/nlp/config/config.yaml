@@ -1,0 +1,8 @@
+directories:
+  logs: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\logs
+  processed_data: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\processed\
+  raw_data: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\data\raw\
+  reports: D:\Github\data-science\projetos\analise-de-sentimentos\nlp\reports\figures\
+files:
+  log_file: etapa2_6_vetorizacao_texto.log
+  raw_dataset: asentimentos.parquet

@@ -1,0 +1,7 @@
+Elastic Net
+
+Elastic net trata-se de um compromisso entre a regressão Ridge e Lasso, combinando os dois tipos de penalties. Os coeficientes elastic net minimizam a quantidade
+
+A vantagem deste modelo é permitir uma efetiva regularização com penalidade do tipo Ridge - especialmente em grupos de preditores correlacionados - aliado à qualidade da seleção de características através do Lasso. A figura abaixo ilustra esta penalização, comparando-a com ridge e lasso (Zou and Hastie, 2005).
+
+http://cursos.leg.ufpr.br/ML4all/apoio/Regularizacao.html

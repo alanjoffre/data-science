@@ -1,0 +1,11 @@
+{
+    "Train F1-score (threshold adjusted)": 0.9815582262743472,
+    "Test F1-score (threshold adjusted)": 0.935511607910576,
+    "Train Accuracy": 0.9895526695526695,
+    "Test Accuracy": 0.9664646464646465,
+    "Train Precision": 0.9859506712457071,
+    "Test Precision": 0.9553437029603613,
+    "Train Recall": 0.97720474471377,
+    "Test Recall": 0.9164861612515042,
+    "Nested CV F1-score": 0.9434819548438004
+}

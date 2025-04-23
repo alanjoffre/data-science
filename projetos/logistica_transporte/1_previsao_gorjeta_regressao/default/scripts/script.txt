@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from tqdm import tqdm
+
+# Caminho do dataset
+dataset_path = "D:/Github/data-science/projetos/logistica_transporte/1_previsao_gorjeta_regressao/data/raw/dataset_preprocessado.parquet"
+
+# Importar o dataset
+# Informar o número de linhas no dataset carregado
+# Listar todas as colunas do dataset
+# Imprimir os tipos de dados de cada coluna
+# Converter colunas de datas para o formato correto
+# Criar novas variáveis baseadas em datas
+# Exibir as primeiras linhas do DataFrame para verificação
+# Informar quais colunas possuem valores ausentes, nulos ou NaNs
+# Exibir os resultados detalhados
+# Preencher valores numéricos ausentes com a média
+# Preencher valores categóricos ausentes com a moda
+# Preencher valores ausentes nas colunas `trato_do_censo_do_embarque` e `trato_do_censo_do_desembarque` com a mediana
+# Verificar novamente os valores ausentes
+# Obter uma amostra de 10% do dataset
+# Informar o número de linhas na amostra
+# Definir a variável alvo (por exemplo, 'gorjeta') e as variáveis de entrada
+# Codificação de variáveis categóricas
+# Criar o modelo de Floresta Aleatória
+# Treinar o modelo com uma barra de progresso
+# Extrair as importâncias das features
+# Criar um DataFrame com as importâncias
+# Exibir as melhores features
+# Salvar o DataFrame processado
+# Salvar o DataFrame com as importâncias das features

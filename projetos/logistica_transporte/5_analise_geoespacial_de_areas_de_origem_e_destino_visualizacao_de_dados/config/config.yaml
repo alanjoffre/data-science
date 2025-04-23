@@ -1,0 +1,31 @@
+# Configuração Inicial do Projeto de Análise de Compartilhamento de Viagem
+
+paths:
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/config/'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/src/'
+
+models:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/models/final_model.joblib'
+
+preprocessors:
+  path: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/preprocessors/preprocessor.joblib'
+
+data:
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/data/processed/amostra.parquet'
+  processed_parquet: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/data/processed/processado.parquet'
+  processed_csv: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/data/processed/processado.csv'
+
+reports:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/reports/figures/'
+
+metrics:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/5_analise_geoespacial_de_areas_de_origem_e_destino_visualizacao_de_dados/metrics/'
+
+# Requisitos do Ambiente
+python:
+  version: '3.8'

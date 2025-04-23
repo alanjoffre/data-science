@@ -1,0 +1,8 @@
+directories:
+  data_raw: "D:/Github/data-science/projetos/previsao_de_mercado_de_acoes/random_forest/data/raw/"
+  models: "D:/Github/data-science/projetos/previsao_de_mercado_de_acoes/random_forest/models/"
+  preprocessors: "D:/Github/data-science/projetos/previsao_de_mercado_de_acoes/random_forest/preprocessors/"
+  figures: "D:/Github/data-science/projetos/previsao_de_mercado_de_acoes/random_forest/reports/figures/"
+  logs: "D:/Github/data-science/projetos/previsao_de_mercado_de_acoes/random_forest/logs/"
+  config: "D:/Github/data-science/projetos/previsao_de_mercado_de_acoes/random_forest/config/"
+

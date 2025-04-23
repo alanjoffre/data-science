@@ -1,0 +1,32 @@
+#Importar as bibliotecas
+# ---------------------- Carregar Configurações do YAML ---------------------- #
+# Extraindo os caminhos do config.yaml
+# Garantir que os diretórios existam
+# Configuração do logging
+# ---------------------- Funções Auxiliares ---------------------- #
+# Informar numero de linhas importadas
+# Informar Colunas e tipos de dados:
+# Informar Dados faltantes
+# Informar Dados duplicados
+# Informar Outliers (usando Z-score para colunas numéricas)
+    """
+    Executa Nested Cross-Validation: o outer loop estima a performance e o inner realiza o tuning.
+    Retorna o melhor modelo treinado com os melhores hiperparâmetros encontrados e a média do F1-score do outer loop.
+    """
+# Converte y para numpy array se for uma Series (para indexação correta)
+# ---------------------- Programa Principal ---------------------- #
+# Preparação dos dados para modelagem: remover colunas irrelevantes
+# Divisão dos dados: 70% treino, 30% teste (seed=42)
+# Pré-processamento: escalonamento (usando um Pipeline) e salvamento do pré-processador
+# Nested Cross-Validation para tuning de hiperparâmetros
+# Model Calibration: calibração usando Platt Scaling (sigmoid)
+# Usamos o classificador do pipeline nested (já treinado) para calibrar
+# Calibração com cv='prefit' (já que o modelo foi treinado com nested CV)
+# Treinamento e avaliação no conjunto de treino (usando o modelo calibrado)
+# Avaliação no conjunto de teste
+# Validação cruzada adicional no conjunto de treino
+# Threshold Tuning: encontrar o melhor threshold para maximizar o F1-score
+# Salvar métricas
+# Salvar o modelo final (modelo calibrado)
+# Gerar e salvar gráficos ROC e Precision-Recall
+   

@@ -1,0 +1,31 @@
+# Configuração Inicial do Projeto de Análise de Compartilhamento de Viagem
+
+paths:
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/config/'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/src/'
+
+models:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/models/final_model.joblib'
+
+preprocessors:
+  path: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/preprocessors/preprocessor.joblib'
+
+data:
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/amostra.parquet'
+  processed_parquet: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/processado.parquet'
+  processed_csv: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/data/processed/processado.csv'
+
+reports:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/reports/figures/'
+
+metrics:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/4_deteccao_de_anomalias_em_tarifas/metrics/'
+
+# Requisitos do Ambiente
+python:
+  version: '3.8'

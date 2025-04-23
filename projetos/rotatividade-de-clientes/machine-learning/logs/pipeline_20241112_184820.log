@@ -1,0 +1,8 @@
+2024-11-12 18:48:20,967 - INFO - Métricas de desempenho do modelo:
+2024-11-12 18:48:20,967 - INFO - Acurácia: 0.5000
+2024-11-12 18:48:20,967 - INFO - Recall: 0.0000
+2024-11-12 18:48:20,967 - INFO - Precisão: 0.0000
+2024-11-12 18:48:20,967 - INFO - F1-Score: 0.0000
+2024-11-12 18:48:20,980 - INFO - AUC: 0.5000
+2024-11-12 18:48:20,989 - INFO - Configuração carregada com sucesso.
+2024-11-12 18:48:21,062 - INFO - Modelo salvo com sucesso em D:\Github\data-science\projetos\rotatividade-de-clientes\machine-learning\model_test.joblib.

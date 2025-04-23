@@ -1,0 +1,78 @@
+===== Análise de setor_censitario_de_partida =====
+Estatísticas descritivas:
+count    3.566100e+04
+mean     1.703137e+10
+std      3.331971e+05
+min      1.703101e+10
+25%      1.703108e+10
+50%      1.703124e+10
+75%      1.703183e+10
+max      1.703198e+10
+
+Contagem de valores únicos (top 20):
+1.703101e+10    24
+1.703101e+10    39
+1.703101e+10    33
+1.703101e+10    44
+1.703101e+10    46
+1.703101e+10    21
+1.703101e+10    27
+1.703101e+10    28
+1.703101e+10    52
+1.703101e+10    11
+1.703101e+10    30
+1.703102e+10    10
+1.703102e+10    18
+1.703102e+10     3
+1.703102e+10     4
+1.703102e+10     8
+1.703102e+10    24
+1.703102e+10     6
+1.703102e+10     7
+1.703102e+10     4
+...
+
+Histograma salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\histograma_setor_censitario_de_partida.png
+Gráfico salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\boxplot_setor_censitario_de_partida.png
+
+==================================================
+
+===== Análise de setor_censitario_de_destino =====
+Estatísticas descritivas:
+count    3.543000e+04
+mean     1.703138e+10
+std      3.378581e+05
+min      1.703101e+10
+25%      1.703108e+10
+50%      1.703124e+10
+75%      1.703183e+10
+max      1.703198e+10
+
+Contagem de valores únicos (top 20):
+1.703101e+10    29
+1.703101e+10    43
+1.703101e+10    17
+1.703101e+10    28
+1.703101e+10    64
+1.703101e+10    24
+1.703101e+10    24
+1.703101e+10    23
+1.703101e+10    52
+1.703101e+10    12
+1.703101e+10    37
+1.703102e+10     8
+1.703102e+10    20
+1.703102e+10     5
+1.703102e+10    11
+1.703102e+10     9
+1.703102e+10    19
+1.703102e+10     7
+1.703102e+10    12
+1.703102e+10     4
+...
+
+Histograma salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\histograma_setor_censitario_de_destino.png
+Gráfico salvo em: D:\Github\data-science\projetos\logistica_transporte\4_deteccao_de_anomalias_em_tarifas\reports\figures\boxplot_setor_censitario_de_destino.png
+
+==================================================
+

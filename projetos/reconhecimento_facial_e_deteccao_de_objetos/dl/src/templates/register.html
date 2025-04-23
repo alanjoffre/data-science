@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+    <h1>Gerenciamento de Usuários</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Nome do Usuário">
+        <button type="submit">Registrar Usuário</button>
+    </form>
+    
+    <h2>Outras Ações</h2>
+    <form action="{{ url_for('list_users') }}" method="get">
+        <button type="submit">Listar Usuários</button>
+    </form>
+    <form action="{{ url_for('update_user') }}" method="get">
+        <button type="submit">Alterar Dados de Usuário</button>
+    </form>
+    <form action="{{ url_for('delete_user') }}" method="get">
+        <button type="submit">Excluir Usuário</button>
+    </form>
+</body>
+</html>

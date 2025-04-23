@@ -1,0 +1,3 @@
+Modelo: Gradient Boosting, F1-Score: 0.8208
+Modelo: XGBoost, F1-Score: 0.9309
+Modelo: Logistic Regression, F1-Score: 0.6942

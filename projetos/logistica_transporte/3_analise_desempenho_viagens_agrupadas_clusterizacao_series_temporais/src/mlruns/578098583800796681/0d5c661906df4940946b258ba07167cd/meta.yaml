@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Github/data-science/projetos/logistica_transporte/3_analise_desempenho_viagens_agrupadas_clusteriza%C3%A7%C3%A3o_series_temporais/src/mlruns/578098583800796681/0d5c661906df4940946b258ba07167cd/artifacts
+end_time: 1738698482757
+entry_point_name: ''
+experiment_id: '578098583800796681'
+lifecycle_stage: active
+run_id: 0d5c661906df4940946b258ba07167cd
+run_name: zealous-hawk-893
+run_uuid: 0d5c661906df4940946b258ba07167cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738698463827
+status: 3
+tags: []
+user_id: alanj

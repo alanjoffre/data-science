@@ -1,0 +1,40 @@
+Regressão Linear com Gradiente Descendente
+
+Basicamente, o objetivo da tarefa da Regressão Linear é obter uma reta que melhor se ajusta aos dados de treinamento, sendo possível estimar um valor de interesse a partir dela:
+
+θ₀ é o coeficiente linear.
+θ₁ é o coeficiente angular.
+ε é o ruído gaussiano.
+O Gradiente Descendente é um algoritmo de otimização que realiza o ajuste de parâmetros de forma iterativa com o objetivo de encontrar o valor θ₀ e θ₁ que minimiza a função de interesse. Ou seja, a reta que melhor se ajusta aos dados.
+
+O método inicia preenchendo θ₀ e θ₁ com valores aleatórios, e melhora gradualmente a cada iteração, dando um pequeno passo de cada vez até que o algoritmo convirja para um mínimo. O tamanho dos passos é definido pelo hiperparâmetro taxa de aprendizado.
+
+Se a taxa de aprendizado for muito pequena, o algoritmo levará muito tempo para convergir devido ao grande número de iterações.
+
+Exemplo com taxa de aprendizado = 0.3
+Se a taxa de aprendizado for muito alta, o algoritmo poderá ultrapassar o mínimo, não encontrando uma boa solução.
+
+Exemplo com taxa de aprendizado = 3
+A simulação acima pode ser realizada nesta página, sendo possível alterar a taxa de aprendizado e acompanhar o algoritmo a cada passo.
+
+Gradiente Descendente em Lote
+
+Para implementar o Gradiente Descendente, precisamos calcular quanto mudará a função custo se alterarmos apenas um pouco do θⱼ. Isto é chamado derivada parcial. A derivada nos dá a taxa de variação de uma função em um determinado ponto, quando temos uma taxa de variação igual a zero, significa que atingimos um ponto plano da função, esse ponto pode ser um mínimo local ou mínimo global. Mínimos locais são um dos principais desafios do Gradiente Descendente, pois a solução não é tão boa quanto o mínimo global.
+
+Felizmente, a função de custo MSE (Erro Quadrático Médio) é convexa. Ou seja, se escolhermos quaisquer dois pontos na curva, a linha que os une nunca irá cruzar a curva. Dessa forma, não há a ocorrência de mínimos locais, apenas um mínimo global. Porém, se tivermos características com escalas muito diferentes, eventualmente alcançaremos o mínimo, mas iremos demorar muito. Portanto, ao utilizar o Gradiente Descendente, devemos garantir que todas as características tenham escalas similares.
+
+A derivada parcial da função de custo em relação ao parâmetro θⱼ é calculada da seguinte forma:
+
+m é o número de instâncias no conjunto de dados.
+θᵀ é a transposição do vetor de parâmetro do modelo.
+x⁽ⁱ⁾ é o vetor contendo os valores das características e yⁱ seus respectivos rótulos.
+Em vez de calcular cada derivada parcial individualmente, podemos calculá-las todas de uma vez através do vetor gradiente:
+
+n é o número de características;
+Xᵀ é transposição da matriz de características.
+y é o vetor dos valores do alvo.
+No GD em Lote, todo o conjunto de treinamento (X) é utilizado no cálculo do vetor gradiente. Ou seja, ele utiliza todo o lote de dados em cada etapa.
+
+O vetor gradiente aponta para o crescimento da função, como desejamos descer, basta caminharmos para o lado oposto (subtraindo o vetor de θ). A taxa de aprendizado é definida por η (Eta), multiplicamos o vetor gradiente por η para definir o tamanho do passo.
+
+https://medium.com/@bruno.dorneles/regress%C3%A3o-linear-com-gradiente-descendente-d3420b0b0ff

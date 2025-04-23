@@ -1,0 +1,144 @@
+liste detalhadamente a nivel senior um projeto de detecção de anomalias em tarifas.
+
+linguagem: python
+
+Config.yaml:
+# Configurações de Diretórios para o Projeto
+paths:
+  config_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/config/config.yaml'
+  logs_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/logs/'
+  notebook_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/notebook/'
+  src_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/src/'
+
+# Caminhos para o Armazenamento de Modelos
+models:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/'
+  scaler: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/scaler.joblib'
+  final_model: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/final_model.joblib'
+
+# Caminhos para Pré-processadores
+preprocessors:
+  path: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/preprocessors/preprocessor.joblib'
+
+# Caminhos para os Dados
+data:
+  raw: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/raw/dataset_preprocessado.parquet'
+  processed: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/processed/processado.parquet'
+
+# Configurações de Relatórios
+reports:
+  directory: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/'
+  figures_dir: 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures/'
+  
+Sempre que for atualizado meu config.yaml, informe os novos dados!
+
+Nome das colunas: 
+id_viagem,segundos_da_viagem,milhas_da_viagem,trato_do_censo_do_embarque,trato_do_censo_do_desembarque,area_comunitaria_do_embarque,area_comunitaria_do_desembarque,tarifa,gorjeta,cobrancas_adicionais,total_da_viagem,viagem_compartilhada_autorizada,viagens_agrupadas,latitude_do_centroide_do_embarque,longitude_do_centroide_do_embarque,local_do_centroide_do_embarque,latitude_do_centroide_do_desembarque,longitude_do_centroide_do_desembarque,local_do_centroide_do_desembarque,data_inicio,hora_inicio,data_final,hora_final
+
+O dataset está em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\data\raw\logistica_transportadora_2018_2022.csv
+possui o tamanho de 1 gb e meio, com informações de 2018 a 2022, preciso gerar uma amostra que seja salvo em: D:\Github\data-science\projetos\logistica_transporte\2_analise_compartilhamento_de_viagem_classificacao\data\processed\
+preprocessado.parquet e preprocessado.csv.
+
+--------------------
+
+A pesquisa do passo a passo do projeto deve ser feita no chatgpt
+
+--------------------
+
+TRATAMENTO DOS DADOS - INICIAL NO COPILOT
+
+# Importar as bibliotecas
+# Caminhos dos arquivos
+preprocessed_data_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/processed/preprocessado.parquet'
+output_csv_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/processed/processado.csv'
+output_parquet_path = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/data/processed/processado.parquet'
+figures_dir = 'D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/reports/figures'
+# Criando diretório para os gráficos, se não existir
+# 🚀 **1. Importação do dataset**
+# 🚨 **2. Verificação de colunas carregadas**
+# 🚀 **3. Renomeação das colunas**
+# 🚨 **4. Removendo viagens inválidas (`data_inicio >= data_final`)**
+# 🚀 **5. Engenharia de Features**
+# 🚀 **6. Gráficos Salvos no Diretório**
+# 🚀 **7. Balanceamento da variável alvo**
+# 🚀 **8. Normalização e Padronização**
+# 🚀 **9. Validação Final**
+# 🚀 **10. Salvando Dataset Final**
+# 🚀 **11. Métricas de Avaliação**
+# 🚀 **12. Matriz de Correlação (salva no diretório)**
+
+--------------------
+
+Projeto de Análise de Compartilhamento de Viagem Utilizando Classificação
+
+1. Definição do Problema e Objetivos
+1.1. Contexto
+Empresas de transporte e mobilidade urbana enfrentam desafios em otimizar o compartilhamento de viagens para maximizar a eficiência operacional, minimizar custos e melhorar a experiência do usuário. O compartilhamento de viagens reduz congestionamentos e emissões de carbono, além de tornar os serviços mais acessíveis.
+
+1.2. Objetivo
+O objetivo deste projeto é prever se uma viagem será compartilhada ou não com base em características da viagem, como tempo, distância, localização e custos.
+
+1.3. Métricas de Avaliação
+Dado que o problema é de classificação binária (viagem compartilhada ou não), as métricas utilizadas serão:
+
+F1-score (prioritário, para balanceamento entre precisão e recall)
+AUC-ROC (para avaliar separabilidade das classes)
+Precision e Recall (dependendo do impacto dos falsos positivos e falsos negativos)
+Matriz de Confusão (para análise qualitativa dos erros)
+
+3.3. Engenharia de Features
+Criação de novas variáveis para enriquecer os dados:
+
+Velocidade Média da Viagem = quilometros_da_viagem / (segundos_da_viagem / 3600)
+Duração da Viagem em Minutos = segundos_da_viagem / 60
+Horário da viagem: Criação de categorias manhã, tarde, noite, madrugada
+Dia da semana e mês do ano a partir da data_inicio
+Períodos de pico: flag indicando se a viagem ocorreu em horários de alto fluxo.
+Distância Euclidiana entre embarque e desembarque usando as coordenadas.
+
+3.4. Codificação de Variáveis Categóricas
+trato_do_censo_do_embarque, trato_do_censo_do_desembarque, area_comunitaria_do_embarque, area_comunitaria_do_desembarque serão codificados via One-Hot Encoding ou Target Encoding dependendo da cardinalidade.
+
+3.5. Normalização e Padronização
+Padronização (StandardScaler) para quilomentros_da_viagem, segundos_da_viagem, tarifa_real, gorjeta_real, cobrancas_adicionais_real.
+Normalização (MinMaxScaler) para variáveis baseadas em tempo.
+
+3.6. Balanceamento das Classes
+Se houver desbalanceamento na variável alvo, serão testadas técnicas como:
+
+Oversampling (SMOTE)
+Undersampling
+Class Weights no modelo de ML
+
+4. Modelagem
+4.1. Definição dos Modelos
+Os modelos testados serão:
+Random Forest – Para benchmark inicial.
+XGBoost – Para otimização do desempenho.
+Redes Neurais (MLP) – Para capturar padrões não lineares.
+4.2. Seleção de Hiperparâmetros
+Uso de Grid Search ou Optuna para ajuste fino de hiperparâmetros.
+Validação cruzada estratificada (K-Fold com k=5).
+4.3. Treinamento e Avaliação
+Separação em treino (70%) e teste (30%).
+Relatórios de desempenho: F1-score, matriz de confusão, curva ROC.
+
+5. Interpretação dos Resultados
+SHAP Values para interpretar a influência de cada variável.
+Feature Importance para destacar os fatores que mais impactam a previsão.
+Análise de erro com inspeção de falsos positivos/negativos.
+
+6. Implantação e Monitoramento
+6.1. Salvamento do Modelo
+O modelo será salvo no diretório:
+D:/Github/data-science/projetos/logistica_transporte/2_analise_compartilhamento_de_viagem_classificacao/models/modelo_compartilhamento.joblib
+6.2. Pipeline de Produção
+O pipeline completo de pré-processamento, treinamento e previsão será encapsulado em um módulo modular e reutilizável.
+6.3. Monitoramento em Produção
+Coleta contínua de novos dados para reavaliação do modelo.
+Dashboard com métricas de performance ao longo do tempo.
+
+7. Conclusões e Próximos Passos
+O impacto do modelo será medido em termos de precisão e recall.
+Se necessário, serão investigadas técnicas avançadas, como AutoML, transformers para dados tabulares ou modelos híbridos.
+Este plano detalhado cobre todo o ciclo de vida do projeto de machine learning, garantindo rastreabilidade, desempenho e escalabilidade. Se precisar de código para cada uma dessas etapas, posso fornecer! 🚀

@@ -1,0 +1,99 @@
+1. Previsão de Gorjeta (Regressão)
+Objetivo: Prever o valor da gorjeta com base em várias características da viagem. 
+Métodos: Regressão Linear, Random Forest Regressor, Gradient Boosting Regressor.
+Resultado Esperado: Um modelo que pode prever com precisão o valor da gorjeta esperado para uma viagem, considerando fatores como a distância da viagem, 
+a área de origem e destino, e o total da viagem.
+
+2. Análise de Comportamento de Compartilhamento de Viagem (Classificação)
+Objetivo: Analisar os fatores que influenciam a autorização de viagens compartilhadas. 
+Métodos: Decision Trees, Random Forest, e Logistic Regression.
+Resultado Esperado: Um modelo que pode prever se uma viagem será compartilhada com base em características como a distância da viagem, a área de origem e destino, 
+e o total da viagem.
+
+3. Análise de Desempenho de Viagens Agrupadas (Clusterização e Séries Temporais)
+Objetivo: Avaliar a eficiência e o impacto das viagens agrupadas.
+Métodos: K-means para clusterização de viagens semelhantes.
+Modelos de séries temporais para analisar padrões e eficiência ao longo do tempo.
+Resultado Esperado: Insights sobre a eficiência das viagens agrupadas e identificação de períodos ou áreas onde esse tipo de viagem é mais comum e eficaz.
+
+4. Detecção de Anomalias em Tarifas (Anomaly Detection)
+Objetivo: Identificar viagens com tarifas anômalas ou discrepantes. 
+Métodos: Isolation Forest e One-Class SVM.
+Resultado Esperado: Detecção de viagens com tarifas fora do padrão, ajudando a identificar possíveis erros ou fraudes.
+
+5. Análise Geoespacial de Áreas de Origem e Destino (Visualização de Dados)
+Objetivo: Visualizar e analisar os padrões geoespaciais de origem e destino das viagens. 
+Métodos: Ferramentas de visualização como Folium, GeoPandas e Mapbox.
+Resultado Esperado: Mapas interativos que mostram os pontos de acesso de origem e destino, ajudando a entender melhor a distribuição geográfica das viagens.
+
+6. Modelagem de Receita por Viagem (Regressão)
+Objetivo: Prever o total da receita gerada por viagem com base em várias características. 
+Métodos: Regressão Linear, Random Forest Regressor e Gradient Boosting Regressor.
+Resultado Esperado: Um modelo que pode prever o total da receita esperado para uma viagem, considerando fatores como a distância da viagem, 
+as áreas de origem e destino, e se a viagem foi compartilhada.
+
+7. Análise de Eficácia das Cobranças Adicionais (Classificação)
+Objetivo: Determinar o impacto das cobranças adicionais no total da viagem. 
+Métodos: Algoritmos de classificação para analisar a relação entre cobranças adicionais e total da viagem.
+Resultado Esperado: Entendimento de como as cobranças adicionais influenciam o valor total da viagem, ajudando a otimizar estratégias de cobrança.
+
+8. Otimização de Rotas (Roteamento)
+Objetivo: Encontrar as rotas mais eficientes para economizar tempo e combustível. 
+Métodos: Algoritmos de roteamento como Dijkstra ou A*. Redes Neurais para previsão de tempo de viagem em diferentes rotas.
+Resultado Esperado: Rotas otimizadas que minimizam o tempo de viagem e o consumo de combustível.
+
+9. Gerenciamento de Frota (Previsao)
+Objetivo: Utilizar a frota de veículos de maneira eficiente, ajustando a disponibilidade conforme a demanda. 
+Métodos: Modelos de previsão como ARIMA ou LSTM para prever a demanda futura.
+Algoritmos de alocação dinâmica de veículos com base na demanda prevista.
+Resultado Esperado: Melhor utilização da frota, com ajuste dinâmico da disponibilidade de veículos conforme a demanda.
+
+10. Análise de Demanda (Series Temporais - Redes Neurais)
+Objetivo: Identificar e prever picos de demanda para ajustar a operação. 
+Métodos: Modelos de séries temporais como ARIMA ou Prophet.
+Redes Neurais Recurrentes (RNN) como LSTM.
+Resultado Esperado: Previsão precisa dos picos de demanda, permitindo ajustes operacionais e alocação de recursos.
+
+11. Eficiência Operacional (Regressao)
+Objetivo: Avaliar e melhorar a eficiência operacional das viagens. 
+Métodos: Análise de Regressão para identificar fatores que impactam o tempo e a distância das viagens.
+Algoritmos de otimização para melhorar a eficiência com base nos dados analisados.
+Resultado Esperado: Identificação de fatores que impactam a eficiência e implementação de melhorias operacionais.
+
+12. Planejamento Urbano (Clusterização - Visualização Geoespacial)
+Objetivo: Identificar pontos de acesso de origem e destino para melhorar o planejamento urbano. 
+Métodos: Clusterização de pontos de acesso usando K-means ou DBSCAN.
+Visualização geoespacial com ferramentas como Folium ou GeoPandas.
+Resultado Esperado: Identificação de áreas de alta atividade para melhor alocação de recursos e infraestrutura.
+
+13. Análise de Custos (Regressão)
+Objetivo: Comparar custos operacionais com receitas para identificar oportunidades de redução de custos. 
+Métodos: Modelos de Regressão para entender a relação entre custos e receitas.
+Algoritmos de detecção de anomalias para identificar discrepâncias em cobranças.
+Resultado Esperado: Entendimento claro dos custos operacionais e identificação de áreas para redução de custos e aumento da rentabilidade.
+
+----------
+
+Tradução das colunas do dataset:
+Trip ID: ID da Viagem
+Trip Start Timestamp: Horário de Início da Viagem
+Trip End Timestamp: Horário de Fim da Viagem
+Trip Seconds: Segundos da Viagem
+Trip Miles: Milhas da Viagem
+Pickup Census Tract: Área Censitária de Origem
+Dropoff Census Tract: Área Censitária de Destino
+Pickup Community Area: Área Comunitária de Origem
+Dropoff Community Area: Área Comunitária de Destino
+Fare: Tarifa
+Tip: Gorjeta
+Additional Charges: Cobranças Adicionais
+Trip Total: Total da Viagem
+Shared Trip Authorized: Viagem Compartilhada Autorizada
+Trips Pooled: Viagens Agrupadas
+Pickup Centroid Latitude: Latitude do Centroide de Origem
+Pickup Centroid Longitude: Longitude do Centroide de Origem
+Pickup Centroid Location: Localização do Centroide de Origem
+Dropoff Centroid Latitude: Latitude do Centroide de Destino
+Dropoff Centroid Longitude: Longitude do Centroide de Destino
+Dropoff Centroid Location: Localização do Centroide de Destino
+
