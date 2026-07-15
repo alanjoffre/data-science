@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="assets/banner.svg" alt="data-science — Machine Learning aplicado, do EDA ao deploy" width="100%">
+
+</div>
+
 # 📊 Data Science & Machine Learning — Alan Joffre
 
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
@@ -9,7 +15,7 @@
 
 Repositório de **Data Science e Machine Learning aplicado** — projetos ponta a ponta de classificação, regressão, clusterização, séries temporais, NLP e visão computacional, do EDA ao deploy. *(Applied ML portfolio: end-to-end projects from EDA to deployment.)*
 
-> 💼 Sou **Data Engineer / Analytics Engineer** — esta é minha base de ML aplicado. Veja também a plataforma de dados [**toll-analytics-platform**](https://github.com/alanjoffre/toll-analytics-platform).
+> 💼 Sou **Data Engineer · Analytics Engineer · AI Engineer** — esta é minha base de ML aplicado. Veja também a plataforma de dados [**toll-analytics-platform**](https://github.com/alanjoffre/toll-analytics-platform) e o projeto de Engenharia de IA de ponta a ponta [**RodoIA**](https://github.com/alanjoffre/rodoia) (RAG · fine-tuning · agente · MLOps).
 
 ---
 

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="data-science — Machine Learning aplicado, do EDA ao deploy">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111a2e"/>
+      <stop offset="0.55" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#0a0f1a"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glowV" cx="0.15" cy="0.1" r="0.6">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowC" cx="0.92" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#06b6d4" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="340" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="340" rx="18" fill="url(#glowV)"/>
+  <rect width="1200" height="340" rx="18" fill="url(#glowC)"/>
+  <rect x="1" y="1" width="1198" height="338" rx="17" fill="none" stroke="#2a3550" stroke-width="1"/>
+
+  <!-- right-side: clusters (ML) -->
+  <g opacity="0.95">
+    <!-- cluster ciano -->
+    <circle cx="952" cy="146" r="6" fill="#22d3ee" opacity="0.85"/>
+    <circle cx="974" cy="152" r="6" fill="#22d3ee" opacity="0.7"/>
+    <circle cx="960" cy="166" r="6" fill="#0d1117" stroke="#22d3ee" stroke-width="2"/>
+    <circle cx="982" cy="160" r="6" fill="#22d3ee" opacity="0.6"/>
+    <circle cx="968" cy="150" r="6" fill="#22d3ee"/>
+    <!-- cluster violeta -->
+    <circle cx="1062" cy="126" r="6" fill="#a78bfa" opacity="0.85"/>
+    <circle cx="1084" cy="132" r="6" fill="#0d1117" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="1070" cy="144" r="6" fill="#a78bfa" opacity="0.7"/>
+    <circle cx="1090" cy="120" r="6" fill="#a78bfa"/>
+    <!-- cluster indigo -->
+    <circle cx="1028" cy="214" r="6" fill="#818cf8" opacity="0.85"/>
+    <circle cx="1050" cy="210" r="6" fill="#818cf8"/>
+    <circle cx="1036" cy="228" r="6" fill="#0d1117" stroke="#818cf8" stroke-width="2"/>
+    <circle cx="1058" cy="224" r="6" fill="#818cf8" opacity="0.6"/>
+    <circle cx="1018" cy="222" r="6" fill="#818cf8" opacity="0.7"/>
+  </g>
+
+  <!-- baseline motif -->
+  <line x1="60" y1="304" x2="1140" y2="304" stroke="#22d3ee" stroke-width="2" opacity="0.25"
+        stroke-dasharray="26 18" stroke-linecap="round"/>
+
+  <!-- wordmark -->
+  <text x="58" y="116" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="60" font-weight="800" fill="url(#ink)" letter-spacing="-0.5">data-science</text>
+
+  <!-- taglines -->
+  <text x="62" y="154" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#c9d4e5">Machine Learning aplicado &#183; do EDA ao deploy</text>
+  <text x="62" y="182" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5" fill="#7f8ba3">25 projetos ponta a ponta &#8212; pipelines, MLflow e apps publicados na web</text>
+
+  <!-- domain pills -->
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle">
+    <g><rect x="60"  y="206" width="118" height="34" rx="17" fill="#161f33" stroke="#33406090"/><text x="119" y="228" fill="#cdd6e6">Classifica&#231;&#227;o</text></g>
+    <g><rect x="186" y="206" width="88"  height="34" rx="17" fill="#161f33" stroke="#33406090"/><text x="230" y="228" fill="#cdd6e6">Regress&#227;o</text></g>
+    <g><rect x="282" y="206" width="92"  height="34" rx="17" fill="#161f33" stroke="#33406090"/><text x="328" y="228" fill="#cdd6e6">Clustering</text></g>
+    <g><rect x="382" y="206" width="140" height="34" rx="17" fill="#161f33" stroke="#33406090"/><text x="452" y="228" fill="#cdd6e6">S&#233;ries Temporais</text></g>
+    <g><rect x="530" y="206" width="56"  height="34" rx="17" fill="#161f33" stroke="#33406090"/><text x="558" y="228" fill="#cdd6e6">NLP</text></g>
+    <g><rect x="594" y="206" width="66"  height="34" rx="17" fill="#161f33" stroke="#33406090"/><text x="627" y="228" fill="#cdd6e6">Vis&#227;o</text></g>
+  </g>
+
+  <!-- tooling highlights -->
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">
+    <g><rect x="60"  y="256" width="120" height="32" rx="8" fill="#0e1b1f" stroke="#22d3ee66"/><text x="120" y="277" fill="#67e8f9">scikit-learn</text></g>
+    <g><rect x="188" y="256" width="92"  height="32" rx="8" fill="#0e1b1f" stroke="#22d3ee66"/><text x="234" y="277" fill="#67e8f9">XGBoost</text></g>
+    <g><rect x="288" y="256" width="86"  height="32" rx="8" fill="#151226" stroke="#a78bfa66"/><text x="331" y="277" fill="#c4b5fd">MLflow</text></g>
+    <g><rect x="382" y="256" width="104" height="32" rx="8" fill="#151226" stroke="#a78bfa66"/><text x="434" y="277" fill="#c4b5fd">Streamlit</text></g>
+  </g>
+</svg>
