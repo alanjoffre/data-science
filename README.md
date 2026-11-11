@@ -42,7 +42,7 @@ Pipeline real de ponta a ponta: EDA → limpeza → modelagem → **explicabilid
 Classificação com forte desbalanceamento (imbalanced-learn), preparada para escorar em lote (PySpark) e streaming (Kafka).
 
 ### 💬 Análise de Sentimentos (NLP em escala) — [`projetos/analise-de-sentimentos/`](projetos/analise-de-sentimentos/)
-Pipeline de NLP processando **10M+ linhas** com Dask (paralelo), inviável em pandas single-node.
+Pipeline de NLP processando **1,6 milhão de linhas** com Dask (paralelo), inviável em pandas single-node.
 
 ### 👥 Segmentação de Clientes — [`projetos/segmentacao_de_clientes_clustering/`](projetos/segmentacao_de_clientes_clustering/)
 Clusterização (KMeans) com Spark e Kafka para segmentação e estratégia.
